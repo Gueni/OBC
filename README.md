@@ -10,7 +10,6 @@ The charger is designed to meet specific power requirements and comply with safe
 - [Overview](#overview)
 - [Features](#features)
 - [System Architecture](#system-architecture)
-- [Project Structure](#project-structure)
 - [PCB Design](#pcb-design)
 - [Control Circuit](#control-circuit)
 - [How to Use](#how-to-use)
@@ -26,19 +25,6 @@ The charger is designed to meet specific power requirements and comply with safe
 ## System Architecture
 
 The EV Onboard Charger consists of two main sections: the Power Factor Correction (PFC) stage and the LLC Resonant Converter stage. PFC ensures high power factor and low harmonic distortion, while the LLC resonant converter improves overall efficiency.
-
-## Project Structure
-
-The repository is organized as follows:
-
-|-- src/ # Source code for control circuit and firmware.
-|-- pcb_design/ # PCB layout and design files.
-|-- simulations/ # Simulations and performance analysis files.
-|-- documentation/ # Project documentation and datasheets.
-|-- examples/ # Example usage and test cases.
-|-- LICENSE # License information.
-|-- README.md # This README file.
-
 
 ## PCB Design
 
