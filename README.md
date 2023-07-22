@@ -28,7 +28,7 @@ The EV Onboard Charger consists of two main sections: the Power Factor Correctio
 
 ## PCB Design
 
-The `pcb_design` directory contains all the files related to the PCB layout and design. It includes Gerber files, BOM (Bill of Materials), and schematic diagrams.
+The `0010 PFC Design` directory contains all the files related to the PCB layout and design. It includes Gerber files, BOM (Bill of Materials), and schematic diagrams.
 
 ## Control Circuit
 
