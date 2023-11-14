@@ -1,0 +1,57 @@
+\documentclass{article}
+%-------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{subcaption}
+%-------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------
+\title{EV On-Board Charger : Power Factor Correction}
+\author{Mohamed Gueni}
+\date{\today}
+%-------------------------------------------------------
+\maketitle
+%-------------------------------------------------------
+\section{Block Diagram}
+
+The block diagram of the PFC design is shown in Figure \ref{fig:block_diagram}. The PFC takes input from the Electric Vehicle Supply Equipment (EVSE) which later could be the mains plug (1ph ) , 3 phase input or even a DC fast charging station.
+The PFC stage performs power factor correction and boosts the voltage to a specific high DC voltage before delivering DC power to the DC-link at the output.
+
+%-------------------------------------------------------
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{PFC.jpg}
+    \caption{PFC Block Diagram}
+    \label{fig:block_diagram}
+\end{figure}
+%-------------------------------------------------------
+The DC Link at the output of the PFC would carry out the DC input power to the cascaded LLC bloc(s) which will be studied later on.
+%-------------------------------------------------------
+\section{Block Description}
+In this document we will go through all sections of the power factor correction bloc starting with a brief description of the input power source which is an external part to this project and will only be included for simulation purposes.Then we will dive into the topology selected for this PFC stage and the switches technology and references which we'll start with.
+Note that later in the simulation phase we would conduct a couple of efficiency simulations between multiple switches from different suppliers in order to determine the one with the most efficiency and less switching and conduction losses in this design.
+%-------------------------------------------------------
+\subsection{EVSE Input}
+The EVSE (Electric Vehicle Supply Equipment) provides the input power to
+the on-board charger. It supplies AC or DC power from the external power source.in this project we only interested in modeling the input source in simulation phases such as inside Plecs models.It should cover all three configurations for 3ph AC , 1ph AC and for DC input source for fast charging.
+%-------------------------------------------------------
+\subsection{AC Filter}
+At the AC input, we can experience 2 Types of EMI (Electromagnetic interference) noise \ref{fig:ac_filter}: Differential Mode (DM) and Common Mode (CM) Noise. DM noise is conducted on the line and neutral, in opposite directions. The basic DM filter uses a single-winding inductor inserted into the line path, along with a capacitor from line to neutral, thus blocking noise from propagating through the system. CM noise is noise conducted on both the line and neutral (ground) but in the same direction. The basic CM filter uses a dual-winding inductor in both line and neutral paths, plus a capacitor from line to ground.
+%-------------------------------------------------------
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{ac_filter.jpg}
+    \caption{AC Filter Primary Sketch (medium.com)}
+    \label{fig:ac_filter}
+\end{figure}
+%-------------------------------------------------------
+%-------------------------------------------------------
+\subsection{Current and Voltage Sensing (AC)}
+
+%-------------------------------------------------------
+\subsection{Power Factor Correction (PFC)}
+%-------------------------------------------------------
+\subsection{DC LINK}
+
+%-------------------------------------------------------
+\end{document}
+%-------------------------------------------------------
