@@ -35,7 +35,7 @@ The EVSE (Electric Vehicle Supply Equipment) provides the input power to
 the on-board charger. It supplies AC or DC power from the external power source.in this project we only interested in modeling the input source in simulation phases such as inside Plecs models.It should cover all three configurations for 3ph AC , 1ph AC and for DC input source for fast charging.
 %-------------------------------------------------------
 \subsection{AC Filter}
-At the AC input, we can experience 2 Types of EMI (Electromagnetic interference) noise \ref{fig:ac_filter}: Differential Mode (DM) and Common Mode (CM) Noise. DM noise is conducted on the line and neutral, in opposite directions. The basic DM filter uses a single-winding inductor inserted into the line path, along with a capacitor from line to neutral, thus blocking noise from propagating through the system. CM noise is noise conducted on both the line and neutral (ground) but in the same direction. The basic CM filter uses a dual-winding inductor in both line and neutral paths, plus a capacitor from line to ground.
+At the input of our system , whether it is connected to home mains plug or to high power three phased charging station, the input can present some imperfections.Radiated EMI from other components can also be picked up on power cabling, adding to conducted levels. The system can experience at its input mainly two types of Electromagnetic interference (EMI) which are Differential Mode (DM) and Common Mode (CM) Noise.(Figure \ref{fig:ac_filter})
 %-------------------------------------------------------
 \begin{figure}[htbp]
     \centering
@@ -44,14 +44,19 @@ At the AC input, we can experience 2 Types of EMI (Electromagnetic interference)
     \label{fig:ac_filter}
 \end{figure}
 %-------------------------------------------------------
-%-------------------------------------------------------
-\subsection{Current and Voltage Sensing (AC)}
 
-%-------------------------------------------------------
-\subsection{Power Factor Correction (PFC)}
-%-------------------------------------------------------
-\subsection{DC LINK}
+DM noise is conducted on the line and neutral, in opposite directions. The basic DM filter uses a single-winding inductor inserted into the line path, along with a capacitor from line to neutral, thus blocking noise from propagating through the system.
 
+CM noise is noise conducted on both the line and neutral (ground) but in the same direction. The basic CM filter uses a dual-winding inductor in both line and neutral paths, plus a capacitor from line to ground.
+
+As presented in Figure \ref{fig:modular_EMI} , a typical but basic EMI filter uses the CX capacitors to attenuate differential mode noise, and an inductor-capacitor combination to reduce common mode noise.
+%-------------------------------------------------------
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{modular_EMI.jpg}
+    \caption{AC Filter Primary Sketch (medium.com)}
+    \label{fig:modular_EMI}
+\end{figure}
 %-------------------------------------------------------
 \end{document}
 %-------------------------------------------------------
