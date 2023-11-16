@@ -57,7 +57,7 @@ Plecs {
       SrcComponent  "library/POWER/AC Filter"
       Name          "AC Filter"
       Show          on
-      Position      [585, 275]
+      Position      [335, 175]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -127,7 +127,7 @@ Plecs {
       Type          Diode
       Name          "D1"
       Show          on
-      Position      [785, 215]
+      Position      [475, 115]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -161,7 +161,7 @@ Plecs {
       Type          PlecsProbe
       Name          "Probe5"
       Show          off
-      Position      [390, 495]
+      Position      [520, 355]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -175,22 +175,22 @@ Plecs {
     Component {
       Type          Scope
       Name          "AC"
-      Show          on
-      Position      [680, 495]
+      Show          off
+      Position      [665, 355]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 26; 1536, 839]
+      Location      [0, 26; 1536, 843]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAB5fwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAAAAAeUAAAB+AP///wAAAAMAAAeAAAABHvw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAK2AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAK7AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"AAAAGQAAAAJAAAAZAAAAAQAAABkAAAABQAAAGQAAAAGAAAAZAAAAAcAAABkAAAAAQAAAGQAAAACAA"
-"AAZAAAAAMAAABkAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"QAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AaGAAAAAQAAAAAAAAPoAAAAACs="
@@ -258,24 +258,10 @@ Plecs {
       }
     }
     Component {
-      Type          SignalDemux
-      Name          "Demux5"
-      Show          off
-      Position      [605, 495]
-      Direction     right
-      Flipped       on
-      LabelPosition south
-      Parameter {
-        Variable      "Width"
-        Value         "[6 6]"
-        Show          off
-      }
-    }
-    Component {
       Type          SignalSelector
       Name          "Selector"
       Show          off
-      Position      [490, 480]
+      Position      [595, 340]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -294,7 +280,7 @@ Plecs {
       Type          SignalSelector
       Name          "Selector1"
       Show          off
-      Position      [490, 510]
+      Position      [595, 370]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -310,24 +296,10 @@ Plecs {
       }
     }
     Component {
-      Type          SignalMux
-      Name          "Mux"
-      Show          off
-      Position      [545, 495]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Width"
-        Value         "[6 6]"
-        Show          off
-      }
-    }
-    Component {
       Type          Resistor
       Name          "R_load1"
       Show          off
-      Position      [700, 240]
+      Position      [425, 140]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -341,7 +313,7 @@ Plecs {
       Type          Resistor
       Name          "R_load2"
       Show          off
-      Position      [700, 265]
+      Position      [425, 165]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -355,7 +327,7 @@ Plecs {
       Type          Resistor
       Name          "R_load3"
       Show          off
-      Position      [700, 290]
+      Position      [425, 190]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -369,7 +341,7 @@ Plecs {
       Type          Resistor
       Name          "R_load4"
       Show          off
-      Position      [700, 315]
+      Position      [425, 215]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -384,7 +356,7 @@ Plecs {
       SrcComponent  "library/POWER/EVSE\\/GRID"
       Name          "EVSE/GRID"
       Show          on
-      Position      [425, 275]
+      Position      [205, 175]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -434,7 +406,7 @@ Plecs {
       Type          Constant
       Name          "FG"
       Show          on
-      Position      [325, 240]
+      Position      [105, 140]
       Direction     right
       Flipped       off
       LabelPosition west
@@ -454,7 +426,7 @@ Plecs {
       Type          Constant
       Name          "VG"
       Show          on
-      Position      [325, 265]
+      Position      [105, 165]
       Direction     right
       Flipped       off
       LabelPosition west
@@ -474,7 +446,7 @@ Plecs {
       Type          PlecsProbe
       Name          "Probe"
       Show          off
-      Position      [390, 110]
+      Position      [525, 405]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -489,7 +461,7 @@ Plecs {
       Type          Scope
       Name          "Scope"
       Show          off
-      Position      [500, 110]
+      Position      [665, 405]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -550,7 +522,7 @@ Plecs {
       Type          Diode
       Name          "D2"
       Show          on
-      Position      [785, 355]
+      Position      [475, 255]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -584,7 +556,7 @@ Plecs {
       Type          Diode
       Name          "D3"
       Show          on
-      Position      [835, 215]
+      Position      [525, 115]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -618,7 +590,7 @@ Plecs {
       Type          Diode
       Name          "D4"
       Show          on
-      Position      [835, 355]
+      Position      [525, 255]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -652,7 +624,7 @@ Plecs {
       Type          Diode
       Name          "D5"
       Show          on
-      Position      [885, 215]
+      Position      [575, 115]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -686,7 +658,7 @@ Plecs {
       Type          Diode
       Name          "D6"
       Show          on
-      Position      [885, 355]
+      Position      [575, 255]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -720,7 +692,7 @@ Plecs {
       Type          Diode
       Name          "D7"
       Show          on
-      Position      [970, 210]
+      Position      [620, 115]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -754,7 +726,7 @@ Plecs {
       Type          Diode
       Name          "D8"
       Show          on
-      Position      [970, 350]
+      Position      [620, 255]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -788,10 +760,10 @@ Plecs {
       Type          ConfigurableSubsystem
       Name          "Load"
       Show          off
-      Position      [1090, 285]
+      Position      [735, 180]
       Direction     up
       Flipped       off
-      LabelPosition north
+      LabelPosition south
       Frame         [-25, -95; 25, 95]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -1150,17 +1122,17 @@ Plecs {
       Type          Wire
       SrcComponent  "D3"
       SrcTerminal   2
-      Points        [835, 185]
+      Points        [525, 85]
       Branch {
-        Points        [885, 185]
+        Points        [575, 85]
         Branch {
-          Points        [970, 185]
+          Points        [620, 85]
           Branch {
             DstComponent  "D7"
             DstTerminal   2
           }
           Branch {
-            Points        [1005, 185; 1005, 205]
+            Points        [660, 85; 660, 100]
             DstComponent  "Load"
             DstTerminal   1
           }
@@ -1171,7 +1143,7 @@ Plecs {
         }
       }
       Branch {
-        Points        [785, 185]
+        Points        [475, 85]
         DstComponent  "D1"
         DstTerminal   2
       }
@@ -1180,17 +1152,17 @@ Plecs {
       Type          Wire
       SrcComponent  "D4"
       SrcTerminal   1
-      Points        [835, 385]
+      Points        [525, 285]
       Branch {
-        Points        [885, 385]
+        Points        [575, 285]
         Branch {
-          Points        [970, 385]
+          Points        [620, 285]
           Branch {
             DstComponent  "D8"
             DstTerminal   1
           }
           Branch {
-            Points        [1005, 385; 1005, 365]
+            Points        [655, 285; 655, 260]
             DstComponent  "Load"
             DstTerminal   2
           }
@@ -1201,7 +1173,7 @@ Plecs {
         }
       }
       Branch {
-        Points        [785, 385]
+        Points        [475, 285]
         DstComponent  "D2"
         DstTerminal   1
       }
@@ -1210,14 +1182,14 @@ Plecs {
       Type          Signal
       SrcComponent  "Probe5"
       SrcTerminal   1
-      Points        [450, 495]
+      Points        [555, 355]
       Branch {
-        Points        [450, 480]
+        Points        [555, 340]
         DstComponent  "Selector"
         DstTerminal   1
       }
       Branch {
-        Points        [450, 510]
+        Points        [555, 370]
         DstComponent  "Selector1"
         DstTerminal   1
       }
@@ -1226,36 +1198,15 @@ Plecs {
       Type          Signal
       SrcComponent  "Selector"
       SrcTerminal   2
-      Points        [520, 480; 520, 490]
-      DstComponent  "Mux"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Selector1"
-      SrcTerminal   2
-      Points        [520, 510; 520, 500]
-      DstComponent  "Mux"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Mux"
-      SrcTerminal   1
-      DstComponent  "Demux5"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux5"
-      SrcTerminal   2
+      Points        [625, 340; 625, 350]
       DstComponent  "AC"
       DstTerminal   1
     }
     Connection {
       Type          Signal
-      SrcComponent  "Demux5"
-      SrcTerminal   3
+      SrcComponent  "Selector1"
+      SrcTerminal   2
+      Points        [625, 370; 625, 360]
       DstComponent  "AC"
       DstTerminal   2
     }
@@ -1263,7 +1214,7 @@ Plecs {
       Type          Wire
       SrcComponent  "D5"
       SrcTerminal   1
-      Points        [885, 240]
+      Points        [575, 140]
       Branch {
         DstComponent  "D6"
         DstTerminal   2
@@ -1277,7 +1228,7 @@ Plecs {
       Type          Wire
       SrcComponent  "D3"
       SrcTerminal   1
-      Points        [835, 265]
+      Points        [525, 165]
       Branch {
         DstComponent  "D4"
         DstTerminal   2
@@ -1291,7 +1242,7 @@ Plecs {
       Type          Wire
       SrcComponent  "D2"
       SrcTerminal   2
-      Points        [785, 290]
+      Points        [475, 190]
       Branch {
         DstComponent  "D1"
         DstTerminal   1
@@ -1305,7 +1256,7 @@ Plecs {
       Type          Wire
       SrcComponent  "D7"
       SrcTerminal   1
-      Points        [970, 315]
+      Points        [620, 215]
       Branch {
         DstComponent  "D8"
         DstTerminal   2
@@ -1394,4 +1345,4 @@ Plecs {
     }
   }
 }
-DemoSignature "5uHzKSh0WBxiEBekEJD6ECyIEOhBQDJ4+PJ6eaGAVZo="
+DemoSignature "ytaGUXm7ogY30jTOJPJwk3N/TUNMp71K91J5ds7h13Q="
