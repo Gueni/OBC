@@ -1,0 +1,1986 @@
+Plecs {
+  Name          "library"
+  Version       "4.7"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 26; 1536, 780]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Subsystem
+      Name          "POWER"
+      Show          on
+      Position      [140, 110]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-55, -30; 55, 30]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskDisplayLang "2"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      Schematic {
+        Location      [0, 26; 1536, 780]
+        ZoomFactor    1.96257
+        SliderPosition [0, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          ConfigurableSubsystem
+          Name          "AC Filter"
+          Show          on
+          Position      [100, 220]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-45, -55; 45, 55]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Li1"
+            Prompt        "L1 Inductor Value :"
+            Type          FreeText
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       "Inductors"
+          }
+          Parameter {
+            Variable      "Li2"
+            Prompt        "L2 Inductor Value :"
+            Type          FreeText
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       "Inductors"
+          }
+          Parameter {
+            Variable      "Li3"
+            Prompt        "L3 Inductor Value :"
+            Type          FreeText
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       "Inductors"
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, -35]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, -10]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, 15]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, 40]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [50, -35]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, 40]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, -10]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, 15]
+            Direction     right
+          }
+          TerminalNames { "L1", "L2", "L3", "N", "LF1", "NF", "LF2", "LF3" }
+          Location      [0, 26; 1536, 780]
+          ZoomFactor    1
+          SliderPosition [0, 0]
+          ShowBrowser   off
+          BrowserWidth  100
+          Configurations {
+            Name          "simple_inductors"
+            Schematic {
+              Component {
+                Type          ThreePhaseMeter
+                Name          "3ph Meter"
+                Show          off
+                Position      [155, 120]
+                Direction     up
+                Flipped       off
+                LabelPosition southSoutheast
+                Parameter {
+                  Variable      "voltage"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ThreePhaseMeter
+                Name          "PCC"
+                Show          off
+                Position      [375, 120]
+                Direction     up
+                Flipped       off
+                LabelPosition southSoutheast
+                Parameter {
+                  Variable      "voltage"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L1"
+                Show          on
+                Position      [90, 105]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L2"
+                Show          on
+                Position      [90, 120]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L3"
+                Show          on
+                Position      [90, 135]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "N"
+                Show          on
+                Position      [90, 150]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "4"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "LF1"
+                Show          on
+                Position      [465, 105]
+                Direction     right
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "5"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "NF"
+                Show          on
+                Position      [465, 150]
+                Direction     right
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "6"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "LF2"
+                Show          on
+                Position      [465, 120]
+                Direction     right
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "7"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "LF3"
+                Show          on
+                Position      [465, 135]
+                Direction     right
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "8"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Inductor
+                Name          "Li1"
+                Show          on
+                Position      [275, 105]
+                Direction     left
+                Flipped       off
+                LabelPosition eastNortheast
+                Parameter {
+                  Variable      "L"
+                  Value         "Li1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "i_init"
+                  Value         "0"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Inductor
+                Name          "Li2"
+                Show          on
+                Position      [275, 120]
+                Direction     left
+                Flipped       off
+                LabelPosition eastNortheast
+                Parameter {
+                  Variable      "L"
+                  Value         "100*1e-6"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "i_init"
+                  Value         "0"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Inductor
+                Name          "Li3"
+                Show          on
+                Position      [275, 135]
+                Direction     left
+                Flipped       off
+                LabelPosition eastNortheast
+                Parameter {
+                  Variable      "L"
+                  Value         "100*1e-6"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "i_init"
+                  Value         "0"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "L1"
+                SrcTerminal   1
+                Points        [120, 105; 120, 110]
+                DstComponent  "3ph Meter"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "L2"
+                SrcTerminal   1
+                DstComponent  "3ph Meter"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "L3"
+                SrcTerminal   1
+                Points        [120, 135; 120, 130]
+                DstComponent  "3ph Meter"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Li1"
+                SrcTerminal   2
+                Points        [330, 105; 330, 110]
+                DstComponent  "PCC"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Li2"
+                SrcTerminal   2
+                DstComponent  "PCC"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Li3"
+                SrcTerminal   2
+                Points        [330, 135; 330, 130]
+                DstComponent  "PCC"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Li1"
+                SrcTerminal   1
+                Points        [215, 105; 215, 110]
+                DstComponent  "3ph Meter"
+                DstTerminal   4
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Li2"
+                SrcTerminal   1
+                DstComponent  "3ph Meter"
+                DstTerminal   5
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Li3"
+                SrcTerminal   1
+                Points        [215, 135; 215, 130]
+                DstComponent  "3ph Meter"
+                DstTerminal   6
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "LF1"
+                SrcTerminal   1
+                Points        [420, 105; 420, 110]
+                DstComponent  "PCC"
+                DstTerminal   4
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "LF2"
+                SrcTerminal   1
+                DstComponent  "PCC"
+                DstTerminal   5
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "LF3"
+                SrcTerminal   1
+                Points        [420, 135; 420, 130]
+                DstComponent  "PCC"
+                DstTerminal   6
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "NF"
+                SrcTerminal   1
+                DstComponent  "N"
+                DstTerminal   1
+              }
+            }
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "1"
+            Show          off
+          }
+          MaskProbe {
+            Name          "Input Voltages"
+            Probe {
+              Component     "3ph Meter"
+              Path          "simple_inductors"
+              Signals       {"Measured voltage"}
+            }
+          }
+          MaskProbe {
+            Name          "Input Currents"
+            Probe {
+              Component     "3ph Meter"
+              Path          "simple_inductors"
+              Signals       {"Measured current"}
+            }
+          }
+          MaskProbe {
+            Name          "Output Voltages"
+            Probe {
+              Component     "PCC"
+              Path          "simple_inductors"
+              Signals       {"Measured voltage"}
+            }
+          }
+          MaskProbe {
+            Name          "Output Currents"
+            Probe {
+              Component     "PCC"
+              Path          "simple_inductors"
+              Signals       {"Measured current"}
+            }
+          }
+        }
+        Component {
+          Type          ConfigurableSubsystem
+          Name          "EVSE/GRID"
+          Show          on
+          Position      [100, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-45, -55; 45, 55]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "R"
+            Prompt        "R"
+            Type          FreeText
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Terminal {
+            Type          Input
+            Position      [-45, -10]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-45, -35]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [50, -35]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, -10]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, 15]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, 40]
+            Direction     right
+          }
+          TerminalNames { "V", "F", "L1", "L2", "L3", "N" }
+          Location      [0, 26; 1536, 761]
+          ZoomFactor    1
+          SliderPosition [0, 0]
+          ShowBrowser   off
+          BrowserWidth  100
+          Configurations {
+            Name          "3 PH"
+            Schematic {
+              Component {
+                Type          Integrator
+                Name          "Integrator"
+                Show          off
+                Position      [170, 160]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "ExternalReset"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "InitialConditionSource"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "x0"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "ShowStatePort"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "EnableWrapping"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "UpperLimit"
+                  Value         "inf"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "LowerLimit"
+                  Value         "-inf"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain"
+                Show          off
+                Position      [180, 225]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "sqrt(2)"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain1"
+                Show          off
+                Position      [265, 160]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "2*pi"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Constant
+                Name          "Constant"
+                Show          off
+                Position      [230, 90]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-30, -10; 30, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "2*pi/3"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum1"
+                Show          off
+                Position      [335, 75]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "++"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum2"
+                Show          off
+                Position      [335, 110]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "-+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          SignalMux
+                Name          "Mux"
+                Show          off
+                Position      [400, 110]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "3"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Trigonometry
+                Name          "Trigonometric\nFunction"
+                Show          off
+                Position      [460, 110]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Operator"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Unit"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product"
+                Show          off
+                Position      [540, 155]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "**"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "V"
+                Show          on
+                Position      [90, 225]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "F"
+                Show          on
+                Position      [90, 160]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L1"
+                Show          on
+                Position      [1045, 60]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L2"
+                Show          on
+                Position      [1045, 90]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "4"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L3"
+                Show          on
+                Position      [1045, 120]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "5"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "N"
+                Show          on
+                Position      [1045, 230]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "6"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          VoltageSource
+                Name          "V1"
+                Show          on
+                Position      [640, 145]
+                Direction     down
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "DiscretizationBehavior"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "StateSpaceInlining"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          VoltageSource
+                Name          "V2"
+                Show          on
+                Position      [690, 155]
+                Direction     down
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "DiscretizationBehavior"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "StateSpaceInlining"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          VoltageSource
+                Name          "V3"
+                Show          on
+                Position      [735, 165]
+                Direction     down
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "DiscretizationBehavior"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "StateSpaceInlining"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R1"
+                Show          off
+                Position      [780, 60]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "R"
+                  Value         "R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R2"
+                Show          off
+                Position      [780, 90]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "R"
+                  Value         "R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R3"
+                Show          off
+                Position      [780, 120]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "R"
+                  Value         "R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R4"
+                Show          off
+                Position      [780, 230]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "R"
+                  Value         "R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          SignalDemux
+                Name          "Demux"
+                Show          off
+                Position      [585, 155]
+                Direction     right
+                Flipped       on
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "3"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ThreePhaseMeter
+                Name          "3ph Meter"
+                Show          off
+                Position      [880, 90]
+                Direction     up
+                Flipped       off
+                LabelPosition southSoutheast
+                Parameter {
+                  Variable      "voltage"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vl1"
+                Show          on
+                Position      [950, 160]
+                Direction     up
+                Flipped       off
+                LabelPosition southSouthwest
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vl2"
+                Show          on
+                Position      [980, 160]
+                Direction     up
+                Flipped       off
+                LabelPosition southSouthwest
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vl3"
+                Show          on
+                Position      [1010, 160]
+                Direction     up
+                Flipped       off
+                LabelPosition southSouthwest
+              }
+              Component {
+                Type          Ammeter
+                Name          "An"
+                Show          on
+                Position      [890, 230]
+                Direction     right
+                Flipped       off
+                LabelPosition north
+              }
+              Component {
+                Type          Constant
+                Name          "Placeholder"
+                Show          on
+                Position      [1045, 20]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain1"
+                SrcTerminal   2
+                Points        [290, 160]
+                Branch {
+                  Points        [365, 160; 365, 120]
+                  DstComponent  "Mux"
+                  DstTerminal   4
+                }
+                Branch {
+                  Points        [290, 115]
+                  Branch {
+                    DstComponent  "Sum2"
+                    DstTerminal   3
+                  }
+                  Branch {
+                    Points        [290, 80]
+                    DstComponent  "Sum1"
+                    DstTerminal   3
+                  }
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Constant"
+                SrcTerminal   1
+                Points        [275, 90]
+                Branch {
+                  Points        [275, 70]
+                  DstComponent  "Sum1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [275, 105]
+                  DstComponent  "Sum2"
+                  DstTerminal   2
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum1"
+                SrcTerminal   1
+                Points        [365, 75; 365, 100]
+                DstComponent  "Mux"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum2"
+                SrcTerminal   1
+                DstComponent  "Mux"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Mux"
+                SrcTerminal   1
+                DstComponent  "Trigonometric\nFunction"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Trigonometric\nFunction"
+                SrcTerminal   2
+                Points        [505, 110; 505, 150]
+                DstComponent  "Product"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain"
+                SrcTerminal   2
+                Points        [505, 225; 505, 160]
+                DstComponent  "Product"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "V"
+                SrcTerminal   1
+                DstComponent  "Gain"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "V1"
+                SrcTerminal   1
+                Points        [640, 60]
+                DstComponent  "R1"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "V1"
+                SrcTerminal   2
+                Points        [640, 230; 690, 230]
+                Branch {
+                  Points        [735, 230]
+                  Branch {
+                    DstComponent  "R4"
+                    DstTerminal   2
+                  }
+                  Branch {
+                    DstComponent  "V3"
+                    DstTerminal   2
+                  }
+                }
+                Branch {
+                  DstComponent  "V2"
+                  DstTerminal   2
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "V2"
+                SrcTerminal   1
+                Points        [690, 90]
+                DstComponent  "R2"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "V3"
+                SrcTerminal   1
+                Points        [735, 120]
+                DstComponent  "R3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product"
+                SrcTerminal   1
+                DstComponent  "Demux"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux"
+                SrcTerminal   2
+                DstComponent  "V1"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux"
+                SrcTerminal   3
+                DstComponent  "V2"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux"
+                SrcTerminal   4
+                DstComponent  "V3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R1"
+                SrcTerminal   1
+                Points        [845, 60; 845, 80]
+                DstComponent  "3ph Meter"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R2"
+                SrcTerminal   1
+                DstComponent  "3ph Meter"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R3"
+                SrcTerminal   1
+                Points        [845, 120; 845, 100]
+                DstComponent  "3ph Meter"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "L1"
+                SrcTerminal   1
+                Points        [950, 60]
+                Branch {
+                  Points        [915, 60; 915, 80]
+                  DstComponent  "3ph Meter"
+                  DstTerminal   4
+                }
+                Branch {
+                  DstComponent  "Vl1"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Vl1"
+                SrcTerminal   2
+                Points        [950, 230]
+                Branch {
+                  DstComponent  "An"
+                  DstTerminal   1
+                }
+                Branch {
+                  Points        [980, 230]
+                  Branch {
+                    Points        [1010, 230]
+                    Branch {
+                      DstComponent  "N"
+                      DstTerminal   1
+                    }
+                    Branch {
+                      DstComponent  "Vl3"
+                      DstTerminal   2
+                    }
+                  }
+                  Branch {
+                    DstComponent  "Vl2"
+                    DstTerminal   2
+                  }
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "L2"
+                SrcTerminal   1
+                Points        [980, 90]
+                Branch {
+                  DstComponent  "3ph Meter"
+                  DstTerminal   5
+                }
+                Branch {
+                  DstComponent  "Vl2"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "L3"
+                SrcTerminal   1
+                Points        [1010, 120]
+                Branch {
+                  Points        [915, 120; 915, 100]
+                  DstComponent  "3ph Meter"
+                  DstTerminal   6
+                }
+                Branch {
+                  DstComponent  "Vl3"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R4"
+                SrcTerminal   1
+                DstComponent  "An"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "F"
+                SrcTerminal   1
+                DstComponent  "Integrator"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Integrator"
+                SrcTerminal   2
+                DstComponent  "Gain1"
+                DstTerminal   1
+              }
+            }
+            Name          "1 PH"
+            Schematic {
+              Component {
+                Type          Integrator
+                Name          "Integrator"
+                Show          off
+                Position      [155, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "ExternalReset"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "InitialConditionSource"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "x0"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "ShowStatePort"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "EnableWrapping"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "UpperLimit"
+                  Value         "inf"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "LowerLimit"
+                  Value         "-inf"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain"
+                Show          off
+                Position      [210, 155]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "sqrt(2)"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain1"
+                Show          off
+                Position      [210, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "2*pi"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Trigonometry
+                Name          "Trigonometric\nFunction"
+                Show          off
+                Position      [265, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Operator"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Unit"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product"
+                Show          off
+                Position      [345, 125]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "**"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "V"
+                Show          on
+                Position      [100, 155]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "F"
+                Show          on
+                Position      [100, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L1"
+                Show          on
+                Position      [620, 85]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L2"
+                Show          on
+                Position      [620, 110]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "4"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "L3"
+                Show          on
+                Position      [620, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "5"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "N"
+                Show          on
+                Position      [620, 165]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "6"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          VoltageSource
+                Name          "V1"
+                Show          on
+                Position      [395, 125]
+                Direction     down
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "DiscretizationBehavior"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "StateSpaceInlining"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vl1"
+                Show          on
+                Position      [540, 125]
+                Direction     up
+                Flipped       off
+                LabelPosition southSouthwest
+              }
+              Component {
+                Type          Ammeter
+                Name          "An"
+                Show          on
+                Position      [510, 165]
+                Direction     right
+                Flipped       off
+                LabelPosition north
+              }
+              Component {
+                Type          Resistor
+                Name          "R1"
+                Show          off
+                Position      [460, 85]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "R"
+                  Value         "R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R4"
+                Show          off
+                Position      [460, 165]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "R"
+                  Value         "R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Constant
+                Name          "Placeholder"
+                Show          on
+                Position      [620, 40]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "Al1"
+                Show          on
+                Position      [570, 85]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Integrator"
+                SrcTerminal   2
+                DstComponent  "Gain1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Trigonometric\nFunction"
+                SrcTerminal   2
+                Points        [295, 100; 295, 120]
+                DstComponent  "Product"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain"
+                SrcTerminal   2
+                Points        [295, 155; 295, 130]
+                DstComponent  "Product"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "V"
+                SrcTerminal   1
+                DstComponent  "Gain"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "F"
+                SrcTerminal   1
+                DstComponent  "Integrator"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain1"
+                SrcTerminal   2
+                DstComponent  "Trigonometric\nFunction"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Vl1"
+                SrcTerminal   1
+                Points        [540, 85]
+                Branch {
+                  DstComponent  "R1"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "Al1"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "An"
+                SrcTerminal   1
+                Points        [540, 165]
+                Branch {
+                  DstComponent  "N"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "Vl1"
+                  DstTerminal   2
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "V1"
+                SrcTerminal   1
+                Points        [395, 85]
+                DstComponent  "R1"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "V1"
+                SrcTerminal   2
+                Points        [395, 165]
+                DstComponent  "R4"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R4"
+                SrcTerminal   1
+                DstComponent  "An"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product"
+                SrcTerminal   1
+                DstComponent  "V1"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Al1"
+                SrcTerminal   2
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+            }
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "1"
+            Show          off
+          }
+          MaskProbe {
+            Name          "Input Line Voltages"
+            Probe {
+              Component     "3ph Meter"
+              Path          "3 PH"
+              Signals       {"Measured voltage"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "Input Line Currents"
+            Probe {
+              Component     "3ph Meter"
+              Path          "3 PH"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "Al1"
+              Path          "1 PH"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "VL1"
+            Probe {
+              Component     "Vl1"
+              Path          "3 PH"
+              Signals       {"Measured voltage"}
+            }
+            Probe {
+              Component     "Vl1"
+              Path          "1 PH"
+              Signals       {"Measured voltage"}
+            }
+          }
+          MaskProbe {
+            Name          "VL2"
+            Probe {
+              Component     "Vl2"
+              Path          "3 PH"
+              Signals       {"Measured voltage"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "VL3"
+            Probe {
+              Component     "Vl3"
+              Path          "3 PH"
+              Signals       {"Measured voltage"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "1 PH"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "IL1"
+            Probe {
+              Component     "Al1"
+              Path          "1 PH"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "Placeholder"
+              Path          "3 PH"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "ILN"
+            Probe {
+              Component     "An"
+              Path          "3 PH"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "An"
+              Path          "1 PH"
+              Signals       {"Measured current"}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+DemoSignature "838ujcXCXZIpClB4/h4Ie+eAKQt/poavdbRVHlqTnPo="
