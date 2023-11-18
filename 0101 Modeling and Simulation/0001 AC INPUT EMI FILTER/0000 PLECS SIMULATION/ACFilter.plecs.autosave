@@ -11,7 +11,7 @@ Plecs {
   FixedStep     "1e-3"
   Refine        "1"
   ZCStepSize    "1e-9"
-  RelTol        "1e-3"
+  RelTol        "1e-6"
   AbsTol        "-1"
   TurnOnThreshold "1.2"
   SyncFixedStepTasks "2"
@@ -291,7 +291,7 @@ Plecs {
       Frame         [-45, -55; 45, 55]
       Parameter {
         Variable      "R"
-        Value         "680"
+        Value         "1e-3"
         Show          off
       }
       Parameter {
@@ -635,11 +635,11 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition east
-      Location      [0, 26; 1536, 811]
+      Location      [0, 26; 1536, 815]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAAyfwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAAAAAMkAAAB+AP///wAAAAMAAAIIAAAAq/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAggAAABfAP///wAAB4AAAAO2AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAggAAABfAP///wAAB4AAAAO7AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -1529,7 +1529,7 @@ Plecs {
       Frame         [-25, -95; 25, 95]
       Parameter {
         Variable      "Cdc"
-        Value         "100*1e-6"
+        Value         "100*1e-3"
         Show          off
       }
       Parameter {
@@ -1578,7 +1578,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "R"
-        Value         "1e-3"
+        Value         "1e3"
         Show          off
       }
     }
@@ -1623,11 +1623,11 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition east
-      Location      [0, 26; 1536, 827]
+      Location      [0, 26; 1536, 831]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAAyfwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAAAAAMkAAAB+AP///wAAAAMAAAIIAAAAq/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAggAAABfAP///wAAB4AAAAPKAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAggAAABfAP///wAAB4AAAAPPAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -2259,4 +2259,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "39YsX82Jd8oNZkpLOMxNOtDLrLTaV+PNyjc7B8P+eRY="
+DemoSignature "Kue+L6MIWjFZU7x7cY84L+K8PuBCP4MVzWJ3zczL6oE="
