@@ -57,7 +57,7 @@ Plecs {
       SrcComponent  "library/POWER/AC Filter"
       Name          "AC Filter"
       Show          on
-      Position      [375, 160]
+      Position      [495, 160]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -119,7 +119,7 @@ Plecs {
       Probe {
         Component     "AC Filter"
         Path          ""
-        Signals       {"Input Voltages Line to N", "Output Voltages Line to N"}
+        Signals       {"Output Voltages Line to N", "Input Voltages Line to N"}
       }
     }
     Component {
@@ -138,9 +138,9 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAIAAAAZAAAAAkAAABkAAAABgAAAGQAAAAHAA"
-"AAZAAAAAQAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AabAAAAAQAAAAAAAAPoAAAAACs="
@@ -211,7 +211,7 @@ Plecs {
       Type          Resistor
       Name          "R_load1"
       Show          off
-      Position      [445, 125]
+      Position      [565, 125]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -225,7 +225,7 @@ Plecs {
       Type          Resistor
       Name          "R_load2"
       Show          off
-      Position      [445, 150]
+      Position      [565, 150]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -239,7 +239,7 @@ Plecs {
       Type          Resistor
       Name          "R_load3"
       Show          off
-      Position      [445, 175]
+      Position      [565, 175]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -253,7 +253,7 @@ Plecs {
       Type          Resistor
       Name          "R_load4"
       Show          off
-      Position      [445, 200]
+      Position      [565, 200]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -358,7 +358,7 @@ Plecs {
       Type          Diode
       Name          "D15"
       Show          on
-      Position      [720, 200]
+      Position      [840, 200]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -392,7 +392,7 @@ Plecs {
       Type          Diode
       Name          "D16"
       Show          on
-      Position      [720, 120]
+      Position      [840, 120]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -447,7 +447,7 @@ Plecs {
       Probe {
         Component     "AC Filter"
         Path          ""
-        Signals       {"Input Currents Line to Line", "Output Currents Line to"
+        Signals       {"Output Currents Line to Line", "Input Currents Line to"
 " Line"}
       }
     }
@@ -467,9 +467,9 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAIAAAAZAAAAAkAAABkAAAABgAAAGQAAAAHAA"
-"AAZAAAAAQAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AabAAAAAQAAAAAAAAPoAAAAACs="
@@ -561,7 +561,7 @@ Plecs {
       Probe {
         Component     "EVSE/GRID"
         Path          ""
-        Signals       {"Input Line Voltages", "Input Line Currents"}
+        Signals       {"Input Line Currents", "Input Line Voltages"}
       }
     }
     Component {
@@ -581,7 +581,7 @@ Plecs {
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAIAAAAZAAAAAkAAABkAAAABgAAAGQAAAAHAA"
+"QAAAGQAAAAGAAAAZAAAAAcAAABkAAAACAAAAGQAAAAJAAAAZAAAAAEAAABkAAAAAgAAAGQAAAADAA"
 "AAZAAAAAQAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
@@ -727,9 +727,9 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAIAAAAZAAAAAkAAABkAAAABgAAAGQAAAAHAA"
-"AAZAAAAAQAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AabAAAAAQAAAAAAAAPoAAAAACs="
@@ -855,12 +855,12 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHAAAAB"
-"QAAAGQAAAADAAAAZAAAAAgAAABkAAAACQAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAdrAA"
-"AACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAKUAAAABAAAAAAAAAGQAAAABAAA"
-"AAAAAAGQAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAB"
-"AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABf4AAAABAAAAAAAAA+gAA"
-"AAAKw=="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAClAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AbGAAAAAQAAAAAAAAPoAAAAACs="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
       Axes          "2"
@@ -929,7 +929,7 @@ Plecs {
       SrcComponent  "Components/Electrical/Power Modules/VSI1"
       Name          "VSI1"
       Show          on
-      Position      [585, 160]
+      Position      [705, 160]
       Direction     down
       Flipped       on
       LabelPosition south
@@ -1009,7 +1009,7 @@ Plecs {
       Type          Capacitor
       Name          "C1"
       Show          off
-      Position      [885, 125]
+      Position      [1005, 125]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -1028,7 +1028,7 @@ Plecs {
       Type          Resistor
       Name          "R_load6"
       Show          off
-      Position      [885, 175]
+      Position      [1005, 175]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -1042,13 +1042,13 @@ Plecs {
       Type          Inductor
       Name          "L4"
       Show          off
-      Position      [850, 95]
+      Position      [970, 95]
       Direction     left
       Flipped       off
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "0.3301"
+        Value         "0.03301"
         Show          off
       }
       Parameter {
@@ -1061,7 +1061,7 @@ Plecs {
       Type          Switch
       Name          "S4"
       Show          off
-      Position      [800, 95]
+      Position      [920, 95]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -1075,7 +1075,7 @@ Plecs {
       Type          Step
       Name          "Charge1"
       Show          off
-      Position      [775, 35]
+      Position      [895, 35]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1104,7 +1104,7 @@ Plecs {
       Type          Capacitor
       Name          "C2"
       Show          off
-      Position      [775, 155]
+      Position      [895, 155]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -1130,7 +1130,7 @@ Plecs {
       Probe {
         Component     "EVSE/GRID"
         Path          ""
-        Signals       {"VL1", "VL2", "VL3", "IL1", "ILN"}
+        Signals       {"ILN", "VL1", "VL2", "VL3", "IL1"}
       }
     }
     Component {
@@ -1149,9 +1149,9 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAIAAAAZAAAAAkAAABkAAAABgAAAGQAAAAHAA"
-"AAZAAAAAQAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADlAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AabAAAAAQAAAAAAAAPoAAAAACs="
@@ -1240,20 +1240,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 26; 1536, 823]
+      Location      [0, 26; 1536, 850]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAPsA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAABWvw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAJmAAAA"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAABSfw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAKZAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHAAAAB"
-"QAAAH0AAAADAAAAfQAAAAgAAAB9AAAACQAAAH0AAAAGAAAAfQAAAAcAAAB9AAAABAAAAH0AAAeAAA"
-"AACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAANkAAAABAAAAAAAAAH0AAAABAAA"
-"AAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAB"
-"AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABa0AAAABAAAAAAAAA+gAA"
-"AAAKw=="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAH0AAAADAAAAfQAAAAIAAAB9AAAABQAAAH0AAAAEAAAAfQAAAAcAAAB9AAAABgAAAH0AAAAJAA"
+"AAfQAAAAgAAAB9AAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADZAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AanAAAAAQAAAAAAAAPoAAAAACs="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1266,7 +1266,7 @@ Plecs {
       Ts            "-1"
       SampleLimit   "0"
       XAxisLabel    "Time / s"
-      ShowLegend    "1"
+      ShowLegend    "2"
       Axis {
         Name          ""
         AutoScale     1
@@ -1545,11 +1545,11 @@ Plecs {
       Type          Wire
       SrcComponent  "D15"
       SrcTerminal   1
-      Points        [720, 225]
+      Points        [840, 225]
       Branch {
-        Points        [775, 225]
+        Points        [895, 225]
         Branch {
-          Points        [885, 225]
+          Points        [1005, 225]
           DstComponent  "R_load6"
           DstTerminal   2
         }
@@ -1567,13 +1567,13 @@ Plecs {
       Type          Wire
       SrcComponent  "D16"
       SrcTerminal   1
-      Points        [720, 180]
+      Points        [840, 180]
       Branch {
         DstComponent  "D15"
         DstTerminal   2
       }
       Branch {
-        Points        [480, 180; 480, 200]
+        Points        [600, 180; 600, 200]
         DstComponent  "R_load4"
         DstTerminal   1
       }
@@ -1582,7 +1582,7 @@ Plecs {
       Type          Wire
       SrcComponent  "R_load1"
       SrcTerminal   1
-      Points        [480, 125]
+      Points        [600, 125]
       DstComponent  "VSI1"
       DstTerminal   2
     }
@@ -1590,7 +1590,7 @@ Plecs {
       Type          Wire
       SrcComponent  "R_load2"
       SrcTerminal   1
-      Points        [475, 150; 475, 160]
+      Points        [595, 150; 595, 160]
       DstComponent  "VSI1"
       DstTerminal   3
     }
@@ -1598,7 +1598,7 @@ Plecs {
       Type          Wire
       SrcComponent  "R_load3"
       SrcTerminal   1
-      Points        [475, 175; 475, 170]
+      Points        [595, 175; 595, 170]
       DstComponent  "VSI1"
       DstTerminal   9
     }
@@ -1606,9 +1606,9 @@ Plecs {
       Type          Wire
       SrcComponent  "D16"
       SrcTerminal   2
-      Points        [720, 95]
+      Points        [840, 95]
       Branch {
-        Points        [775, 95]
+        Points        [895, 95]
         Branch {
           DstComponent  "C2"
           DstTerminal   1
@@ -1634,7 +1634,7 @@ Plecs {
       Type          Wire
       SrcComponent  "C1"
       SrcTerminal   1
-      Points        [885, 95]
+      Points        [1005, 95]
       DstComponent  "L4"
       DstTerminal   2
     }
@@ -1670,7 +1670,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Charge1"
       SrcTerminal   1
-      Points        [800, 35]
+      Points        [920, 35]
       DstComponent  "S4"
       DstTerminal   3
     }
@@ -1746,4 +1746,4 @@ Plecs {
     }
   }
 }
-DemoSignature "0BSdUOA48JX3XKPu8CBE/d0IDnoD5qiq5969jOmPpjA="
+DemoSignature "OJbGfk7+P/5gPHqAtQQ+LiDy4QqefR1eNUJ3146GCZw="
