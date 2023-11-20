@@ -58,5 +58,66 @@ As presented in Figure \ref{fig:modular_EMI} , a typical but basic EMI filter us
     \label{fig:modular_EMI}
 \end{figure}
 %-------------------------------------------------------
+Designing an AC EMI (Electromagnetic Interference) filter for an onboard charger involves several stages to reduce conducted and radiated emissions.  
+%-------------------------------------------------------
+\subsubsection{Common Mode (CM) Filter:}
+Purpose:
+Attenuate common mode noise, which flows in the same direction on all three phases and the neutral.
+Components:
+Common mode choke
+Common mode capacitors
+Dimensioning:
+Inductance of the common mode choke: Choose based on the rated current and the frequency range of interest for common mode noise.
+Common mode capacitors: Capacitance should be selected to resonate with the common mode inductance at higher frequencies.
+
+****Logic goes here !!****
+%-------------------------------------------------------
+\subsubsection{Differential Mode (DM) Filter:}
+Purpose:
+Attenuate differential mode noise, which flows in opposite directions on different phases.
+Components:
+Differential mode choke
+Differential mode capacitors
+Dimensioning:
+Inductance of the differential mode choke: Choose based on the rated current and the frequency range of interest for differential mode noise.
+Differential mode capacitors: Capacitance should be selected to filter out high-frequency differential mode noise.
+
+****Logic goes here !!****
+%-------------------------------------------------------
+A first glimpse into the general structure of the Filter could be clearly seen in the following figure.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{Screenshot 2023-11-18 182451.png}
+    \caption{filter Plecs model.}
+    \label{fig:modular_EMI Plecs model.}
+\end{figure}
+%-------------------------------------------------------
+\subsubsection{Input Stage (Pre-filter):}
+Purpose:
+Suppress high-frequency conducted emissions.
+Components:
+Input capacitors
+Dimensioning:
+Capacitance value: Choose to filter out high-frequency noise and stabilize the input voltage.
+
+****Logic goes here !!****
+%-------------------------------------------------------
+\subsubsection{Voltage Suppression:}
+Purpose:
+Protect the system against voltage spikes and transients.
+Components:
+Metal Oxide Varistors (MOVs) or Transient Voltage Suppressors (TVS)
+Dimensioning:
+Select based on the voltage rating and clamping voltage requirements.
+
+****Logic goes here !!****
+%-------------------------------------------------------
+\subsubsection{Grounding:}
+Purpose:
+Ensure proper grounding for the EMI filter and the entire system.
+Guidelines:
+Use a low-impedance ground connection.
+Minimize ground loops.
+%-------------------------------------------------------
 \end{document}
 %-------------------------------------------------------
