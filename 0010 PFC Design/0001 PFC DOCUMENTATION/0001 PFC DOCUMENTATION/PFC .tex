@@ -35,6 +35,7 @@ The EVSE (Electric Vehicle Supply Equipment) provides the input power to
 the on-board charger. It supplies AC or DC power from the external power source.in this project we only interested in modeling the input source in simulation phases such as inside Plecs models.It should cover all three configurations for 3ph AC , 1ph AC and for DC input source for fast charging.
 %-------------------------------------------------------
 \subsection{AC Filter}
+The first stage of the OBC is the EMI filter. During this stage AC power is filtered to remove any unwanted noise from the typical AC sine wave that is expected. 
 At the input of our system , whether it is connected to home mains plug or to high power three phased charging station, the input can present some imperfections.Radiated EMI from other components can also be picked up on power cabling, adding to conducted levels. The system can experience at its input mainly two types of Electromagnetic interference (EMI) which are Differential Mode (DM) and Common Mode (CM) Noise.(Figure \ref{fig:ac_filter})
 %-------------------------------------------------------
 \begin{figure}[htbp]
@@ -58,7 +59,7 @@ As presented in Figure \ref{fig:modular_EMI} , a typical but basic EMI filter us
     \label{fig:modular_EMI}
 \end{figure}
 %-------------------------------------------------------
-Designing an AC EMI (Electromagnetic Interference) filter for an onboard charger involves several stages to reduce conducted and radiated emissions.  
+Designing an AC EMI (Electromagnetic Interference) filter for an onboard charger involves several stages to reduce conducted and radiated emissions.the EMI filter limits voltage and current spikes that can be harmful.Most commonly these filters are made up of X and Y Safety Capacitors, Common Mode Chokes and AC Harmonic Filter Capacitors.   
 %-------------------------------------------------------
 \subsubsection{Common Mode (CM) Filter:}
 Purpose:
@@ -93,12 +94,8 @@ A first glimpse into the general structure of the Filter could be clearly seen i
 \end{figure}
 %-------------------------------------------------------
 \subsubsection{Input Stage (Pre-filter):}
-Purpose:
-Suppress high-frequency conducted emissions.
-Components:
-Input capacitors
-Dimensioning:
-Capacitance value: Choose to filter out high-frequency noise and stabilize the input voltage.
+The purpose is to suppress high-frequency conducted emissions.
+Stabilize the input voltage by mitigating voltage spikes and transients using mainly Input capacitors.
 
 ****Logic goes here !!****
 %-------------------------------------------------------
