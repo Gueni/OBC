@@ -12,6 +12,7 @@
 %-------------------------------------------------------
 \maketitle
 %-------------------------------------------------------
+\tableofcontents
 \section{Block Diagram}
 
 The block diagram of the PFC design is shown in Figure \ref{fig:PFC}. The PFC takes input from the Electric Vehicle Supply Equipment (EVSE) which later could be the mains plug (1ph ).
@@ -152,12 +153,66 @@ fc_{\text{filter}} =  \frac{1}{2\times\pi\times\sqrt{L\times C}}
  L &\text{ is the inductance value (H)} \\
  C &\text{ is the capacitor value (F}\text{)}
 \end{align*}
-In general we are interested in attenuating the frequencies higher than the maximum switching frequency of the PFC (100KHz) so as a rule of thumb we start by considering the cutoff frequency of the filter as :
+In general we are interested in attenuating the frequencies higher than the maximum switching frequency of the PFC (70KHz) so as a rule of thumb we start by considering the cutoff frequency of the filter as :
 
 \[
-fc_{\text{filter}} =  110 KHz
+fc_{\text{filter}} =  80 KHz
 \]
 
+However, since the LLC is switching at even higher frequency range than the PFC does we would be interested in taking into account that frequency range which is roughly about 90 to 250 KHz with a 350KHz used at the starting sequence(will be detailed later in controls).
+
+Hence, the cutoff frequency of the filter should be at :
+\[
+fc_{\text{filter}} =  350 Khz + 10Khz \text{ } \text{safety margin. } 
+\]
+
+The process moving forward will be about a mixture between using mathematical formulas , trial and error , simulation and logic related to multiple aspects to name a few : physical size of the components and other characteristics and the availability of certain values of components in the market (good luck finding certain values if they ever existed ).
+
+First we could Find the approximated Input impedance of the system in series with the input filter using professor Middlebrook's approximation:
+
+\[
+Z_{\text{in}} =  \frac{240^2\times 0.98}{7000} = 8.1 \textbf{$\Omega$}
+\]
+
+which then means that in order for the system to not get affected by the addition of the filter : 
+\[Z_{\text{out(Filter)}} << 8.1 \textbf{$\Omega$}\]
+
+Given we already know Zout filter is dependent on the L and C values at its output. We could select one of the values (choose the most commonly used / tested values) and use a reactance paper and simulation software such as Plecs and LtSpice to narrow down a small margin of values for both C and L and simulate all range.
+
+
+
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+%-------------------------------------------------------
+%-------------------------------------------------------
+\section{References}
+
+\begin{enumerate}
+    
+    \item R. W. Erickson, \textit{Fundamentals of power electronics}, New York: Chapman \& Hall, 1997.
+    \item S. Ahmed, “Controlled on-time power factor correction circuit with input filter”, M.Sc. thesis, Virginia Polytechnic Institute and State University, Blacksburg, VA, 1990.
+    \item V. Vlatkovic, D. Borojevic, F. C. Lee, “Input filter design for power factor correction circuits”, \textit{IEEE Transactions on Power Electronics}, vol. 11, no. 1, pp. 199-205, Jan. 1996.
+    \item J. S. Glaser, A. F. Witulski, “Design issues for high power factor AC-DC converters systems”, in \textit{IEEE Power Electronics Specialists Conference 1995 Record}, pp. 542-548.
+    \item Y. Jang, R. W. Erickson, “Physical origins of input filter oscillations in current programmed converters”, \textit{IEEE Transactions on Power Electronics}, vol. 7, no. 4, pp. 725-733, Oct. 1992.
+    \item R. B. Ridley, “Average small signal analysis of the Boost Power Factor Correction Circuit”, in \textit{Virginia Power Electronics Center Seminar Proceedings 1989}.
+\end{enumerate}
+%-------------------------------------------------------
+\section{Units}
+
+\begin{enumerate}
+    \item Farads (\textbf{F}).................: Unit of capacitance.
+    \item Amps (\textbf{A})..................: Unit of electric current.
+    \item Volts (\textbf{V})...................: Unit of electric potential.
+    \item Ohms (\textbf{$\Omega$})...................: Unit of electrical resistance.
+    \item Henrys (\textbf{H}).................: Unit of inductance.
+    \item Watts (\textbf{W}).................: Unit of power.
+    \item Hertz (\textbf{Hz}).................: Unit of frequency.
+    \item Teslas (\textbf{T})...................: Unit of magnetic flux density.
+    \item Webers (\textbf{Wb}).............: Unit of magnetic flux.
+    \item Decibels (\textbf{dB}).............: Unit of measurement for the power level of an electrical signal.(or the intensity of a sound )
+\end{enumerate}
 %-------------------------------------------------------
 \end{document}
 %-------------------------------------------------------

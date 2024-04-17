@@ -1,0 +1,8 @@
+* D:\4 WORKSPACE\24-OBC\OBC\0101 Modeling and Simulation\0001 LT SPICE SIMULATION\AC Input Filter\LCout.asc
+V1 N001 0 SINE(0 230 50 0 0 0 0)
+C3 N003 0 0.1u V=0 Irms=0 Rser=4 Lser=0
+R3 N002 N001 0.01
+L1 N002 N003 1u
+.tran 0 10 2 1e-3
+.backanno
+.end
