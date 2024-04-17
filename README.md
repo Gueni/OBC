@@ -1,7 +1,5 @@
 ![PyPI - License](https://img.shields.io/pypi/l/PyCircTools)
-//![Total lines](https://img.shields.io/tokei/lines/github.com/Gueni/OBC?color=green&label=total%20lines)
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/lovethefrogs?country.x=ES&locale.x=es_ES)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 
 # EV Onboard Charger with PFC and LLC Resonant Converter
