@@ -88,4 +88,18 @@ To use the EV onboard charger, follow these steps:
 4. Assemble the components onto the PCB.
 5. Test the charger with a suitable input power source and EV battery pack.
 
+## Copyright and Licensing
+-----
+    Licensed under the GNU General Public License License, Version 3.0
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at GNU .
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+###### [Issues :Feel free to submit issues and enhancement requests.](https://github.com/Gueni/OBC/issues) 
+###### [FAQ    :Feel free to join discussions.](https://github.com/Gueni/OBC/discussions)
 
