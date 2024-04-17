@@ -82,7 +82,7 @@ Production and manufacturing cover the mass production and assembly of the onboa
 
 To use the EV onboard charger, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your_username/ev-onboard-charger.git`
+1. Clone the repository: `git clone https://github.com/Gueni/OBC.git`
 2. Set up the development environment and build the control circuit firmware.
 3. Fabricate the PCB design using the provided Gerber files.
 4. Assemble the components onto the PCB.
