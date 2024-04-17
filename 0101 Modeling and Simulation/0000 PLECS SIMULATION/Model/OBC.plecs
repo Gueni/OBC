@@ -1,0 +1,1960 @@
+Plecs {
+  Name          "OBC"
+  Version       "4.7"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "Sim_param.tSim"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "Sim_param.maxStep"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "Sim_param.rel_tol"
+  AbsTol        "-1"
+  TurnOnThreshold "1.2"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  InitializationCommands "mosfet           = 'file:C2M0025120D' ;\ndiode      "
+"     = 'file:E4D20120G' ;\n"
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 26; 1536, 780]
+    ZoomFactor    1.14436
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/EVSE\\/GRID"
+      Name          "EVSE/GRID"
+      Show          on
+      Position      [85, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "R"
+        Value         "Grid.Rg"
+        Show          off
+      }
+      Parameter {
+        Variable      "Vin"
+        Value         "Grid.Vin"
+        Show          off
+      }
+      Parameter {
+        Variable      "f"
+        Value         "Grid.Fgrid"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "Grid.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 15]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground"
+      Show          off
+      Position      [210, 235]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [1095, 210]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 807]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAChfwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAoUAAAB+AP///wAAAAMAAAeAAAABJ/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAKFAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAIAAAAFAAAAB"
+"gAAAG0AAAAJAAAAbQAAAAMAAABtAAAABQAAAG0AAAAEAAAAbQAAB4AAAAALAQAAAQAAAAAAAAAAAA"
+"AAAH3/////AAAAgQAAAAAAAAALAAAAmQAAAAEAAAAAAAAAbQAAAAEAAAAAAAAAbgAAAAEAAAAAAAA"
+"AAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAbQAAAAEAAAAA"
+"AAAAbQAAAAEAAAAAAAAAAAAAAAEAAAAAAAAFMgAAAAEAAAAAAAAD6AAAAAAr"
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
+"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "4"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "2"
+      Axis {
+        Name          "PWM Signals"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"PWM1", "PWM2"}
+        SignalTypes   [ ]
+        Untangle      1
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Load voltage (DC)"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"Vout"}
+        SignalTypes   [ ]
+        AxisLabel     "Voltage / V"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Source current (AC)"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"Vin_scaled", "Iin"}
+        SignalTypes   [ ]
+        AxisLabel     "Current / A"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Inductor Current"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"IL"}
+        SignalTypes   [ ]
+        AxisLabel     "Current / A"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"PWM1", "PWM2"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"Vout"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"Vin_scaled", "Iin"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"IL"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          off
+      Position      [950, 240]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "L"
+        Path          "DC FILTER/Pi"
+        Signals       {}
+      }
+      Probe {
+        Component     "L2"
+        Path          "PFC/1PH PFC"
+        Signals       {"Inductor current"}
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe1"
+      Show          off
+      Position      [950, 200]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "Load"
+        Path          ""
+        Signals       {"Voltage"}
+      }
+    }
+    Component {
+      Type          From
+      Name          "From1"
+      Show          off
+      Position      [955, 175]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "gate"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe2"
+      Show          off
+      Position      [950, 220]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "EVSE/GRID"
+        Path          ""
+        Signals       {"ILN", "VL1"}
+      }
+      Probe {
+        Component     "EMI FILTER"
+        Path          ""
+        Signals       {"V", "I"}
+      }
+    }
+    Component {
+      Type          Display
+      Name          "Source Current\nTHD (%)"
+      Show          on
+      Position      [1085, 270]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Frame         [-26, -11; 26, 11]
+      Parameter {
+        Variable      "Notation"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Precision"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground1"
+      Show          off
+      Position      [340, 235]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Subsystem
+      Name          "Data Export"
+      Show          on
+      Position      [975, 130]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-45, -25; 45, 25]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskDisplayLang "2"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      Schematic {
+        Location      [673, 142; 1460, 704]
+        ZoomFactor    1
+        SliderPosition [0, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          ToFile
+          Name          "To File"
+          Show          off
+          Position      [335, 130]
+          Direction     right
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Filename"
+            Value         "ToFile.ToFile_path"
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "FileType"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "WriteSignalNames"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "SampleTime"
+            Value         "ToFile.Ts"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Grid"
+          Show          on
+          Position      [230, 120]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "EVSE/GRID"
+            Path          ""
+            Signals       {"VL1", "ILN"}
+          }
+        }
+        Component {
+          Type          SignalMux
+          Name          "Mux"
+          Show          off
+          Position      [280, 130]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[2 2]"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "In Filter"
+          Show          on
+          Position      [230, 145]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "EMI FILTER"
+            Path          ""
+            Signals       {"V", "I"}
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Grid"
+          SrcTerminal   1
+          Points        [255, 125]
+          DstComponent  "Mux"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "In Filter"
+          SrcTerminal   1
+          Points        [255, 135]
+          DstComponent  "Mux"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Mux"
+          SrcTerminal   1
+          DstComponent  "To File"
+          DstTerminal   1
+        }
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Output"
+      Show          on
+      Position      [1095, 315]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 811]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACrPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAqwAAAB+AP///wAAAAMAAAeAAAAAwfw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALwAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"wAAAGQAAAAGAAAAZAAAAAkAAABkAAAACAAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAFAA"
+"AAZAAAAAQAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACiAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AbeAAAAAQAAAAAAAAPoAAAAACs="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
+"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"=="
+      Axes          "3"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          "Output Voltage"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"Output Voltage"}
+        SignalTypes   [ ]
+        AxisLabel     "Voltage / V"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Output Current"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"Output Current"}
+        SignalTypes   [ ]
+        AxisLabel     "Current / A"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Output Power"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"Output Power"}
+        SignalTypes   [ ]
+        AxisLabel     "Power / W"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"Output Voltage"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"Output Current"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"Output Power"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "V_out,I_out"
+      Show          on
+      Position      [950, 310]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "Load"
+        Path          ""
+        Signals       {"Current", "Voltage"}
+      }
+    }
+    Component {
+      Type          SignalDemux
+      Name          "Demux3"
+      Show          off
+      Position      [1005, 310]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "[1 1]"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/DCLink"
+      Name          "DCLink"
+      Show          on
+      Position      [440, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-20, -55; 20, 55]
+      Parameter {
+        Variable      "Cdc"
+        Value         "DCLink.Cdc"
+        Show          off
+      }
+      Parameter {
+        Variable      "Vinit"
+        Value         "DCLink.Vinit"
+        Show          off
+      }
+      Parameter {
+        Variable      "ESR"
+        Value         "DCLink.ESR"
+        Show          off
+      }
+      Parameter {
+        Variable      "ESL"
+        Value         "DCLink.ESL"
+        Show          off
+      }
+      Parameter {
+        Variable      "Iinit"
+        Value         "DCLink.Iinit"
+        Show          off
+      }
+      Parameter {
+        Variable      "nPara"
+        Value         "DCLink.nPara"
+        Show          off
+      }
+      Parameter {
+        Variable      "nSeri"
+        Value         "DCLink.nSeri"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "DCLink.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [25, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [25, 40]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground2"
+      Show          off
+      Position      [545, 165]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Ground
+      Name          "Ground3"
+      Show          off
+      Position      [545, 330]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/Load"
+      Name          "Load"
+      Show          on
+      Position      [805, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-20, -55; 20, 55]
+      Parameter {
+        Variable      "CL"
+        Value         "Load.CL"
+        Show          off
+      }
+      Parameter {
+        Variable      "Vinit"
+        Value         "Load.Vinit"
+        Show          off
+      }
+      Parameter {
+        Variable      "Iinit"
+        Value         "Load.Iinit"
+        Show          off
+      }
+      Parameter {
+        Variable      "LL"
+        Value         "Load.LL"
+        Show          off
+      }
+      Parameter {
+        Variable      "RL"
+        Value         "Load.RL"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "Load.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 40]
+        Direction     left
+      }
+    }
+    Component {
+      Type          Product
+      Name          "Product"
+      Show          off
+      Position      [1035, 325]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "IconShape"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Inputs"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "11"
+        Show          off
+      }
+    }
+    Component {
+      Type          ConfigurableSubsystem
+      Name          "Controller"
+      Show          on
+      Position      [975, 70]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-45, -25; 45, 25]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      TerminalNames {  }
+      Location      [0, 26; 1536, 760]
+      ZoomFactor    1
+      SliderPosition [0, 0]
+      ShowBrowser   off
+      BrowserWidth  100
+      Configurations {
+        Name          "Configuration 1"
+        Schematic {
+          Component {
+            Type          From
+            Name          "From4"
+            Show          off
+            Position      [300, 305]
+            Direction     up
+            Flipped       off
+            LabelPosition east
+            Parameter {
+              Variable      "Tag"
+              Value         "Il_PFC"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto"
+            Show          off
+            Position      [645, 280]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "PWM"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto2"
+            Show          off
+            Position      [645, 360]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "Freq"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Scope
+            Name          "Frequency"
+            Show          on
+            Position      [655, 395]
+            Direction     up
+            Flipped       off
+            LabelPosition south
+            Location      [0, 26; 1536, 803]
+            State         "AAAA/wAAAAD9AAAAAgAAAAEAAACFAAAAm/wCAAAAA/sAAAAQAFo"
+"AbwBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIA"
+"AANKAAACMwAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAJsAAAB+AP///wAAAAMAAAH4A"
+"AAAWPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAfgAAABfAP///wAAB4AAAA"
+"OsAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8"
+"AAAAAAAAAAA=="
+            SavedViews    "AAAAAgAAAAA="
+            HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAA"
+"JAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQA"
+"AAAJAAAAZAAAAAYAAABkAAAArgAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAA"
+"ACDAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAA"
+"AAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQA"
+"AAAAAAAArAAAAAQAAAAAAAAPoAAAAACs="
+            PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            Axes          "1"
+            TimeRange     "0"
+            ScrollingMode "1"
+            SingleTimeAxis "1"
+            Open          "0"
+            Ts            "-1"
+            SampleLimit   "0"
+            XAxisLabel    "Time / s"
+            ShowLegend    "1"
+            Axis {
+              Name          "PWM Frequency"
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              SignalTypes   [ ]
+              AxisLabel     "Frequency / kHz"
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Fourier {
+              SingleXAxis       on
+              AxisLabel         "Frequency"
+              Scaling           0
+              PhaseDisplay      0
+              ShowFourierLegend off
+              Axis {
+                Name          ""
+                AutoScale     1
+                MinValue      0
+                MaxValue      1
+                Signals       {}
+                Untangle      0
+                KeepBaseline  off
+                BaselineValue 0
+              }
+            }
+          }
+          Component {
+            Type          From
+            Name          "From"
+            Show          off
+            Position      [435, 280]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "VLLC"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto3"
+            Show          off
+            Position      [645, 310]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "HS1"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto4"
+            Show          off
+            Position      [645, 340]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "HS2"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Reference
+            SrcComponent  "library/Contollers/PFC Controller"
+            Name          "PFC Controller"
+            Show          on
+            Position      [300, 200]
+            Direction     up
+            Flipped       off
+            LabelPosition none
+            Frame         [-60, -80; 60, 80]
+            Parameter {
+              Variable      "Grid"
+              Value         "Grid"
+              Show          off
+            }
+            Parameter {
+              Variable      "PFC"
+              Value         "PFC"
+              Show          off
+            }
+            Terminal {
+              Type          Output
+              Position      [64, -40]
+              Direction     right
+            }
+            Terminal {
+              Type          Output
+              Position      [64, 40]
+              Direction     right
+            }
+            Terminal {
+              Type          Input
+              Position      [-60, -40]
+              Direction     left
+            }
+            Terminal {
+              Type          Input
+              Position      [-60, 40]
+              Direction     left
+            }
+            Terminal {
+              Type          Input
+              Position      [0, 80]
+              Direction     down
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto5"
+            Show          off
+            Position      [405, 240]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "gate"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          From
+            Name          "From5"
+            Show          off
+            Position      [195, 160]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "Vin_PFC"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Constant
+            Name          "Constant4"
+            Show          off
+            Position      [180, 240]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Frame         [-20, -10; 20, 10]
+            Parameter {
+              Variable      "Value"
+              Value         "Vout"
+              Show          off
+            }
+            Parameter {
+              Variable      "DataType"
+              Value         "10"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto6"
+            Show          off
+            Position      [405, 160]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "VSC"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "2"
+              Show          off
+            }
+          }
+          Component {
+            Type          Reference
+            SrcComponent  "library/Contollers/LLC Controller"
+            Name          "LLC Controller"
+            Show          on
+            Position      [540, 320]
+            Direction     up
+            Flipped       off
+            LabelPosition none
+            Frame         [-60, -80; 60, 80]
+            Parameter {
+              Variable      "LLC"
+              Value         "LLC"
+              Show          off
+            }
+            Terminal {
+              Type          Input
+              Position      [-60, -40]
+              Direction     left
+            }
+            Terminal {
+              Type          Output
+              Position      [64, -40]
+              Direction     right
+            }
+            Terminal {
+              Type          Output
+              Position      [64, -10]
+              Direction     right
+            }
+            Terminal {
+              Type          Output
+              Position      [64, 20]
+              Direction     right
+            }
+            Terminal {
+              Type          Output
+              Position      [64, 40]
+              Direction     right
+            }
+            Terminal {
+              Type          Input
+              Position      [-60, 40]
+              Direction     left
+            }
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "From5"
+            SrcTerminal   1
+            DstComponent  "PFC Controller"
+            DstTerminal   3
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "From4"
+            SrcTerminal   1
+            DstComponent  "PFC Controller"
+            DstTerminal   5
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "PFC Controller"
+            SrcTerminal   1
+            DstComponent  "Goto6"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "PFC Controller"
+            SrcTerminal   2
+            DstComponent  "Goto5"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "Constant4"
+            SrcTerminal   1
+            Points        [215, 240]
+            Branch {
+              DstComponent  "PFC Controller"
+              DstTerminal   4
+            }
+            Branch {
+              Points        [215, 360]
+              DstComponent  "LLC Controller"
+              DstTerminal   6
+            }
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "From"
+            SrcTerminal   1
+            DstComponent  "LLC Controller"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "LLC Controller"
+            SrcTerminal   2
+            DstComponent  "Goto"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "LLC Controller"
+            SrcTerminal   3
+            DstComponent  "Goto3"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "LLC Controller"
+            SrcTerminal   4
+            DstComponent  "Goto4"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "LLC Controller"
+            SrcTerminal   5
+            Points        [615, 360]
+            Branch {
+              DstComponent  "Goto2"
+              DstTerminal   1
+            }
+            Branch {
+              Points        [615, 395]
+              DstComponent  "Frequency"
+              DstTerminal   1
+            }
+          }
+        }
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Subsystem
+      Name          "THD"
+      Show          on
+      Position      [1015, 270]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-20, -10; 20, 10]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskDisplayLang "2"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      Terminal {
+        Type          Output
+        Position      [24, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-20, 0]
+        Direction     left
+      }
+      Schematic {
+        Location      [512, 216; 764, 420]
+        ZoomFactor    1
+        SliderPosition [0, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          Reference
+          SrcComponent  "Components/Control/Filters/Total Harmonic\\nDistortio"
+"n"
+          Name          "Total Harmonic\nDistortion"
+          Show          off
+          Position      [120, 70]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-15, -15; 15, 15]
+          Parameter {
+            Variable      "ts"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "fs"
+            Value         "Grid.Fgrid"
+            Show          off
+          }
+          Terminal {
+            Type          Input
+            Position      [-15, 0]
+            Direction     left
+          }
+          Terminal {
+            Type          Output
+            Position      [19, 0]
+            Direction     right
+          }
+        }
+        Component {
+          Type          SignalSelector
+          Name          "Cont\nSelector"
+          Show          off
+          Position      [70, 70]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "InputWidth"
+            Value         "4"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputIndices"
+            Value         "[2]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Gain"
+          Show          off
+          Position      [170, 70]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "100"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+        }
+        Component {
+          Type          Output
+          Name          "1"
+          Show          off
+          Position      [220, 70]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Input
+          Name          "2"
+          Show          off
+          Position      [20, 70]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Cont\nSelector"
+          SrcTerminal   2
+          DstComponent  "Total Harmonic\nDistortion"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Total Harmonic\nDistortion"
+          SrcTerminal   2
+          DstComponent  "Gain"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Gain"
+          SrcTerminal   2
+          DstComponent  "1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "2"
+          SrcTerminal   1
+          DstComponent  "Cont\nSelector"
+          DstTerminal   1
+        }
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/PFC"
+      Name          "PFC"
+      Show          on
+      Position      [340, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "PFC"
+        Value         "PFC"
+        Show          off
+      }
+      Parameter {
+        Variable      "PFC_glb"
+        Value         "PFC_glb"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "1"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 60]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/EMI FILTER"
+      Name          "EMI FILTER"
+      Show          on
+      Position      [210, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "Lin"
+        Value         "Lin"
+        Show          off
+      }
+      Parameter {
+        Variable      "Cin"
+        Value         "Cin"
+        Show          off
+      }
+      Parameter {
+        Variable      "L_CMC"
+        Value         "L_CMC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Cy1"
+        Value         "Cy1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Cy2"
+        Value         "Cy2"
+        Show          off
+      }
+      Parameter {
+        Variable      "L_DMC"
+        Value         "L_DMC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Cx"
+        Value         "Cx"
+        Show          off
+      }
+      Parameter {
+        Variable      "Cd"
+        Value         "Cd"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rd"
+        Value         "Rd"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ro"
+        Value         "Ro"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "in_filter_config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 15]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 15]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/LLC"
+      Name          "LLC1"
+      Show          on
+      Position      [545, 90]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "LLC"
+        Value         "LLC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "3"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Output
+        Position      [49, 0]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/DC FILTER"
+      Name          "DC FILTER"
+      Show          on
+      Position      [720, 160]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "param"
+        Value         "LLC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "1"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto2"
+      Show          off
+      Position      [610, 90]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "VLLC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/LLC"
+      Name          "LLC2"
+      Show          on
+      Position      [545, 260]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "LLC"
+        Value         "LLC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "3"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Output
+        Position      [49, 0]
+        Direction     right
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground"
+      SrcTerminal   1
+      DstComponent  "EMI FILTER"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "EVSE/GRID"
+      SrcTerminal   4
+      DstComponent  "EMI FILTER"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "EVSE/GRID"
+      SrcTerminal   1
+      DstComponent  "EMI FILTER"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe1"
+      SrcTerminal   1
+      Points        [1045, 200; 1045, 205]
+      DstComponent  "Scope"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      Points        [1055, 240; 1055, 225]
+      DstComponent  "Scope"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From1"
+      SrcTerminal   1
+      Points        [1055, 175; 1055, 195]
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe2"
+      SrcTerminal   1
+      Points        [980, 220]
+      Branch {
+        Points        [1045, 220; 1045, 215]
+        DstComponent  "Scope"
+        DstTerminal   3
+      }
+      Branch {
+        DstComponent  "THD"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "THD"
+      SrcTerminal   1
+      DstComponent  "Source Current\nTHD (%)"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "PFC"
+      SrcTerminal   4
+      DstComponent  "EMI FILTER"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "PFC"
+      SrcTerminal   3
+      DstComponent  "EMI FILTER"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground1"
+      SrcTerminal   1
+      DstComponent  "PFC"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground2"
+      SrcTerminal   1
+      DstComponent  "LLC1"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux3"
+      SrcTerminal   3
+      DstComponent  "Output"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux3"
+      SrcTerminal   2
+      DstComponent  "Output"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "DCLink"
+      SrcTerminal   1
+      DstComponent  "PFC"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "DCLink"
+      SrcTerminal   2
+      DstComponent  "PFC"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC2"
+      SrcTerminal   4
+      Points        [490, 225; 490, 125]
+      Branch {
+        Points        [490, 55]
+        DstComponent  "LLC1"
+        DstTerminal   4
+      }
+      Branch {
+        DstComponent  "DCLink"
+        DstTerminal   3
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC1"
+      SrcTerminal   3
+      Points        [485, 130; 485, 200]
+      Branch {
+        Points        [485, 300]
+        DstComponent  "LLC2"
+        DstTerminal   3
+      }
+      Branch {
+        DstComponent  "DCLink"
+        DstTerminal   4
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Product"
+      SrcTerminal   1
+      DstComponent  "Output"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "V_out,I_out"
+      SrcTerminal   1
+      Points        [980, 310]
+      Branch {
+        DstComponent  "Demux3"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [980, 325]
+        DstComponent  "Product"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "DC FILTER"
+      SrcTerminal   1
+      DstComponent  "Load"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "DC FILTER"
+      SrcTerminal   2
+      DstComponent  "Load"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC2"
+      SrcTerminal   1
+      Points        [650, 225; 650, 125]
+      Branch {
+        Points        [650, 55]
+        DstComponent  "LLC1"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "DC FILTER"
+        DstTerminal   4
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC1"
+      SrcTerminal   2
+      Points        [655, 130; 655, 200]
+      Branch {
+        Points        [655, 300]
+        DstComponent  "LLC2"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "DC FILTER"
+        DstTerminal   3
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "LLC1"
+      SrcTerminal   6
+      DstComponent  "Goto2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC2"
+      SrcTerminal   5
+      DstComponent  "Ground3"
+      DstTerminal   1
+    }
+  }
+}
+DemoSignature "HTjbU51h5muR2raKArBVo2pvjclXbuDUxrYjy8MbSY8="

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="Diode" vendor="Wolfspeed" partnumber="CAS175M12BM3">
+        <Variables/>
+        <SemiconductorData type="Diode">
+            <TurnOnLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0 0.02 0.1 1 2.5 5 25 50 75 100 125 150 175 200 225 250 275 300 325 350</CurrentAxis>
+                <TemperatureAxis> -40 -25 0 25 100 125 150 175 1000</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0.000 1.039 1.039 1.043 1.050 1.062 1.150 1.256 1.355 1.453 1.548 1.643 1.737 1.832 1.925 2.021 2.115 2.209 2.301 2.394</Temperature>
+                    <Temperature> 0.000 1.018 1.018 1.022 1.029 1.041 1.133 1.243 1.345 1.445 1.543 1.640 1.738 1.835 1.934 2.031 2.128 2.224 2.321 2.417</Temperature>
+                    <Temperature> 0.000 0.984 0.984 0.989 0.997 1.010 1.111 1.229 1.338 1.446 1.553 1.657 1.763 1.868 1.975 2.079 2.184 2.288 2.392 2.494</Temperature>
+                    <Temperature> 0.000 0.952 0.953 0.958 0.967 0.981 1.092 1.222 1.343 1.462 1.580 1.696 1.815 1.930 2.046 2.160 2.273 2.385 2.494 2.601</Temperature>
+                    <Temperature> 0.000 0.867 0.868 0.875 0.887 0.907 1.062 1.247 1.422 1.592 1.759 1.919 2.075 2.225 2.370 2.510 2.649 2.786 2.922 3.066</Temperature>
+                    <Temperature> 0.000 0.843 0.844 0.852 0.865 0.887 1.060 1.267 1.466 1.657 1.837 2.011 2.176 2.339 2.495 2.648 2.798 2.951 3.110 3.273</Temperature>
+                    <Temperature> 0.000 0.806 0.807 0.816 0.832 0.858 1.058 1.295 1.518 1.724 1.921 2.107 2.287 2.460 2.630 2.796 2.966 3.140 3.316 3.489</Temperature>
+                    <Temperature> 0.000 0.768 0.769 0.780 0.798 0.828 1.060 1.329 1.573 1.798 2.009 2.209 2.404 2.592 2.777 2.963 3.149 3.335 3.517 3.697</Temperature>
+                    <Temperature> 0.000 0.729 0.730 0.743 0.763 0.798 1.063 1.363 1.628 1.871 2.096 2.311 2.520 2.724 2.924 3.130 3.332 3.530 3.717 3.905</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.014608" C="0.007113"/>
+                <RCElement R="0.074370" C="0.039985"/>
+                <RCElement R="0.126609" C="0.172166"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>DISCLAIMER</Line>
+            <Line>This model is provided as is, where is, and with no warranty of any kind either</Line>
+            <Line>expressed or implied, including but not limited to any implied warranties of</Line>
+            <Line>merchantability and fitness for a particular purpose.</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>Wolfspeed SiC Module PLECS Library</Line>
+            <Line></Line>
+            <Line>	CAS175M12BM3</Line>
+            <Line>	Half Bridge	(Diode Model)</Line>
+            <Line>	Version 2	Date: 06-21-2022</Line>
+            <Line></Line>
+            <Line>	Electrical Parameters</Line>
+            <Line>	Vf	= 0.947	V</Line>
+            <Line>	Ron	= 0.0057	Ω</Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>To find other WOLFSPEED SiC models, please visit: </Line>
+            <Line>https://www.wolfspeed.com/power/tools-and-support/all-models</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>

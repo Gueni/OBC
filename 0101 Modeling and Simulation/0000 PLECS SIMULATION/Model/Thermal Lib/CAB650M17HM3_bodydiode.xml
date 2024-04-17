@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="Diode" vendor="Wolfspeed" partnumber="XAB650M17HM3">
+        <Variables/>
+        <SemiconductorData type="Diode">
+            <TurnOnLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0 0.02 0.1 1 2.5 5 25 50 75 100 200 300 400 500 600 700 800 900 1000 1100 1200 1300</CurrentAxis>
+                <TemperatureAxis> -40 -25 0 25 100 125 150 175 1000</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0.000 3.117 3.118 3.131 3.153 3.190 3.464 3.744 3.945 4.109 4.596 4.955 5.252 5.508 5.740 5.951 6.145 6.326 6.498 6.661 6.818 6.968</Temperature>
+                    <Temperature> 0.000 3.029 3.030 3.043 3.063 3.098 3.357 3.621 3.809 3.962 4.421 4.765 5.056 5.309 5.539 5.748 5.946 6.130 6.304 6.473 6.635 6.791</Temperature>
+                    <Temperature> 0.000 2.920 2.921 2.932 2.951 2.982 3.217 3.459 3.634 3.777 4.211 4.543 4.825 5.076 5.304 5.515 5.715 5.904 6.084 6.258 6.426 6.587</Temperature>
+                    <Temperature> 0.000 2.830 2.831 2.841 2.859 2.888 3.110 3.339 3.507 3.643 4.069 4.397 4.677 4.928 5.156 5.372 5.576 5.767 5.951 6.127 6.297 6.461</Temperature>
+                    <Temperature> 0.000 2.622 2.623 2.633 2.649 2.676 2.880 3.095 3.261 3.395 3.804 4.115 4.384 4.623 4.844 5.051 5.248 5.436 5.614 5.783 5.945 6.100</Temperature>
+                    <Temperature> 0.000 2.545 2.546 2.556 2.573 2.601 2.813 3.032 3.195 3.329 3.728 4.027 4.282 4.510 4.719 4.915 5.098 5.272 5.442 5.604 5.760 5.910</Temperature>
+                    <Temperature> 0.000 2.483 2.484 2.494 2.511 2.539 2.751 2.971 3.134 3.266 3.659 3.950 4.201 4.419 4.621 4.807 4.983 5.148 5.308 5.463 5.612 5.756</Temperature>
+                    <Temperature> 0.000 2.421 2.422 2.432 2.449 2.477 2.689 2.908 3.070 3.204 3.590 3.879 4.125 4.342 4.540 4.723 4.896 5.058 5.215 5.367 5.513 5.655</Temperature>
+                    <Temperature> 0.000 2.376 2.377 2.387 2.404 2.431 2.637 2.851 3.010 3.144 3.522 3.807 4.047 4.262 4.455 4.636 4.803 4.963 5.125 5.277 5.423 5.565</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.003530" C="0.039248"/>
+                <RCElement R="0.015339" C="0.285619"/>
+                <RCElement R="0.034882" C="1.840490"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>DISCLAIMER</Line>
+            <Line>This model is provided as is, where is, and with no warranty of any kind either</Line>
+            <Line>expressed or implied, including but not limited to any implied warranties of</Line>
+            <Line>merchantability and fitness for a particular purpose.</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>Wolfspeed SiC Module PLECS Library</Line>
+            <Line></Line>
+            <Line>	XAB650M17HM3</Line>
+            <Line>	Half Bridge	(Diode Model)</Line>
+            <Line>	Version 2	Date: 01-27-2022</Line>
+            <Line></Line>
+            <Line>	Electrical Parameters</Line>
+            <Line>	Vf	= 3.360	V</Line>
+            <Line>	Ron	= 0.0027	Ω</Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>To find other WOLFSPEED SiC models, please visit: </Line>
+            <Line>https://www.wolfspeed.com/power/tools-and-support/all-models</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>
