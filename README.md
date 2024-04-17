@@ -1,4 +1,10 @@
-![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
+![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)[![PyPI status](https://img.shields.io/pypi/status/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
+
+
+
 # EV Onboard Charger with PFC and LLC Resonant Converter
 ## Overview
 
