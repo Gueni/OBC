@@ -1,0 +1,398 @@
+Plecs {
+  Name          "PFC Average Model"
+  Version       "4.7"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  InitializationCommands "\nV_ac   \t= 230 ;\nF_grid \t= 50  ;\nLdm \t\t= 0\t;"
+"\nCd \t\t= struct(\n\t\t\t\t\t'Config'\t\t=\t1,\n\t\t\t\t\t'Cap_s'\t\t= \t0,"
+"\n\t\t\t\t\t'Resr_s'\t\t=\t0,\n\t\t\t\t\t'Npara' \t\t=\t0,\n\t\t\t\t\t'Nseri'"
+"\t  \t=\t0,\n\t\t\t\t\t'Lesl_s'  \t=\t0,\n\t\t\t\t\t'Vinit' \t\t=\t0,\n\t\t\t"
+"\t\t'Iinit'\t \t=\t0\n);\nRd \t= 0;\nCe \t= struct(\n\t\t\t\t\t'Config'\t\t="
+"\t1,\n\t\t\t\t\t'Cap_s'\t\t= \t0,\n\t\t\t\t\t'Resr_s'\t\t=\t0,\n\t\t\t\t\t'Np"
+"ara' \t\t=\t0,\n\t\t\t\t\t'Nseri'\t  \t=\t0,\n\t\t\t\t\t'Lesl_s'  \t=\t0,\n\t"
+"\t\t\t\t'Vinit' \t\t=\t0,\n\t\t\t\t\t'Iinit'\t \t=\t0\n);\nL \t\t= 0;\nRl \t="
+" 0;\nV_dc \t= 450;\nI_dc \t= 0;\nRo \t= 0;\nCo \t= struct(\n\t\t\t\t\t'Config"
+"'\t\t=\t1,\n\t\t\t\t\t'Cap_s'\t\t= \t0,\n\t\t\t\t\t'Resr_s'\t\t=\t0,\n\t\t\t"
+"\t\t'Npara' \t\t=\t0,\n\t\t\t\t\t'Nseri'\t  \t=\t0,\n\t\t\t\t\t'Lesl_s'  \t="
+"\t0,\n\t\t\t\t\t'Vinit' \t\t=\t0,\n\t\t\t\t\t'Iinit'\t \t=\t0\n);\n"
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 26; 1536, 780]
+    ZoomFactor    1.30957
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          ACVoltageSource
+      Name          "V_ac"
+      Show          on
+      Position      [155, 205]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "V"
+        Value         "V_ac"
+        Show          off
+      }
+      Parameter {
+        Variable      "w"
+        Value         "2*pi*F_ac"
+        Show          off
+      }
+      Parameter {
+        Variable      "phi"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "Ldm"
+      Show          on
+      Position      [215, 135]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "L"
+        Value         "Ldm"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rl"
+      Show          on
+      Position      [410, 135]
+      Direction     right
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "R"
+        Value         "Rl"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/Capacitor"
+      Name          "Cd"
+      Show          on
+      Position      [275, 180]
+      Direction     left
+      Flipped       off
+      LabelPosition west
+      Frame         [-10, -20; 10, 20]
+      Parameter {
+        Variable      "Cap_dict"
+        Value         "Cd"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "Cd.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [25, 0]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rd"
+      Show          on
+      Position      [275, 225]
+      Direction     down
+      Flipped       off
+      LabelPosition west
+      Parameter {
+        Variable      "R"
+        Value         "Rd"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "L"
+      Show          on
+      Position      [360, 135]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "L"
+        Value         "L"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          DCVoltageSource
+      Name          "V_dc"
+      Show          on
+      Position      [435, 200]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "V"
+        Value         "V_dc"
+        Show          off
+      }
+    }
+    Component {
+      Type          DCCurrentSource
+      Name          "I_dc"
+      Show          on
+      Position      [475, 200]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "I"
+        Value         "I_dc"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Ro"
+      Show          on
+      Position      [530, 200]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "Ro"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/Capacitor"
+      Name          "Co"
+      Show          on
+      Position      [580, 200]
+      Direction     left
+      Flipped       off
+      LabelPosition east
+      Frame         [-10, -20; 10, 20]
+      Parameter {
+        Variable      "Cap_dict"
+        Value         "Co"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "Co.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [25, 0]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/Capacitor"
+      Name          "Ce"
+      Show          on
+      Position      [315, 200]
+      Direction     left
+      Flipped       off
+      LabelPosition east
+      Frame         [-10, -20; 10, 20]
+      Parameter {
+        Variable      "Cap_dict"
+        Value         "Ce"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "Ce.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [25, 0]
+        Direction     right
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_ac"
+      SrcTerminal   1
+      Points        [155, 135]
+      DstComponent  "Ldm"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Rd"
+      SrcTerminal   2
+      DstComponent  "Cd"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ce"
+      SrcTerminal   1
+      Points        [315, 245]
+      Branch {
+        DstComponent  "Rd"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [315, 265]
+        Branch {
+          Points        [155, 265]
+          DstComponent  "V_ac"
+          DstTerminal   2
+        }
+        Branch {
+          Points        [435, 265]
+          DstComponent  "V_dc"
+          DstTerminal   2
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ce"
+      SrcTerminal   2
+      Points        [315, 155]
+      Branch {
+        Points        [315, 135]
+        Branch {
+          DstComponent  "Ldm"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "L"
+          DstTerminal   1
+        }
+      }
+      Branch {
+        DstComponent  "Cd"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Rl"
+      SrcTerminal   2
+      DstComponent  "L"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_dc"
+      SrcTerminal   1
+      Points        [435, 135]
+      DstComponent  "Rl"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "I_dc"
+      SrcTerminal   2
+      Points        [475, 135; 530, 135]
+      Branch {
+        Points        [580, 135]
+        DstComponent  "Co"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Ro"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ro"
+      SrcTerminal   1
+      Points        [530, 265]
+      Branch {
+        Points        [475, 265]
+        DstComponent  "I_dc"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [580, 265]
+        DstComponent  "Co"
+        DstTerminal   1
+      }
+    }
+  }
+}
+DemoSignature "QDfEyhiFJ0vydpPidHXfz2jllOxOPsCC4KKjYGButV4="
