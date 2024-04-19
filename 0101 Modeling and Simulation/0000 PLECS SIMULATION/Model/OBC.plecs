@@ -1606,9 +1606,14 @@ Plecs {
         Direction     down
       }
       Terminal {
-        Type          Output
-        Position      [49, 0]
-        Direction     right
+        Type          HeatPort
+        Position      [10, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Input
+        Position      [-45, 0]
+        Direction     left
       }
     }
     Component {
@@ -1650,25 +1655,6 @@ Plecs {
         Type          Port
         Position      [-50, -35]
         Direction     left
-      }
-    }
-    Component {
-      Type          Goto
-      Name          "Goto2"
-      Show          off
-      Position      [610, 90]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "VLLC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
       }
     }
     Component {
@@ -1717,9 +1703,42 @@ Plecs {
         Direction     down
       }
       Terminal {
-        Type          Output
-        Position      [49, 0]
-        Direction     right
+        Type          HeatPort
+        Position      [10, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Input
+        Position      [-45, 0]
+        Direction     left
+      }
+    }
+    Component {
+      Type          ThermalResistor
+      Name          "Rth\nH-A"
+      Show          on
+      Position      [555, 395]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "Rth"
+        Value         "0.09"
+        Show          off
+      }
+    }
+    Component {
+      Type          ConstantTemperatureGnd
+      Name          "Ambient"
+      Show          on
+      Position      [555, 430]
+      Direction     up
+      Flipped       off
+      LabelPosition west
+      Parameter {
+        Variable      "T"
+        Value         "25"
+        Show          off
       }
     }
     Connection {
@@ -1942,19 +1961,37 @@ Plecs {
       }
     }
     Connection {
-      Type          Signal
-      SrcComponent  "LLC1"
-      SrcTerminal   6
-      DstComponent  "Goto2"
-      DstTerminal   1
-    }
-    Connection {
       Type          Wire
       SrcComponent  "LLC2"
       SrcTerminal   5
       DstComponent  "Ground3"
       DstTerminal   1
     }
+    Connection {
+      Type          HeatPipe
+      SrcComponent  "Ambient"
+      SrcTerminal   1
+      DstComponent  "Rth\nH-A"
+      DstTerminal   2
+    }
+    Connection {
+      Type          HeatPipe
+      SrcComponent  "LLC2"
+      SrcTerminal   6
+      Points        [555, 360]
+      Branch {
+        Points        [600, 360; 600, 160; 555, 160]
+        DstComponent  "LLC1"
+        DstTerminal   6
+      }
+      Branch {
+        DstComponent  "Rth\nH-A"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [360, 360; 360, 230]
+      }
+    }
   }
 }
-DemoSignature "HTjbU51h5muR2raKArBVo2pvjclXbuDUxrYjy8MbSY8="
+DemoSignature "lQBjbxGPD8SdBWCuw4YP3BQuCoKd+IWG6GwNZK5oStw="
