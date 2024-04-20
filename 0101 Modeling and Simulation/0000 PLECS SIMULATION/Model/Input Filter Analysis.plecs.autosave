@@ -1,0 +1,985 @@
+Plecs {
+  Name          "Input Filter Analysis"
+  Version       "4.7"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "tSim"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "maxStep"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "4"
+  ZCStepSize    "1e-9"
+  RelTol        "rel_tol"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "2"
+  AssertionAction "1"
+  InitializationCommands "\ntSim\t    \t   \t\t= \t1                          "
+"       ;  %  % [s] - simulation time\nmaxStep\t\t   \t\t= \t1e-3             "
+"                  ;  %  maximum step size\nrel_tol\t\t   \t\t= \t1e-3        "
+"                       ;  %  relative tolerance\t\t\n\nVin             \t\t= "
+" 230                                ;  %  Input voltage in V (RMS)\nFgrid    "
+"       \t\t=  50                                 ;  %  Grid frequency in Hz\n"
+"Rg              \t\t=  1e-3                               ;  %  Grid bus resi"
+"stance in ohm.  \n\nL_CMC           \t\t=  (1.5e-3)/2                        "
+" ;  %  CM choke inductor value in H.\nL_DMC           \t\t=  (1.9e-6)/2      "
+"                   ;  %  DM choke inductor value in H.\nCx              \t\t="
+"  0.1e-6                               ;  %  X capacitor value in F.\nCy1    "
+"         \t\t=  4.7e-9                             ;  %  Y capacitor 1 value "
+"in F.\nCy2             \t\t=  4.7e-9                             ;  %  Y capa"
+"citor 2 value in F.\nCd              \t\t=  470e-3                           "
+"  ;  %  Damping Capacitor value in F.\nRd              \t\t=  5              "
+"                  ;  %  Damping Resistor value in ohm.\n               "
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry "[626 364 456 272]"
+  ScriptsDialogSplitterPos "100"
+  Schematic {
+    Location      [0, 26; 1536, 780]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          off
+      Position      [260, 150]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 850]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADZfwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAA2UAAAB+AP///wAAAAMAAAeAAAAAffw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAANlAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"QAAAG0AAAAIAAAAbQAAAAkAAABtAAAAAgAAAG4AAAADAAAAbQAAAAEAAABtAAAABgAAAG0AAAAHAA"
+"AAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACZAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AbSAAAAAQAAAAAAAAPoAAAAACs="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
+"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+      Axes          "2"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "2"
+      Axis {
+        Name          "Source current (AC)"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"Vin_scaled"}
+        SignalTypes   [ ]
+        AxisLabel     "Current / A"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Source Voltage"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"IL"}
+        SignalTypes   [ ]
+        AxisLabel     "Voltage / V"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"Vin_scaled"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"IL"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          off
+      Position      [100, 150]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "V_ac"
+        Path          ""
+        Signals       {"Source current", "Source voltage"}
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Control/Filters/Total Harmonic\\nDistortion"
+      Name          "Total Harmonic\nDistortion"
+      Show          off
+      Position      [260, 110]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -15; 15, 15]
+      Parameter {
+        Variable      "ts"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "fs"
+        Value         "Fgrid"
+        Show          off
+      }
+      Terminal {
+        Type          Input
+        Position      [-15, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          Output
+        Position      [19, 0]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Display
+      Name          "Source Current\nTHD (%)"
+      Show          on
+      Position      [380, 110]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-31, -11; 31, 11]
+      Parameter {
+        Variable      "Notation"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Precision"
+        Value         "3"
+        Show          off
+      }
+    }
+    Component {
+      Type          Gain
+      Name          "Gain"
+      Show          off
+      Position      [310, 110]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "K"
+        Value         "100"
+        Show          off
+      }
+      Parameter {
+        Variable      "Multiplication"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "11"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "Cy2"
+      Show          on
+      Position      [370, 265]
+      Direction     up
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "Cy2"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "Cy1"
+      Show          on
+      Position      [370, 225]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "Cy1"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "Cx"
+      Show          on
+      Position      [535, 240]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "Cx"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          MutInductor
+      Name          "DMC"
+      Show          on
+      Position      [470, 240]
+      Direction     left
+      Flipped       on
+      LabelPosition north
+      Parameter {
+        Variable      "Windings"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "L"
+        Value         "[2 1; 1 2]*L_DMC"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "Cd"
+      Show          on
+      Position      [580, 220]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "Cd"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rd"
+      Show          on
+      Position      [580, 265]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "Rd"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am1"
+      Show          on
+      Position      [610, 195]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Vm1"
+      Show          on
+      Position      [640, 245]
+      Direction     up
+      Flipped       off
+      LabelPosition west
+    }
+    Component {
+      Type          Ground
+      Name          "Ground"
+      Show          off
+      Position      [405, 245]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+    }
+    Component {
+      Type          ACVoltageSource
+      Name          "V_ac"
+      Show          on
+      Position      [80, 245]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "V"
+        Value         "230"
+        Show          off
+      }
+      Parameter {
+        Variable      "w"
+        Value         "2*pi*50"
+        Show          off
+      }
+      Parameter {
+        Variable      "phi"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rac"
+      Show          on
+      Position      [125, 195]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "R"
+        Value         "1e-3"
+        Show          off
+      }
+    }
+    Component {
+      Type          CurrentSource
+      Name          "I"
+      Show          on
+      Position      [705, 245]
+      Direction     up
+      Flipped       off
+      LabelPosition west
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope1"
+      Show          off
+      Position      [730, 175]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 847]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAAvPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAAHKAA"
+"ABgQAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAALwAAAB+AP///wAAAAMAAAI5AAAAXfw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAjkAAABfAP///wAAB4AAAAPjAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAIAAABkAAAAAwAAAGQAAAABAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAA"
+"AAZAAAAAUAAABkAAAAsgAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACHAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AArAAAAAQAAAAAAAAPoAAAAACs="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
+"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+      Axes          "2"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          "Inductor Current"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"iL"}
+        SignalTypes   [ ]
+        AxisLabel     "Current / A"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Output Voltage"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {"vo"}
+        SignalTypes   [ ]
+        AxisLabel     "Voltage / V"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"iL"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {"vo"}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          SmallSignalResponse
+      Name          "vo_oi'"
+      Show          on
+      Position      [730, 125]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "ShowReference"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "InvertReference"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SmallSignalResponse
+      Name          "vo_co'"
+      Show          on
+      Position      [730, 80]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "ShowReference"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "InvertReference"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SmallSignalPerturbation
+      Name          "i'"
+      Show          on
+      Position      [755, 245]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "ShowInput"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalSelector
+      Name          "Selector"
+      Show          off
+      Position      [155, 150]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "InputWidth"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutputIndices"
+        Value         "[2 1]"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalDemux
+      Name          "Demux"
+      Show          off
+      Position      [190, 150]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          MutInductor
+      Name          "CMC"
+      Show          on
+      Position      [275, 245]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "Windings"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "L"
+        Value         "[2 1; 1 2]*L_CMC"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Total Harmonic\nDistortion"
+      SrcTerminal   2
+      DstComponent  "Gain"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Gain"
+      SrcTerminal   2
+      DstComponent  "Source Current\nTHD (%)"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "CMC"
+      SrcTerminal   2
+      Points        [310, 235; 310, 195; 370, 195]
+      Branch {
+        Points        [435, 195; 435, 230]
+        DstComponent  "DMC"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Cy1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Cy2"
+      SrcTerminal   1
+      Points        [370, 295]
+      Branch {
+        Points        [310, 295; 310, 255]
+        DstComponent  "CMC"
+        DstTerminal   4
+      }
+      Branch {
+        Points        [435, 295; 435, 250]
+        DstComponent  "DMC"
+        DstTerminal   4
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Cd"
+      SrcTerminal   2
+      DstComponent  "Rd"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Cx"
+      SrcTerminal   1
+      Points        [535, 195]
+      Branch {
+        Points        [500, 195; 500, 230]
+        DstComponent  "DMC"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [580, 195]
+        Branch {
+          DstComponent  "Cd"
+          DstTerminal   1
+        }
+        Branch {
+          DstComponent  "Am1"
+          DstTerminal   1
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Cx"
+      SrcTerminal   2
+      Points        [535, 295]
+      Branch {
+        Points        [500, 295; 500, 250]
+        DstComponent  "DMC"
+        DstTerminal   3
+      }
+      Branch {
+        Points        [580, 295]
+        Branch {
+          DstComponent  "Rd"
+          DstTerminal   2
+        }
+        Branch {
+          Points        [640, 295]
+          Branch {
+            DstComponent  "Vm1"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [705, 295]
+            DstComponent  "I"
+            DstTerminal   1
+          }
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Cy1"
+      SrcTerminal   2
+      Points        [370, 245]
+      Branch {
+        DstComponent  "Cy2"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Ground"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_ac"
+      SrcTerminal   2
+      Points        [80, 295; 245, 295; 245, 255]
+      DstComponent  "CMC"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_ac"
+      SrcTerminal   1
+      Points        [80, 195]
+      DstComponent  "Rac"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Rac"
+      SrcTerminal   1
+      Points        [245, 195; 245, 235]
+      DstComponent  "CMC"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "i'"
+      SrcTerminal   1
+      DstComponent  "I"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am1"
+      SrcTerminal   3
+      Points        [610, 170]
+      Branch {
+        Points        [610, 120]
+        Branch {
+          Points        [610, 80]
+          DstComponent  "vo_co'"
+          DstTerminal   1
+        }
+        Branch {
+          Points        [715, 120]
+        }
+      }
+      Branch {
+        DstComponent  "Scope1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm1"
+      SrcTerminal   3
+      Points        [680, 245; 680, 180]
+      Branch {
+        Points        [680, 125]
+        DstComponent  "vo_oi'"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "Scope1"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      DstComponent  "Selector"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Selector"
+      SrcTerminal   2
+      DstComponent  "Demux"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux"
+      SrcTerminal   2
+      Points        [210, 145]
+      Branch {
+        DstComponent  "Scope"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [210, 110]
+        DstComponent  "Total Harmonic\nDistortion"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux"
+      SrcTerminal   3
+      DstComponent  "Scope"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   2
+      Points        [640, 195]
+      Branch {
+        DstComponent  "Vm1"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [705, 195]
+        DstComponent  "I"
+        DstTerminal   2
+      }
+    }
+  }
+  Analysis {
+    Type          SteadyStateAnalysis
+    Name          "Steady State Analysis"
+    OperatingPoint "1"
+    TimeSpan      "1/50"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "2"
+    InitCycles    "10"
+    ShowCycles    "5"
+  }
+  Analysis {
+    Type          ACSweep
+    Name          "Control to Output TF (AC Sweep)"
+    ShowLegend    "1"
+    OperatingPoint "1"
+    TimeSpan      "1/50"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    FrequencyRange "[1 10000]"
+    FrequencyScale "2"
+    AdditionalFreqs "[10:10:100000 ]"
+    AmplitudeRange "1e-3"
+    NumPoints     "21"
+    Perturbation  "i'"
+    Response      "vo_oi'"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "2"
+    InitCycles    "0"
+  }
+  Analysis {
+    Type          ImpulseResponseAnalysis
+    Name          "Control to Output TF (Impulse Response)"
+    ShowLegend    "1"
+    TimeSpan      "-1"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    FrequencyRange "[100 50e3]"
+    FrequencyScale "2"
+    Amplitude     "1e-3"
+    NumPoints     "300"
+    Perturbation  "i'"
+    Response      "vo_oi'"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "2"
+    InitCycles    "0"
+  }
+  Analysis {
+    Type          MultitoneAnalysis
+    Name          "Control to Output TF (Multitone Analysis)"
+    ShowLegend    "1"
+    StartTime     "0"
+    InitSimulationPeriod "0.5"
+    FrequencyRange "[10 100000]"
+    Amplitude     "1e-4"
+    Perturbation  "i'"
+    Response      "vo_oi'"
+  }
+  Analysis {
+    Type          ACSweep
+    Name          "Output Impedance (AC Sweep)"
+    ShowLegend    "1"
+    OperatingPoint "1"
+    TimeSpan      "1/50"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    FrequencyRange "[1 1e9]"
+    FrequencyScale "2"
+    AdditionalFreqs "[1:10:1e9 ]"
+    AmplitudeRange "1e-3"
+    NumPoints     "21"
+    Perturbation  "i'"
+    Response      "vo_oi'"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "2"
+    InitCycles    "10"
+  }
+  Analysis {
+    Type          ImpulseResponseAnalysis
+    Name          "Output Impedance (Impulse Response)"
+    ShowLegend    "1"
+    TimeSpan      "1/50"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    FrequencyRange "[1 100e3]"
+    FrequencyScale "2"
+    Amplitude     "1e-3"
+    NumPoints     "21"
+    Perturbation  "i'"
+    Response      "vo_oi'"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "2"
+    InitCycles    "10"
+  }
+  Analysis {
+    Type          MultitoneAnalysis
+    Name          "Output Impedance (Multitone Analysis)"
+    ShowLegend    "2"
+    StartTime     "0"
+    InitSimulationPeriod "1"
+    FrequencyRange "[1 500]"
+    Amplitude     "1e-2"
+    Perturbation  "i'"
+    Response      "vo_oi'"
+  }
+}
+DemoSignature "AUYntyZF0glJcKUcHbtod7dkbtV+cH7IRDDrtwgoA+k="

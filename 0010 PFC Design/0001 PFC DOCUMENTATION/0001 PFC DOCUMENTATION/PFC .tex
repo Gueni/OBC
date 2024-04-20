@@ -156,14 +156,7 @@ fc_{\text{filter}} =  \frac{1}{2\times\pi\times\sqrt{L\times C}}
 In general we are interested in attenuating the frequencies higher than the maximum switching frequency of the PFC (70KHz) so as a rule of thumb we start by considering the cutoff frequency of the filter as :
 
 \[
-fc_{\text{filter}} =  80 KHz
-\]
-
-However, since the LLC is switching at even higher frequency range than the PFC does we would be interested in taking into account that frequency range which is roughly about 90 to 250 KHz with a 350KHz used at the starting sequence(will be detailed later in controls).
-
-Hence, the cutoff frequency of the filter should be at :
-\[
-fc_{\text{filter}} =  350 Khz + 10Khz \text{ } \text{safety margin. } 
+fc_{\text{filter}} =  75 KHz
 \]
 
 The process moving forward will be about a mixture between using mathematical formulas , trial and error , simulation and logic related to multiple aspects to name a few : physical size of the components and other characteristics and the availability of certain values of components in the market (good luck finding certain values if they ever existed ).
@@ -171,11 +164,11 @@ The process moving forward will be about a mixture between using mathematical fo
 First we could Find the approximated Input impedance of the system in series with the input filter using professor Middlebrook's approximation:
 
 \[
-Z_{\text{in}} =  \frac{240^2\times 0.98}{7000} = 8.1 \textbf{$\Omega$}
+Z_{\text{in}} =  
 \]
 
 which then means that in order for the system to not get affected by the addition of the filter : 
-\[Z_{\text{out(Filter)}} << 8.1 \textbf{$\Omega$}\]
+\[Z_{\text{out(Filter)}} << \]
 
 Given we already know Zout filter is dependent on the L and C values at its output. We could select one of the values (choose the most commonly used / tested values) and use a reactance paper and simulation software such as Plecs and LtSpice to narrow down a small margin of values for both C and L and simulate all range.
 
