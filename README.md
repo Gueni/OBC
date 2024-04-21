@@ -8,7 +8,7 @@
 # EV Onboard Charger with PFC and LLC Resonant Converter
 ## Overview
 
-This repository contains the design and implementation of an Electric Vehicle (EV) Onboard Charger with Power Factor Correction (PFC) and LLC Resonant Converter. The onboard charger is responsible for efficiently converting AC power from the grid into DC power for charging the EV's battery pack.
+This repository contains the design and implementation of an Electric Vehicle (EV) single phase Onboard Charger with Power Factor Correction (PFC) and LLC Resonant Converter. The onboard charger is responsible for efficiently converting AC power from the grid into DC power for charging the EV's battery pack.
 
 The charger is designed to meet specific power requirements and comply with safety and regulatory standards. It utilizes PFC to improve power factor and LLC resonant converter for high efficiency and reduced switching losses.
 
