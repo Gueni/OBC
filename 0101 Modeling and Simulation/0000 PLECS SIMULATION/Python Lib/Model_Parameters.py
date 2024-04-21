@@ -21,7 +21,7 @@ PFC_glb     =  {
                   'L'               :  100e-6                                                   ,  #  Boost indutance in H.
                   'Rl'              :  1                                                        ,  #  DCR of inductor in Ω.
                   'Cout'               :  {
-                                             'Config'		      : 6          ,  #  
+                                             'Config'		      : 4          ,  #  
                                              'Cap_s'    		   : 500e-6     ,  #  
                                              'Resr_s'		         : 19e-6      ,  #  
                                              'Lesl_s'		         : 0          ,  #  
@@ -37,8 +37,8 @@ PFC_glb     =  {
 PFC_SW      =  {
                   'Config'               : 1                                                 ,  # 
                   'therm_mosfet'         : 'file:C3M0021120K'                                ,  # MOSFET thermal description
-                  'Rgon'                 : 2.5                                               ,  # external turn-on gate resistance (ohms)
-                  'Rgoff'                : 2.5                                               ,  # external turn-off gate resistance (ohms)
+                  'Rgon'                 : 0,#2.5                                               ,  # external turn-on gate resistance (ohms)
+                  'Rgoff'                : 0,#2.5                                               ,  # external turn-off gate resistance (ohms)
                   'Vdsmax'               : 1200                                              ,  # max device drain-source voltage rating (V)
                   'Idsmax'               : 100                                               ,  # max drain current rating @ 25 C(A)
                   'Tjmax'                : 175                                               ,  # max operating junction temperature (C)                        
@@ -46,12 +46,12 @@ PFC_SW      =  {
                   'TcDerating'           : [-55,27,45,70,95,108,120,132,145,158,170,175]     ,  # Temperature derating curve (C)                       
                   'IdsMaxDerated'        : [100,100,95,86,77, 71, 65, 58, 49, 37, 20,  0]    ,  # Current derating curve (A)                     
                   'ron_mosfet'           : 0.021                                             ,  # MOSFET on-resistance  (ohms)
-                  'Rds_off'              : 100e-3                                            ,  #
-                  'Iinit'                : 100e-3                                            ,  #
+                  'Rds_off'              : 0                                                 ,  #
+                  'Iinit'                : 0                                                 ,  #
                   'Coss'                 : {                                                    #
                                           'Config'		      : 6                              ,  #  
-                                          'Cap_s'    		   : 100e-3                         ,  #  
-                                          'Resr_s'		      : 19e-6                          ,  #  
+                                          'Cap_s'    		   : 1e-12                          ,  #  
+                                          'Resr_s'		      : 0                              ,  #  
                                           'Lesl_s'		      : 0                              ,  #  
                                           'Npara'		      : 1                              ,  #  
                                           'Nseri'		      : 1                              ,  #  
@@ -63,9 +63,8 @@ PFC_SW      =  {
                   'Trise'                : 0                                                 ,  #
                   'Tfall'                : 0                                                 ,  #
                   'therm_body_diode'     : 'file:C3M0021120K_bodydiode'                      ,  # body diode thermal description
-                  'custom_var'           : []                                                ,  #
                   'ron_body_diode'       : 0.033                                             ,  # diode on-resistance from body diode curve @25C & Vgs=0V (ohms)
-                  'Rdb_off'              : 100e-3                                            ,  #
+                  'Rdb_off'              : 0                                                 ,  #
                   'vf_body_diode'        : 2.3                                               ,  # forward voltage diode from body diode curve @25C & Vgs=0V (V)
                   'BD_If'                : 0                                                 ,  #
                   'T_reverse'            : 0                                                 ,  #
@@ -76,9 +75,6 @@ PFC_SW      =  {
                   'Lso_Iinit'            : 0                                                 ,  #
                   'nPara'                : 0                                                 ,  #
                   'T_init'               : 25                                                ,  #
-                  'JC_cth'               : 0                                                 ,  #
-                  'CA_cth'               : 0                                                 ,  #
-                  'Qoss'                 : 0                                                 ,   #                                                                              # Thermal parameters
                   'Tamb'                 : 25                                                ,  # ambient temperature (C)
                   't_init'               : 25                                                ,  # initial junction temperature (C)
                   'rth_ch'               : 0.5                                               ,  # thermal resistance case-heatsink (grease) (K/W)
@@ -87,14 +83,14 @@ PFC_SW      =  {
 PFC         =  {
                   'R1'              : 4700/4                                                    ,  # [Ohm] - sensing resistor
                   'R2'              : 160/24                                                    ,  # [Ohm] - sensing resistor
-                  'fs'              :  100e3                                                    ,  #  Switching frequency in Hz.
-                  'C_Ts'            :  1/100e3                                                  ,  #  Sample time in s.
-                  'C_Tp'            :  1*(1/100e3)                                              ,  #
+                  'fs'              :  70e3                                                    ,  #  Switching frequency in Hz.
+                  'C_Ts'            :  1/70e3                                                  ,  #  Sample time in s.
+                  'C_Tp'            :  1*(1/70e3)                                              ,  #
                   'C_K1'            :  1                                                        ,  #  Sample time in s.
                   'C_Tn'            :  100e-6                                                   ,  #  Sample time in s.
                   'C_Ti'            :  2*(1/1)*(1*1/PFC_glb['CF'])                              ,  #  Sample time in s.
                   'C_Kp'            :  (PFC_glb['L'] /1)/(2*(1/1)*(1*1/PFC_glb['CF']))          ,  #  Sample time in s.
-                  'C_Ki'            :  1/ (2*(1/1)*(1*1/100e3))                                 ,  #  Sample time in s.
+                  'C_Ki'            :  1/ (2*(1/1)*(1*1/70e3))                                 ,  #  Sample time in s.
                   'V_Ts'            :  1/PFC_glb['VF']                                          ,  #  Sample time in s.
                   'V_Tp'            :  1*(1/PFC_glb['VF'])                                      ,  # Equivalent delay (PWM delay + calculation delay) in s
                   'V_T2'            :  PFC_glb['Cout']['Cap_s']                                          ,  #  Sample time in s.
@@ -110,8 +106,8 @@ PFC         =  {
 
                }		
 DCLink      =  {
-                  'Config'		      : 6                                  ,  #  DCLink Cap model Config.
-                  'Cdc'    		   : 100e-3                                ,  #  DCLink Cap Capacitance.
+                  'Config'		      : 1                                  ,  #  DCLink Cap model Config.
+                  'Cdc'    		   : 500e-3                                ,  #  DCLink Cap Capacitance.
                   'ESR'		         : 19e-6                                 ,  #  Series Resistance.
                   'ESL'		         : 0                                 ,  #  Series Inductance.
                   'nPara'		      : 1                                 ,  #  Number of Parallel Units.
@@ -121,10 +117,10 @@ DCLink      =  {
 
                }
 Load      =  {
-                  'Config'		      :4                                    ,  #  DCLink Cap model Config.
-                  'CL'    		   : 0                                ,  #  DCLink Cap Capacitance.
-                  'RL'		         :100                                ,  #  Series Resistance.
-                  'LL'		         : 0                                ,  #  Series Inductance.
+                  'Config'		      : 4                                    ,  #  DCLink Cap model Config.
+                  'CL'    		      : 0                                ,  #  DCLink Cap Capacitance.
+                  'RL'		         : (400*400)/7000                                ,  #  Series Resistance.
+                  'LL'		         : 1e-9                                ,  #  Series Inductance.
                   # 'nPara'		      : 1                                ,  #  Number of Parallel Units.
                   # 'nSeri'		      : 1                                 ,  #  Number of Units in Series.
                   'Vinit'		      :0                                ,  #  DCLink Cap Initial Voltage.
@@ -211,7 +207,7 @@ ModelVars   =  {  'ToFile'          :  ToFile                                   
                   #? LLC Parameters :-------------------------------------- 
                   'LLC'          :  LLC                                                                                 ,  #  DC Link Capacitor dictionary.
                   #? Load Parameters :-------------------------------------- 
-                  'Vout'            :  800                                                                                       ,  #  Output voltage in V.
+                  'Vout'            :  400                                                                                       ,  #  Output voltage in V.
                   'Load'           :  Load                                                                                         #  Load resistance in Ω.
                }	
 #?----------------------------------------------------------------------------------------------------------------------------------------			

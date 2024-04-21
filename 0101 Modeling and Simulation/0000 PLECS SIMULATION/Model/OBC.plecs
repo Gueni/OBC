@@ -121,20 +121,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 26; 1536, 831]
-      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACo/wCAAAAA/sAAAAQAFoAbwBvA"
+      Location      [0, 26; 1536, 850]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACu/wCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAqMAAAB+AP///wAAAAMAAAeAAAABJ/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAKjAAAA"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAArsAAAB+AP///wAAAAMAAAeAAAABJ/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAK7AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"gAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAAAFAAAAbQAAAAQAAABtAAAACQAAAG0AAAAIAA"
-"AAbQAAAAMAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACZAAA"
-"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
-"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AbnAAAAAQAAAAAAAAPoAAAAACs="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHAAAAC"
+"AAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAAAEAAAAbQAAAAUAAABtAAAAAwAAAG0AAAeAAA"
+"AACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAJkAAAABAAAAAAAAAG0AAAABAAA"
+"AAAAAAG4AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAB"
+"AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABgwAAAABAAAAAAAAA+gAA"
+"AAAKw=="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -464,20 +464,19 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 26; 1536, 823]
+      Location      [0, 26; 1536, 803]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACrPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAqwAAAB+AP///wAAAAMAAAeAAAAAwfw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAL/AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALmAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"gAAAGQAAAABAAAAZAAAAAcAAABkAAAABgAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAA"
-"AAZAAAAAMAAABkAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACiAAA"
-"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
-"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AbeAAAAAQAAAAAAAAPoAAAAACs="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAMAAAAGAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABAAAAGQAAAAFAAAAZAAAAAMAAABkAAAHgAAAAAsBAAABAA"
+"AAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACiAAAAAQAAAAAAAABkAAAAAQAAAAAAAABkAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAABk"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAWyAAAAAQAAAAAAAAPoAAAAACs="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "=="
@@ -664,29 +663,11 @@ Plecs {
       }
     }
     Component {
-      Type          Ground
-      Name          "Ground2"
-      Show          off
-      Position      [545, 165]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-    }
-    Component {
-      Type          Ground
-      Name          "Ground3"
-      Show          off
-      Position      [545, 330]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-    }
-    Component {
       Type          Reference
       SrcComponent  "library/Power Components/Load"
       Name          "Load"
       Show          on
-      Position      [805, 160]
+      Position      [525, 160]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -791,144 +772,6 @@ Plecs {
             Parameter {
               Variable      "Tag"
               Value         "Il_PFC"
-              Show          off
-            }
-            Parameter {
-              Variable      "Visibility"
-              Value         "1"
-              Show          off
-            }
-          }
-          Component {
-            Type          Goto
-            Name          "Goto"
-            Show          off
-            Position      [645, 280]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "Tag"
-              Value         "PWM"
-              Show          off
-            }
-            Parameter {
-              Variable      "Visibility"
-              Value         "1"
-              Show          off
-            }
-          }
-          Component {
-            Type          Goto
-            Name          "Goto2"
-            Show          off
-            Position      [645, 360]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "Tag"
-              Value         "Freq"
-              Show          off
-            }
-            Parameter {
-              Variable      "Visibility"
-              Value         "1"
-              Show          off
-            }
-          }
-          Component {
-            Type          Scope
-            Name          "Frequency"
-            Show          on
-            Position      [655, 395]
-            Direction     up
-            Flipped       off
-            LabelPosition south
-            Location      [0, 26; 1536, 803]
-            State         "AAAA/wAAAAD9AAAAAgAAAAEAAACFAAAAm/wCAAAAA/sAAAAQAFo"
-"AbwBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIA"
-"AANKAAACMwAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAJsAAAB+AP///wAAAAMAAAH4A"
-"AAAWPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAfgAAABfAP///wAAB4AAAA"
-"OsAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8"
-"AAAAAAAAAAA=="
-            SavedViews    "AAAAAgAAAAA="
-            HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAA"
-"JAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQA"
-"AAAJAAAAZAAAAAYAAABkAAAArgAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAA"
-"ACDAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAA"
-"AAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQA"
-"AAAAAAAArAAAAAQAAAAAAAAPoAAAAACs="
-            PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-            Axes          "1"
-            TimeRange     "0"
-            ScrollingMode "1"
-            SingleTimeAxis "1"
-            Open          "0"
-            Ts            "-1"
-            SampleLimit   "0"
-            XAxisLabel    "Time / s"
-            ShowLegend    "1"
-            Axis {
-              Name          "PWM Frequency"
-              AutoScale     1
-              MinValue      0
-              MaxValue      1
-              Signals       {}
-              SignalTypes   [ ]
-              AxisLabel     "Frequency / kHz"
-              Untangle      0
-              KeepBaseline  off
-              BaselineValue 0
-            }
-            Fourier {
-              SingleXAxis       on
-              AxisLabel         "Frequency"
-              Scaling           0
-              PhaseDisplay      0
-              ShowFourierLegend off
-              Axis {
-                Name          ""
-                AutoScale     1
-                MinValue      0
-                MaxValue      1
-                Signals       {}
-                Untangle      0
-                KeepBaseline  off
-                BaselineValue 0
-              }
-            }
-          }
-          Component {
-            Type          Goto
-            Name          "Goto3"
-            Show          off
-            Position      [645, 310]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "Tag"
-              Value         "HS1"
-              Show          off
-            }
-            Parameter {
-              Variable      "Visibility"
-              Value         "1"
-              Show          off
-            }
-          }
-          Component {
-            Type          Goto
-            Name          "Goto4"
-            Show          off
-            Position      [645, 340]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "Tag"
-              Value         "HS2"
               Show          off
             }
             Parameter {
@@ -1060,52 +903,6 @@ Plecs {
               Show          off
             }
           }
-          Component {
-            Type          Reference
-            SrcComponent  "library/Contollers/LLC Controller"
-            Name          "LLC Controller"
-            Show          on
-            Position      [540, 320]
-            Direction     up
-            Flipped       off
-            LabelPosition none
-            Frame         [-60, -80; 60, 80]
-            Parameter {
-              Variable      "LLC"
-              Value         "LLC"
-              Show          off
-            }
-            Terminal {
-              Type          Input
-              Position      [-60, -40]
-              Direction     left
-            }
-            Terminal {
-              Type          Output
-              Position      [64, -40]
-              Direction     right
-            }
-            Terminal {
-              Type          Output
-              Position      [64, -10]
-              Direction     right
-            }
-            Terminal {
-              Type          Output
-              Position      [64, 20]
-              Direction     right
-            }
-            Terminal {
-              Type          Output
-              Position      [64, 40]
-              Direction     right
-            }
-            Terminal {
-              Type          Input
-              Position      [-60, 40]
-              Direction     left
-            }
-          }
           Connection {
             Type          Signal
             SrcComponent  "From5"
@@ -1133,42 +930,6 @@ Plecs {
             SrcTerminal   2
             DstComponent  "Goto5"
             DstTerminal   1
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "LLC Controller"
-            SrcTerminal   2
-            DstComponent  "Goto"
-            DstTerminal   1
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "LLC Controller"
-            SrcTerminal   3
-            DstComponent  "Goto3"
-            DstTerminal   1
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "LLC Controller"
-            SrcTerminal   4
-            DstComponent  "Goto4"
-            DstTerminal   1
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "LLC Controller"
-            SrcTerminal   5
-            Points        [615, 360]
-            Branch {
-              DstComponent  "Goto2"
-              DstTerminal   1
-            }
-            Branch {
-              Points        [615, 395]
-              DstComponent  "Frequency"
-              DstTerminal   1
-            }
           }
           Connection {
             Type          Signal
@@ -1472,163 +1233,10 @@ Plecs {
       }
     }
     Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/LLC"
-      Name          "LLC1"
-      Show          on
-      Position      [545, 90]
-      Direction     up
-      Flipped       off
-      LabelPosition north
-      Frame         [-45, -55; 45, 55]
-      Parameter {
-        Variable      "LLC"
-        Value         "LLC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "2"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -35]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 40]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 40]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -35]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          Input
-        Position      [-45, 0]
-        Direction     left
-      }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/DC FILTER"
-      Name          "DC FILTER"
-      Show          on
-      Position      [720, 160]
-      Direction     up
-      Flipped       off
-      LabelPosition north
-      Frame         [-45, -55; 45, 55]
-      Parameter {
-        Variable      "param"
-        Value         "LLC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "2"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -35]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 40]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 40]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -35]
-        Direction     left
-      }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/LLC"
-      Name          "LLC2"
-      Show          on
-      Position      [545, 260]
-      Direction     up
-      Flipped       off
-      LabelPosition north
-      Frame         [-45, -55; 45, 55]
-      Parameter {
-        Variable      "LLC"
-        Value         "LLC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "2"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -35]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 40]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 40]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -35]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          Input
-        Position      [-45, 0]
-        Direction     left
-      }
-    }
-    Component {
       Type          ThermalResistor
       Name          "Rth\nH-A"
       Show          on
-      Position      [555, 395]
+      Position      [345, 275]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -1642,7 +1250,7 @@ Plecs {
       Type          ConstantTemperatureGnd
       Name          "Ambient"
       Show          on
-      Position      [555, 430]
+      Position      [345, 310]
       Direction     up
       Flipped       off
       LabelPosition west
@@ -10265,30 +9873,16 @@ Plecs {
           }
           Connection {
             Type          Wire
-            SrcComponent  "FET1"
-            SrcTerminal   3
-            Points        [695, 265]
+            SrcComponent  "L4"
+            SrcTerminal   2
+            Points        [695, 325]
             Branch {
-              Points        [695, 325]
-              Branch {
-                DstComponent  "L4"
-                DstTerminal   2
-              }
-              Branch {
-                DstComponent  "FET2"
-                DstTerminal   2
-              }
+              DstComponent  "FET1"
+              DstTerminal   3
             }
             Branch {
-              Points        [775, 265]
-              Branch {
-                DstComponent  "Cout1"
-                DstTerminal   1
-              }
-              Branch {
-                DstComponent  "Cout2"
-                DstTerminal   2
-              }
+              DstComponent  "FET2"
+              DstTerminal   2
             }
           }
           Connection {
@@ -10397,6 +9991,13 @@ Plecs {
               DstComponent  "VAC+"
               DstTerminal   1
             }
+          }
+          Connection {
+            Type          Wire
+            SrcComponent  "Cout1"
+            SrcTerminal   1
+            DstComponent  "Cout2"
+            DstTerminal   2
           }
         }
         Name          "Pass"
@@ -10725,6 +10326,83 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe3"
+      Show          off
+      Position      [690, 440]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "FET"
+        Path          "PFC/1PH PFC"
+        Signals       {"Device voltage", "Device current", "Device junction te"
+"mperature", "Device case temperature", "Device switching loss", "Device condu"
+"ction loss"}
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope1"
+      Show          on
+      Position      [750, 435]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 827]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAAA4/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALiAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHAAAAC"
+"AAAAH0AAAAJAAAAfQAAAAYAAAB9AAAABwAAAH0AAAAEAAAAfQAAAAUAAAB9AAAAAwAAAH0AAAeAAA"
+"AACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAWQAAAABAAAAAAAAAH0AAAABAAA"
+"AAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAB"
+"AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABSIAAAABAAAAAAAAA+gAA"
+"AAAKw=="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "2"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "Ground"
@@ -10814,13 +10492,6 @@ Plecs {
       DstTerminal   5
     }
     Connection {
-      Type          Wire
-      SrcComponent  "Ground2"
-      SrcTerminal   1
-      DstComponent  "LLC1"
-      DstTerminal   5
-    }
-    Connection {
       Type          Signal
       SrcComponent  "Demux3"
       SrcTerminal   3
@@ -10847,36 +10518,6 @@ Plecs {
       SrcTerminal   2
       DstComponent  "PFC"
       DstTerminal   2
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC2"
-      SrcTerminal   4
-      Points        [490, 225; 490, 125]
-      Branch {
-        Points        [490, 55]
-        DstComponent  "LLC1"
-        DstTerminal   4
-      }
-      Branch {
-        DstComponent  "DCLink"
-        DstTerminal   3
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC1"
-      SrcTerminal   3
-      Points        [485, 130; 485, 200]
-      Branch {
-        Points        [485, 300]
-        DstComponent  "LLC2"
-        DstTerminal   3
-      }
-      Branch {
-        DstComponent  "DCLink"
-        DstTerminal   4
-      }
     }
     Connection {
       Type          Signal
@@ -10901,57 +10542,6 @@ Plecs {
       }
     }
     Connection {
-      Type          Wire
-      SrcComponent  "DC FILTER"
-      SrcTerminal   1
-      DstComponent  "Load"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "DC FILTER"
-      SrcTerminal   2
-      DstComponent  "Load"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC2"
-      SrcTerminal   1
-      Points        [650, 225; 650, 125]
-      Branch {
-        Points        [650, 55]
-        DstComponent  "LLC1"
-        DstTerminal   1
-      }
-      Branch {
-        DstComponent  "DC FILTER"
-        DstTerminal   4
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC1"
-      SrcTerminal   2
-      Points        [655, 130; 655, 200]
-      Branch {
-        Points        [655, 300]
-        DstComponent  "LLC2"
-        DstTerminal   2
-      }
-      Branch {
-        DstComponent  "DC FILTER"
-        DstTerminal   3
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC2"
-      SrcTerminal   5
-      DstComponent  "Ground3"
-      DstTerminal   1
-    }
-    Connection {
       Type          HeatPipe
       SrcComponent  "Ambient"
       SrcTerminal   1
@@ -10960,24 +10550,33 @@ Plecs {
     }
     Connection {
       Type          HeatPipe
-      SrcComponent  "LLC2"
-      SrcTerminal   6
-      Points        [555, 360]
-      Branch {
-        Points        [600, 360; 600, 160; 555, 160]
-        DstComponent  "LLC1"
-        DstTerminal   6
-      }
-      Branch {
-        DstComponent  "Rth\nH-A"
-        DstTerminal   1
-      }
-      Branch {
-        Points        [345, 360]
-        DstComponent  "PFC"
-        DstTerminal   6
-      }
+      SrcComponent  "Rth\nH-A"
+      SrcTerminal   1
+      DstComponent  "PFC"
+      DstTerminal   6
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Load"
+      SrcTerminal   1
+      DstComponent  "DCLink"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Load"
+      SrcTerminal   2
+      DstComponent  "DCLink"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe3"
+      SrcTerminal   1
+      Points        [720, 440]
+      DstComponent  "Scope1"
+      DstTerminal   1
     }
   }
 }
-DemoSignature "jnnrVVVCaMvBIVeIORDtPjr8BKCbOSCWaDUj6g2hCWo="
+DemoSignature "lSENxYrHEE3Moo/1U7PjqFiWSKL5VwZMQVx4m5D3DwI="
