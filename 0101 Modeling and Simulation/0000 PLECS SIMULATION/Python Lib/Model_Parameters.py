@@ -2,10 +2,10 @@
 import math
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
-                  'tSim'	    	   : 10                                ,  #  # [s] - simulation time
-                  'maxStep'		   : 1e-3                                 ,  #  maximum step size
-                  'idx'             : 0         ,
-                  'rel_tol'		   : 1e-3                                    #  relative tolerance
+                  'tSim'	    	   : 10                                                        ,  #  simulation time
+                  'maxStep'		   : 1e-3                                                      ,  #  maximum step size
+                  'idx'             : 0                                                         ,  #
+                  'rel_tol'		   : 1e-3                                                         #  relative tolerance
                }
 ToFile      =  {   
                   'ToFile_path'		: (f"D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Results_{Sim_param['idx']}.csv").replace("\\", "/")                                ,  #  Data CVS file path.
@@ -15,36 +15,98 @@ ToFile      =  {
                }  
 #?----------------------------------------------------------------------------------------------------------------------------------------	
 scopes      =  {
-				      'Scope'	    	   : "OBC/Scope" ,                                 
+				      'Scope'	    	   : "OBC/Scope"                                               ,  #                                 
                }	
 PFC_glb     =  {
-                  'L'               :  100e-6                                                                                    ,  #  Boost indutance in H.
-                  'Rl'              :  1                                                                                         ,  #  DCR of inductor in Ω.
-                  'Cout'            :  500e-6                                                                                    ,  #  Output Capacitance in F.
-                  'CF'              :  100e3                                                                                    ,  #  Current control loop frequency in Hz.
-                  'VF'              :  500                                                                                       #  Voltage control loop frequency in Hz.
+                  'L'               :  100e-6                                                   ,  #  Boost indutance in H.
+                  'Rl'              :  1                                                        ,  #  DCR of inductor in Ω.
+                  'Cout'               :  {
+                                             'Config'		      : 6          ,  #  
+                                             'Cap_s'    		   : 500e-6     ,  #  
+                                             'Resr_s'		         : 19e-6      ,  #  
+                                             'Lesl_s'		         : 0          ,  #  
+                                             'Npara'		      : 1          ,  #  
+                                             'Nseri'		      : 1          ,  #  
+                                             'Vinit'		      : 0          ,  #  
+                                             'Iinit'		      : 0             
+                                          }                                                                        ,  #  Output Capacitance in F.
+                  'CF'              :  100e3                                                    ,  #  Current control loop frequency in Hz.
+                  'VF'              :  500                                                         #  Voltage control loop frequency in Hz.
+               }
 
+PFC_SW      =  {
+                  'Config'               : 1                                                 ,  # 
+                  'therm_mosfet'         : 'file:C3M0021120K'                                ,  # MOSFET thermal description
+                  'Rgon'                 : 2.5                                               ,  # external turn-on gate resistance (ohms)
+                  'Rgoff'                : 2.5                                               ,  # external turn-off gate resistance (ohms)
+                  'Vdsmax'               : 1200                                              ,  # max device drain-source voltage rating (V)
+                  'Idsmax'               : 100                                               ,  # max drain current rating @ 25 C(A)
+                  'Tjmax'                : 175                                               ,  # max operating junction temperature (C)                        
+                  'Tjmin'                : -40                                               ,  # min operating junction temperature (C)                       
+                  'TcDerating'           : [-55,27,45,70,95,108,120,132,145,158,170,175]     ,  # Temperature derating curve (C)                       
+                  'IdsMaxDerated'        : [100,100,95,86,77, 71, 65, 58, 49, 37, 20,  0]    ,  # Current derating curve (A)                     
+                  'ron_mosfet'           : 0.021                                             ,  # MOSFET on-resistance  (ohms)
+                  'Rds_off'              : 100e-3                                            ,  #
+                  'Iinit'                : 100e-3                                            ,  #
+                  'Coss'                 : {                                                    #
+                                          'Config'		      : 6                              ,  #  
+                                          'Cap_s'    		   : 100e-3                         ,  #  
+                                          'Resr_s'		      : 19e-6                          ,  #  
+                                          'Lesl_s'		      : 0                              ,  #  
+                                          'Npara'		      : 1                              ,  #  
+                                          'Nseri'		      : 1                              ,  #  
+                                          'Vinit'		      : 0                              ,  #  
+                                          'Iinit'		      : 0             
+                                          }                                                  ,
+                  'vblock'               : 0                                                 ,  #
+                  'Idrain'               : 0                                                 ,  #
+                  'Trise'                : 0                                                 ,  #
+                  'Tfall'                : 0                                                 ,  #
+                  'therm_body_diode'     : 'file:C3M0021120K_bodydiode'                      ,  # body diode thermal description
+                  'custom_var'           : []                                                ,  #
+                  'ron_body_diode'       : 0.033                                             ,  # diode on-resistance from body diode curve @25C & Vgs=0V (ohms)
+                  'Rdb_off'              : 100e-3                                            ,  #
+                  'vf_body_diode'        : 2.3                                               ,  # forward voltage diode from body diode curve @25C & Vgs=0V (V)
+                  'BD_If'                : 0                                                 ,  #
+                  'T_reverse'            : 0                                                 ,  #
+                  'Q_reverse'            : 0                                                 ,  #            
+                  'Ldr'                  : 0                                                 ,  #
+                  'Ldr_Iinit'            : 0                                                 ,  #
+                  'Lso'                  : 0                                                 ,  #
+                  'Lso_Iinit'            : 0                                                 ,  #
+                  'nPara'                : 0                                                 ,  #
+                  'T_init'               : 25                                                ,  #
+                  'JC_cth'               : 0                                                 ,  #
+                  'CA_cth'               : 0                                                 ,  #
+                  'Qoss'                 : 0                                                 ,   #                                                                              # Thermal parameters
+                  'Tamb'                 : 25                                                ,  # ambient temperature (C)
+                  't_init'               : 25                                                ,  # initial junction temperature (C)
+                  'rth_ch'               : 0.5                                               ,  # thermal resistance case-heatsink (grease) (K/W)
+                  'Rth'                  : 0.34 					    	                           # thermal resistance heatsink-ambient (K/W)
                }
 PFC         =  {
-      ## Sensing
-                  'R1'               : 4700/4                   ,           # [Ohm] - sensing resistor
-                  'R2'               : 160/24                   ,           # [Ohm] - sensing resistor
-                  'fs'              :  100e3                                                                                     ,  #  Switching frequency in Hz.
-                  'C_Ts'            :  1/100e3                                                                           ,  #  Sample time in s.
-                  'C_Tp'            :  1*(1/100e3)                                                                       ,  #
-                  'C_K1'            :  1                                                                           ,  #  Sample time in s.
-                  'C_Tn'            :  100e-6                                                                ,  #  Sample time in s.
-                  'C_Ti'            :  2*(1/1)*(1*1/PFC_glb['CF'])                                                   ,  #  Sample time in s.
-                  'C_Kp'            :  (PFC_glb['L'] /1)/(2*(1/1)*(1*1/PFC_glb['CF']))                   ,  #  Sample time in s.
-                  'C_Ki'            :  1/ (2*(1/1)*(1*1/100e3))                                              ,  #  Sample time in s.
-                  'V_Ts'            :  1/PFC_glb['VF']                                                                           ,  #  Sample time in s.
-                  'V_Tp'            :  1*(1/PFC_glb['VF'])                                                                       ,  # Equivalent delay (PWM delay + calculation delay) in s
-                  'V_T2'            :  PFC_glb['Cout']                                                                           ,  #  Sample time in s.
-                  'V_Ti'            :  8/PFC_glb['Cout']*math.pow((1*(1/PFC_glb['VF'])), 2)                                      ,  #  Sample time in s.
-                  'V_Tn'            :  4*( 1*(1/PFC_glb['VF']))                                                                  ,  #  Sample time in s.
-                  'V_Kp'            :  (4*( 1*(1/PFC_glb['VF'])) )/(8/PFC_glb['Cout']*math.pow((1*(1/PFC_glb['VF'])), 2))        ,  #  Sample time in s.
-                  'V_Ki'            :  1/(8/PFC_glb['Cout']*math.pow((1*(1/PFC_glb['VF'])), 2))                                  ,  #  Sample time in s.
-
+                  'R1'              : 4700/4                                                    ,  # [Ohm] - sensing resistor
+                  'R2'              : 160/24                                                    ,  # [Ohm] - sensing resistor
+                  'fs'              :  100e3                                                    ,  #  Switching frequency in Hz.
+                  'C_Ts'            :  1/100e3                                                  ,  #  Sample time in s.
+                  'C_Tp'            :  1*(1/100e3)                                              ,  #
+                  'C_K1'            :  1                                                        ,  #  Sample time in s.
+                  'C_Tn'            :  100e-6                                                   ,  #  Sample time in s.
+                  'C_Ti'            :  2*(1/1)*(1*1/PFC_glb['CF'])                              ,  #  Sample time in s.
+                  'C_Kp'            :  (PFC_glb['L'] /1)/(2*(1/1)*(1*1/PFC_glb['CF']))          ,  #  Sample time in s.
+                  'C_Ki'            :  1/ (2*(1/1)*(1*1/100e3))                                 ,  #  Sample time in s.
+                  'V_Ts'            :  1/PFC_glb['VF']                                          ,  #  Sample time in s.
+                  'V_Tp'            :  1*(1/PFC_glb['VF'])                                      ,  # Equivalent delay (PWM delay + calculation delay) in s
+                  'V_T2'            :  PFC_glb['Cout']['Cap_s']                                          ,  #  Sample time in s.
+                  'V_Ti'            :  8/PFC_glb['Cout']['Cap_s']*math.pow((1*(1/PFC_glb['VF'])), 2)     ,  #  Sample time in s.
+                  'V_Tn'            :  4*( 1*(1/PFC_glb['VF']))                                 ,  #  Sample time in s.
+                  'V_Kp'            :  (4*( 1*(1/PFC_glb['VF'])) )/(8/PFC_glb['Cout']['Cap_s']
+                                                *math.pow((1*(1/PFC_glb['VF'])), 2))            ,  #  Sample time in s.
+                  'V_Ki'            :  1/(8/PFC_glb['Cout']['Cap_s']*math.pow((1*(1/PFC_glb['VF'])), 2)) ,  #  Sample time in s.
+                  'HS1'             :  PFC_SW                                                   ,  #   
+                  'HS2'             :  PFC_SW                                                   ,  #   
+                  'LS1'             :  PFC_SW                                                   ,  #   
+                  'LS2'             :  PFC_SW                                                      #   
 
                }		
 DCLink      =  {
@@ -72,7 +134,7 @@ LLC       =  {
     ## Sensing
                   'R1'               : 4700/4                   ,           # [Ohm] - sensing resistor
                   'R2'               : 160/24                   ,           # [Ohm] - sensing resistor
-  'V_DC'          : 400                   ,            # [V] - DC voltage source
+                  'V_DC'          : 400                   ,            # [V] - DC voltage source
                   'n_prim'          : 10                   ,            # [] - primary side turn number
                   'n_sndry'         : 2                   ,           # [] - secondary side turn number
                   ## Primary side

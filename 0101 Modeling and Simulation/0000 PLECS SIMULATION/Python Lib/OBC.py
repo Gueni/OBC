@@ -1,6 +1,6 @@
 
 #?----------------------------------------------------------------------------------------------------------------------------------------
-import pyplecs as plc
+import plecs as plc
 import Model_Parameters as mdl
 import os  
 import numpy as np 
@@ -55,7 +55,7 @@ for i in range(len(L_CMC)):
     # plcsim.HoldAllTraces(scopedict=mdlvar['scopes'])
     # plcsim.saveAllTraces(mdlvar['scopes'],save_path)
 #loop over csv files 
-process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],open=True)
+process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],open=False)
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 
