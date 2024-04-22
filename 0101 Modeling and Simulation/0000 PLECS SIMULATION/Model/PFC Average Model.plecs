@@ -23,18 +23,17 @@ Plecs {
   MaxConsecutiveZCs "1000"
   AlgebraicLoopWithStateMachineMsg "3"
   AssertionAction "1"
-  InitializationCommands "\nV_ac   \t= 230 ;\nF_grid \t= 50  ;\nLdm \t\t= 0\t;"
-"\nCd \t\t= struct(\n\t\t\t\t\t'Config'\t\t=\t1,\n\t\t\t\t\t'Cap_s'\t\t= \t0,"
-"\n\t\t\t\t\t'Resr_s'\t\t=\t0,\n\t\t\t\t\t'Npara' \t\t=\t0,\n\t\t\t\t\t'Nseri'"
-"\t  \t=\t0,\n\t\t\t\t\t'Lesl_s'  \t=\t0,\n\t\t\t\t\t'Vinit' \t\t=\t0,\n\t\t\t"
-"\t\t'Iinit'\t \t=\t0\n);\nRd \t= 0;\nCe \t= struct(\n\t\t\t\t\t'Config'\t\t="
-"\t1,\n\t\t\t\t\t'Cap_s'\t\t= \t0,\n\t\t\t\t\t'Resr_s'\t\t=\t0,\n\t\t\t\t\t'Np"
-"ara' \t\t=\t0,\n\t\t\t\t\t'Nseri'\t  \t=\t0,\n\t\t\t\t\t'Lesl_s'  \t=\t0,\n\t"
-"\t\t\t\t'Vinit' \t\t=\t0,\n\t\t\t\t\t'Iinit'\t \t=\t0\n);\nL \t\t= 0;\nRl \t="
-" 0;\nV_dc \t= 450;\nI_dc \t= 0;\nRo \t= 0;\nCo \t= struct(\n\t\t\t\t\t'Config"
-"'\t\t=\t1,\n\t\t\t\t\t'Cap_s'\t\t= \t0,\n\t\t\t\t\t'Resr_s'\t\t=\t0,\n\t\t\t"
-"\t\t'Npara' \t\t=\t0,\n\t\t\t\t\t'Nseri'\t  \t=\t0,\n\t\t\t\t\t'Lesl_s'  \t="
-"\t0,\n\t\t\t\t\t'Vinit' \t\t=\t0,\n\t\t\t\t\t'Iinit'\t \t=\t0\n);\n"
+  InitializationCommands "\nV_ac   \t= 230 ;\nF_ac  \t= 50  ;\nLdm \t\t= 1e-12"
+"\t;\nCd \t\t= struct(\n\t\t\t\t\t'Cap_s'\t\t, \t1e-3,\n\t\t\t\t\t'Resr_s'\t\t"
+",\t0,\n\t\t\t\t\t'Npara' \t\t,\t1,\n\t\t\t\t\t'Nseri'\t  \t,\t1,\n\t\t\t\t\t'"
+"Lesl_s'  \t,\t0,\n\t\t\t\t\t'Vinit' \t\t,\t0,\n\t\t\t\t\t'Iinit'\t \t,\t0\n);"
+"\nRd \t= 0;\nCe \t= struct(\n\t\t\t\t\t'Cap_s'\t\t, \t1e-3,\n\t\t\t\t\t'Resr_"
+"s'\t\t,\t0,\n\t\t\t\t\t'Npara' \t\t,\t1,\n\t\t\t\t\t'Nseri'\t  \t,\t1,\n\t\t"
+"\t\t\t'Lesl_s'  \t,\t0,\n\t\t\t\t\t'Vinit' \t\t,\t0,\n\t\t\t\t\t'Iinit'\t \t,"
+"\t0\n);\nL \t\t= 1e-6;\nRl \t= 1e-2;\nV_dc \t= 400;\nI_dc \t= 18;\nRo \t= 100"
+";\nCo \t= struct(\n\t\t\t\t\t'Cap_s'\t\t, \t1e-3,\n\t\t\t\t\t'Resr_s'\t\t,\t0"
+",\n\t\t\t\t\t'Npara' \t\t,\t1,\n\t\t\t\t\t'Nseri'\t  \t,\t1,\n\t\t\t\t\t'Lesl"
+"_s'  \t,\t0,\n\t\t\t\t\t'Vinit' \t\t,\t0,\n\t\t\t\t\t'Iinit'\t \t,\t0\n);\n"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -121,37 +120,6 @@ Plecs {
       }
     }
     Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/Capacitor"
-      Name          "Cd"
-      Show          on
-      Position      [275, 180]
-      Direction     left
-      Flipped       off
-      LabelPosition west
-      Frame         [-10, -20; 10, 20]
-      Parameter {
-        Variable      "Cap_dict"
-        Value         "Cd"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "Cd.Config"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [-25, 0]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [25, 0]
-        Direction     right
-      }
-    }
-    Component {
       Type          Resistor
       Name          "Rd"
       Show          on
@@ -228,22 +196,22 @@ Plecs {
     }
     Component {
       Type          Reference
-      SrcComponent  "library/Power Components/Capacitor"
-      Name          "Co"
+      SrcComponent  "library/Passives/Capacitor"
+      Name          "Cd"
       Show          on
-      Position      [580, 200]
+      Position      [275, 180]
       Direction     left
       Flipped       off
-      LabelPosition east
+      LabelPosition west
       Frame         [-10, -20; 10, 20]
       Parameter {
         Variable      "Cap_dict"
-        Value         "Co"
+        Value         "Cd"
         Show          off
       }
       Parameter {
         Variable      "Configuration"
-        Value         "Co.Config"
+        Value         "1"
         Show          off
       }
       Terminal {
@@ -259,7 +227,7 @@ Plecs {
     }
     Component {
       Type          Reference
-      SrcComponent  "library/Power Components/Capacitor"
+      SrcComponent  "library/Passives/Capacitor"
       Name          "Ce"
       Show          on
       Position      [315, 200]
@@ -274,7 +242,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "Ce.Config"
+        Value         "1"
         Show          off
       }
       Terminal {
@@ -288,19 +256,147 @@ Plecs {
         Direction     right
       }
     }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Passives/Capacitor"
+      Name          "Co"
+      Show          on
+      Position      [580, 200]
+      Direction     left
+      Flipped       off
+      LabelPosition east
+      Frame         [-10, -20; 10, 20]
+      Parameter {
+        Variable      "Cap_dict"
+        Value         "Co"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "1"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-25, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [25, 0]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [805, 245]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 23; 1536, 796]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAABjfw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAIVAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAIAAAAFAAAAB"
+"QAAAH0AAAAEAAAAfQAAAAYAAAB9AAAACQAAAH0AAAADAAAAfQAAB4AAAAALAQAAAQAAAAAAAAAAAA"
+"AAAH3/////AAAAgQAAAAAAAAALAAABeAAAAAEAAAAAAAAAfQAAAAEAAAAAAAAAfQAAAAEAAAAAAAA"
+"AAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAfQAAAAEAAAAA"
+"AAAAfQAAAAEAAAAAAAAAAAAAAAEAAAAAAAAEFAAAAAEAAAAAAAAD6AAAAAAr"
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          on
+      Position      [720, 250]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "V_ac"
+        Path          ""
+        Signals       {"Source voltage", "Source current", "Source power"}
+      }
+      Probe {
+        Component     "Ldm"
+        Path          ""
+        Signals       {"Inductor current", "Inductor voltage"}
+      }
+      Probe {
+        Component     "Ce"
+        Path          ""
+        Signals       {"Capacitor Voltage", "Capacitor Current"}
+      }
+      Probe {
+        Component     "L"
+        Path          ""
+        Signals       {"Inductor current", "Inductor voltage"}
+      }
+      Probe {
+        Component     "V_dc"
+        Path          ""
+        Signals       {"Source voltage", "Source current", "Source power"}
+      }
+      Probe {
+        Component     "I_dc"
+        Path          ""
+        Signals       {"Source current", "Source voltage", "Source power"}
+      }
+      Probe {
+        Component     "Co"
+        Path          ""
+        Signals       {"Capacitor Voltage", "Capacitor Current"}
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "V_ac"
       SrcTerminal   1
       Points        [155, 135]
       DstComponent  "Ldm"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "Rd"
-      SrcTerminal   2
-      DstComponent  "Cd"
       DstTerminal   1
     }
     Connection {
@@ -393,6 +489,21 @@ Plecs {
         DstTerminal   1
       }
     }
+    Connection {
+      Type          Wire
+      SrcComponent  "Cd"
+      SrcTerminal   1
+      DstComponent  "Rd"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      Points        [760, 250; 760, 245]
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
   }
 }
-DemoSignature "QDfEyhiFJ0vydpPidHXfz2jllOxOPsCC4KKjYGButV4="
+DemoSignature "K57HDIFGCgAKgFi0Mj+nm2+h+z5AUBMnLF35AHb762Y="
