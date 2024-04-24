@@ -1,5 +1,12 @@
 
 #?----------------------------------------------------------------------------------------------------------------------------------------
+#?                                                             ____  ____  ______
+#?                                                            / __ \/ __ )/ ____/
+#?                                                           / / / / __  / /
+#?                                                          / /_/ / /_/ / /___
+#?                                                          \____/_____/\____/
+#?
+#?----------------------------------------------------------------------------------------------------------------------------------------
 import plecs as plc
 import Model_Parameters as mdl
 import os  
@@ -28,14 +35,6 @@ plcsim              = plc.simpy(url=url , port=port , path=directory , modelvar=
 plcsim.rpc_connect()                                                                       # Connect to plecs through the given url and port.
 plcsim.load_model()                                                                        # load the plecs model.
 #?----------------------------------------------------------------------------------------------------------------------------------------
-# Define your original lists
-L_CMC               = (np.arange(0.6, 1, 0.1) * 1e-3).tolist()
-L_DMC               = (np.arange(500, 900, 100) * 1e-6).tolist()
-Cx                  = (np.arange(0.6, 1, 0.1) * 1e-6).tolist()
-Cy1                 = (np.arange(6, 10, 1) * 1e-9).tolist()
-Cy2                 = (np.arange(6, 10, 1) * 1e-9).tolist()
-Cd                  = (np.arange(0, 400, 100) * 1e-3).tolist()
-Rd                  = (np.arange(0, 400, 100) * 1e3).tolist()
 for i in range(len(L_CMC)):
     mdlvar['Sim_param']['idx']  = i
     mdlvar['L_CMC']  = L_CMC[i]
@@ -45,6 +44,7 @@ for i in range(len(L_CMC)):
     mdlvar['Cy2']    = Cy2[i]
     mdlvar['Cd']     = Cd[i]
     mdlvar['Rd']     = Rd[i]
+    mdlvar['Sim_param']['idx'] = i
     with open(os.path.join(current_directory, log_file).replace("\\", "/"), "a") as file:
         plcsim.log_parameters(dict({'Simulation' : i}), file)
         plcsim.log_parameters(mdlvar, file)

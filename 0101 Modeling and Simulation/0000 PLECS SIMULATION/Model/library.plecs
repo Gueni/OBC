@@ -81,7 +81,7 @@ Plecs {
           Position      [225, 95]
           Direction     up
           Flipped       off
-          LabelPosition north
+          LabelPosition none
           Frame         [-45, -55; 45, 55]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -89,16 +89,6 @@ Plecs {
           MaskType      "EVSE/GRID"
           MaskDescription "This component models either a single phase AC powe"
 "r source or a 3 phases AC power source."
-          MaskDisplay   "Icon:circle(0, 0, 18)\n"
-"Icon:circle(0, 0, 25)\n"
-"Icon:line({-25, -23}, {10, 10})\n"
-"Icon:line({-25, -23}, {-10, -10})\n"
-"Icon:line({15, 25}, {10, 10})\n"
-"Icon:line({18, 25}, {0, 0})\n"
-"Icon:line({15, 25}, {-10, -10})\n"
-"Icon:line({-18, -25, -25, 25, 25, 18}, {18, 25, 35, 35, 25, 18})\n"
-"Icon:circle(-26.5, -13.5, .5)\n"
-"Icon:circle(26.5, -13.5, .5)"
           MaskDisplayLang "2"
           MaskIconFrame on
           MaskIconOpaque off
@@ -9429,7 +9419,12 @@ Plecs {
             Position      [5, 60]
             Direction     down
           }
-          TerminalNames { "VDC+", "VDC-", "VAC-", "VAC+", "PE", "Port1" }
+          Terminal {
+            Type          Input
+            Position      [-45, 0]
+            Direction     left
+          }
+          TerminalNames { "VDC+", "VDC-", "VAC-", "VAC+", "PE", "Port1", "Gate" }
           Location      [0, 26; 1536, 780]
           ZoomFactor    1
           SliderPosition [0, 0]
@@ -10695,29 +10690,10 @@ Plecs {
                 }
               }
               Component {
-                Type          From
-                Name          "From2"
-                Show          off
-                Position      [365, 75]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "gate"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "1"
-                  Show          off
-                }
-              }
-              Component {
                 Type          SignalDemux
                 Name          "Demux1"
                 Show          off
-                Position      [395, 75]
+                Position      [225, 130]
                 Direction     right
                 Flipped       on
                 LabelPosition south
@@ -10731,7 +10707,7 @@ Plecs {
                 Type          Goto
                 Name          "Goto6"
                 Show          off
-                Position      [435, 70]
+                Position      [265, 125]
                 Direction     right
                 Flipped       off
                 LabelPosition south
@@ -10750,7 +10726,7 @@ Plecs {
                 Type          Goto
                 Name          "Goto7"
                 Show          off
-                Position      [490, 80]
+                Position      [320, 135]
                 Direction     right
                 Flipped       off
                 LabelPosition south
@@ -10775,7 +10751,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "Tag"
-                  Value         "LS"
+                  Value         "LS1"
                   Show          off
                 }
                 Parameter {
@@ -10794,7 +10770,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "Tag"
-                  Value         "HS"
+                  Value         "HS1"
                   Show          off
                 }
                 Parameter {
@@ -10919,7 +10895,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "Tag"
-                  Value         "HS"
+                  Value         "HS2"
                   Show          off
                 }
                 Parameter {
@@ -10938,7 +10914,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "Tag"
-                  Value         "LS"
+                  Value         "LS2"
                   Show          off
                 }
                 Parameter {
@@ -17839,6 +17815,25 @@ Plecs {
                   }
                 }
               }
+              Component {
+                Type          Input
+                Name          "Gate"
+                Show          on
+                Position      [185, 130]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "7"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
               Connection {
                 Type          HeatPipe
                 SrcComponent  "FET3"
@@ -17960,30 +17955,16 @@ Plecs {
               }
               Connection {
                 Type          Wire
-                SrcComponent  "FET3"
-                SrcTerminal   3
-                Points        [695, 265]
+                SrcComponent  "L4"
+                SrcTerminal   2
+                Points        [695, 325]
                 Branch {
-                  Points        [695, 325]
-                  Branch {
-                    DstComponent  "L4"
-                    DstTerminal   2
-                  }
-                  Branch {
-                    DstComponent  "FET2"
-                    DstTerminal   2
-                  }
+                  DstComponent  "FET3"
+                  DstTerminal   3
                 }
                 Branch {
-                  Points        [775, 265]
-                  Branch {
-                    DstComponent  "Cout1"
-                    DstTerminal   1
-                  }
-                  Branch {
-                    DstComponent  "Cout2"
-                    DstTerminal   2
-                  }
+                  DstComponent  "FET2"
+                  DstTerminal   2
                 }
               }
               Connection {
@@ -18002,7 +17983,7 @@ Plecs {
               }
               Connection {
                 Type          Signal
-                SrcComponent  "From2"
+                SrcComponent  "Gate"
                 SrcTerminal   1
                 DstComponent  "Demux1"
                 DstTerminal   1
@@ -18092,6 +18073,13 @@ Plecs {
                   DstComponent  "VAC+"
                   DstTerminal   1
                 }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Cout1"
+                SrcTerminal   1
+                DstComponent  "Cout2"
+                DstTerminal   2
               }
             }
             Name          "Pass"
@@ -18319,6 +18307,25 @@ Plecs {
                 Parameter {
                   Variable      "Index"
                   Value         "6"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "Gate"
+                Show          on
+                Position      [775, 535]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "7"
                   Show          on
                 }
                 Parameter {
@@ -32349,4 +32356,4 @@ Plecs {
     }
   }
 }
-DemoSignature "KdLp8yDja6qdEBWRii7zTmOiyQL9SiVKX3fIxDo9gDY="
+DemoSignature "3iZfq7rqXGSwCHTC+oXFb29n6JDeKyDvZ8zLDJAA4Eg="
