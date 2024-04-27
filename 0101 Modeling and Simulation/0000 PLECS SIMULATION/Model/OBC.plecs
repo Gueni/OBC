@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -374,57 +374,57 @@ Plecs {
       Frame         [-45, -55; 45, 55]
       Parameter {
         Variable      "Lin"
-        Value         "Lin"
+        Value         "AC_Filter.Lin"
         Show          off
       }
       Parameter {
         Variable      "Cin"
-        Value         "Cin"
+        Value         "AC_Filter.Cin"
         Show          off
       }
       Parameter {
         Variable      "L_CMC"
-        Value         "L_CMC"
+        Value         "AC_Filter.L_CMC"
         Show          off
       }
       Parameter {
         Variable      "Cy1"
-        Value         "Cy1"
+        Value         "AC_Filter.Cy1"
         Show          off
       }
       Parameter {
         Variable      "Cy2"
-        Value         "Cy2"
+        Value         "AC_Filter.Cy2"
         Show          off
       }
       Parameter {
         Variable      "L_DMC"
-        Value         "L_DMC"
+        Value         "AC_Filter.L_DMC"
         Show          off
       }
       Parameter {
         Variable      "Cx"
-        Value         "Cx"
+        Value         "AC_Filter.Cx"
         Show          off
       }
       Parameter {
         Variable      "Cd"
-        Value         "Cd"
+        Value         "AC_Filter.Cd"
         Show          off
       }
       Parameter {
         Variable      "Rd"
-        Value         "Rd"
+        Value         "AC_Filter.Rd"
         Show          off
       }
       Parameter {
         Variable      "Ro"
-        Value         "Ro"
+        Value         "AC_Filter.Ro"
         Show          off
       }
       Parameter {
         Variable      "Configuration"
-        Value         "in_filter_config"
+        Value         "AC_Filter.Config"
         Show          off
       }
       Terminal {
@@ -769,20 +769,19 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 847]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADP/wCAAAAA/sAAAAQAFoAb"
+          Location      [0, 26; 1536, 811]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACm/wCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAz8AAAB+AP///wAAAAMAAAeAAAA"
-"An/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAM/"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAApsAAAB+AP///wAAAAMAAAeAAAA"
+"BFvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAKb"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAD"
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAMAAAAGA"
+"AAAAwAAAG0AAAAEAAAAbQAAAAUAAABtAAAABgAAAG0AAAAIAAAAbQAAAAkAAABtAAAHgAAAAAsBAA"
+"ABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADuAAAAAQAAAAAAAABtAAAAAQAAAAAAAAB"
 "uAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAZ9AAAAAQAAAAAAAAPoAAAAACs="
+"AABtAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAVKAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1816,7 +1815,7 @@ Plecs {
           }
           Parameter {
             Variable      "f"
-            Value         "1"
+            Value         "50"
             Show          off
           }
           Parameter {
@@ -2743,4 +2742,4 @@ Plecs {
     }
   }
 }
-DemoSignature "LMYJAWq0LK8eV7gOhDUOtrE9UzlRhNRsxrhERVjnEDs="
+DemoSignature "gFK6CVFArAW2vSK0aEgcTE1Bh7W9MVX/dRVwi1M6jW0="
