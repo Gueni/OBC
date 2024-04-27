@@ -40,7 +40,6 @@ PFC_glb     =  {
                                        },  
                   'VF'              :  500                                                         
                }
-
 PFC_SW      =  {
                   'Config'          : 1, 
                   'therm_mosfet'    : 'file:C3M0021120K', 
@@ -129,7 +128,7 @@ DCLink      =  {
                   'Iinit'		      : 0, 
 
                }
-Load      =  {
+Load        =  {
                   'Config'		      : 3,  
                   'CL'    		      : 0, 
                   'RL'		         : (400*400)/7000,  
@@ -137,7 +136,7 @@ Load      =  {
                   'Vinit'		      : 0,  
                   'Iinit'		      : 0, 
                }
-LLC       =  {
+LLC         =  {
                   ## Sensing
                   'R1'               : 4700/4,           # [Ohm] - sensing resistor
                   'R2'               : 160/24,           # [Ohm] - sensing resistor
@@ -180,20 +179,19 @@ LLC       =  {
                   'Rth'               : 0.1,                    # Heatsink to ambient thermal resistance (K/W)
                   't_init'               : 25                     					# initial temperature (C)
              }
-
-Grid      = {
+Grid        =  {
                   'Config'          :  2,  
                   'Vin'             :  230,  
                   'Fgrid'           :  50,  
                   'F'               :  50,  
                   'Rg'              :  1e-2                                                                                  
             }
-Thermals  = {
+Thermals    =  {
                   'T_amb'           :  25.0,  
                   'rth_Amb'         :  0.09,  
 
             }
-HV_Filter = {
+HV_Filter   =  {
                   'Config'         :  2
 
             }
