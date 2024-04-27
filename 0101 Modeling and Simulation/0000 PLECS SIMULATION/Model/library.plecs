@@ -10707,7 +10707,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "Width"
-                  Value         "2"
+                  Value         "4"
                   Show          off
                 }
               }
@@ -18074,35 +18074,6 @@ Plecs {
                 }
               }
               Connection {
-                Type          Signal
-                SrcComponent  "Demux1"
-                SrcTerminal   2
-                Points        [255, 120]
-                Branch {
-                  DstComponent  "Goto6"
-                  DstTerminal   1
-                }
-                Branch {
-                  DstComponent  "Goto10"
-                  DstTerminal   1
-                }
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux1"
-                SrcTerminal   3
-                Points        [255, 130]
-                Branch {
-                  DstComponent  "Goto7"
-                  DstTerminal   1
-                }
-                Branch {
-                  Points        [255, 140]
-                  DstComponent  "Goto9"
-                  DstTerminal   1
-                }
-              }
-              Connection {
                 Type          Wire
                 SrcComponent  "Rl4"
                 SrcTerminal   2
@@ -18129,6 +18100,34 @@ Plecs {
                   DstComponent  "LS2"
                   DstTerminal   2
                 }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   2
+                DstComponent  "Goto10"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   3
+                DstComponent  "Goto6"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   4
+                DstComponent  "Goto7"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   5
+                DstComponent  "Goto9"
+                DstTerminal   1
               }
             }
             Name          "Pass"
@@ -18236,58 +18235,6 @@ Plecs {
                 Direction     left
                 Flipped       off
                 LabelPosition south
-              }
-              Component {
-                Type          SignalDemux
-                Name          "Demux1"
-                Show          off
-                Position      [235, 125]
-                Direction     right
-                Flipped       on
-                LabelPosition south
-                Parameter {
-                  Variable      "Width"
-                  Value         "2"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Goto
-                Name          "Goto6"
-                Show          off
-                Position      [310, 120]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "HS2"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "2"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Goto
-                Name          "Goto7"
-                Show          off
-                Position      [345, 130]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "LS1"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "2"
-                  Show          off
-                }
               }
               Component {
                 Type          From
@@ -18422,6 +18369,87 @@ Plecs {
                 }
               }
               Component {
+                Type          Constant
+                Name          "PH"
+                Show          on
+                Position      [190, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "iL3"
+                Show          off
+                Position      [725, 160]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Component {
+                Type          SignalDemux
+                Name          "Demux1"
+                Show          off
+                Position      [235, 125]
+                Direction     right
+                Flipped       on
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "4"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto6"
+                Show          off
+                Position      [310, 120]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "HS2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto7"
+                Show          off
+                Position      [345, 130]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "LS1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
                 Type          Goto
                 Name          "Goto9"
                 Show          off
@@ -18458,35 +18486,6 @@ Plecs {
                   Value         "2"
                   Show          off
                 }
-              }
-              Component {
-                Type          Constant
-                Name          "PH"
-                Show          on
-                Position      [190, 100]
-                Direction     right
-                Flipped       off
-                LabelPosition west
-                Frame         [-10, -10; 10, 10]
-                Parameter {
-                  Variable      "Value"
-                  Value         "0"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "DataType"
-                  Value         "10"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Ammeter
-                Name          "iL3"
-                Show          off
-                Position      [725, 160]
-                Direction     left
-                Flipped       off
-                LabelPosition south
               }
               Connection {
                 Type          Wire
@@ -18530,13 +18529,6 @@ Plecs {
               }
               Connection {
                 Type          Signal
-                SrcComponent  "Gate"
-                SrcTerminal   1
-                DstComponent  "Demux1"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
                 SrcComponent  "From3"
                 SrcTerminal   1
                 Points        [380, 345]
@@ -18558,35 +18550,6 @@ Plecs {
                 SrcComponent  "From6"
                 SrcTerminal   1
                 Points        [590, 345]
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux1"
-                SrcTerminal   2
-                Points        [255, 120]
-                Branch {
-                  DstComponent  "Goto6"
-                  DstTerminal   1
-                }
-                Branch {
-                  DstComponent  "Goto10"
-                  DstTerminal   1
-                }
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux1"
-                SrcTerminal   3
-                Points        [255, 130]
-                Branch {
-                  DstComponent  "Goto7"
-                  DstTerminal   1
-                }
-                Branch {
-                  Points        [255, 140]
-                  DstComponent  "Goto9"
-                  DstTerminal   1
-                }
               }
               Connection {
                 Type          Wire
@@ -18620,6 +18583,41 @@ Plecs {
                 SrcTerminal   1
                 DstComponent  "iL2"
                 DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   2
+                DstComponent  "Goto10"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   3
+                DstComponent  "Goto6"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   4
+                DstComponent  "Goto7"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Demux1"
+                SrcTerminal   5
+                DstComponent  "Goto9"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gate"
+                SrcTerminal   1
+                DstComponent  "Demux1"
+                DstTerminal   1
               }
             }
           }
@@ -30117,4 +30115,4 @@ Plecs {
     }
   }
 }
-DemoSignature "clIq59GLRK77okpB10XtgBxTMNF2Fit3/uCzYQeRXfQ="
+DemoSignature "nmoiiyzhky1UQbH6hiqMsYBkb+QCmPq24ZEIHfmdnCo="

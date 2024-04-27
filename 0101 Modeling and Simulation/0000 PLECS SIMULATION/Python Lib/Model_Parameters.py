@@ -25,7 +25,7 @@ scopes      =  {
 				      'Scope'	    	   : "OBC/Scope",                                
                }	
 PFC_glb     =  {
-                  'L'               :  1.5e-3,
+                  'L'               :  300e-6,
                   'Rbusin'          :  1e-2,
                   'Rbusout'         :  1e-2,
                   'Cout'            :  {
@@ -75,7 +75,7 @@ PFC_SW      =  {
                   'BD_If'           : 0,
                   'T_reverse'       : 0,
                   'Q_reverse'       : 0,            
-                  'Ldr'             : 0,
+                  'Ldr'             : 1e-12,
                   'Ldr_Iinit'       : 0,
                   'Lso'             : 0,
                   'Lso_Iinit'       : 0,
@@ -119,7 +119,7 @@ CTRL_PFC    =  {
                }
 DCLink      =  {
                   'Config'		      : 4,
-                  'Cdc'    		   : 100e-3,  
+                  'Cdc'    		   : 500e-6,  
                   'ESR'		         : 19e-9,
                   'ESL'		         : 1e-12, 
                   'nPara'		      : 6, 
@@ -129,7 +129,7 @@ DCLink      =  {
 
                }
 Load        =  {
-                  'Config'		      : 3,  
+                  'Config'		      : 4,  
                   'CL'    		      : 0, 
                   'RL'		         : (400*400)/7000,  
                   'LL'		         : 1e-9, 
