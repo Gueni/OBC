@@ -15,10 +15,10 @@ Sim_param 	=  {
                   'idx'             : 0,
                   'rel_tol'		   : 1e-3 
                }
-ToFile      =  {   
-                  'ToFile_path'		: os.path.join(os.getcwd(),f'/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Results_{Sim_param['idx']}.csv'),                     
-                  'Ts'              : 1/100e3,
-                  'output_html'     : os.path.join(os.getcwd(),'/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/output_html.html') 
+ToFile      =  {   #! change dir to generic later
+                  'ToFile_path'		: f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Results_{Sim_param['idx']}.csv',                     
+                  'Ts'              : 0,
+                  'output_html'     : f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/output_html{Sim_param['idx']}.html',
                            
                }  
 scopes      =  {
@@ -26,18 +26,18 @@ scopes      =  {
                }	
 PFC_glb     =  {
                   'L'               :  1.5e-3,
-                  'Rl'              :  0.001,
+                  'Rbusin'          :  1e-2,
+                  'Rbusout'         :  1e-2,
                   'Cout'            :  {
-                                             'Config'		      : 1,
-                                             'Cap_s'    		   : 400e-6,  
-                                             'Resr_s'		      : 19e-6,  
-                                             'Lesl_s'		      : 0,  
+                                             'Config'		      : 4,
+                                             'Cap_s'    		   : 100e-6,  
+                                             'Resr_s'		      : 19e-9,  
+                                             'Lesl_s'		      : 1e-12,  
                                              'Npara'		      : 1,  
                                              'Nseri'		      : 1,  
                                              'Vinit'		      : 0,  
                                              'Iinit'		      : 0             
                                        },  
-                  # 'CF'              :  100e3,  
                   'VF'              :  500                                                         
                }
 
@@ -84,24 +84,31 @@ PFC_SW      =  {
                   'T_init'          : 25,
                   'Tamb'            : 25, 
                   't_init'          : 25, 
+                  'rth_sw'          : 0.09,
                   'rth_ch'          : 0.5, 
                   'Rth'             : 0.34 					    	                           
                }
 PFC         =  {
                   'R1'              :  4700/4,
                   'R2'              :  160/24,
-                  'fs'              :  70e3,  
                   'HS1'             :  PFC_SW,   
                   'HS2'             :  PFC_SW,   
                   'LS1'             :  PFC_SW,   
                   'LS2'             :  PFC_SW,
+
+
+               }	
+CTRL_PFC    =  {
+                  'modulator_gain'  : 2,  
+                  'Vref'    		   : 400,  
+                  'fs'    		      : 70e-3,  
                   'Ri_F '           :  50e3,
                   'Ri_Ts'           :  1/50e3,
                   'Ri_Tp'           :  (1/50e3)/2.0,
-                  'Ri_Ti'           :  2/PFC_glb['Rl']*((1/50e3)/2.0),
-                  'Ri_Tn'           :  PFC_glb['L']/PFC_glb['Rl'],
-                  'Ri_Kp'           :  (PFC_glb['L']/PFC_glb['Rl'])/(2/PFC_glb['Rl']*((1/50e3)/2.0)),
-                  'Ri_Ki'           :  1/(2/PFC_glb['Rl']*((1/50e3)/2.0)),
+                  'Ri_Ti'           :  2/PFC_glb['Rbusin']*((1/50e3)/2.0),
+                  'Ri_Tn'           :  PFC_glb['L']/PFC_glb['Rbusin'],
+                  'Ri_Kp'           :  (PFC_glb['L']/PFC_glb['Rbusin'])/(2/PFC_glb['Rbusin']*((1/50e3)/2.0)),
+                  'Ri_Ki'           :  1/(2/PFC_glb['Rbusin']*((1/50e3)/2.0)),
                   'Rv_F '           :  2e3,
                   'Rv_Ts'           :  1/2e3,
                   'Rv_Tp'           :  (1/2e3)/2*10,
@@ -109,20 +116,21 @@ PFC         =  {
                   'Rv_Tn'           :  4*((1/2e3)/2*10),
                   'Rv_Kp'           :  (4*((1/2e3)/2*10))/(8/PFC_glb['Cout']['Cap_s']*((1/2e3)/2*10)*((1/2e3)/2*10)),
                   'Rv_Ki'           :  1/(8/PFC_glb['Cout']['Cap_s']*((1/2e3)/2*10)*((1/2e3)/2*10))
-               }		
+
+               }
 DCLink      =  {
-                  'Config'		      : 1,
-                  'Cdc'    		   : 500e-3,  
-                  'ESR'		         : 19e-6,
-                  'ESL'		         : 0, 
-                  'nPara'		      : 1, 
+                  'Config'		      : 4,
+                  'Cdc'    		   : 100e-3,  
+                  'ESR'		         : 19e-9,
+                  'ESL'		         : 1e-12, 
+                  'nPara'		      : 6, 
                   'nSeri'		      : 1, 
                   'Vinit'		      : 0, 
                   'Iinit'		      : 0, 
 
                }
 Load      =  {
-                  'Config'		      : 4,  
+                  'Config'		      : 3,  
                   'CL'    		      : 0, 
                   'RL'		         : (400*400)/7000,  
                   'LL'		         : 1e-9, 
@@ -178,23 +186,26 @@ Grid      = {
                   'Vin'             :  230,  
                   'Fgrid'           :  50,  
                   'F'               :  50,  
-                  'Rg'              :  1e-3                                                                                  
+                  'Rg'              :  1e-2                                                                                  
+            }
+Thermals  = {
+                  'T_amb'           :  25.0,  
+                  'rth_Amb'         :  0.09,  
 
-}
+            }
+HV_Filter = {
+                  'Config'         :  2
 
-
+            }
 #?----------------------------------------------------------------------------------------------------------------------------------------
 ModelVars   =  {  'ToFile'          :  ToFile,
                   'scopes'          :  scopes,  
                   'Sim_param'       :  Sim_param,  
                   'Grid'            :  Grid,  
-
-                  #? AC Input Filter Parameters  
                   'in_filter_config':  1, 
                   'Cin'             :  1e-9,  
                    'Lin'            :  1e-9,  
                    'Ro'             :  1e-9, 
-
                   'L_CMC'           :  (1.5e-3)/2, 
                   'L_DMC'           :  (900e-6)/2, 
                   'Cx'              :  1e-6,  
@@ -202,15 +213,14 @@ ModelVars   =  {  'ToFile'          :  ToFile,
                   'Cy2'             :  4.7e-9,  
                   'Cd'              :  100e-3,  
                   'Rd'              :  470e3,  
-                  #? PFC Parameters 
                   'PFC_glb'         :  PFC_glb, 
                   'PFC'             :  PFC, 
-                  #? DCLink Parameters 
+                  'CTRL_PFC'        :  CTRL_PFC,
                   'DCLink'          :  DCLink,  
-                  #? LLC Parameters 
-                  'LLC'             :  LLC,  
-                  #? Load Parameters 
+                  'LLC'             :  LLC, 
+                  'HV_Filter'       :  HV_Filter,   
                   'Vout'            :  400,  
-                  'Load'            :  Load                                                                                   
+                  'Load'            :  Load,
+                  'Thermals'        :Thermals                                                                                   
                }	
 #?----------------------------------------------------------------------------------------------------------------------------------------			

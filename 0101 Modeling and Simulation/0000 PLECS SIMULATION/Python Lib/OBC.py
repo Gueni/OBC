@@ -10,7 +10,6 @@
 import plecs as plc
 import Model_Parameters as mdl
 import os  
-import numpy as np 
 import process
 #?----------------------------------------------------------------------------------------------------------------------------------------
 port                = "1080"                                                                  # Port to which to connect the RPC server.    
@@ -23,37 +22,20 @@ directory           = directory.replace("\\", "/")                              
 modelname           = "OBC"                                                                 # plecs model name.
 save_path           = "0101 Modeling and Simulation/0000 PLECS SIMULATION/RES"
 log_file            = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/parameters.log"
-L_CMC               = (np.arange(0.1    ,2    +0.1    ,0.1    )*1e-3).tolist()
-L_DMC               = (np.arange(100    ,900  +50     ,50     )*1e-6).tolist()
-Cx                  = (np.arange(0.1    ,2    +0.1    ,0.1    )*1e-6).tolist()
-Cy1                 = (np.arange(1      ,10   +0.1    ,0.1    )*1e-9).tolist()
-Cy2                 = (np.arange(0.1    ,2    +0.1    ,0.1    )*1e-9).tolist()
-Cd                  = (np.arange(0      ,400  +100    ,100     )*1e-3).tolist()
-Rd                  = (np.arange(1      ,500  +50     ,50     )*1e3 ).tolist()
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim              = plc.simpy(url=url , port=port , path=directory , modelvar=mdlvar)    # set a simpy object with all the needed vars.
 plcsim.rpc_connect()                                                                       # Connect to plecs through the given url and port.
 plcsim.load_model()                                                                        # load the plecs model.
 #?----------------------------------------------------------------------------------------------------------------------------------------
-for i in range(len(L_CMC)):
-    mdlvar['Sim_param']['idx']  = i
-    mdlvar['L_CMC']  = L_CMC[i]
-    mdlvar['L_DMC']  = L_DMC[i]
-    mdlvar['Cx']     = Cx[i]
-    mdlvar['Cy1']    = Cy1[i]
-    mdlvar['Cy2']    = Cy2[i]
-    mdlvar['Cd']     = Cd[i]
-    mdlvar['Rd']     = Rd[i]
-    mdlvar['Sim_param']['idx'] = i
-    with open(os.path.join(current_directory, log_file).replace("\\", "/"), "a") as file:
-        plcsim.log_parameters(dict({'Simulation' : i}), file)
-        plcsim.log_parameters(mdlvar, file)
-    file.close
-    # plcsim.ClearAllTraces(mdlvar['scopes'])                                                    # clear all scopes.
-    plcsim.Set_sim_param()
-    plcsim.launch_sim(modelname=modelname)
-    # plcsim.HoldAllTraces(scopedict=mdlvar['scopes'])
-    # plcsim.saveAllTraces(mdlvar['scopes'],save_path)
+
+with open(os.path.join(current_directory, log_file).replace("\\", "/"), "a") as file:
+    plcsim.log_parameters(mdlvar, file)
+file.close
+# plcsim.ClearAllTraces(mdlvar['scopes'])                                                    # clear all scopes.
+plcsim.Set_sim_param()
+plcsim.launch_sim(modelname=modelname)
+# plcsim.HoldAllTraces(scopedict=mdlvar['scopes'])
+# plcsim.saveAllTraces(mdlvar['scopes'],save_path)
 #loop over csv files 
 process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],open=False)
 #?----------------------------------------------------------------------------------------------------------------------------------------
