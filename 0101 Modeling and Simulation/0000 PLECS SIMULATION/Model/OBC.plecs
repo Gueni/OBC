@@ -48,7 +48,7 @@ Plecs {
   ScriptsDialogSplitterPos "0"
   Schematic {
     Location      [0, 23; 1536, 777]
-    ZoomFactor    1.14436
+    ZoomFactor    1.30957
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -57,7 +57,7 @@ Plecs {
       SrcComponent  "library/Power Components/EVSE\\/GRID"
       Name          "EVSE/GRID"
       Show          on
-      Position      [125, 175]
+      Position      [95, 185]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -107,7 +107,7 @@ Plecs {
       Type          Ground
       Name          "Ground"
       Show          off
-      Position      [245, 250]
+      Position      [215, 260]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -116,7 +116,7 @@ Plecs {
       Type          Ground
       Name          "Ground1"
       Show          off
-      Position      [350, 250]
+      Position      [320, 260]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -125,7 +125,7 @@ Plecs {
       Type          Subsystem
       Name          "Data Export"
       Show          on
-      Position      [155, 350]
+      Position      [125, 360]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -138,16 +138,16 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 26; 1536, 780]
-        ZoomFactor    0.873846
-        SliderPosition [0, 0]
+        Location      [0, 23; 1536, 777]
+        ZoomFactor    1.14437
+        SliderPosition [0, 56]
         ShowBrowser   off
         BrowserWidth  100
         Component {
           Type          ToFile
           Name          "To File"
           Show          off
-          Position      [1460, 430]
+          Position      [885, 315]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -164,7 +164,7 @@ Plecs {
           }
           Parameter {
             Variable      "WriteSignalNames"
-            Value         "2"
+            Value         "1"
             Show          off
           }
           Parameter {
@@ -177,13 +177,13 @@ Plecs {
           Type          SignalMux
           Name          "Mux"
           Show          off
-          Position      [455, 450]
+          Position      [455, 325]
           Direction     right
           Flipped       off
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "[1 1 1 4 2  4 4 4 4 4 8 1 1 1 6 6 ]"
+            Value         "[1 1 1 4 2  8 8 8 4 4 8 1 1 1 6 6 ]"
             Show          off
           }
         }
@@ -191,7 +191,7 @@ Plecs {
           Type          PlecsProbe
           Name          "grid"
           Show          on
-          Position      [260, 215]
+          Position      [260, 90]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -205,7 +205,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC Input Voltage"
           Show          on
-          Position      [260, 305]
+          Position      [260, 180]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -219,7 +219,7 @@ Plecs {
           Type          PlecsProbe
           Name          "In Filter"
           Show          on
-          Position      [260, 250]
+          Position      [260, 125]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -231,9 +231,9 @@ Plecs {
         }
         Component {
           Type          PlecsProbe
-          Name          "DCLin Capacitor"
+          Name          "DCLink Capacitor"
           Show          on
-          Position      [260, 685]
+          Position      [260, 560]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -247,7 +247,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC Input Current"
           Show          on
-          Position      [260, 325]
+          Position      [260, 200]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -261,7 +261,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC output voltage"
           Show          on
-          Position      [260, 345]
+          Position      [260, 220]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -275,7 +275,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC gates signals"
           Show          on
-          Position      [260, 365]
+          Position      [260, 240]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -289,7 +289,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC Input choke"
           Show          on
-          Position      [260, 385]
+          Position      [260, 260]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -303,7 +303,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC sw voltages"
           Show          on
-          Position      [260, 405]
+          Position      [260, 280]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -317,7 +317,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC sw currents"
           Show          on
-          Position      [260, 425]
+          Position      [260, 300]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -331,7 +331,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC sw junction Temp"
           Show          on
-          Position      [260, 445]
+          Position      [260, 320]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -345,7 +345,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC sw case Temp"
           Show          on
-          Position      [260, 465]
+          Position      [260, 340]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -359,7 +359,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC sw switching losses"
           Show          on
-          Position      [260, 485]
+          Position      [260, 360]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -371,9 +371,9 @@ Plecs {
         }
         Component {
           Type          PlecsProbe
-          Name          "PFC sw+diodes conductiond losses"
+          Name          "PFC sw conduction losses"
           Show          on
-          Position      [260, 505]
+          Position      [260, 380]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -387,7 +387,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC output capacitor voltage"
           Show          on
-          Position      [260, 525]
+          Position      [260, 400]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -401,7 +401,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC output capacitor current"
           Show          on
-          Position      [260, 545]
+          Position      [260, 420]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -415,7 +415,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC output capacitor dissipation"
           Show          on
-          Position      [260, 565]
+          Position      [260, 440]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -429,7 +429,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC input busbar"
           Show          on
-          Position      [260, 585]
+          Position      [260, 460]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -443,7 +443,7 @@ Plecs {
           Type          PlecsProbe
           Name          "PFC output busbar"
           Show          on
-          Position      [260, 605]
+          Position      [260, 480]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -454,176 +454,42 @@ Plecs {
           }
         }
         Component {
-          Type          Goto
-          Name          "Goto"
-          Show          off
-          Position      [485, 450]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "pfc"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-        }
-        Component {
-          Type          Goto
-          Name          "Goto1"
-          Show          off
-          Position      [485, 685]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "dclink"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-        }
-        Component {
-          Type          Goto
-          Name          "Goto2"
-          Show          off
-          Position      [485, 250]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "In Filter"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-        }
-        Component {
-          Type          Goto
-          Name          "Goto3"
-          Show          off
-          Position      [485, 215]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "grid"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-        }
-        Component {
           Type          SignalMux
           Name          "Mux1"
           Show          off
-          Position      [1400, 430]
+          Position      [825, 315]
           Direction     right
           Flipped       off
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "[2 2 52 2]"
+            Value         "[2 2 64 2]"
             Show          off
           }
         }
         Component {
-          Type          From
-          Name          "From"
+          Type          Abs
+          Name          "Abs"
           Show          off
-          Position      [1350, 400]
+          Position      [315, 360]
           Direction     right
           Flipped       off
           LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "grid"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
         }
         Component {
-          Type          From
-          Name          "From1"
+          Type          Abs
+          Name          "Abs1"
           Show          off
-          Position      [1350, 420]
+          Position      [365, 380]
           Direction     right
           Flipped       off
           LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "In Filter"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-        }
-        Component {
-          Type          From
-          Name          "From2"
-          Show          off
-          Position      [1350, 440]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "pfc"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-        }
-        Component {
-          Type          From
-          Name          "From3"
-          Show          off
-          Position      [1350, 460]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "dclink"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
         }
         Connection {
           Type          Signal
           SrcComponent  "PFC Input Voltage"
           SrcTerminal   1
-          Points        [440, 305]
+          Points        [440, 180]
           DstComponent  "Mux"
           DstTerminal   2
         }
@@ -631,7 +497,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC Input Current"
           SrcTerminal   1
-          Points        [435, 325; 435, 385]
+          Points        [435, 200; 435, 260]
           DstComponent  "Mux"
           DstTerminal   3
         }
@@ -639,7 +505,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC output voltage"
           SrcTerminal   1
-          Points        [430, 345; 430, 395]
+          Points        [430, 220; 430, 270]
           DstComponent  "Mux"
           DstTerminal   4
         }
@@ -647,7 +513,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC gates signals"
           SrcTerminal   1
-          Points        [425, 365; 425, 405]
+          Points        [425, 240; 425, 280]
           DstComponent  "Mux"
           DstTerminal   5
         }
@@ -655,7 +521,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC Input choke"
           SrcTerminal   1
-          Points        [420, 385; 420, 415]
+          Points        [420, 260; 420, 290]
           DstComponent  "Mux"
           DstTerminal   6
         }
@@ -663,7 +529,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC sw voltages"
           SrcTerminal   1
-          Points        [365, 405; 365, 425]
+          Points        [365, 280; 365, 300]
           DstComponent  "Mux"
           DstTerminal   7
         }
@@ -671,7 +537,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC sw currents"
           SrcTerminal   1
-          Points        [425, 425; 425, 435]
+          Points        [425, 300; 425, 310]
           DstComponent  "Mux"
           DstTerminal   8
         }
@@ -686,31 +552,15 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC sw case Temp"
           SrcTerminal   1
-          Points        [405, 465; 405, 455]
+          Points        [405, 340; 405, 330]
           DstComponent  "Mux"
           DstTerminal   10
         }
         Connection {
           Type          Signal
-          SrcComponent  "PFC sw switching losses"
-          SrcTerminal   1
-          Points        [410, 485; 410, 465]
-          DstComponent  "Mux"
-          DstTerminal   11
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "PFC sw+diodes conductiond losses"
-          SrcTerminal   1
-          Points        [415, 505; 415, 475]
-          DstComponent  "Mux"
-          DstTerminal   12
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "PFC output capacitor voltage"
           SrcTerminal   1
-          Points        [420, 525; 420, 485]
+          Points        [420, 400; 420, 360]
           DstComponent  "Mux"
           DstTerminal   13
         }
@@ -718,7 +568,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC output capacitor current"
           SrcTerminal   1
-          Points        [425, 545; 425, 495]
+          Points        [425, 420; 425, 370]
           DstComponent  "Mux"
           DstTerminal   14
         }
@@ -726,7 +576,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC output capacitor dissipation"
           SrcTerminal   1
-          Points        [430, 565; 430, 505]
+          Points        [430, 440; 430, 380]
           DstComponent  "Mux"
           DstTerminal   15
         }
@@ -734,7 +584,7 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC input busbar"
           SrcTerminal   1
-          Points        [435, 585; 435, 515]
+          Points        [435, 460; 435, 390]
           DstComponent  "Mux"
           DstTerminal   16
         }
@@ -742,37 +592,9 @@ Plecs {
           Type          Signal
           SrcComponent  "PFC output busbar"
           SrcTerminal   1
-          Points        [440, 605]
+          Points        [440, 480]
           DstComponent  "Mux"
           DstTerminal   17
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Mux"
-          SrcTerminal   1
-          DstComponent  "Goto"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "DCLin Capacitor"
-          SrcTerminal   1
-          DstComponent  "Goto1"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "In Filter"
-          SrcTerminal   1
-          DstComponent  "Goto2"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "grid"
-          SrcTerminal   1
-          DstComponent  "Goto3"
-          DstTerminal   1
         }
         Connection {
           Type          Signal
@@ -783,69 +605,66 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "From"
+          SrcComponent  "grid"
           SrcTerminal   1
-          Points        [1380, 400; 1380, 415]
+          Points        [645, 90; 645, 300]
           DstComponent  "Mux1"
           DstTerminal   2
         }
         Connection {
           Type          Signal
-          SrcComponent  "From1"
+          SrcComponent  "In Filter"
           SrcTerminal   1
-          Points        [1375, 420; 1375, 425]
+          Points        [640, 125; 640, 310]
           DstComponent  "Mux1"
           DstTerminal   3
         }
         Connection {
           Type          Signal
-          SrcComponent  "From2"
+          SrcComponent  "Mux"
           SrcTerminal   1
-          Points        [1375, 440; 1375, 435]
+          Points        [645, 325; 645, 320]
           DstComponent  "Mux1"
           DstTerminal   4
         }
         Connection {
           Type          Signal
-          SrcComponent  "From3"
+          SrcComponent  "DCLink Capacitor"
           SrcTerminal   1
-          Points        [1380, 460; 1380, 445]
+          Points        [285, 500; 650, 500; 650, 330]
           DstComponent  "Mux1"
           DstTerminal   5
         }
-        RectangleAnnotation {
-          Position     [305, 450]
-          Width        510
-          Height       350
-          CornerRadius 3
-          Thickness    2
-          PenColor     4283760767
-          PenAlpha     1
-          BrushColor   10642217
-          BrushAlpha   0
-        } 
-        RectangleAnnotation {
-          Position     [305, 675]
-          Width        510
-          Height       100
-          CornerRadius 3
-          Thickness    2
-          PenColor     4283760767
-          PenAlpha     1
-          BrushColor   10642217
-          BrushAlpha   0
-        } 
-        RectangleAnnotation {
-          Position     [305, 225]
-          Width        510
-          Height       100
-          CornerRadius 3
-          Thickness    2
-          PenColor     4283760767
-          PenAlpha     1
-          BrushColor   10642217
-          BrushAlpha   0
-        } 
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw switching losses"
+          SrcTerminal   1
+          DstComponent  "Abs"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Abs"
+          SrcTerminal   2
+          Points        [410, 360; 410, 340]
+          DstComponent  "Mux"
+          DstTerminal   11
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw conduction losses"
+          SrcTerminal   1
+          DstComponent  "Abs1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Abs1"
+          SrcTerminal   2
+          Points        [415, 380; 415, 350]
+          DstComponent  "Mux"
+          DstTerminal   12
+        }
       }
     }
     Component {
@@ -853,7 +672,7 @@ Plecs {
       SrcComponent  "library/Power Components/DCLink"
       Name          "DCLink"
       Show          on
-      Position      [440, 175]
+      Position      [410, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -922,9 +741,9 @@ Plecs {
     Component {
       Type          Reference
       SrcComponent  "library/Power Components/Load"
-      Name          "Load"
+      Name          "BAT"
       Show          on
-      Position      [715, 175]
+      Position      [685, 185]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -975,7 +794,7 @@ Plecs {
       SrcComponent  "library/Power Components/EMI FILTER"
       Name          "EMI FILTER"
       Show          on
-      Position      [245, 175]
+      Position      [215, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -1085,7 +904,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth H-A"
       Show          on
-      Position      [450, 305]
+      Position      [420, 315]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -1099,7 +918,7 @@ Plecs {
       Type          ConstantTemperatureGnd
       Name          "Ambient"
       Show          on
-      Position      [450, 345]
+      Position      [420, 355]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -1114,7 +933,7 @@ Plecs {
       SrcComponent  "library/Power Components/PFC"
       Name          "PFC"
       Show          on
-      Position      [355, 175]
+      Position      [325, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -1173,9 +992,9 @@ Plecs {
     Component {
       Type          Reference
       SrcComponent  "library/Power Components/DC FILTER"
-      Name          "HV FILTER"
+      Name          "HV DC FILTER"
       Show          on
-      Position      [630, 175]
+      Position      [600, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -1220,7 +1039,7 @@ Plecs {
       Type          Subsystem
       Name          "Scopes"
       Show          on
-      Position      [155, 280]
+      Position      [125, 290]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -1234,8 +1053,8 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.763608
-        SliderPosition [0, 120]
+        ZoomFactor    0.873847
+        SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1255,8 +1074,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
-"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1392,7 +1211,7 @@ Plecs {
           Type          Scope
           Name          "load_scope"
           Show          on
-          Position      [295, 935]
+          Position      [1055, 135]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1499,7 +1318,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux2"
           Show          off
-          Position      [180, 930]
+          Position      [940, 130]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -1513,7 +1332,7 @@ Plecs {
           Type          Product
           Name          "Product"
           Show          off
-          Position      [235, 945]
+          Position      [995, 145]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1589,12 +1408,12 @@ Plecs {
           Type          PlecsProbe
           Name          "Probe2"
           Show          off
-          Position      [130, 930]
+          Position      [890, 130]
           Direction     right
           Flipped       off
           LabelPosition west
           Probe {
-            Component     "Load"
+            Component     "BAT"
             Path          ""
             Signals       {"Voltage", "Current"}
           }
@@ -1634,8 +1453,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
-"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1822,11 +1641,11 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
-"AGAAAAbQAAAAEAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
           Axes          "2"
@@ -1873,7 +1692,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {}
+              Signals       {"IL"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -1914,33 +1733,34 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "[1 1 1 4 2  4 4 4 4 4 8 1 1 1 6 6]"
+            Value         "[1 1 1 4 2  8 8 8 4 4 8 1 1 1 6 6 ]"
             Show          off
           }
         }
         Component {
           Type          Scope
-          Name          "grid_scope1"
+          Name          "PFC Input Voltage"
           Show          on
           Position      [680, 165]
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 803]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+          Location      [0, 26; 1536, 807]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADPfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAM4"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAz0AAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAM9"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
-"AFAAAAbQAAAAYAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
-          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAQAAAAEB/////1VVf38AAAAAAAEAAAABA"
+"QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAEAAAABP/AAAAAAAAAAAAABAAAAAQA="
           Axes          "1"
           TimeRange     "0"
           ScrollingMode "1"
@@ -1982,7 +1802,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope2"
+          Name          "PFC Input Current"
           Show          on
           Position      [680, 195]
           Direction     up
@@ -2044,7 +1864,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope3"
+          Name          "PFC output voltage"
           Show          on
           Position      [680, 225]
           Direction     up
@@ -2106,22 +1926,22 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope4"
+          Name          "PFC gates signal"
           Show          on
           Position      [680, 265]
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 23; 1536, 796]
+          Location      [0, 26; 1536, 803]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMz"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAM4"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHA"
-"AAABwAAAG0AAAADAAAAbQAAAAgAAABtAAAACQAAAG0AAAAEAAAAbQAAAAUAAABtAAAABgAAAG0AAA"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
 "drAAAACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAHEAAAABAAAAAAAAAG0AAAA"
 "BAAAAAAAAAG4AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAA"
 "AAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABh8AAAABAAAAAAAAA"
@@ -2233,7 +2053,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope5"
+          Name          "PFC Input choke"
           Show          on
           Position      [680, 305]
           Direction     up
@@ -2345,7 +2165,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope6"
+          Name          "PFC sw voltage"
           Show          on
           Position      [680, 345]
           Direction     up
@@ -2480,13 +2300,13 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "4"
+            Value         "[2 2 2 2]"
             Show          off
           }
         }
         Component {
           Type          Scope
-          Name          "grid_scope7"
+          Name          "PFC sw current"
           Show          on
           Position      [680, 395]
           Direction     up
@@ -2621,32 +2441,32 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "4"
+            Value         "[2 2 2 2]"
             Show          off
           }
         }
         Component {
           Type          Scope
-          Name          "grid_scope8"
+          Name          "PFC sw junction Temp"
           Show          on
           Position      [680, 445]
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 850]
+          Location      [0, 26; 1536, 803]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"BJ/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAKA"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
-"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
-"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE"
+"RAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+"AAAAAZvAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2762,13 +2582,13 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "4"
+            Value         "[2 2 2 2]"
             Show          off
           }
         }
         Component {
           Type          Scope
-          Name          "grid_scope9"
+          Name          "'PFC case Temp"
           Show          on
           Position      [680, 495]
           Direction     up
@@ -2778,16 +2598,16 @@ Plecs {
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"A4/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAL/"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
-"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2909,7 +2729,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope10"
+          Name          "PFC switching losses"
           Show          on
           Position      [680, 545]
           Direction     up
@@ -2924,8 +2744,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
-"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
@@ -3050,7 +2870,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope11"
+          Name          "PFC conduction losses"
           Show          on
           Position      [680, 595]
           Direction     up
@@ -3065,11 +2885,11 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
-"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
-"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE"
+"DAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+"AAAAAZoAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3138,7 +2958,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {}
+              Signals       {"IL"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -3191,7 +3011,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope12"
+          Name          "PFC output capacitor"
           Show          on
           Position      [680, 635]
           Direction     up
@@ -3297,7 +3117,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope13"
+          Name          "PFC input busbar"
           Show          on
           Position      [680, 670]
           Direction     up
@@ -3312,8 +3132,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
-"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "JAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAciAAAAAQAAAAAAAAPoAAAAACs="
@@ -3394,7 +3214,7 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "grid_scope14"
+          Name          "PFC output busbar"
           Show          on
           Position      [680, 700]
           Direction     up
@@ -3536,7 +3356,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux2"
           SrcTerminal   2
-          Points        [205, 925]
+          Points        [965, 125]
           Branch {
             DstComponent  "load_scope"
             DstTerminal   1
@@ -3550,13 +3370,13 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux2"
           SrcTerminal   3
-          Points        [200, 935]
+          Points        [960, 135]
           Branch {
             DstComponent  "load_scope"
             DstTerminal   2
           }
           Branch {
-            Points        [200, 950]
+            Points        [960, 150]
             DstComponent  "Product"
             DstTerminal   3
           }
@@ -3653,7 +3473,7 @@ Plecs {
           SrcComponent  "Demux4"
           SrcTerminal   2
           Points        [545, 350; 545, 165]
-          DstComponent  "grid_scope1"
+          DstComponent  "PFC Input Voltage"
           DstTerminal   1
         }
         Connection {
@@ -3661,7 +3481,7 @@ Plecs {
           SrcComponent  "Demux4"
           SrcTerminal   3
           Points        [550, 360; 550, 195]
-          DstComponent  "grid_scope2"
+          DstComponent  "PFC Input Current"
           DstTerminal   1
         }
         Connection {
@@ -3669,7 +3489,7 @@ Plecs {
           SrcComponent  "Demux4"
           SrcTerminal   4
           Points        [555, 370; 555, 225]
-          DstComponent  "grid_scope3"
+          DstComponent  "PFC output voltage"
           DstTerminal   1
         }
         Connection {
@@ -3684,42 +3504,42 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux5"
           SrcTerminal   2
-          DstComponent  "grid_scope4"
+          DstComponent  "PFC gates signal"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux5"
           SrcTerminal   3
-          DstComponent  "grid_scope4"
+          DstComponent  "PFC gates signal"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux5"
           SrcTerminal   4
-          DstComponent  "grid_scope4"
+          DstComponent  "PFC gates signal"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux5"
           SrcTerminal   5
-          DstComponent  "grid_scope4"
+          DstComponent  "PFC gates signal"
           DstTerminal   4
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux6"
           SrcTerminal   2
-          DstComponent  "grid_scope5"
+          DstComponent  "PFC Input choke"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux6"
           SrcTerminal   3
-          DstComponent  "grid_scope5"
+          DstComponent  "PFC Input choke"
           DstTerminal   2
         }
         Connection {
@@ -3734,35 +3554,35 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux7"
           SrcTerminal   3
-          DstComponent  "grid_scope6"
+          DstComponent  "PFC sw voltage"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux7"
           SrcTerminal   4
-          DstComponent  "grid_scope6"
+          DstComponent  "PFC sw voltage"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux7"
           SrcTerminal   5
-          DstComponent  "grid_scope6"
+          DstComponent  "PFC sw voltage"
           DstTerminal   4
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux7"
           SrcTerminal   2
-          DstComponent  "grid_scope6"
+          DstComponent  "PFC sw voltage"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux8"
           SrcTerminal   5
-          DstComponent  "grid_scope7"
+          DstComponent  "PFC sw current"
           DstTerminal   4
         }
         Connection {
@@ -3785,7 +3605,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux9"
           SrcTerminal   5
-          DstComponent  "grid_scope8"
+          DstComponent  "PFC sw junction Temp"
           DstTerminal   4
         }
         Connection {
@@ -3800,7 +3620,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux10"
           SrcTerminal   5
-          DstComponent  "grid_scope9"
+          DstComponent  "'PFC case Temp"
           DstTerminal   4
         }
         Connection {
@@ -3815,14 +3635,14 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux11"
           SrcTerminal   5
-          DstComponent  "grid_scope10"
+          DstComponent  "PFC switching losses"
           DstTerminal   4
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux12"
           SrcTerminal   5
-          DstComponent  "grid_scope11"
+          DstComponent  "PFC conduction losses"
           DstTerminal   4
         }
         Connection {
@@ -3846,7 +3666,7 @@ Plecs {
           SrcComponent  "Demux4"
           SrcTerminal   13
           Points        [550, 460; 550, 625]
-          DstComponent  "grid_scope12"
+          DstComponent  "PFC output capacitor"
           DstTerminal   1
         }
         Connection {
@@ -3854,7 +3674,7 @@ Plecs {
           SrcComponent  "Demux4"
           SrcTerminal   14
           Points        [545, 470; 545, 635]
-          DstComponent  "grid_scope12"
+          DstComponent  "PFC output capacitor"
           DstTerminal   2
         }
         Connection {
@@ -3862,21 +3682,21 @@ Plecs {
           SrcComponent  "Demux4"
           SrcTerminal   15
           Points        [540, 480; 540, 645]
-          DstComponent  "grid_scope12"
+          DstComponent  "PFC output capacitor"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux13"
           SrcTerminal   2
-          DstComponent  "grid_scope13"
+          DstComponent  "PFC input busbar"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux13"
           SrcTerminal   3
-          DstComponent  "grid_scope13"
+          DstComponent  "PFC input busbar"
           DstTerminal   2
         }
         Connection {
@@ -3891,14 +3711,14 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux14"
           SrcTerminal   2
-          DstComponent  "grid_scope14"
+          DstComponent  "PFC output busbar"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux14"
           SrcTerminal   3
-          DstComponent  "grid_scope14"
+          DstComponent  "PFC output busbar"
           DstTerminal   2
         }
         Connection {
@@ -3913,105 +3733,105 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux12"
           SrcTerminal   2
-          DstComponent  "grid_scope11"
+          DstComponent  "PFC conduction losses"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux12"
           SrcTerminal   3
-          DstComponent  "grid_scope11"
+          DstComponent  "PFC conduction losses"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux12"
           SrcTerminal   4
-          DstComponent  "grid_scope11"
+          DstComponent  "PFC conduction losses"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux11"
           SrcTerminal   2
-          DstComponent  "grid_scope10"
+          DstComponent  "PFC switching losses"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux11"
           SrcTerminal   3
-          DstComponent  "grid_scope10"
+          DstComponent  "PFC switching losses"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux11"
           SrcTerminal   4
-          DstComponent  "grid_scope10"
+          DstComponent  "PFC switching losses"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux10"
           SrcTerminal   2
-          DstComponent  "grid_scope9"
+          DstComponent  "'PFC case Temp"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux10"
           SrcTerminal   3
-          DstComponent  "grid_scope9"
+          DstComponent  "'PFC case Temp"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux10"
           SrcTerminal   4
-          DstComponent  "grid_scope9"
+          DstComponent  "'PFC case Temp"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux9"
           SrcTerminal   2
-          DstComponent  "grid_scope8"
+          DstComponent  "PFC sw junction Temp"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux9"
           SrcTerminal   3
-          DstComponent  "grid_scope8"
+          DstComponent  "PFC sw junction Temp"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux9"
           SrcTerminal   4
-          DstComponent  "grid_scope8"
+          DstComponent  "PFC sw junction Temp"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux8"
           SrcTerminal   2
-          DstComponent  "grid_scope7"
+          DstComponent  "PFC sw current"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux8"
           SrcTerminal   3
-          DstComponent  "grid_scope7"
+          DstComponent  "PFC sw current"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux8"
           SrcTerminal   4
-          DstComponent  "grid_scope7"
+          DstComponent  "PFC sw current"
           DstTerminal   3
         }
         RectangleAnnotation {
@@ -4047,8 +3867,8 @@ Plecs {
           Position      [95, 320]
         } 
         RectangleAnnotation {
-          Position     [615, 455]
-          Width        360
+          Position     [635, 455]
+          Width        400
           Height       760
           CornerRadius 3
           Thickness    2
@@ -4079,23 +3899,7 @@ Plecs {
           Position      [110, 585]
         } 
         RectangleAnnotation {
-          Position     [615, 990]
-          Width        360
-          Height       230
-          CornerRadius 3
-          Thickness    2
-          PenColor     4283760767
-          PenAlpha     1
-          BrushColor   10642217
-          BrushAlpha   0
-        } 
-        Annotation {
-          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
-"weight:600; color:#55007f;\">HV</span></p></body></html>"
-          Position      [455, 855]
-        } 
-        RectangleAnnotation {
-          Position     [255, 990]
+          Position     [1015, 190]
           Width        360
           Height       230
           CornerRadius 3
@@ -4108,23 +3912,7 @@ Plecs {
         Annotation {
           Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
 "weight:600; color:#55007f;\">Load</span></p></body></html>"
-          Position      [100, 855]
-        } 
-        RectangleAnnotation {
-          Position     [975, 455]
-          Width        360
-          Height       760
-          CornerRadius 3
-          Thickness    2
-          PenColor     4283760767
-          PenAlpha     1
-          BrushColor   10642217
-          BrushAlpha   0
-        } 
-        Annotation {
-          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
-"weight:600; color:#55007f;\">LLC</span></p></body></html>"
-          Position      [815, 60]
+          Position      [860, 55]
         } 
       }
     }
@@ -4132,7 +3920,7 @@ Plecs {
       Type          Ground
       Name          "Ground4"
       Show          off
-      Position      [630, 245]
+      Position      [600, 255]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -4141,7 +3929,7 @@ Plecs {
       Type          Subsystem
       Name          "Controller"
       Show          on
-      Position      [155, 315]
+      Position      [125, 325]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -5746,9 +5534,9 @@ Plecs {
     }
     Component {
       Type          Subsystem
-      Name          "LLC"
+      Name          "DUAL LLC"
       Show          on
-      Position      [525, 175]
+      Position      [495, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -6267,7 +6055,7 @@ Plecs {
       Type          Ground
       Name          "Ground5"
       Show          off
-      Position      [525, 245]
+      Position      [495, 255]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -6276,7 +6064,7 @@ Plecs {
       Type          Goto
       Name          "Goto"
       Show          off
-      Position      [250, 310]
+      Position      [220, 320]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6295,7 +6083,7 @@ Plecs {
       Type          From
       Name          "From"
       Show          off
-      Position      [330, 250]
+      Position      [300, 260]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -6314,7 +6102,7 @@ Plecs {
       Type          Goto
       Name          "Goto1"
       Show          off
-      Position      [295, 320]
+      Position      [265, 330]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6333,7 +6121,7 @@ Plecs {
       Type          From
       Name          "From1"
       Show          off
-      Position      [500, 250]
+      Position      [470, 260]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -6406,21 +6194,21 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "HV FILTER"
+      SrcComponent  "HV DC FILTER"
       SrcTerminal   1
-      DstComponent  "Load"
+      DstComponent  "BAT"
       DstTerminal   1
     }
     Connection {
       Type          Wire
-      SrcComponent  "HV FILTER"
+      SrcComponent  "HV DC FILTER"
       SrcTerminal   2
-      DstComponent  "Load"
+      DstComponent  "BAT"
       DstTerminal   2
     }
     Connection {
       Type          Wire
-      SrcComponent  "HV FILTER"
+      SrcComponent  "HV DC FILTER"
       SrcTerminal   5
       DstComponent  "Ground4"
       DstTerminal   1
@@ -6429,51 +6217,51 @@ Plecs {
       Type          Wire
       SrcComponent  "DCLink"
       SrcTerminal   3
-      DstComponent  "LLC"
+      DstComponent  "DUAL LLC"
       DstTerminal   5
     }
     Connection {
       Type          Wire
       SrcComponent  "DCLink"
       SrcTerminal   4
-      DstComponent  "LLC"
+      DstComponent  "DUAL LLC"
       DstTerminal   4
     }
     Connection {
       Type          HeatPipe
       SrcComponent  "Rth H-A"
       SrcTerminal   1
-      Points        [450, 275]
+      Points        [420, 285]
       Branch {
-        Points        [360, 275]
+        Points        [330, 285]
         DstComponent  "PFC"
         DstTerminal   6
       }
       Branch {
-        Points        [535, 275]
-        DstComponent  "LLC"
+        Points        [505, 285]
+        DstComponent  "DUAL LLC"
         DstTerminal   3
       }
     }
     Connection {
       Type          Wire
-      SrcComponent  "LLC"
+      SrcComponent  "DUAL LLC"
       SrcTerminal   1
-      DstComponent  "HV FILTER"
+      DstComponent  "HV DC FILTER"
       DstTerminal   4
     }
     Connection {
       Type          Wire
-      SrcComponent  "LLC"
+      SrcComponent  "DUAL LLC"
       SrcTerminal   2
-      DstComponent  "HV FILTER"
+      DstComponent  "HV DC FILTER"
       DstTerminal   3
     }
     Connection {
       Type          Wire
       SrcComponent  "Ground5"
       SrcTerminal   1
-      DstComponent  "LLC"
+      DstComponent  "DUAL LLC"
       DstTerminal   6
     }
     Connection {
@@ -6508,7 +6296,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From1"
       SrcTerminal   1
-      DstComponent  "LLC"
+      DstComponent  "DUAL LLC"
       DstTerminal   7
     }
     Annotation {
@@ -6521,8 +6309,19 @@ Plecs {
 "e UI Emoji'; font-size:xx-large; font-weight:600; color:#55007f; background-c"
 "olor:#ffffff;\">EV Onboard Charger with PFC and LLC Resonant Converter</span>"
 "</h1></body></html>"
-      Position      [455, 60]
+      Position      [425, 70]
+    } 
+    RectangleAnnotation {
+      Position     [425, 220]
+      Width        770
+      Height       360
+      CornerRadius 17
+      Thickness    2
+      PenColor     4283760767
+      PenAlpha     1
+      BrushColor   10642217
+      BrushAlpha   0
     } 
   }
 }
-DemoSignature "2EnDFtGCKm8jUo+EHk3+/HMQ0c+ZZAR7iheeNUe2Pdo="
+DemoSignature "H4hoh3rOx3UIOrL3HpSLvOeVNKfCHaoxU25WDcuLRIU="

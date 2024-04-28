@@ -29,21 +29,13 @@ class simpy:
         #add bloc to test if path is valid 
         self.server.plecs.load(self.path)
     
-    def ClearTrace(self,scopePath):
-        """_summary_
-
-        Args:
-            scopePath (_type_): _description_
-        """
-        self.server.plecs.scope(scopePath,'ClearTraces')
-    
-    def ClearAllTraces(self,scopedict):
+    def ClearAllTraces(self,scopelist):
         """_summary_
 
         Args:
             scopedict (_type_): _description_
         """
-        for val in scopedict:
+        for val in scopelist:
             self.server.plecs.scope(val,'ClearTraces')
 
     def Set_sim_param(self):
@@ -56,33 +48,23 @@ class simpy:
         """
         self.server.plecs.simulate(modelname, self.opts)
 
-    def HoldTraces(self,scope):
-        """_summary_
-        """
-        self.server.plecs.scope(scope,'HoldTrace')
-
-    def HoldAllTraces(self,scopedict):
+    def HoldAllTraces(self,scopelist):
         """_summary_
 
         Args:
             scopedict (_type_): _description_
         """
-        for key,val in scopedict:
+        for val in scopelist:
             self.server.plecs.scope(val,'HoldTrace')
 
-    def saveTraces(self,scope,ﬁleName):
-        """_summary_
-        """
-        self.server.plecs.scope(scope, 'SaveTraces', ﬁleName)
-
-    def saveAllTraces(self,scopedict,path):
+    def saveAllTraces(self,scopelist,path):
         """_summary_
 
         Args:
             scopedict (_type_): _description_
         """
-        for key,val in scopedict:
-            self.server.plecs.scope(val, 'SaveTraces', path + key+".trace")
+        for val in scopelist:
+            self.server.plecs.scope(val, 'SaveTraces',path+"/"+ val[11:]+".trace")
 
     def close_cnx(self,modelname):
         self.server.plecs.close(modelname) 
@@ -95,12 +77,3 @@ class simpy:
                 self.log_parameters(value, file, key, indentation)
             else:
                 file.write(f"[{parent_key}]{'[' + str(key) + ']'.ljust(max_key_length)} = {str(value)}\n")
-
-    def interpolate_list(self,lst, max_length):
-        start_value = lst[0]
-        end_value = lst[-1]
-        step = (end_value - start_value) // (len(lst) - 1)
-        new_lst = [start_value + i * step for i in range(len(lst))]
-        # Extend the list to match the maximum length
-        new_lst.extend([end_value] * (max_length - len(lst)))
-        return new_lst

@@ -9,21 +9,41 @@
 import os  
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
-                  'tSim'	    	   : 1.5, 
+                  'tSim'	    	   : 1.0, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'idx'             : 0,
                   'rel_tol'		   : 1e-3 
                }
 ToFile      =  {   #! change dir to generic later
-                  'ToFile_path'		: f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Results_{Sim_param['idx']}.csv',                     
+                  'RES'		         : 'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces',                     
+                  'ToFile_path'		: f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/Results_{Sim_param['idx']}.csv',                     
+                  'logfile'		   : f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/log_{Sim_param['idx']}.log',                     
                   'Ts'              : 0,
-                  'output_html'     : f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/output_html{Sim_param['idx']}.html',
+                  'output_html'     : f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/output_html{Sim_param['idx']}.html',
                            
                }  
-scopes      =  {
-				      'Scope'	    	   : "OBC/Scope",                                
-               }	
+scopes      =  [
+				      "OBC/Scopes/grid_scope",     
+				      "OBC/Scopes/EMI_scope",                                
+				      "OBC/Scopes/DCLink_scope",                                
+				      "OBC/Scopes/load_scope",                                
+				      "OBC/Scopes/PFC Input Voltage",                                
+				      "OBC/Scopes/PFC Input Current",                                
+				      "OBC/Scopes/PFC output voltage",                                
+				      "OBC/Scopes/PFC gates signal",                                
+				      "OBC/Scopes/PFC Input choke",                                
+				      "OBC/Scopes/PFC sw voltage",                                
+				      "OBC/Scopes/PFC sw current",                                
+				      "OBC/Scopes/PFC sw junction Temp",                                
+				      "OBC/Scopes/'PFC case Temp",                                
+				      "OBC/Scopes/PFC switching losses",                                
+				      "OBC/Scopes/PFC conduction losses",                                
+				      "OBC/Scopes/PFC output capacitor",                                
+				      "OBC/Scopes/PFC input busbar",                                
+				      "OBC/Scopes/PFC output busbar"                               
+                           
+               ]	
 PFC_glb     =  {
                   'L'               :  300e-6,
                   'Rbusin'          :  1e-2,
@@ -165,7 +185,8 @@ AC_Filter   =  {
                   'Rd'              :  470e3
             }
 #?----------------------------------------------------------------------------------------------------------------------------------------
-ModelVars   =  {  'ToFile'          :  ToFile,
+ModelVars   =  {  
+                  'ToFile'          :  ToFile,
                   'scopes'          :  scopes,  
                   'Sim_param'       :  Sim_param,  
                   'Grid'            :  Grid,  
@@ -179,4 +200,98 @@ ModelVars   =  {  'ToFile'          :  ToFile,
                   'Load'            :  Load,
                   'Thermals'        :Thermals                                                                                   
                }	
-#?----------------------------------------------------------------------------------------------------------------------------------------			
+#?----------------------------------------------------------------------------------------------------------------------------------------	
+Waveforms   =  [  
+                  'Grid Voltage',
+                  'Grid Current',
+
+                  'EMI Filter Voltage',
+                  'EMI Filter Current',
+
+                  'PFC Input Voltage',
+
+                  'PFC Input Current',
+
+                  'PFC output voltage',
+
+                  'PFC gates signal HS1',
+                  'PFC gates signal HS2',
+                  'PFC gates signal LS1',
+                  'PFC gates signal LS2',
+
+                  'PFC Input choke Voltage',
+                  'PFC Input choke Current',
+
+                  'PFC HS1 voltage',
+                  'PFC Diode HS1 voltage',
+                  'PFC HS2 voltage',
+                  'PFC Diode HS2 voltage',
+                  'PFC LS1 voltage',
+                  'PFC Diode LS1 voltage',
+                  'PFC LS2 voltage',
+                  'PFC Diode LS2 voltage',
+
+                  'PFC HS1 Current',
+                  'PFC Diode HS1 Current',
+                  'PFC HS2 Current',
+                  'PFC Diode HS2 Current',
+                  'PFC LS1 Current',
+                  'PFC Diode LS1 Current',
+                  'PFC LS2 Current',
+                  'PFC Diode LS2 Current',
+
+                  'PFC HS1 junction Temp',
+                  'PFC Diode HS1 junction Temp',
+                  'PFC HS2 junction Temp',
+                  'PFC Diode HS2 junction Temp',
+                  'PFC LS1 junction Temp',
+                  'PFC Diode LS1 junction Temp',
+                  'PFC LS2 junction Temp',
+                  'PFC Diode LS2 junction Temp',
+
+                  'PFC case Temp HS1',
+                  'PFC case Temp HS2',
+                  'PFC case Temp LS1',
+                  'PFC case Temp LS2',
+
+                  'PFC HS1 switching losses',
+                  # 'PFC Diode HS1 switching losses',
+                  'PFC HS2 switching losses',
+                  # 'PFC Diode HS2 switching losses',
+                  'PFC LS1 switching losses',
+                  # 'PFC Diode LS1 switching losses',
+                  'PFC LS2 switching losses',
+                  # 'PFC Diode LS2 switching losses',
+
+                  'PFC HS1 conduction losses',
+                  'PFC Diode HS1 conduction losses',
+                  'PFC HS2 conduction losses',
+                  'PFC Diode HS2 conduction losses',
+                  'PFC LS1 conduction losses',
+                  'PFC Diode LS1 conduction losses',
+                  'PFC LS2 conduction losses',
+                  'PFC Diode LS2 conduction losses',
+
+                  'PFC output capacitor voltage',
+                  'PFC output capacitor current',
+                  'PFC output capacitor dissipation',
+                 
+                  'PFC input busbar+ Resistor Voltage',
+                  'PFC input busbar+ Resistor Current',
+                  'PFC input busbar+ Resistor Dissipation',
+                  'PFC input busbar- Resistor Voltage',
+                  'PFC input busbar- Resistor Current',
+                  'PFC input busbar- Resistor Dissipation',
+
+                  'PFC output busbar+ Resistor Voltage',
+                  'PFC output busbar+ Resistor Current',
+                  'PFC output busbar+ Resistor Dissipation',
+                  'PFC output busbar- Resistor Voltage',
+                  'PFC output busbar- Resistor Current',
+                  'PFC output busbar- Resistor Dissipation',
+
+                  'DCLink Capacitor Voltage',
+                  'DCLink Capacitor Current'
+               ]		
+#?----------------------------------------------------------------------------------------------------------------------------------------	
+
