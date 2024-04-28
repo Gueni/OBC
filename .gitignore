@@ -150,3 +150,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# extensions
+*.trace
+*.html
+*.csv
+*.log
+pyfig.py

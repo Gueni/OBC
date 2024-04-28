@@ -42614,15 +42614,6 @@ Plecs {
                 }
               }
               Component {
-                Type          Ammeter
-                Name          "Am1"
-                Show          off
-                Position      [1090, 160]
-                Direction     left
-                Flipped       off
-                LabelPosition south
-              }
-              Component {
                 Type          Constant
                 Name          "PH"
                 Show          on
@@ -42655,8 +42646,8 @@ Plecs {
                 SrcTerminal   1
                 Points        [1125, 160]
                 Branch {
-                  DstComponent  "Am1"
-                  DstTerminal   2
+                  DstComponent  "VDC+"
+                  DstTerminal   1
                 }
                 Branch {
                   DstComponent  "VBAT+"
@@ -42733,13 +42724,6 @@ Plecs {
                 SrcComponent  "Demux2"
                 SrcTerminal   5
                 DstComponent  "Goto7"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Wire
-                SrcComponent  "VDC+"
-                SrcTerminal   1
-                DstComponent  "Am1"
                 DstTerminal   1
               }
               Connection {
@@ -53368,4 +53352,4 @@ Plecs {
     }
   }
 }
-DemoSignature "A7SkI6v0dXcqBHxjosVBOavZLZwP7IpP17qKpOTak78="
+DemoSignature "v6Vwpmd/Q+Jn1/kHv4+PorNbGftzC8VULl0OXaJBPBk="

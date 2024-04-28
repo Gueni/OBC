@@ -6,22 +6,32 @@
 #?                                        / /_/ / /_/ / /___     | |/ / /_/ / /  (__  )
 #?                                        \____/_____/\____/     |___/\__,_/_/  /____/
 #?----------------------------------------------------------------------------------------------------------------------------------------
-import os  
+import os 
+from datetime import datetime, timezone
+#?----------------------------------------------------------------------------------------------------------------------------------------
+utc_now             = datetime.now(timezone.utc)
+utc_numeric         = utc_now.strftime("%Y%m%d%H%M%S")
+current_directory   = os.getcwd() 
+sim_idx             = 0
+Traces_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces/" 
+ToFile_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/"
+logfile_path        = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/"
+output_html_path    = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"
+model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/OBC.plecs" 
+model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                        
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
                   'tSim'	    	   : 1.0, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
-                  'idx'             : 0,
                   'rel_tol'		   : 1e-3 
                }
-ToFile      =  {   #! change dir to generic later
-                  'RES'		         : 'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces',                     
-                  'ToFile_path'		: f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/Results_{Sim_param['idx']}.csv',                     
-                  'logfile'		   : f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/log_{Sim_param['idx']}.log',                     
-                  'Ts'              : 0,
-                  'output_html'     : f'D:/4 WORKSPACE/24-OBC/OBC/0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/output_html{Sim_param['idx']}.html',
-                           
+ToFile      =  {   
+                  'ToFile_path'		: (os.path.join(current_directory, ToFile_path+f"Results_{utc_numeric}_{sim_idx}.csv")).replace("\\", "/"),                     
+                  'logfile'		   : (os.path.join(current_directory, logfile_path+f"Log_{utc_numeric}_{sim_idx}.log")).replace("\\", "/"),                     
+                  'output_html'     : (os.path.join(current_directory, output_html_path+f"Html_{utc_numeric}_{sim_idx}.html")).replace("\\", "/"),
+                  'Traces'		      : (os.path.join(current_directory, Traces_path)).replace("\\", "/")  ,                     
+                  'Ts'              : 0         
                }  
 scopes      =  [
 				      "OBC/Scopes/grid_scope",     
@@ -57,8 +67,7 @@ PFC_glb     =  {
                                              'Nseri'		      : 1,  
                                              'Vinit'		      : 0,  
                                              'Iinit'		      : 0             
-                                       },  
-                  'VF'              :  500                                                         
+                                       }                                                        
                }
 PFC_SW      =  {
                   'Config'          : 1, 
@@ -97,7 +106,101 @@ PFC_SW      =  {
                   'Q_reverse'       : 0,            
                   'Ldr'             : 1e-12,
                   'Ldr_Iinit'       : 0,
-                  'Lso'             : 0,
+                  'Lso'             : 1e-12,
+                  'Lso_Iinit'       : 0,
+                  'nPara'           : 0,
+                  'T_init'          : 25,
+                  'Tamb'            : 25, 
+                  't_init'          : 25, 
+                  'rth_sw'          : 0.09,
+                  'rth_ch'          : 0.5, 
+                  'Rth'             : 0.34 					    	                           
+               }
+LLC_SW      =  {
+                  'Config'          : 1, 
+                  'therm_mosfet'    : 'file:C3M0021120K', 
+                  'Rgon'            : 2.5,
+                  'Rgoff'           : 2.5, 
+                  'Vdsmax'          : 1200, 
+                  'Idsmax'          : 100, 
+                  'Tjmax'           : 175,                    
+                  'Tjmin'           : -40,                   
+                  'TcDerating'      : [-55,27,45,70,95,108,120,132,145,158,170,175],           
+                  'IdsMaxDerated'   : [100,100,95,86,77, 71, 65, 58, 49, 37, 20,  0],     
+                  'ron_mosfet'      : 0.021, 
+                  'Rds_off'         : 0,
+                  'Iinit'           : 0,
+                  'Coss'            : {                                                    
+                                          'Config'		      : 6,  
+                                          'Cap_s'    		   : 1e-12,  
+                                          'Resr_s'		      : 0,  
+                                          'Lesl_s'		      : 0,  
+                                          'Npara'		      : 1,  
+                                          'Nseri'		      : 1,  
+                                          'Vinit'		      : 0,  
+                                          'Iinit'		      : 0             
+                                          },
+                  'vblock'          : 0,
+                  'Idrain'          : 0,
+                  'Trise'           : 0,
+                  'Tfall'           : 0,
+                  'therm_body_diode': 'file:C3M0021120K_bodydiode', 
+                  'ron_body_diode'  : 0.033, 
+                  'Rdb_off'         : 0,
+                  'vf_body_diode'   : 2.3, 
+                  'BD_If'           : 0,
+                  'T_reverse'       : 0,
+                  'Q_reverse'       : 0,            
+                  'Ldr'             : 1e-12,
+                  'Ldr_Iinit'       : 0,
+                  'Lso'             : 1e-12,
+                  'Lso_Iinit'       : 0,
+                  'nPara'           : 0,
+                  'T_init'          : 25,
+                  'Tamb'            : 25, 
+                  't_init'          : 25, 
+                  'rth_sw'          : 0.09,
+                  'rth_ch'          : 0.5, 
+                  'Rth'             : 0.34 					    	                           
+               }
+LLC_SR      =  {
+                  'Config'          : 1, 
+                  'therm_mosfet'    : 'file:C3M0021120K', 
+                  'Rgon'            : 2.5,
+                  'Rgoff'           : 2.5, 
+                  'Vdsmax'          : 1200, 
+                  'Idsmax'          : 100, 
+                  'Tjmax'           : 175,                    
+                  'Tjmin'           : -40,                   
+                  'TcDerating'      : [-55,27,45,70,95,108,120,132,145,158,170,175],           
+                  'IdsMaxDerated'   : [100,100,95,86,77, 71, 65, 58, 49, 37, 20,  0],     
+                  'ron_mosfet'      : 0.021, 
+                  'Rds_off'         : 0,
+                  'Iinit'           : 0,
+                  'Coss'            : {                                                    
+                                          'Config'		      : 6,  
+                                          'Cap_s'    		   : 1e-12,  
+                                          'Resr_s'		      : 0,  
+                                          'Lesl_s'		      : 0,  
+                                          'Npara'		      : 1,  
+                                          'Nseri'		      : 1,  
+                                          'Vinit'		      : 0,  
+                                          'Iinit'		      : 0             
+                                          },
+                  'vblock'          : 0,
+                  'Idrain'          : 0,
+                  'Trise'           : 0,
+                  'Tfall'           : 0,
+                  'therm_body_diode': 'file:C3M0021120K_bodydiode', 
+                  'ron_body_diode'  : 0.033, 
+                  'Rdb_off'         : 0,
+                  'vf_body_diode'   : 2.3, 
+                  'BD_If'           : 0,
+                  'T_reverse'       : 0,
+                  'Q_reverse'       : 0,            
+                  'Ldr'             : 1e-12,
+                  'Ldr_Iinit'       : 0,
+                  'Lso'             : 1e-12,
                   'Lso_Iinit'       : 0,
                   'nPara'           : 0,
                   'T_init'          : 25,
@@ -143,7 +246,15 @@ Load        =  {
 LLC         =  {
                   'R1'              : 4700/4,          
                   'R2'              : 160/24,          
-                  'T_dt'            : 300e-9                          					
+                  'T_dt'            : 300e-9,
+                  'HS1'             :  LLC_SW,   
+                  'HS2'             :  LLC_SW,   
+                  'LS1'             :  LLC_SW,   
+                  'LS2'             :  LLC_SW,
+                  'SRHS1'           :  LLC_SR,   
+                  'SRHS2'           :  LLC_SR,   
+                  'SRLS1'           :  LLC_SR,   
+                  'SRLS2'           :  LLC_SR                          					
                }
 Grid        =  {
                   'Config'          :  2,  
@@ -204,24 +315,24 @@ ModelVars   =  {
 Waveforms   =  [  
                   'Grid Voltage',
                   'Grid Current',
-
+                  #?-------------------------
                   'EMI Filter Voltage',
                   'EMI Filter Current',
-
+                  #?-------------------------
                   'PFC Input Voltage',
-
+                  #?-------------------------
                   'PFC Input Current',
-
+                  #?-------------------------
                   'PFC output voltage',
-
+                  #?-------------------------
                   'PFC gates signal HS1',
                   'PFC gates signal HS2',
                   'PFC gates signal LS1',
                   'PFC gates signal LS2',
-
+                  #?-------------------------
                   'PFC Input choke Voltage',
                   'PFC Input choke Current',
-
+                  #?-------------------------
                   'PFC HS1 voltage',
                   'PFC Diode HS1 voltage',
                   'PFC HS2 voltage',
@@ -230,7 +341,7 @@ Waveforms   =  [
                   'PFC Diode LS1 voltage',
                   'PFC LS2 voltage',
                   'PFC Diode LS2 voltage',
-
+                  #?-------------------------
                   'PFC HS1 Current',
                   'PFC Diode HS1 Current',
                   'PFC HS2 Current',
@@ -239,7 +350,7 @@ Waveforms   =  [
                   'PFC Diode LS1 Current',
                   'PFC LS2 Current',
                   'PFC Diode LS2 Current',
-
+                  #?-------------------------
                   'PFC HS1 junction Temp',
                   'PFC Diode HS1 junction Temp',
                   'PFC HS2 junction Temp',
@@ -248,12 +359,12 @@ Waveforms   =  [
                   'PFC Diode LS1 junction Temp',
                   'PFC LS2 junction Temp',
                   'PFC Diode LS2 junction Temp',
-
+                  #?-------------------------
                   'PFC case Temp HS1',
                   'PFC case Temp HS2',
                   'PFC case Temp LS1',
                   'PFC case Temp LS2',
-
+                  #?-------------------------
                   'PFC HS1 switching losses',
                   # 'PFC Diode HS1 switching losses',
                   'PFC HS2 switching losses',
@@ -262,7 +373,7 @@ Waveforms   =  [
                   # 'PFC Diode LS1 switching losses',
                   'PFC LS2 switching losses',
                   # 'PFC Diode LS2 switching losses',
-
+                  #?-------------------------
                   'PFC HS1 conduction losses',
                   'PFC Diode HS1 conduction losses',
                   'PFC HS2 conduction losses',
@@ -271,25 +382,25 @@ Waveforms   =  [
                   'PFC Diode LS1 conduction losses',
                   'PFC LS2 conduction losses',
                   'PFC Diode LS2 conduction losses',
-
+                  #?-------------------------
                   'PFC output capacitor voltage',
                   'PFC output capacitor current',
                   'PFC output capacitor dissipation',
-                 
+                  #?-------------------------                 
                   'PFC input busbar+ Resistor Voltage',
                   'PFC input busbar+ Resistor Current',
                   'PFC input busbar+ Resistor Dissipation',
                   'PFC input busbar- Resistor Voltage',
                   'PFC input busbar- Resistor Current',
                   'PFC input busbar- Resistor Dissipation',
-
+                  #?-------------------------
                   'PFC output busbar+ Resistor Voltage',
                   'PFC output busbar+ Resistor Current',
                   'PFC output busbar+ Resistor Dissipation',
                   'PFC output busbar- Resistor Voltage',
                   'PFC output busbar- Resistor Current',
                   'PFC output busbar- Resistor Dissipation',
-
+                  #?-------------------------
                   'DCLink Capacitor Voltage',
                   'DCLink Capacitor Current'
                ]		
