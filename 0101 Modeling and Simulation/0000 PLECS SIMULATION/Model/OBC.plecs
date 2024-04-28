@@ -47,8 +47,8 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
-    ZoomFactor    1.14436
+    Location      [0, 26; 1536, 780]
+    ZoomFactor    1.49862
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -57,7 +57,7 @@ Plecs {
       SrcComponent  "library/Power Components/EVSE\\/GRID"
       Name          "EVSE/GRID"
       Show          on
-      Position      [125, 255]
+      Position      [125, 175]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -107,7 +107,7 @@ Plecs {
       Type          Ground
       Name          "Ground"
       Show          off
-      Position      [250, 330]
+      Position      [245, 250]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -116,7 +116,7 @@ Plecs {
       Type          Ground
       Name          "Ground1"
       Show          off
-      Position      [415, 330]
+      Position      [350, 250]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -125,11 +125,11 @@ Plecs {
       Type          Subsystem
       Name          "Data Export"
       Show          on
-      Position      [210, 140]
+      Position      [155, 350]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-40, -20; 40, 20]
+      Frame         [-70, -15; 70, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -245,7 +245,7 @@ Plecs {
       SrcComponent  "library/Power Components/DCLink"
       Name          "DCLink"
       Show          on
-      Position      [520, 255]
+      Position      [440, 175]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -316,7 +316,7 @@ Plecs {
       SrcComponent  "library/Power Components/Load"
       Name          "Load"
       Show          on
-      Position      [865, 260]
+      Position      [715, 175]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -367,7 +367,7 @@ Plecs {
       SrcComponent  "library/Power Components/EMI FILTER"
       Name          "EMI FILTER"
       Show          on
-      Position      [250, 255]
+      Position      [245, 175]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -477,7 +477,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth H-A"
       Show          on
-      Position      [560, 505]
+      Position      [450, 305]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -491,7 +491,7 @@ Plecs {
       Type          ConstantTemperatureGnd
       Name          "Ambient"
       Show          on
-      Position      [560, 540]
+      Position      [450, 345]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -506,7 +506,7 @@ Plecs {
       SrcComponent  "library/Power Components/PFC"
       Name          "PFC"
       Show          on
-      Position      [420, 255]
+      Position      [355, 175]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -558,139 +558,8 @@ Plecs {
       }
       Terminal {
         Type          Input
-        Position      [-45, 0]
-        Direction     left
-      }
-    }
-    Component {
-      Type          From
-      Name          "From"
-      Show          off
-      Position      [350, 255]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "g_PFC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/LLC"
-      Name          "LLC1"
-      Show          on
-      Position      [645, 190]
-      Direction     up
-      Flipped       off
-      LabelPosition north
-      Frame         [-45, -55; 45, 55]
-      Parameter {
-        Variable      "LLC"
-        Value         "LLC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "2"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -35]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 40]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 40]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -35]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 60]
+        Position      [-25, 55]
         Direction     down
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          Input
-        Position      [-45, 0]
-        Direction     left
-      }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/LLC"
-      Name          "LLC2"
-      Show          on
-      Position      [645, 350]
-      Direction     up
-      Flipped       off
-      LabelPosition north
-      Frame         [-45, -55; 45, 55]
-      Parameter {
-        Variable      "LLC"
-        Value         "LLC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "2"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -35]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 40]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 40]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -35]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          Input
-        Position      [-45, 0]
-        Direction     left
       }
     }
     Component {
@@ -698,7 +567,7 @@ Plecs {
       SrcComponent  "library/Power Components/DC FILTER"
       Name          "HV FILTER"
       Show          on
-      Position      [775, 260]
+      Position      [630, 175]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -743,11 +612,11 @@ Plecs {
       Type          Subsystem
       Name          "Scopes"
       Show          on
-      Position      [120, 140]
+      Position      [155, 280]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-40, -20; 40, 20]
+      Frame         [-70, -15; 70, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -1076,27 +945,9 @@ Plecs {
     }
     Component {
       Type          Ground
-      Name          "Ground2"
-      Show          off
-      Position      [645, 260]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-    }
-    Component {
-      Type          Ground
-      Name          "Ground3"
-      Show          off
-      Position      [645, 420]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-    }
-    Component {
-      Type          Ground
       Name          "Ground4"
       Show          off
-      Position      [775, 330]
+      Position      [630, 245]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -1105,11 +956,11 @@ Plecs {
       Type          Subsystem
       Name          "Controller"
       Show          on
-      Position      [300, 140]
+      Position      [155, 315]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-40, -20; 40, 20]
+      Frame         [-70, -15; 70, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -1117,9 +968,19 @@ Plecs {
       MaskIconFrame on
       MaskIconOpaque off
       MaskIconRotates on
+      Terminal {
+        Type          Output
+        Position      [74, -5]
+        Direction     right
+      }
+      Terminal {
+        Type          Output
+        Position      [74, 5]
+        Direction     right
+      }
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.763605
+        ZoomFactor    0.873844
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -2197,25 +2058,6 @@ Plecs {
           }
         }
         Component {
-          Type          Goto
-          Name          "Goto15"
-          Show          off
-          Position      [1060, 270]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Tag"
-            Value         "g_PFC"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "1"
-            Show          off
-          }
-        }
-        Component {
           Type          From
           Name          "From8"
           Show          off
@@ -2302,6 +2144,44 @@ Plecs {
           Parameter {
             Variable      "Width"
             Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Output
+          Name          "g_PFC"
+          Show          on
+          Position      [1070, 270]
+          Direction     right
+          Flipped       off
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Output
+          Name          "g_LLC"
+          Show          on
+          Position      [1065, 575]
+          Direction     right
+          Flipped       off
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
             Show          off
           }
         }
@@ -2621,7 +2501,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Mux"
           SrcTerminal   1
-          DstComponent  "Goto15"
+          DstComponent  "g_PFC"
           DstTerminal   1
         }
         RectangleAnnotation {
@@ -2656,6 +2536,610 @@ Plecs {
 "weight:600; color:#55007f;\">LLC CONTROLLER</span></p></body></html>"
           Position      [200, 500]
         } 
+      }
+    }
+    Component {
+      Type          Subsystem
+      Name          "LLC"
+      Show          on
+      Position      [525, 175]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskDisplay   "line([0, 0, -10], [-20, -10, -4])\n"
+"line([-10, 0, 0], [4, 10, 20])\n"
+"line([-10, -10], [8, -8])\n"
+"line([-14, -14], [8, -8])\n"
+"line([-14, -20], [0, 0])\n"
+"line([0, 10, 10], [-14, -14, -6])\n"
+"line([10, 10, 0], [6, 14, 14])\n"
+"line([3, 17], [-6, -6])\n"
+"line([10, 17, 3, 10], [-6, 6, 6, -6])\n"
+"line([-5.65, -1.667, -3.864], [8.634, 9, 5.658])\n"
+"circle(-32.5, -13.5, .5)"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          HeatPort
+        Position      [10, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Input
+        Position      [-25, 55]
+        Direction     down
+      }
+      Schematic {
+        Location      [0, 26; 1536, 780]
+        ZoomFactor    1.30957
+        SliderPosition [0, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          Reference
+          SrcComponent  "library/Power Components/LLC"
+          Name          "LLC1"
+          Show          on
+          Position      [405, 135]
+          Direction     up
+          Flipped       off
+          LabelPosition north
+          Frame         [-45, -55; 45, 55]
+          Parameter {
+            Variable      "LLC"
+            Value         "LLC"
+            Show          off
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "2"
+            Show          off
+          }
+          Terminal {
+            Type          Port
+            Position      [50, -35]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, 40]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, 40]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, -35]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [0, 60]
+            Direction     down
+          }
+          Terminal {
+            Type          HeatPort
+            Position      [10, 60]
+            Direction     down
+          }
+          Terminal {
+            Type          Input
+            Position      [-45, 0]
+            Direction     left
+          }
+        }
+        Component {
+          Type          Reference
+          SrcComponent  "library/Power Components/LLC"
+          Name          "LLC2"
+          Show          on
+          Position      [495, 255]
+          Direction     up
+          Flipped       off
+          LabelPosition north
+          Frame         [-45, -55; 45, 55]
+          Parameter {
+            Variable      "LLC"
+            Value         "LLC"
+            Show          off
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "2"
+            Show          off
+          }
+          Terminal {
+            Type          Port
+            Position      [50, -35]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [50, 40]
+            Direction     right
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, 40]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [-50, -35]
+            Direction     left
+          }
+          Terminal {
+            Type          Port
+            Position      [0, 60]
+            Direction     down
+          }
+          Terminal {
+            Type          HeatPort
+            Position      [10, 60]
+            Direction     down
+          }
+          Terminal {
+            Type          Input
+            Position      [-45, 0]
+            Direction     left
+          }
+        }
+        Component {
+          Type          Port
+          Name          "VLLC+"
+          Show          on
+          Position      [665, 100]
+          Direction     right
+          Flipped       on
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "VLLC-"
+          Show          on
+          Position      [665, 295]
+          Direction     right
+          Flipped       on
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          HeatPort
+          Name          "6"
+          Show          off
+          Position      [415, 395]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "3"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "VDC-"
+          Show          on
+          Position      [115, 295]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Parameter {
+            Variable      "Index"
+            Value         "4"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "VDC+"
+          Show          on
+          Position      [115, 100]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Parameter {
+            Variable      "Index"
+            Value         "5"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "11"
+          Show          off
+          Position      [405, 365]
+          Direction     down
+          Flipped       on
+          LabelPosition west
+          Parameter {
+            Variable      "Index"
+            Value         "6"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Input
+          Name          "Gates"
+          Show          off
+          Position      [265, 200]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Parameter {
+            Variable      "Index"
+            Value         "7"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux"
+          Show          off
+          Position      [305, 200]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[8 8]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Voltmeter
+          Name          "Vm1"
+          Show          on
+          Position      [620, 195]
+          Direction     up
+          Flipped       off
+          LabelPosition west
+        }
+        Component {
+          Type          Ammeter
+          Name          "Am1"
+          Show          on
+          Position      [595, 100]
+          Direction     left
+          Flipped       off
+          LabelPosition south
+        }
+        Component {
+          Type          Voltmeter
+          Name          "Vm2"
+          Show          on
+          Position      [210, 200]
+          Direction     up
+          Flipped       off
+          LabelPosition west
+        }
+        Component {
+          Type          Ammeter
+          Name          "Am2"
+          Show          on
+          Position      [185, 100]
+          Direction     left
+          Flipped       off
+          LabelPosition south
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "11"
+          SrcTerminal   1
+          Points        [405, 320]
+          Branch {
+            DstComponent  "LLC1"
+            DstTerminal   5
+          }
+          Branch {
+            Points        [495, 320]
+            DstComponent  "LLC2"
+            DstTerminal   5
+          }
+        }
+        Connection {
+          Type          HeatPipe
+          SrcComponent  "6"
+          SrcTerminal   1
+          Points        [415, 330]
+          Branch {
+            DstComponent  "LLC1"
+            DstTerminal   6
+          }
+          Branch {
+            Points        [505, 330]
+            DstComponent  "LLC2"
+            DstTerminal   6
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "LLC1"
+          SrcTerminal   4
+          Points        [340, 100]
+          Branch {
+            Points        [210, 100]
+            Branch {
+              DstComponent  "Am2"
+              DstTerminal   2
+            }
+            Branch {
+              DstComponent  "Vm2"
+              DstTerminal   1
+            }
+          }
+          Branch {
+            Points        [340, 220]
+            DstComponent  "LLC2"
+            DstTerminal   4
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "LLC2"
+          SrcTerminal   3
+          Points        [330, 295]
+          Branch {
+            Points        [210, 295]
+            Branch {
+              DstComponent  "VDC-"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "Vm2"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            Points        [330, 175]
+            DstComponent  "LLC1"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "LLC1"
+          SrcTerminal   1
+          Points        [550, 100]
+          Branch {
+            DstComponent  "Am1"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [550, 220]
+            DstComponent  "LLC2"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "LLC2"
+          SrcTerminal   2
+          Points        [560, 295]
+          Branch {
+            Points        [620, 295]
+            Branch {
+              DstComponent  "VLLC-"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "Vm1"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            Points        [560, 175]
+            DstComponent  "LLC1"
+            DstTerminal   2
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Gates"
+          SrcTerminal   1
+          DstComponent  "Demux"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux"
+          SrcTerminal   2
+          Points        [310, 135]
+          DstComponent  "LLC1"
+          DstTerminal   7
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux"
+          SrcTerminal   3
+          Points        [310, 255]
+          DstComponent  "LLC2"
+          DstTerminal   7
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "VLLC+"
+          SrcTerminal   1
+          Points        [620, 100]
+          Branch {
+            DstComponent  "Am1"
+            DstTerminal   2
+          }
+          Branch {
+            DstComponent  "Vm1"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "VDC+"
+          SrcTerminal   1
+          DstComponent  "Am2"
+          DstTerminal   1
+        }
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground5"
+      Show          off
+      Position      [525, 245]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Goto
+      Name          "Goto"
+      Show          off
+      Position      [250, 310]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "g_PFC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From"
+      Show          off
+      Position      [330, 250]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "g_PFC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto1"
+      Show          off
+      Position      [295, 320]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "g_LLC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From1"
+      Show          off
+      Position      [500, 250]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "g_LLC"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
       }
     }
     Connection {
@@ -2715,11 +3199,97 @@ Plecs {
       DstTerminal   2
     }
     Connection {
+      Type          Wire
+      SrcComponent  "HV FILTER"
+      SrcTerminal   1
+      DstComponent  "Load"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "HV FILTER"
+      SrcTerminal   2
+      DstComponent  "Load"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "HV FILTER"
+      SrcTerminal   5
+      DstComponent  "Ground4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "DCLink"
+      SrcTerminal   3
+      DstComponent  "LLC"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "DCLink"
+      SrcTerminal   4
+      DstComponent  "LLC"
+      DstTerminal   4
+    }
+    Connection {
+      Type          HeatPipe
+      SrcComponent  "Rth H-A"
+      SrcTerminal   1
+      Points        [450, 275]
+      Branch {
+        Points        [360, 275]
+        DstComponent  "PFC"
+        DstTerminal   6
+      }
+      Branch {
+        Points        [535, 275]
+        DstComponent  "LLC"
+        DstTerminal   3
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC"
+      SrcTerminal   1
+      DstComponent  "HV FILTER"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LLC"
+      SrcTerminal   2
+      DstComponent  "HV FILTER"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Ground5"
+      SrcTerminal   1
+      DstComponent  "LLC"
+      DstTerminal   6
+    }
+    Connection {
       Type          HeatPipe
       SrcComponent  "Ambient"
       SrcTerminal   1
       DstComponent  "Rth H-A"
       DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Controller"
+      SrcTerminal   1
+      DstComponent  "Goto"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Controller"
+      SrcTerminal   2
+      DstComponent  "Goto1"
+      DstTerminal   1
     }
     Connection {
       Type          Signal
@@ -2729,123 +3299,24 @@ Plecs {
       DstTerminal   7
     }
     Connection {
-      Type          Wire
-      SrcComponent  "LLC1"
-      SrcTerminal   4
-      Points        [585, 155; 585, 220]
-      Branch {
-        Points        [585, 315]
-        DstComponent  "LLC2"
-        DstTerminal   4
-      }
-      Branch {
-        DstComponent  "DCLink"
-        DstTerminal   3
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC1"
-      SrcTerminal   3
-      Points        [590, 230; 590, 295]
-      Branch {
-        Points        [590, 390]
-        DstComponent  "LLC2"
-        DstTerminal   3
-      }
-      Branch {
-        DstComponent  "DCLink"
-        DstTerminal   4
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HV FILTER"
+      Type          Signal
+      SrcComponent  "From1"
       SrcTerminal   1
-      DstComponent  "Load"
-      DstTerminal   1
+      DstComponent  "LLC"
+      DstTerminal   7
     }
-    Connection {
-      Type          Wire
-      SrcComponent  "HV FILTER"
-      SrcTerminal   2
-      DstComponent  "Load"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC2"
-      SrcTerminal   1
-      Points        [700, 315; 700, 225]
-      Branch {
-        Points        [700, 155]
-        DstComponent  "LLC1"
-        DstTerminal   1
-      }
-      Branch {
-        DstComponent  "HV FILTER"
-        DstTerminal   4
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "LLC1"
-      SrcTerminal   2
-      Points        [710, 230; 710, 300]
-      Branch {
-        Points        [710, 390]
-        DstComponent  "LLC2"
-        DstTerminal   2
-      }
-      Branch {
-        DstComponent  "HV FILTER"
-        DstTerminal   3
-      }
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth H-A"
-      SrcTerminal   1
-      Points        [560, 440]
-      Branch {
-        Points        [425, 440]
-        DstComponent  "PFC"
-        DstTerminal   6
-      }
-      Branch {
-        Points        [655, 440]
-        Branch {
-          DstComponent  "LLC2"
-          DstTerminal   6
-        }
-        Branch {
-          Points        [700, 440; 700, 265; 655, 265]
-          DstComponent  "LLC1"
-          DstTerminal   6
-        }
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "Ground2"
-      SrcTerminal   1
-      DstComponent  "LLC1"
-      DstTerminal   5
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "Ground3"
-      SrcTerminal   1
-      DstComponent  "LLC2"
-      DstTerminal   5
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HV FILTER"
-      SrcTerminal   5
-      DstComponent  "Ground4"
-      DstTerminal   1
-    }
+    Annotation {
+      Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
+":16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
+"; line-height:125%; background-color:#ffffff;\"><span style=\" font-size:xx-l"
+"arge; font-weight:600; color:#55007f; background-color:#ffffff;\">Single Phas"
+"e </span><span style=\" font-family:'-apple-system','BlinkMacSystemFont','Seg"
+"oe UI','Noto Sans','Helvetica','Arial','sans-serif','Apple Color Emoji','Sego"
+"e UI Emoji'; font-size:xx-large; font-weight:600; color:#55007f; background-c"
+"olor:#ffffff;\">EV Onboard Charger with PFC and LLC Resonant Converter</span>"
+"</h1></body></html>"
+      Position      [455, 60]
+    } 
   }
 }
-DemoSignature "sj+ZwC2PuFWhc2kbaw0viFZxQJm1pfq6aLPKY8sm9+Y="
+DemoSignature "DORIRXU9DnS4cLTnFYz/vSqs2k5wo0iWdxkdoAzj9po="

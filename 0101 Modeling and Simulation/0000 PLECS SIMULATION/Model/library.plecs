@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -9481,8 +9481,8 @@ Plecs {
           }
           Terminal {
             Type          Input
-            Position      [-45, 0]
-            Direction     left
+            Position      [-25, 55]
+            Direction     down
           }
           TerminalNames { "VDC+", "VDC-", "VAC-", "VAC+", "PE", "Port1", "Gate" }
           Location      [0, 26; 1536, 780]
@@ -10865,7 +10865,7 @@ Plecs {
               Component {
                 Type          Input
                 Name          "Gate"
-                Show          on
+                Show          off
                 Position      [195, 125]
                 Direction     right
                 Flipped       off
@@ -18352,7 +18352,7 @@ Plecs {
               Component {
                 Type          Input
                 Name          "Gate"
-                Show          on
+                Show          off
                 Position      [195, 125]
                 Direction     right
                 Flipped       off
@@ -31053,4 +31053,4 @@ Plecs {
     }
   }
 }
-DemoSignature "Rjf7D5CRrmsriyKmauD6bUD/YGpECJgfu+s4tiMZJRI="
+DemoSignature "EM1bRWukFMRBzhSEuMp/IvvnrEOc3l25CkRrgyKwCFo="
