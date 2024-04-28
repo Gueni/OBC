@@ -2406,94 +2406,13 @@ Plecs {
           MaskIconOpaque off
           MaskIconRotates on
           Parameter {
-            Variable      "Lin"
-            Prompt        "Lin"
+            Variable      "AC_Filter"
+            Prompt        "Parameters :"
             Type          FreeText
             Value         ""
             Show          off
             Tunable       off
-            TabName       "Input Parameters"
-          }
-          Parameter {
-            Variable      "Cin"
-            Prompt        "Cin"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "Input Parameters"
-          }
-          Parameter {
-            Variable      "L_CMC"
-            Prompt        "L_CMC"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "CM"
-          }
-          Parameter {
-            Variable      "Cy1"
-            Prompt        "Cy1"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "CM"
-          }
-          Parameter {
-            Variable      "Cy2"
-            Prompt        "Cy2"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "CM"
-          }
-          Parameter {
-            Variable      "L_DMC"
-            Prompt        "L_DMC"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "DM"
-          }
-          Parameter {
-            Variable      "Cx"
-            Prompt        "Cx"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "DM"
-          }
-          Parameter {
-            Variable      "Cd"
-            Prompt        "Cd"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "Damping"
-          }
-          Parameter {
-            Variable      "Rd"
-            Prompt        "Rd"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "Damping"
-          }
-          Parameter {
-            Variable      "Ro"
-            Prompt        "Ro"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       "Output Parameters"
+            TabName       ""
           }
           Terminal {
             Type          Port
@@ -2559,7 +2478,7 @@ Plecs {
                 LabelPosition west
                 Parameter {
                   Variable      "C"
-                  Value         "Cy2"
+                  Value         "AC_Filter.Cy2"
                   Show          off
                 }
                 Parameter {
@@ -2578,7 +2497,7 @@ Plecs {
                 LabelPosition west
                 Parameter {
                   Variable      "C"
-                  Value         "Cy1"
+                  Value         "AC_Filter.Cy1"
                   Show          off
                 }
                 Parameter {
@@ -2597,7 +2516,7 @@ Plecs {
                 LabelPosition west
                 Parameter {
                   Variable      "C"
-                  Value         "Cx"
+                  Value         "AC_Filter.Cx"
                   Show          off
                 }
                 Parameter {
@@ -2769,7 +2688,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "L"
-                  Value         "[2 1; 1 2]*L_CMC"
+                  Value         "[2 1; 1 2]*AC_Filter.L_CMC"
                   Show          off
                 }
                 Parameter {
@@ -2793,7 +2712,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "L"
-                  Value         "[2 1; 1 2]*L_DMC"
+                  Value         "[2 1; 1 2]*AC_Filter.L_DMC"
                   Show          off
                 }
                 Parameter {
@@ -2879,90 +2798,6 @@ Plecs {
                 }
               }
               Component {
-                Type          Resistor
-                Name          "Rd1"
-                Show          off
-                Position      [175, 95]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Resistor
-                Name          "Rd2"
-                Show          off
-                Position      [175, 135]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Resistor
-                Name          "Rd3"
-                Show          off
-                Position      [175, 175]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Resistor
-                Name          "Rd4"
-                Show          off
-                Position      [155, 95]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Resistor
-                Name          "Rd5"
-                Show          off
-                Position      [155, 135]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Resistor
-                Name          "Rd6"
-                Show          off
-                Position      [155, 175]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
                 Type          Capacitor
                 Name          "Cin"
                 Show          on
@@ -2972,7 +2807,7 @@ Plecs {
                 LabelPosition west
                 Parameter {
                   Variable      "C"
-                  Value         "Cx"
+                  Value         "AC_Filter.Cx"
                   Show          off
                 }
                 Parameter {
@@ -2991,7 +2826,7 @@ Plecs {
                 LabelPosition west
                 Parameter {
                   Variable      "C"
-                  Value         "Cx"
+                  Value         "AC_Filter.Cx"
                   Show          off
                 }
                 Parameter {
@@ -3010,26 +2845,7 @@ Plecs {
                 LabelPosition north
                 Parameter {
                   Variable      "L"
-                  Value         "0.001"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "i_init"
-                  Value         "0"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Inductor
-                Name          "L4"
-                Show          off
-                Position      [440, 195]
-                Direction     left
-                Flipped       off
-                LabelPosition north
-                Parameter {
-                  Variable      "L"
-                  Value         "0.001"
+                  Value         "AC_Filter.Ll"
                   Show          off
                 }
                 Parameter {
@@ -3053,7 +2869,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "L"
-                  Value         "[2 1; 1 2]*L_DMC"
+                  Value         "[2 1; 1 2]*AC_Filter.L_DMC"
                   Show          off
                 }
                 Parameter {
@@ -3072,11 +2888,30 @@ Plecs {
                 LabelPosition west
                 Parameter {
                   Variable      "C"
-                  Value         "Cx"
+                  Value         "AC_Filter.Cx"
                   Show          off
                 }
                 Parameter {
                   Variable      "v_init"
+                  Value         "0"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Inductor
+                Name          "L5"
+                Show          off
+                Position      [440, 195]
+                Direction     left
+                Flipped       off
+                LabelPosition north
+                Parameter {
+                  Variable      "L"
+                  Value         "AC_Filter.Ll"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "i_init"
                   Value         "0"
                   Show          off
                 }
@@ -3180,87 +3015,29 @@ Plecs {
               }
               Connection {
                 Type          Wire
-                SrcComponent  "Rd3"
-                SrcTerminal   1
-                DstComponent  "Rd2"
-                DstTerminal   2
-              }
-              Connection {
-                Type          Wire
-                SrcComponent  "Rd2"
-                SrcTerminal   1
-                DstComponent  "Rd1"
-                DstTerminal   2
-              }
-              Connection {
-                Type          Wire
-                SrcComponent  "Rd6"
-                SrcTerminal   1
-                DstComponent  "Rd5"
-                DstTerminal   2
-              }
-              Connection {
-                Type          Wire
-                SrcComponent  "Rd5"
-                SrcTerminal   1
-                DstComponent  "Rd4"
-                DstTerminal   2
-              }
-              Connection {
-                Type          Wire
-                SrcComponent  "Rd6"
-                SrcTerminal   2
-                Points        [155, 195]
-                Branch {
-                  Points        [175, 195]
-                  Branch {
-                    DstComponent  "Rd3"
-                    DstTerminal   2
-                  }
-                  Branch {
-                    Points        [220, 195]
-                    Branch {
-                      Points        [240, 195; 240, 145]
-                      DstComponent  "CMC"
-                      DstTerminal   4
-                    }
-                    Branch {
-                      DstComponent  "Cin"
-                      DstTerminal   2
-                    }
-                  }
-                }
+                SrcComponent  "CMC"
+                SrcTerminal   4
+                Points        [240, 145; 240, 195; 220, 195]
                 Branch {
                   DstComponent  "N"
                   DstTerminal   1
                 }
+                Branch {
+                  DstComponent  "Cin"
+                  DstTerminal   2
+                }
               }
               Connection {
                 Type          Wire
-                SrcComponent  "Rd4"
-                SrcTerminal   1
-                Points        [155, 75]
-                Branch {
-                  Points        [175, 75]
-                  Branch {
-                    DstComponent  "Rd1"
-                    DstTerminal   1
-                  }
-                  Branch {
-                    Points        [220, 75]
-                    Branch {
-                      Points        [240, 75; 240, 125]
-                      DstComponent  "CMC"
-                      DstTerminal   2
-                    }
-                    Branch {
-                      DstComponent  "Cin"
-                      DstTerminal   1
-                    }
-                  }
-                }
+                SrcComponent  "CMC"
+                SrcTerminal   2
+                Points        [240, 125; 240, 75; 220, 75]
                 Branch {
                   DstComponent  "L"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "Cin"
                   DstTerminal   1
                 }
               }
@@ -3303,7 +3080,7 @@ Plecs {
                     DstTerminal   1
                   }
                   Branch {
-                    DstComponent  "L4"
+                    DstComponent  "L5"
                     DstTerminal   1
                   }
                 }
@@ -3321,7 +3098,7 @@ Plecs {
                 SrcComponent  "DMC"
                 SrcTerminal   4
                 Points        [465, 145; 465, 195]
-                DstComponent  "L4"
+                DstComponent  "L5"
                 DstTerminal   2
               }
               Connection {
@@ -53352,4 +53129,4 @@ Plecs {
     }
   }
 }
-DemoSignature "v6Vwpmd/Q+Jn1/kHv4+PorNbGftzC8VULl0OXaJBPBk="
+DemoSignature "MJox5kn2Tw2PlF8Dq/lekBVc95Wb8uZMcePu3Cxp10E="

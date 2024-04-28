@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1.30957
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -138,7 +138,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 23; 1536, 777]
+        Location      [0, 26; 1536, 780]
         ZoomFactor    1.14437
         SliderPosition [0, 56]
         ShowBrowser   off
@@ -226,7 +226,7 @@ Plecs {
           Probe {
             Component     "EMI FILTER"
             Path          ""
-            Signals       {"I", "V"}
+            Signals       {"V", "I"}
           }
         }
         Component {
@@ -743,7 +743,7 @@ Plecs {
       SrcComponent  "library/Power Components/Load"
       Name          "BAT"
       Show          on
-      Position      [685, 185]
+      Position      [680, 185]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -787,117 +787,6 @@ Plecs {
         Type          Port
         Position      [-25, 40]
         Direction     left
-      }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "library/Power Components/EMI FILTER"
-      Name          "EMI FILTER"
-      Show          on
-      Position      [215, 185]
-      Direction     up
-      Flipped       off
-      LabelPosition north
-      Frame         [-45, -55; 45, 55]
-      Parameter {
-        Variable      "Lin"
-        Value         "AC_Filter.Lin"
-        Show          off
-      }
-      Parameter {
-        Variable      "Cin"
-        Value         "AC_Filter.Cin"
-        Show          off
-      }
-      Parameter {
-        Variable      "L_CMC"
-        Value         "AC_Filter.L_CMC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Cy1"
-        Value         "AC_Filter.Cy1"
-        Show          off
-      }
-      Parameter {
-        Variable      "Cy2"
-        Value         "AC_Filter.Cy2"
-        Show          off
-      }
-      Parameter {
-        Variable      "L_DMC"
-        Value         "AC_Filter.L_DMC"
-        Show          off
-      }
-      Parameter {
-        Variable      "Cx"
-        Value         "AC_Filter.Cx"
-        Show          off
-      }
-      Parameter {
-        Variable      "Cd"
-        Value         "AC_Filter.Cd"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rd"
-        Value         "AC_Filter.Rd"
-        Show          off
-      }
-      Parameter {
-        Variable      "Ro"
-        Value         "AC_Filter.Ro"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "AC_Filter.Config"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -35]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 40]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 40]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -35]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 60]
-        Direction     down
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, -10]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [-50, 15]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [50, -10]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [50, 15]
-        Direction     right
       }
     }
     Component {
@@ -1074,8 +963,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
-"AFAAAAbQAAAAQAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAACQAAAG0AAAAIAAAAbQAAAAEAAABtAAAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAA"
+"AHAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -2453,17 +2342,17 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 803]
+          Location      [0, 26; 1536, 807]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"BJ/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAKA"
+"BJ/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAKF"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACQAAAG0AAAAIAAAAbQAAAAMAAABtAAAAAgAAAG4AAAABAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
-"AFAAAAbQAAAAQAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE"
+"AAACQAAAG0AAAAIAAAAbQAAAAEAAABtAAAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAA"
+"AHAAAAbQAAAAYAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE"
 "RAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAZvAAAAAQAAAAAAAAPoAAAAACs="
@@ -6136,6 +6025,72 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/EMI FILTER"
+      Name          "EMI FILTER"
+      Show          on
+      Position      [215, 185]
+      Direction     up
+      Flipped       off
+      LabelPosition north
+      Frame         [-45, -55; 45, 55]
+      Parameter {
+        Variable      "AC_Filter"
+        Value         "AC_Filter"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "AC_Filter.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -35]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 40]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 40]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -35]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 60]
+        Direction     down
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-50, 15]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [50, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [50, 15]
+        Direction     right
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "Ground"
@@ -6190,20 +6145,6 @@ Plecs {
       SrcComponent  "DCLink"
       SrcTerminal   2
       DstComponent  "PFC"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HV DC FILTER"
-      SrcTerminal   1
-      DstComponent  "BAT"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HV DC FILTER"
-      SrcTerminal   2
-      DstComponent  "BAT"
       DstTerminal   2
     }
     Connection {
@@ -6299,6 +6240,20 @@ Plecs {
       DstComponent  "DUAL LLC"
       DstTerminal   7
     }
+    Connection {
+      Type          Wire
+      SrcComponent  "BAT"
+      SrcTerminal   1
+      DstComponent  "HV DC FILTER"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "BAT"
+      SrcTerminal   2
+      DstComponent  "HV DC FILTER"
+      DstTerminal   2
+    }
     Annotation {
       Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
 ":16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
@@ -6324,4 +6279,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "H4hoh3rOx3UIOrL3HpSLvOeVNKfCHaoxU25WDcuLRIU="
+DemoSignature "aV4M4njesERIKrmi+TRw3lww4gfI73KawMv6o2j/2hs="

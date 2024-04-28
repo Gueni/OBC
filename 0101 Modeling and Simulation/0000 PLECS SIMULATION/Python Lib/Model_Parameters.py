@@ -21,7 +21,7 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                        
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
-                  'tSim'	    	   : 1.0, 
+                  'tSim'	    	   : 3.0, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'rel_tol'		   : 1e-3 
@@ -55,7 +55,7 @@ scopes      =  [
                            
                ]	
 PFC_glb     =  {
-                  'L'               :  300e-6,
+                  'L'               :  40e-6,
                   'Rbusin'          :  1e-2,
                   'Rbusout'         :  1e-2,
                   'Cout'            :  {
@@ -236,8 +236,8 @@ DCLink      =  {
                   'Iinit'		      : 0
                }
 Load        =  {
-                  'Config'		      : 2,  
-                  'CL'    		      : 1e-6, 
+                  'Config'		      : 4,  
+                  'CL'    		      : 0, 
                   'RL'		         : 40,  
                   'LL'		         : 0, 
                   'Vinit'		      : 0,  
@@ -284,17 +284,14 @@ HV_Filter   =  {
             }
 AC_Filter   =  {
                   'Config'          :  4 ,
-                  'Cin'             :  1e-9,  
-                  'Lin'             :  1e-9,  
-                  'Ro'              :  1e-9, 
+                  'Cin'             :  1e-6,  
                   'L_CMC'           :  1.5e-3, 
                   'L_DMC'           :  900e-6, 
                   'Cx'              :  0.1e-6,  
                   'Cy1'             :  4.7e-12, 
                   'Cy2'             :  4.7e-12,  
-                  'Cd'              :  0,  
-                  'Rd'              :  470e3
-            }
+                  'Ll'              :  10e-6 
+               }
 #?----------------------------------------------------------------------------------------------------------------------------------------
 ModelVars   =  {  
                   'ToFile'          :  ToFile,
