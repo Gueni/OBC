@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 26; 1536, 780]
+    Location      [0, 23; 1536, 777]
     ZoomFactor    1
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -28508,8 +28508,8 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [512, 216; 764, 420]
-        ZoomFactor    1
+        Location      [0, 26; 1536, 780]
+        ZoomFactor    1.96257
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -28517,7 +28517,7 @@ Plecs {
           Type          ConfigurableSubsystem
           Name          "Capacitor"
           Show          on
-          Position      [65, 75]
+          Position      [80, 65]
           Direction     left
           Flipped       off
           LabelPosition eastNortheast
@@ -29580,6 +29580,944 @@ Plecs {
             }
           }
         }
+        Component {
+          Type          ConfigurableSubsystem
+          Name          "RC Snub"
+          Show          on
+          Position      [160, 70]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Frame         [-10, -25; 10, 25]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "RC Snubber"
+          MaskDescription "RC snubber Circuit."
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "RCS"
+            Prompt        "RC Snubber Parameters :"
+            Type          FreeText
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [0, -30]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [0, 30]
+            Direction     down
+          }
+          TerminalNames { "Port1", "Port2" }
+          Location      [0, 26; 1536, 780]
+          ZoomFactor    1
+          SliderPosition [0, 0]
+          ShowBrowser   off
+          BrowserWidth  100
+          Configurations {
+            Name          "Enable"
+            Schematic {
+              Component {
+                Type          Resistor
+                Name          "Rsnub"
+                Show          on
+                Position      [160, 140]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "R"
+                  Value         "RCS.Rsnub"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Passives/Capacitor"
+                Name          "Csnub"
+                Show          on
+                Position      [160, 185]
+                Direction     left
+                Flipped       off
+                LabelPosition eastNortheast
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "RCS.Csnub"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "RCS.Csnub.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Port
+                Name          "Port1"
+                Show          off
+                Position      [65, 80]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "Port2"
+                Show          off
+                Position      [65, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "Am1"
+                Show          on
+                Position      [125, 80]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vm1"
+                Show          on
+                Position      [250, 165]
+                Direction     up
+                Flipped       off
+                LabelPosition west
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Csnub"
+                SrcTerminal   2
+                DstComponent  "Rsnub"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Am1"
+                SrcTerminal   1
+                DstComponent  "Port1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Rsnub"
+                SrcTerminal   1
+                Points        [160, 80]
+                Branch {
+                  DstComponent  "Am1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [250, 80]
+                  DstComponent  "Vm1"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Csnub"
+                SrcTerminal   1
+                Points        [160, 240]
+                Branch {
+                  DstComponent  "Port2"
+                  DstTerminal   1
+                }
+                Branch {
+                  Points        [250, 240]
+                  DstComponent  "Vm1"
+                  DstTerminal   2
+                }
+              }
+            }
+            Name          "Disable"
+            Schematic {
+              Component {
+                Type          Port
+                Name          "Port1"
+                Show          off
+                Position      [65, 80]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "Port2"
+                Show          off
+                Position      [65, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "Am1"
+                Show          on
+                Position      [125, 80]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Component {
+                Type          Constant
+                Name          "PH"
+                Show          on
+                Position      [95, 160]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Am1"
+                SrcTerminal   1
+                DstComponent  "Port1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                Points        [160, 120; 160, 80]
+                Branch {
+                  DstComponent  "Am1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [250, 80; 250, 145]
+                }
+              }
+              Connection {
+                Type          Wire
+                Points        [160, 210; 160, 240]
+                Branch {
+                  DstComponent  "Port2"
+                  DstTerminal   1
+                }
+                Branch {
+                  Points        [250, 240; 250, 185]
+                }
+              }
+            }
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "1"
+            Show          off
+          }
+          MaskProbe {
+            Name          "RC Snubber Current"
+            Probe {
+              Component     "Am1"
+              Path          "Enable"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "Rsnub"
+              Path          "Enable"
+              Signals       {"Resistor current"}
+            }
+            Probe {
+              Component     "Csnub"
+              Path          "Enable"
+              Signals       {"Capacitor Current"}
+            }
+            Probe {
+              Component     "Am1"
+              Path          "Disable"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "RC Snubber Voltage"
+            Probe {
+              Component     "Vm1"
+              Path          "Enable"
+              Signals       {"Measured voltage"}
+            }
+            Probe {
+              Component     "Rsnub"
+              Path          "Enable"
+              Signals       {"Resistor voltage"}
+            }
+            Probe {
+              Component     "Csnub"
+              Path          "Enable"
+              Signals       {"Capacitor Voltage"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "RC Snubber Dissipation"
+            Probe {
+              Component     "Rsnub"
+              Path          "Enable"
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+          }
+        }
+        Component {
+          Type          ConfigurableSubsystem
+          Name          "RCD Clamp"
+          Show          on
+          Position      [240, 70]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Frame         [-10, -25; 10, 25]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "RCD Clamp"
+          MaskDescription "RCD Clamp Circuit."
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "RCD"
+            Prompt        "RCD Clamp Parameters :"
+            Type          FreeText
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [0, -30]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-5, 30]
+            Direction     down
+          }
+          Terminal {
+            Type          HeatPort
+            Position      [5, 30]
+            Direction     down
+          }
+          TerminalNames { "Port1", "Port2", "Ambient" }
+          Location      [0, 26; 1536, 780]
+          ZoomFactor    1
+          SliderPosition [0, 0]
+          ShowBrowser   off
+          BrowserWidth  100
+          Configurations {
+            Name          "Enable"
+            Schematic {
+              Component {
+                Type          Port
+                Name          "Port1"
+                Show          off
+                Position      [65, 80]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "Port2"
+                Show          off
+                Position      [65, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "Am1"
+                Show          on
+                Position      [125, 80]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vm1"
+                Show          on
+                Position      [250, 165]
+                Direction     up
+                Flipped       off
+                LabelPosition west
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Passives/Capacitor"
+                Name          "C"
+                Show          on
+                Position      [155, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "RCD.C"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "RCD.C.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R"
+                Show          on
+                Position      [185, 145]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "R"
+                  Value         "RCD.R"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Diode
+                Name          "D2"
+                Show          off
+                Position      [170, 200]
+                Direction     down
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Vf"
+                  Value         "RCD.vf_diode"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Ron"
+                  Value         "RCD.ron_diode"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "thermal"
+                  Value         "ref:RCD.therm_diode"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Rth"
+                  Value         "RCD.thr_diode"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "T_init"
+                  Value         "RCD.t_init"
+                  Show          off
+                }
+              }
+              Component {
+                Type          HeatSink
+                Name          "Heat Sink"
+                Show          off
+                Position      [170, 200]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-17, -22; 17, 22]
+                Parameter {
+                  Variable      "Cth"
+                  Value         "RCD.thc_sink"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "T_init"
+                  Value         "RCD.Tinit"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "1"
+                  Show          off
+                }
+                Terminal {
+                  Type          HeatPort
+                  Position      [27, -5]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          ThermalResistor
+                Name          "Rth\nCase-Heatsink\n(thermal grease)"
+                Show          on
+                Position      [175, 275]
+                Direction     down
+                Flipped       on
+                LabelPosition west
+                Parameter {
+                  Variable      "Rth"
+                  Value         "RCD.rth_ch"
+                  Show          off
+                }
+              }
+              Component {
+                Type          HeatPort
+                Name          "Ambient"
+                Show          off
+                Position      [175, 320]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Am1"
+                SrcTerminal   1
+                DstComponent  "Port1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R"
+                SrcTerminal   2
+                Points        [170, 165]
+                Branch {
+                  DstComponent  "C"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "D2"
+                  DstTerminal   2
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "R"
+                SrcTerminal   1
+                Points        [185, 115; 170, 115]
+                Branch {
+                  DstComponent  "C"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [170, 80]
+                  Branch {
+                    DstComponent  "Am1"
+                    DstTerminal   2
+                  }
+                  Branch {
+                    Points        [250, 80]
+                    DstComponent  "Vm1"
+                    DstTerminal   1
+                  }
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Port2"
+                SrcTerminal   1
+                Points        [170, 240]
+                Branch {
+                  Points        [250, 240]
+                  DstComponent  "Vm1"
+                  DstTerminal   2
+                }
+                Branch {
+                  DstComponent  "D2"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          HeatPipe
+                SrcComponent  "Ambient"
+                SrcTerminal   1
+                DstComponent  "Rth\nCase-Heatsink\n(thermal grease)"
+                DstTerminal   2
+              }
+              Connection {
+                Type          HeatPipe
+                SrcComponent  "Rth\nCase-Heatsink\n(thermal grease)"
+                SrcTerminal   1
+                DstComponent  "Heat Sink"
+                DstTerminal   1
+              }
+            }
+            Name          "Disable"
+            Schematic {
+              Component {
+                Type          Port
+                Name          "Port1"
+                Show          off
+                Position      [65, 80]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "Port2"
+                Show          off
+                Position      [65, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "Am1"
+                Show          on
+                Position      [125, 80]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Component {
+                Type          Constant
+                Name          "PH"
+                Show          on
+                Position      [95, 160]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          HeatPort
+                Name          "Ambient"
+                Show          off
+                Position      [65, 265]
+                Direction     left
+                Flipped       off
+                LabelPosition north
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Am1"
+                SrcTerminal   1
+                DstComponent  "Port1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                Points        [160, 120; 160, 80]
+                Branch {
+                  DstComponent  "Am1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [250, 80; 250, 145]
+                }
+              }
+              Connection {
+                Type          Wire
+                Points        [160, 210; 160, 240]
+                Branch {
+                  DstComponent  "Port2"
+                  DstTerminal   1
+                }
+                Branch {
+                  Points        [250, 240; 250, 185]
+                }
+              }
+            }
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "1"
+            Show          off
+          }
+          MaskProbe {
+            Name          "RCD Current"
+            Probe {
+              Component     "Am1"
+              Path          "Enable"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "C"
+              Path          "Enable"
+              Signals       {"Capacitor Current"}
+            }
+            Probe {
+              Component     "R"
+              Path          "Enable"
+              Signals       {"Resistor current"}
+            }
+            Probe {
+              Component     "D2"
+              Path          "Enable"
+              Signals       {"Diode current"}
+            }
+            Probe {
+              Component     "Am1"
+              Path          "Disable"
+              Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "RCD Voltage"
+            Probe {
+              Component     "Vm1"
+              Path          "Enable"
+              Signals       {"Measured voltage"}
+            }
+            Probe {
+              Component     "C"
+              Path          "Enable"
+              Signals       {"Capacitor Voltage"}
+            }
+            Probe {
+              Component     "R"
+              Path          "Enable"
+              Signals       {"Resistor voltage"}
+            }
+            Probe {
+              Component     "D2"
+              Path          "Enable"
+              Signals       {"Diode voltage"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "RCD Dissipation"
+            Probe {
+              Component     "R"
+              Path          "Enable"
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "D2"
+              Path          "Enable"
+              Signals       {"Diode conduction loss", "Diode switching loss"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Disable"
+              Signals       {"Constant"}
+            }
+          }
+        }
       }
     }
     Component {
@@ -30115,4 +31053,4 @@ Plecs {
     }
   }
 }
-DemoSignature "nmoiiyzhky1UQbH6hiqMsYBkb+QCmPq24ZEIHfmdnCo="
+DemoSignature "Rjf7D5CRrmsriyKmauD6bUD/YGpECJgfu+s4tiMZJRI="

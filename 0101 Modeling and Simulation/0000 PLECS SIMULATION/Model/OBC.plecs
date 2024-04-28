@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 26; 1536, 780]
+    Location      [0, 23; 1536, 777]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -756,8 +756,8 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [512, 216; 797, 436]
-        ZoomFactor    1
+        Location      [0, 26; 1536, 780]
+        ZoomFactor    3.36578
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -769,22 +769,25 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 811]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACm/wCAAAAA/sAAAAQAFoAb"
+          Location      [0, 26; 1536, 815]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACoPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAApsAAAB+AP///wAAAAMAAAeAAAA"
-"BFvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAKb"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAqAAAAB+AP///wAAAAMAAAeAAAA"
+"BFvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAKg"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAMAAAAGA"
-"AAAAwAAAG0AAAAEAAAAbQAAAAUAAABtAAAABgAAAG0AAAAIAAAAbQAAAAkAAABtAAAHgAAAAAsBAA"
-"ABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADuAAAAAQAAAAAAAABtAAAAAQAAAAAAAAB"
-"uAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AABtAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAVKAAAAAQAAAAAAAAPoAAAAACs="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAIAAAAFA"
+"AAACQAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAAADAAAAbQAAB4AAAAALAQAAAQAAAAAAAA"
+"AAAAAAAH3/////AAAAgQAAAAAAAAALAAABwQAAAAEAAAAAAAAAbQAAAAEAAAAAAAAAbgAAAAEAAAA"
+"AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAbQAAAAEA"
+"AAAAAAAAbQAAAAEAAAAAAAAAAAAAAAEAAAAAAAAECgAAAAEAAAAAAAAD6AAAAAAr"
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"gAAAAIAAAABAAAAAgL//y7g///MzAAAAf////8AAH9/AAAAAAABAAAAAgABAAAAAQAAAAIAAAABAA"
+"AAAQAAAAEAAAACAAAAAAABAAAAAj/wAAAAAAAAP/AAAAAAAAAAAAABAAAAAgAAAAAAAgAAAAIAAAA"
+"BAAAAAgL//y7g///MzAAAAf////8AAH9/AAAAAAABAAAAAgABAAAAAQAAAAIAAAABAAAAAQAAAAEA"
+"AAACAAAAAAABAAAAAj/wAAAAAAAAP/AAAAAAAAAAAAABAAAAAgAAAAAAAQAAAAEAAAAAAAAAAAAAA"
+"AAAAAAAAAAAAAAAAAA="
           Axes          "4"
           TimeRange     "0"
           ScrollingMode "1"
@@ -931,6 +934,102 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          Scope
+          Name          "Scope1"
+          Show          on
+          Position      [185, 160]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 23; 1536, 796]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACv/wCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAr8AAAB+AP///wAAAAMAAAeAAAA"
+"A4/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAK/"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAMAAAAGA"
+"AAACQAAAG0AAAAIAAAAbQAAAAYAAABtAAAABQAAAG0AAAAEAAAAbQAAAAMAAABtAAAHgAAAAAsBAA"
+"ABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC0AAAAAQAAAAAAAABtAAAAAQAAAAAAAAB"
+"uAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AABtAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAWEAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAcAAAABAAAABwAAAAEB/////wAAf38AAAAAAAEC//8AA"
+"P////8AAAAAAAEC//9PsP////8AAAAAAAEC//8SwP////8AAAAAAAEC//91MP////8AAAAAAAEC//"
+"9GUP//zMwAAAAAAAEC//8u4P//zMwAAAAAAAcAAAABAQAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQA"
+"AAAABAAAAAAcAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEA"
+"AAABAAAAAQAAAAcAAAABAAAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQAAAAABAAAAAAcAAAABQBQAA"
+"AAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/"
+"AAAAAAAAAAAAABP/AAAAAAAAAAAAAHAAAAAQEAAAABAAAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQA"
+"="
+          Axes          "1"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "DC Link Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe4"
+          Show          off
+          Position      [75, 160]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Gate Signals"}
+          }
+          Probe {
+            Component     "Load"
+            Path          ""
+            Signals       {"Voltage"}
+          }
+          Probe {
+            Component     "EVSE/GRID"
+            Path          ""
+            Signals       {"IL1"}
+          }
+          Probe {
+            Component     "DCLink"
+            Path          ""
+            Signals       {"Voltage"}
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "Probe3"
@@ -965,6 +1064,13 @@ Plecs {
           SrcTerminal   5
           DstComponent  "Scope"
           DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe4"
+          SrcTerminal   1
+          DstComponent  "Scope1"
+          DstTerminal   1
         }
       }
     }
@@ -1026,9 +1132,9 @@ Plecs {
           Flipped       off
           LabelPosition west
           Probe {
-            Component     "DCLink"
+            Component     "PFC"
             Path          ""
-            Signals       {"Voltage"}
+            Signals       {"Output Voltage"}
           }
         }
         Component {
@@ -2742,4 +2848,4 @@ Plecs {
     }
   }
 }
-DemoSignature "gFK6CVFArAW2vSK0aEgcTE1Bh7W9MVX/dRVwi1M6jW0="
+DemoSignature "sj+ZwC2PuFWhc2kbaw0viFZxQJm1pfq6aLPKY8sm9+Y="
