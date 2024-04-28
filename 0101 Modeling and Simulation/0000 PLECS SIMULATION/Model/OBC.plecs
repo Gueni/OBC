@@ -47,8 +47,8 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 26; 1536, 780]
-    ZoomFactor    1.49862
+    Location      [0, 23; 1536, 777]
+    ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -138,8 +138,8 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [673, 142; 1460, 704]
-        ZoomFactor    1
+        Location      [0, 26; 1536, 780]
+        ZoomFactor    0.873846
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -147,7 +147,7 @@ Plecs {
           Type          ToFile
           Name          "To File"
           Show          off
-          Position      [335, 130]
+          Position      [1460, 430]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -174,38 +174,52 @@ Plecs {
           }
         }
         Component {
+          Type          SignalMux
+          Name          "Mux"
+          Show          off
+          Position      [455, 450]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1 1 4 2  4 4 4 4 4 8 1 1 1 6 6 ]"
+            Show          off
+          }
+        }
+        Component {
           Type          PlecsProbe
-          Name          "Grid"
+          Name          "grid"
           Show          on
-          Position      [175, 115]
+          Position      [260, 215]
           Direction     right
           Flipped       off
           LabelPosition west
           Probe {
             Component     "EVSE/GRID"
             Path          ""
-            Signals       {"ILN", "VL1"}
+            Signals       {"IL1", "VL1"}
           }
         }
         Component {
-          Type          SignalMux
-          Name          "Mux"
-          Show          off
-          Position      [280, 130]
+          Type          PlecsProbe
+          Name          "PFC Input Voltage"
+          Show          on
+          Position      [260, 305]
           Direction     right
           Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Width"
-            Value         "[2 2]"
-            Show          off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Input Voltage"}
           }
         }
         Component {
           Type          PlecsProbe
           Name          "In Filter"
           Show          on
-          Position      [175, 140]
+          Position      [260, 250]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -215,29 +229,623 @@ Plecs {
             Signals       {"I", "V"}
           }
         }
+        Component {
+          Type          PlecsProbe
+          Name          "DCLin Capacitor"
+          Show          on
+          Position      [260, 685]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "DCLink"
+            Path          ""
+            Signals       {"Current", "Voltage"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC Input Current"
+          Show          on
+          Position      [260, 325]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Input Current"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC output voltage"
+          Show          on
+          Position      [260, 345]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Output Voltage"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC gates signals"
+          Show          on
+          Position      [260, 365]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Gate Signals"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC Input choke"
+          Show          on
+          Position      [260, 385]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Input Choke"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC sw voltages"
+          Show          on
+          Position      [260, 405]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"SW Voltages"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC sw currents"
+          Show          on
+          Position      [260, 425]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"SW Currents"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC sw junction Temp"
+          Show          on
+          Position      [260, 445]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"SW Junction Temperature"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC sw case Temp"
+          Show          on
+          Position      [260, 465]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"SW Case Temperature"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC sw switching losses"
+          Show          on
+          Position      [260, 485]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Device Switching Losses"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC sw+diodes conductiond losses"
+          Show          on
+          Position      [260, 505]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Device Conduction Losses"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC output capacitor voltage"
+          Show          on
+          Position      [260, 525]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Output Capacitor Voltage"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC output capacitor current"
+          Show          on
+          Position      [260, 545]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Output Capacitor Current"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC output capacitor dissipation"
+          Show          on
+          Position      [260, 565]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Output Capacitor Dissipation"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC input busbar"
+          Show          on
+          Position      [260, 585]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Input Busbar Resistance"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "PFC output busbar"
+          Show          on
+          Position      [260, 605]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Output Busbar Resistance"}
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto"
+          Show          off
+          Position      [485, 450]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "pfc"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto1"
+          Show          off
+          Position      [485, 685]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "dclink"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto2"
+          Show          off
+          Position      [485, 250]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "In Filter"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto3"
+          Show          off
+          Position      [485, 215]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "grid"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          SignalMux
+          Name          "Mux1"
+          Show          off
+          Position      [1400, 430]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[2 2 52 2]"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From"
+          Show          off
+          Position      [1350, 400]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "grid"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From1"
+          Show          off
+          Position      [1350, 420]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "In Filter"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From2"
+          Show          off
+          Position      [1350, 440]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "pfc"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From3"
+          Show          off
+          Position      [1350, 460]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "dclink"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+        }
         Connection {
           Type          Signal
-          SrcComponent  "Grid"
+          SrcComponent  "PFC Input Voltage"
           SrcTerminal   1
-          Points        [255, 115; 255, 125]
+          Points        [440, 305]
           DstComponent  "Mux"
           DstTerminal   2
         }
         Connection {
           Type          Signal
-          SrcComponent  "In Filter"
+          SrcComponent  "PFC Input Current"
           SrcTerminal   1
-          Points        [255, 140; 255, 135]
+          Points        [435, 325; 435, 385]
           DstComponent  "Mux"
           DstTerminal   3
         }
         Connection {
           Type          Signal
+          SrcComponent  "PFC output voltage"
+          SrcTerminal   1
+          Points        [430, 345; 430, 395]
+          DstComponent  "Mux"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC gates signals"
+          SrcTerminal   1
+          Points        [425, 365; 425, 405]
+          DstComponent  "Mux"
+          DstTerminal   5
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC Input choke"
+          SrcTerminal   1
+          Points        [420, 385; 420, 415]
+          DstComponent  "Mux"
+          DstTerminal   6
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw voltages"
+          SrcTerminal   1
+          Points        [365, 405; 365, 425]
+          DstComponent  "Mux"
+          DstTerminal   7
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw currents"
+          SrcTerminal   1
+          Points        [425, 425; 425, 435]
+          DstComponent  "Mux"
+          DstTerminal   8
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw junction Temp"
+          SrcTerminal   1
+          DstComponent  "Mux"
+          DstTerminal   9
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw case Temp"
+          SrcTerminal   1
+          Points        [405, 465; 405, 455]
+          DstComponent  "Mux"
+          DstTerminal   10
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw switching losses"
+          SrcTerminal   1
+          Points        [410, 485; 410, 465]
+          DstComponent  "Mux"
+          DstTerminal   11
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC sw+diodes conductiond losses"
+          SrcTerminal   1
+          Points        [415, 505; 415, 475]
+          DstComponent  "Mux"
+          DstTerminal   12
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC output capacitor voltage"
+          SrcTerminal   1
+          Points        [420, 525; 420, 485]
+          DstComponent  "Mux"
+          DstTerminal   13
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC output capacitor current"
+          SrcTerminal   1
+          Points        [425, 545; 425, 495]
+          DstComponent  "Mux"
+          DstTerminal   14
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC output capacitor dissipation"
+          SrcTerminal   1
+          Points        [430, 565; 430, 505]
+          DstComponent  "Mux"
+          DstTerminal   15
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC input busbar"
+          SrcTerminal   1
+          Points        [435, 585; 435, 515]
+          DstComponent  "Mux"
+          DstTerminal   16
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "PFC output busbar"
+          SrcTerminal   1
+          Points        [440, 605]
+          DstComponent  "Mux"
+          DstTerminal   17
+        }
+        Connection {
+          Type          Signal
           SrcComponent  "Mux"
+          SrcTerminal   1
+          DstComponent  "Goto"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "DCLin Capacitor"
+          SrcTerminal   1
+          DstComponent  "Goto1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "In Filter"
+          SrcTerminal   1
+          DstComponent  "Goto2"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "grid"
+          SrcTerminal   1
+          DstComponent  "Goto3"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Mux1"
           SrcTerminal   1
           DstComponent  "To File"
           DstTerminal   1
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "From"
+          SrcTerminal   1
+          Points        [1380, 400; 1380, 415]
+          DstComponent  "Mux1"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From1"
+          SrcTerminal   1
+          Points        [1375, 420; 1375, 425]
+          DstComponent  "Mux1"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From2"
+          SrcTerminal   1
+          Points        [1375, 440; 1375, 435]
+          DstComponent  "Mux1"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From3"
+          SrcTerminal   1
+          Points        [1380, 460; 1380, 445]
+          DstComponent  "Mux1"
+          DstTerminal   5
+        }
+        RectangleAnnotation {
+          Position     [305, 450]
+          Width        510
+          Height       350
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        RectangleAnnotation {
+          Position     [305, 675]
+          Width        510
+          Height       100
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        RectangleAnnotation {
+          Position     [305, 225]
+          Width        510
+          Height       100
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
       }
     }
     Component {
@@ -523,7 +1131,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "1"
+        Value         "PFC.Config"
         Show          off
       }
       Terminal {
@@ -626,38 +1234,36 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    3.36578
-        SliderPosition [0, 0]
+        ZoomFactor    0.763608
+        SliderPosition [0, 120]
         ShowBrowser   off
         BrowserWidth  100
         Component {
           Type          Scope
-          Name          "Scope"
+          Name          "grid_scope"
           Show          on
-          Position      [185, 90]
+          Position      [340, 155]
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 815]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACoPwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAqAAAAB+AP///wAAAAMAAAeAAAA"
-"BFvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAKg"
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAIAAAAFA"
-"AAACQAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAAADAAAAbQAAB4AAAAALAQAAAQAAAAAAAA"
-"AAAAAAAH3/////AAAAgQAAAAAAAAALAAABwQAAAAEAAAAAAAAAbQAAAAEAAAAAAAAAbgAAAAEAAAA"
-"AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAbQAAAAEA"
-"AAAAAAAAbQAAAAEAAAAAAAAAAAAAAAEAAAAAAAAECgAAAAEAAAAAAAAD6AAAAAAr"
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-"gAAAAIAAAABAAAAAgL//y7g///MzAAAAf////8AAH9/AAAAAAABAAAAAgABAAAAAQAAAAIAAAABAA"
-"AAAQAAAAEAAAACAAAAAAABAAAAAj/wAAAAAAAAP/AAAAAAAAAAAAABAAAAAgAAAAAAAgAAAAIAAAA"
-"BAAAAAgL//y7g///MzAAAAf////8AAH9/AAAAAAABAAAAAgABAAAAAQAAAAIAAAABAAAAAQAAAAEA"
-"AAACAAAAAAABAAAAAj/wAAAAAAAAP/AAAAAAAAAAAAABAAAAAgAAAAAAAQAAAAEAAAAAAAAAAAAAA"
-"AAAAAAAAAAAAAAAAAA="
-          Axes          "4"
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAA=="
+          Axes          "3"
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
@@ -667,47 +1273,37 @@ Plecs {
           XAxisLabel    "Time / s"
           ShowLegend    "2"
           Axis {
-            Name          "PWM Signals"
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {"PWM1"}
-            SignalTypes   [ ]
-            Untangle      1
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Axis {
-            Name          "Load voltage"
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {"Vout"}
-            SignalTypes   [ ]
-            AxisLabel     "Voltage / V"
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Axis {
-            Name          "Source current (AC)"
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {"Vin_scaled"}
-            SignalTypes   [ ]
-            AxisLabel     "Current / A"
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Axis {
-            Name          "DC Link Voltage"
+            Name          "Grid Voltage"
             AutoScale     1
             MinValue      0
             MaxValue      1
             Signals       {"IL"}
             SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "Grid Current"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "[ A ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "THD"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "%"
             Untangle      0
             KeepBaseline  off
             BaselineValue 0
@@ -723,7 +1319,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {"PWM1"}
+              Signals       {"IL"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -733,7 +1329,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {"Vout"}
+              Signals       {}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -743,11 +1339,360 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {"Vin_scaled"}
+              Signals       {}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
             }
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe"
+          Show          off
+          Position      [140, 415]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "EMI FILTER"
+            Path          ""
+            Signals       {"V", "I"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe1"
+          Show          off
+          Position      [140, 150]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "EVSE/GRID"
+            Path          ""
+            Signals       {"IL1", "VL1"}
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux"
+          Show          off
+          Position      [205, 150]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "load_scope"
+          Show          on
+          Position      [295, 935]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 26; 1536, 811]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAACuAAABkvwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAZIAAAB+AP///wAAAAMAAAeAAAA"
+"AwfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALw"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAIAAAAFA"
+"AAAAwAAAGQAAAAJAAAAZAAAAAUAAABkAAAABAAAAGQAAAAGAAAAZAAAB4AAAAALAQAAAQAAAAAAAA"
+"AAAAAAAH3/////AAAAgQAAAAAAAAALAAAAmwAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAA"
+"AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAZAAAAAEA"
+"AAAAAAAAZAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAFVQAAAAEAAAAAAAAD6AAAAAAr"
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAA=="
+          Axes          "3"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "1"
+          Axis {
+            Name          "LED Output"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "Voltage / V"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "LED Output"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "Current / A"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "LED Output"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"Output power"}
+            SignalTypes   [ ]
+            AxisLabel     "Power / W"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"Output power"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux2"
+          Show          off
+          Position      [180, 930]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "Product"
+          Show          off
+          Position      [235, 945]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+        }
+        Component {
+          Type          Reference
+          SrcComponent  "Components/Control/Filters/Total Harmonic\\nDistortio"
+"n"
+          Name          "Total Harmonic\nDistortion"
+          Show          on
+          Position      [260, 215]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-15, -15; 15, 15]
+          Parameter {
+            Variable      "ts"
+            Value         "Grid.Ts"
+            Show          off
+          }
+          Parameter {
+            Variable      "fs"
+            Value         "Grid.Fgrid"
+            Show          off
+          }
+          Terminal {
+            Type          Input
+            Position      [-15, 0]
+            Direction     left
+          }
+          Terminal {
+            Type          Output
+            Position      [19, 0]
+            Direction     right
+          }
+        }
+        Component {
+          Type          Display
+          Name          "Display"
+          Show          off
+          Position      [330, 215]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-31, -11; 31, 11]
+          Parameter {
+            Variable      "Notation"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Precision"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe2"
+          Show          off
+          Position      [130, 930]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "Load"
+            Path          ""
+            Signals       {"Voltage", "Current"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe3"
+          Show          off
+          Position      [475, 425]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "PFC"
+            Path          ""
+            Signals       {"Output Busbar Resistance", "Input Voltage", "Input"
+" Current", "Output Voltage", "Gate Signals", "Input Choke", "SW Voltages", "S"
+"W Currents", "SW Junction Temperature", "SW Case Temperature", "Device Switch"
+"ing Losses", "Device Conduction Losses", "Output Capacitor Voltage", "Output "
+"Capacitor Current", "Output Capacitor Dissipation", "Input Busbar Resistance"}
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "EMI_scope"
+          Show          on
+          Position      [340, 420]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAA=="
+          Axes          "3"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "Grid Current"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "[ A ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "THD"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "%"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
             Axis {
               Name          ""
               AutoScale     1
@@ -758,80 +1703,244 @@ Plecs {
               KeepBaseline  off
               BaselineValue 0
             }
-          }
-        }
-        Component {
-          Type          PlecsProbe
-          Name          "Probe3"
-          Show          off
-          Position      [75, 90]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Probe {
-            Component     "PFC"
-            Path          ""
-            Signals       {"Gate Signals"}
-          }
-          Probe {
-            Component     "Load"
-            Path          ""
-            Signals       {"Voltage"}
-          }
-          Probe {
-            Component     "EVSE/GRID"
-            Path          ""
-            Signals       {"IL1"}
-          }
-          Probe {
-            Component     "DCLink"
-            Path          ""
-            Signals       {"Voltage"}
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
           }
         }
         Component {
           Type          SignalDemux
-          Name          "Demux"
+          Name          "Demux1"
           Show          off
-          Position      [140, 90]
+          Position      [205, 415]
           Direction     right
           Flipped       on
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "[4  1  1 1 ]"
+            Value         "[1 1]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Reference
+          SrcComponent  "Components/Control/Filters/Total Harmonic\\nDistortio"
+"n"
+          Name          "Total Harmonic\nDistortion1"
+          Show          off
+          Position      [260, 480]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-15, -15; 15, 15]
+          Parameter {
+            Variable      "ts"
+            Value         "Grid.Ts"
+            Show          off
+          }
+          Parameter {
+            Variable      "fs"
+            Value         "Grid.Fgrid"
+            Show          off
+          }
+          Terminal {
+            Type          Input
+            Position      [-15, 0]
+            Direction     left
+          }
+          Terminal {
+            Type          Output
+            Position      [19, 0]
+            Direction     right
+          }
+        }
+        Component {
+          Type          Display
+          Name          "Display1"
+          Show          off
+          Position      [330, 480]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-31, -11; 31, 11]
+          Parameter {
+            Variable      "Notation"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Precision"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe4"
+          Show          off
+          Position      [140, 710]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "DCLink"
+            Path          ""
+            Signals       {"Current", "Voltage"}
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "DCLink_scope"
+          Show          on
+          Position      [265, 710]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "Grid Current"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "[ A ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux3"
+          Show          off
+          Position      [200, 710]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1]"
+            Show          off
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux4"
+          Show          off
+          Position      [525, 425]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1 1 4 2  4 4 4 4 4 8 1 1 1 6 6]"
             Show          off
           }
         }
         Component {
           Type          Scope
-          Name          "Scope1"
+          Name          "grid_scope1"
           Show          on
-          Position      [185, 160]
+          Position      [680, 165]
           Direction     up
           Flipped       off
-          LabelPosition south
-          Location      [0, 23; 1536, 796]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACv/wCAAAAA/sAAAAQAFoAb"
+          LabelPosition east
+          Location      [0, 26; 1536, 803]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAAr8AAAB+AP///wAAAAMAAAeAAAA"
-"A4/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAAK/"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAM4"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAMAAAAGA"
-"AAACQAAAG0AAAAIAAAAbQAAAAYAAABtAAAABQAAAG0AAAAEAAAAbQAAAAMAAABtAAAHgAAAAAsBAA"
-"ABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC0AAAAAQAAAAAAAABtAAAAAQAAAAAAAAB"
-"uAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AABtAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAWEAAAAAQAAAAAAAAPoAAAAACs="
-          PlotPalettes  "AAAAAQAAAAcAAAABAAAABwAAAAEB/////wAAf38AAAAAAAEC//8AA"
-"P////8AAAAAAAEC//9PsP////8AAAAAAAEC//8SwP////8AAAAAAAEC//91MP////8AAAAAAAEC//"
-"9GUP//zMwAAAAAAAEC//8u4P//zMwAAAAAAAcAAAABAQAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQA"
-"AAAABAAAAAAcAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEA"
-"AAABAAAAAQAAAAcAAAABAAAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQAAAAABAAAAAAcAAAABQBQAA"
-"AAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/"
-"AAAAAAAAAAAAABP/AAAAAAAAAAAAAHAAAAAQEAAAABAAAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQA"
-"="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0"
           ScrollingMode "1"
@@ -842,12 +1951,13 @@ Plecs {
           XAxisLabel    "Time / s"
           ShowLegend    "2"
           Axis {
-            Name          "DC Link Voltage"
+            Name          "Grid Voltage"
             AutoScale     1
             MinValue      0
             MaxValue      1
             Signals       {"IL"}
             SignalTypes   [ ]
+            AxisLabel     "[ V ]"
             Untangle      0
             KeepBaseline  off
             BaselineValue 0
@@ -871,76 +1981,2151 @@ Plecs {
           }
         }
         Component {
-          Type          PlecsProbe
-          Name          "Probe4"
-          Show          off
-          Position      [75, 160]
-          Direction     right
+          Type          Scope
+          Name          "grid_scope2"
+          Show          on
+          Position      [680, 195]
+          Direction     up
           Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope3"
+          Show          on
+          Position      [680, 225]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope4"
+          Show          on
+          Position      [680, 265]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 23; 1536, 796]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHA"
+"AAABwAAAG0AAAADAAAAbQAAAAgAAABtAAAACQAAAG0AAAAEAAAAbQAAAAUAAABtAAAABgAAAG0AAA"
+"drAAAACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAHEAAAABAAAAAAAAAG0AAAA"
+"BAAAAAAAAAG4AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAA"
+"AAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABh8AAAABAAAAAAAAA"
+"+gAAAAAKw=="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope5"
+          Show          on
+          Position      [680, 305]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux5"
+          Show          off
+          Position      [635, 265]
+          Direction     right
+          Flipped       on
           LabelPosition south
-          Probe {
-            Component     "PFC"
-            Path          ""
-            Signals       {"Gate Signals"}
+          Parameter {
+            Variable      "Width"
+            Value         "4"
+            Show          off
           }
-          Probe {
-            Component     "Load"
-            Path          ""
-            Signals       {"Voltage"}
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux6"
+          Show          off
+          Position      [635, 305]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1]"
+            Show          off
           }
-          Probe {
-            Component     "EVSE/GRID"
-            Path          ""
-            Signals       {"IL1"}
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope6"
+          Show          on
+          Position      [680, 345]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
           }
-          Probe {
-            Component     "DCLink"
-            Path          ""
-            Signals       {"Voltage"}
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux7"
+          Show          off
+          Position      [635, 345]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope7"
+          Show          on
+          Position      [680, 395]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux8"
+          Show          off
+          Position      [635, 395]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope8"
+          Show          on
+          Position      [680, 445]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux9"
+          Show          off
+          Position      [635, 445]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope9"
+          Show          on
+          Position      [680, 495]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux10"
+          Show          off
+          Position      [635, 495]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope10"
+          Show          on
+          Position      [680, 545]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux11"
+          Show          off
+          Position      [635, 545]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope11"
+          Show          on
+          Position      [680, 595]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "4"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux12"
+          Show          off
+          Position      [635, 595]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[2 2 2 2]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope12"
+          Show          on
+          Position      [680, 635]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAkAAABtAAAACAAAAG0AAAAFAAAAbQAAAAQAAABtAAAABwAAAG0AAA"
+"AGAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAA=="
+          Axes          "3"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope13"
+          Show          on
+          Position      [680, 670]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"JAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAciAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux13"
+          Show          off
+          Position      [635, 670]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[3 3]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid_scope14"
+          Show          on
+          Position      [680, 700]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABwAAAG0AAAABAAAAbQAAAAIAAABuAAAAAwAAAG0AAAAIAAAAbQAAAAkAAABtAAAABAAAAG0AAA"
+"AFAAAAbQAAAAYAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"JAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAciAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux14"
+          Show          off
+          Position      [635, 700]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[3 3]"
+            Show          off
           }
         }
         Connection {
           Type          Signal
-          SrcComponent  "Probe3"
+          SrcComponent  "Demux"
+          SrcTerminal   2
+          DstComponent  "grid_scope"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe1"
           SrcTerminal   1
           DstComponent  "Demux"
           DstTerminal   1
         }
         Connection {
           Type          Signal
-          SrcComponent  "Demux"
-          SrcTerminal   2
-          DstComponent  "Scope"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux"
-          SrcTerminal   3
-          DstComponent  "Scope"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux"
-          SrcTerminal   4
-          DstComponent  "Scope"
+          SrcComponent  "Product"
+          SrcTerminal   1
+          DstComponent  "load_scope"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux"
-          SrcTerminal   5
-          DstComponent  "Scope"
-          DstTerminal   4
+          SrcTerminal   3
+          Points        [225, 155]
+          Branch {
+            DstComponent  "grid_scope"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [225, 215]
+            DstComponent  "Total Harmonic\nDistortion"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe2"
+          SrcTerminal   1
+          DstComponent  "Demux2"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux2"
+          SrcTerminal   2
+          Points        [205, 925]
+          Branch {
+            DstComponent  "load_scope"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "Product"
+            DstTerminal   2
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux2"
+          SrcTerminal   3
+          Points        [200, 935]
+          Branch {
+            DstComponent  "load_scope"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [200, 950]
+            DstComponent  "Product"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Total Harmonic\nDistortion"
+          SrcTerminal   2
+          Points        [280, 215]
+          Branch {
+            DstComponent  "Display"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [280, 165]
+            DstComponent  "grid_scope"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux1"
+          SrcTerminal   2
+          DstComponent  "EMI_scope"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe"
+          SrcTerminal   1
+          DstComponent  "Demux1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux1"
+          SrcTerminal   3
+          Points        [225, 420]
+          Branch {
+            DstComponent  "EMI_scope"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [225, 480]
+            DstComponent  "Total Harmonic\nDistortion1"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Total Harmonic\nDistortion1"
+          SrcTerminal   2
+          Points        [280, 480]
+          Branch {
+            DstComponent  "Display1"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [280, 430]
+            DstComponent  "EMI_scope"
+            DstTerminal   3
+          }
         }
         Connection {
           Type          Signal
           SrcComponent  "Probe4"
           SrcTerminal   1
-          DstComponent  "Scope1"
+          DstComponent  "Demux3"
           DstTerminal   1
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux3"
+          SrcTerminal   2
+          DstComponent  "DCLink_scope"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux3"
+          SrcTerminal   3
+          DstComponent  "DCLink_scope"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe3"
+          SrcTerminal   1
+          DstComponent  "Demux4"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   2
+          Points        [545, 350; 545, 165]
+          DstComponent  "grid_scope1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   3
+          Points        [550, 360; 550, 195]
+          DstComponent  "grid_scope2"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   4
+          Points        [555, 370; 555, 225]
+          DstComponent  "grid_scope3"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   5
+          Points        [560, 380; 560, 265]
+          DstComponent  "Demux5"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux5"
+          SrcTerminal   2
+          DstComponent  "grid_scope4"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux5"
+          SrcTerminal   3
+          DstComponent  "grid_scope4"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux5"
+          SrcTerminal   4
+          DstComponent  "grid_scope4"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux5"
+          SrcTerminal   5
+          DstComponent  "grid_scope4"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux6"
+          SrcTerminal   2
+          DstComponent  "grid_scope5"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux6"
+          SrcTerminal   3
+          DstComponent  "grid_scope5"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   6
+          Points        [565, 390; 565, 305]
+          DstComponent  "Demux6"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux7"
+          SrcTerminal   3
+          DstComponent  "grid_scope6"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux7"
+          SrcTerminal   4
+          DstComponent  "grid_scope6"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux7"
+          SrcTerminal   5
+          DstComponent  "grid_scope6"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux7"
+          SrcTerminal   2
+          DstComponent  "grid_scope6"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux8"
+          SrcTerminal   5
+          DstComponent  "grid_scope7"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   7
+          Points        [570, 400; 570, 345]
+          DstComponent  "Demux7"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   8
+          Points        [575, 410; 575, 395]
+          DstComponent  "Demux8"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux9"
+          SrcTerminal   5
+          DstComponent  "grid_scope8"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   9
+          Points        [575, 420; 575, 445]
+          DstComponent  "Demux9"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux10"
+          SrcTerminal   5
+          DstComponent  "grid_scope9"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   10
+          Points        [565, 430; 565, 495]
+          DstComponent  "Demux10"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux11"
+          SrcTerminal   5
+          DstComponent  "grid_scope10"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux12"
+          SrcTerminal   5
+          DstComponent  "grid_scope11"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   11
+          Points        [560, 440; 560, 545]
+          DstComponent  "Demux11"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   12
+          Points        [555, 450; 555, 595]
+          DstComponent  "Demux12"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   13
+          Points        [550, 460; 550, 625]
+          DstComponent  "grid_scope12"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   14
+          Points        [545, 470; 545, 635]
+          DstComponent  "grid_scope12"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   15
+          Points        [540, 480; 540, 645]
+          DstComponent  "grid_scope12"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux13"
+          SrcTerminal   2
+          DstComponent  "grid_scope13"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux13"
+          SrcTerminal   3
+          DstComponent  "grid_scope13"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   16
+          Points        [535, 490; 535, 670]
+          DstComponent  "Demux13"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux14"
+          SrcTerminal   2
+          DstComponent  "grid_scope14"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux14"
+          SrcTerminal   3
+          DstComponent  "grid_scope14"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux4"
+          SrcTerminal   17
+          Points        [530, 700]
+          DstComponent  "Demux14"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux12"
+          SrcTerminal   2
+          DstComponent  "grid_scope11"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux12"
+          SrcTerminal   3
+          DstComponent  "grid_scope11"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux12"
+          SrcTerminal   4
+          DstComponent  "grid_scope11"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux11"
+          SrcTerminal   2
+          DstComponent  "grid_scope10"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux11"
+          SrcTerminal   3
+          DstComponent  "grid_scope10"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux11"
+          SrcTerminal   4
+          DstComponent  "grid_scope10"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux10"
+          SrcTerminal   2
+          DstComponent  "grid_scope9"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux10"
+          SrcTerminal   3
+          DstComponent  "grid_scope9"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux10"
+          SrcTerminal   4
+          DstComponent  "grid_scope9"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux9"
+          SrcTerminal   2
+          DstComponent  "grid_scope8"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux9"
+          SrcTerminal   3
+          DstComponent  "grid_scope8"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux9"
+          SrcTerminal   4
+          DstComponent  "grid_scope8"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux8"
+          SrcTerminal   2
+          DstComponent  "grid_scope7"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux8"
+          SrcTerminal   3
+          DstComponent  "grid_scope7"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux8"
+          SrcTerminal   4
+          DstComponent  "grid_scope7"
+          DstTerminal   3
+        }
+        RectangleAnnotation {
+          Position     [255, 190]
+          Width        360
+          Height       230
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">Grid</span></p></body></html>"
+          Position      [95, 55]
+        } 
+        RectangleAnnotation {
+          Position     [255, 455]
+          Width        360
+          Height       230
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">EMI</span></p></body></html>"
+          Position      [95, 320]
+        } 
+        RectangleAnnotation {
+          Position     [615, 455]
+          Width        360
+          Height       760
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">PFC</span></p></body></html>"
+          Position      [455, 55]
+        } 
+        RectangleAnnotation {
+          Position     [255, 720]
+          Width        360
+          Height       230
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">DCLink</span></p></body></html>"
+          Position      [110, 585]
+        } 
+        RectangleAnnotation {
+          Position     [615, 990]
+          Width        360
+          Height       230
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">HV</span></p></body></html>"
+          Position      [455, 855]
+        } 
+        RectangleAnnotation {
+          Position     [255, 990]
+          Width        360
+          Height       230
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">Load</span></p></body></html>"
+          Position      [100, 855]
+        } 
+        RectangleAnnotation {
+          Position     [975, 455]
+          Width        360
+          Height       760
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">LLC</span></p></body></html>"
+          Position      [815, 60]
+        } 
       }
     }
     Component {
@@ -980,7 +4165,7 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.873844
+        ZoomFactor    0.763605
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -1248,12 +4433,12 @@ Plecs {
           Frame         [-15, -15; 15, 15]
           Parameter {
             Variable      "x0"
-            Value         "230"
+            Value         "Grid.Vin"
             Show          off
           }
           Parameter {
             Variable      "ts"
-            Value         "0"
+            Value         "Grid.Ts"
             Show          off
           }
           Parameter {
@@ -2185,6 +5370,20 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          SignalMux
+          Name          "Mux1"
+          Show          off
+          Position      [1005, 575]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[8 8]"
+            Show          off
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "CTRL_PFC.Vref"
@@ -2502,6 +5701,13 @@ Plecs {
           SrcComponent  "Mux"
           SrcTerminal   1
           DstComponent  "g_PFC"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Mux1"
+          SrcTerminal   1
+          DstComponent  "g_LLC"
           DstTerminal   1
         }
         RectangleAnnotation {
@@ -3319,4 +6525,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "DORIRXU9DnS4cLTnFYz/vSqs2k5wo0iWdxkdoAzj9po="
+DemoSignature "2EnDFtGCKm8jUo+EHk3+/HMQ0c+ZZAR7iheeNUe2Pdo="

@@ -18699,6 +18699,26 @@ Plecs {
           MaskProbe {
             Name          "SW Voltages"
             Probe {
+              Component     "HS1"
+              Path          "1PH PFC"
+              Signals       {"Device voltage"}
+            }
+            Probe {
+              Component     "HS2"
+              Path          "1PH PFC"
+              Signals       {"Device voltage"}
+            }
+            Probe {
+              Component     "LS1"
+              Path          "1PH PFC"
+              Signals       {"Device voltage"}
+            }
+            Probe {
+              Component     "LS2"
+              Path          "1PH PFC"
+              Signals       {"Device voltage"}
+            }
+            Probe {
               Component     "PH"
               Path          "Pass"
               Signals       {"Constant"}
@@ -18721,6 +18741,26 @@ Plecs {
           }
           MaskProbe {
             Name          "SW Currents"
+            Probe {
+              Component     "HS1"
+              Path          "1PH PFC"
+              Signals       {"Device current"}
+            }
+            Probe {
+              Component     "HS2"
+              Path          "1PH PFC"
+              Signals       {"Device current"}
+            }
+            Probe {
+              Component     "LS1"
+              Path          "1PH PFC"
+              Signals       {"Device current"}
+            }
+            Probe {
+              Component     "LS2"
+              Path          "1PH PFC"
+              Signals       {"Device current"}
+            }
             Probe {
               Component     "PH"
               Path          "Pass"
@@ -18745,6 +18785,26 @@ Plecs {
           MaskProbe {
             Name          "SW Junction Temperature"
             Probe {
+              Component     "HS1"
+              Path          "1PH PFC"
+              Signals       {"Device junction temperature"}
+            }
+            Probe {
+              Component     "HS2"
+              Path          "1PH PFC"
+              Signals       {"Device junction temperature"}
+            }
+            Probe {
+              Component     "LS1"
+              Path          "1PH PFC"
+              Signals       {"Device junction temperature"}
+            }
+            Probe {
+              Component     "LS2"
+              Path          "1PH PFC"
+              Signals       {"Device junction temperature"}
+            }
+            Probe {
               Component     "PH"
               Path          "Pass"
               Signals       {"Constant"}
@@ -18767,6 +18827,26 @@ Plecs {
           }
           MaskProbe {
             Name          "SW Case Temperature"
+            Probe {
+              Component     "HS1"
+              Path          "1PH PFC"
+              Signals       {"Device case temperature"}
+            }
+            Probe {
+              Component     "HS2"
+              Path          "1PH PFC"
+              Signals       {"Device case temperature"}
+            }
+            Probe {
+              Component     "LS1"
+              Path          "1PH PFC"
+              Signals       {"Device case temperature"}
+            }
+            Probe {
+              Component     "LS2"
+              Path          "1PH PFC"
+              Signals       {"Device case temperature"}
+            }
             Probe {
               Component     "PH"
               Path          "Pass"
@@ -18791,6 +18871,26 @@ Plecs {
           MaskProbe {
             Name          "Device Switching Losses"
             Probe {
+              Component     "HS1"
+              Path          "1PH PFC"
+              Signals       {"Device switching loss"}
+            }
+            Probe {
+              Component     "HS2"
+              Path          "1PH PFC"
+              Signals       {"Device switching loss"}
+            }
+            Probe {
+              Component     "LS1"
+              Path          "1PH PFC"
+              Signals       {"Device switching loss"}
+            }
+            Probe {
+              Component     "LS2"
+              Path          "1PH PFC"
+              Signals       {"Device switching loss"}
+            }
+            Probe {
               Component     "PH"
               Path          "Pass"
               Signals       {"Constant"}
@@ -18813,6 +18913,26 @@ Plecs {
           }
           MaskProbe {
             Name          "Device Conduction Losses"
+            Probe {
+              Component     "HS1"
+              Path          "1PH PFC"
+              Signals       {"Device conduction loss"}
+            }
+            Probe {
+              Component     "HS2"
+              Path          "1PH PFC"
+              Signals       {"Device conduction loss"}
+            }
+            Probe {
+              Component     "LS1"
+              Path          "1PH PFC"
+              Signals       {"Device conduction loss"}
+            }
+            Probe {
+              Component     "LS2"
+              Path          "1PH PFC"
+              Signals       {"Device conduction loss"}
+            }
             Probe {
               Component     "PH"
               Path          "Pass"
@@ -31053,4 +31173,4 @@ Plecs {
     }
   }
 }
-DemoSignature "EM1bRWukFMRBzhSEuMp/IvvnrEOc3l25CkRrgyKwCFo="
+DemoSignature "UEVnDTw399qYfZyvJjS9SW/iWJ9lcXvuLHXOxzlsjhk="

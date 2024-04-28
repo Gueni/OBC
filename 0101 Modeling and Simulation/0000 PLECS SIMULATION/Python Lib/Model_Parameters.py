@@ -9,7 +9,7 @@
 import os  
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
-                  'tSim'	    	   : 10, 
+                  'tSim'	    	   : 1.5, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'idx'             : 0,
@@ -88,8 +88,7 @@ PFC_SW      =  {
                   'Rth'             : 0.34 					    	                           
                }
 PFC         =  {
-                  'R1'              :  4700/4,
-                  'R2'              :  160/24,
+                  'Config'          :  1,
                   'HS1'             :  PFC_SW,   
                   'HS2'             :  PFC_SW,   
                   'LS1'             :  PFC_SW,   
@@ -114,37 +113,22 @@ DCLink      =  {
                   'Iinit'		      : 0
                }
 Load        =  {
-                  'Config'		      : 4,  
-                  'CL'    		      : 0, 
-                  'Vout'            :  400,  
+                  'Config'		      : 2,  
+                  'CL'    		      : 1e-6, 
                   'RL'		         : 40,  
-                  'LL'		         : 1e-9, 
+                  'LL'		         : 0, 
                   'Vinit'		      : 0,  
                   'Iinit'		      : 0
                }
 LLC         =  {
                   'R1'              : 4700/4,          
                   'R2'              : 160/24,          
-                  'V_DC'            : 400,          
-                  'n_prim'          : 10,            
-                  'n_sndry'         : 2,          
-                  'L_r'             : 1.55e-6,   		  
-                  'C_r'             : 1.2e-6,   		 
-                  'L'               : 1.6e-6,   			  
-                  'C_o'             : 480e-6,   		 
-                  'C_v_init'        : 0,   		  
-                  'sys_clk'         : 100e6,   	  
-                  'max_period'      : 2000,     
-                  'min_period'      : 200,   	 
-                  'SlewStep'        : 50/3,    
-                  'StartUpInc'      : 500,     
-                  'C_sense'         : 10e-9,       
-                  'adc_conv'        : 15,       
                   'T_dt'            : 300e-9                          					
                }
 Grid        =  {
                   'Config'          :  2,  
                   'Vin'             :  230,  
+                  'Ts'              :  0,  
                   'Fgrid'           :  50,  
                   'Rg'              :  1e-3                                                                                  
                }
@@ -153,7 +137,7 @@ Thermals    =  {
                   'rth_Amb'         :  0.09,  
                }
 HV_Filter   =  {
-                  'Config'         :  1,
+                  'Config'         :  2,
                   'C_o'            : {                                                    
                                           'Config'		      : 6,  
                                           'Cap_s'    		   : 1e-3,  
@@ -168,7 +152,7 @@ HV_Filter   =  {
 
             }
 AC_Filter   =  {
-                  'Config'          :  1 ,
+                  'Config'          :  4 ,
                   'Cin'             :  1e-9,  
                   'Lin'             :  1e-9,  
                   'Ro'              :  1e-9, 

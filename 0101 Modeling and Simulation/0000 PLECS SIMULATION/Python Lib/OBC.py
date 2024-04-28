@@ -37,7 +37,7 @@ plcsim.launch_sim(modelname=modelname)
 # plcsim.HoldAllTraces(scopedict=mdlvar['scopes'])
 # plcsim.saveAllTraces(mdlvar['scopes'],save_path)
 #loop over csv files 
-process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],open=False)
+process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],open=True)
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 
