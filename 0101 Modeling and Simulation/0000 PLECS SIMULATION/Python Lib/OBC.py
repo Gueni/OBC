@@ -20,11 +20,11 @@ plcsim              = plc.simpy(url=url , port=port , path=mdl.model_directory ,
 plcsim.rpc_connect()                                                                       
 plcsim.load_model()                                                                        
 #?----------------------------------------------------------------------------------------------------------------------------------------
-plcsim.logParams(mdlvar['ToFile']['logfile'],mdlvar)
+plcsim.logParams(str(mdlvar['ToFile']['logfile']),mdlvar)
 plcsim.ClearAllTraces(mdlvar['scopes'])  
 plcsim.Set_sim_param()
 plcsim.launch_sim(modelname=modelname)
 # plcsim.HoldAllTraces(mdlvar['scopes'])
-plcsim.saveAllTraces(mdlvar['scopes'],mdl,mdlvar['ToFile']['Traces'])
+# plcsim.saveAllTraces(mdlvar['scopes'],mdl,mdlvar['ToFile']['Traces'])
 post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------------------------------------------------------------------------------------------------------------

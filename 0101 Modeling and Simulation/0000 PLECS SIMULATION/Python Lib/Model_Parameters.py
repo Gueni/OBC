@@ -22,6 +22,7 @@ model_directory     = (os.path.join(current_directory, model_path)).replace("\\"
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
                   'tSim'	    	   : 3.0, 
+                  'tsave_i'	    	: 1.0, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'rel_tol'		   : 1e-3 
@@ -32,7 +33,7 @@ ToFile      =  {
                   'output_html'     : (os.path.join(current_directory, output_html_path+f"Html_{utc_numeric}_{sim_idx}.html")).replace("\\", "/"),
                   'Traces'		      : (os.path.join(current_directory, Traces_path)).replace("\\", "/")  ,                     
                   'Ts'              : 0,
-                  'tsave' 	    	   : Sim_param['tSim']-1     
+                  'tsave' 	    	   : Sim_param['tSim']-Sim_param['tsave_i']     
                }  
 scopes      =  [
 				      "OBC/Scopes/grid_scope",     
@@ -295,6 +296,22 @@ AC_Filter   =  {
                   'Cy2'             :  4.7e-12,  
                   'Ll'              :  10e-6 
                }
+Battery     =  {
+                  'n_series'                  : 1, # number of series-connected cells
+                  'n_parallel'                : 1, # number of parallel branches
+                  'SOC_init'                  : 0, # initial SOC
+                  'polarizingRshift'          : 0.10, # shift polarizing R by 10%
+                  'cellNominalV'              : 2.9, # voltage at end of nominal zone
+                  'cellFullChargeV'           : 400, # voltage at full SOC
+                  'cellExponentialV'          : 390, # voltage at end of exponential zone
+                  'cellRatedCapacity'         : 400, # cell rated capacity
+                  'cellMaximumCapacity'       : 400, # cell maximum capacity
+                  'cellNominalCapacity'       : 350, # cell capacity at end of nominal zone
+                  'cellExponentialCapacity'   : 100, # cell capacity at end of exponential zone
+                  'cellNominalDischargeI'     : 200, # nominal discharge current for cell
+                  'cellInternalR'             : 20, # internal cell resistance
+                  'cellLPFTimeConstant'       : 30 # 30 second time constant for LPF for effect of current on voltage
+               }
 #?----------------------------------------------------------------------------------------------------------------------------------------
 ModelVars   =  {  
                   'ToFile'          :  ToFile,
@@ -308,7 +325,7 @@ ModelVars   =  {
                   'DCLink'          :  DCLink,  
                   'LLC'             :  LLC, 
                   'HV_Filter'       :  HV_Filter,   
-                  'Load'            :  Load,
+                  'Battery'         :  Battery,
                   'Thermals'        :Thermals                                                                                   
                }	
 #?----------------------------------------------------------------------------------------------------------------------------------------	
@@ -405,4 +422,6 @@ Waveforms   =  [
                   'DCLink Capacitor Current'
                ]		
 #?----------------------------------------------------------------------------------------------------------------------------------------	
+
+
 

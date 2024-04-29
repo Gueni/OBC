@@ -7,6 +7,8 @@
 #?                              /_/   /_____/_____/\____//____/  /_/    \____/_/ |_/\____/  
 #?                              
 #?----------------------------------------------------------------------------------------------------------------------------------------
+from genericpath import exists
+import sys
 import xmlrpc.client
 #?----------------------------------------------------------------------------------------------------------------------------------------
 class simpy:
@@ -44,18 +46,18 @@ class simpy:
     def close_cnx(self,modelname):
         self.server.plecs.close(modelname) 
 
-    def log_parameters(self,parameters_dict, file, parent_key=None, indentation=0):
-        max_key_length = max(len(str(key)) for key in parameters_dict.keys())
+    def logParams(self,file_path, nested_dict):
+        with open(file_path, 'w') as file:
+            self.log_parameters(file, nested_dict, parent_keys=[])
 
-        for key, value in parameters_dict.items():
+    def log_parameters(self,file, nested_dict, parent_keys):
+        for key, value in nested_dict.items():
+            current_keys = parent_keys + [key]
             if isinstance(value, dict):
-                self.log_parameters(value, file, key, indentation)
+                self.log_parameters(file, value, current_keys)
             else:
-                file.write(f"[{parent_key}]{'[' + str(key) + ']'.ljust(max_key_length)} = {str(value)}\n")
+                parent_path = "[" + "][".join(current_keys) + "]"
+                file.write("{:<40}= {}\n".format(parent_path, value))
 
-    def logParams(self,file,mdlvar) :
-        with open(mdlvar['ToFile']['logfile'], "w") as file:
-            self.log_parameters(mdlvar, file)
-        file.close
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
