@@ -419,7 +419,12 @@ Waveforms   =  [
                   'PFC output busbar- Resistor Dissipation',
                   #?-------------------------
                   'DCLink Capacitor Voltage',
-                  'DCLink Capacitor Current'
+                  'DCLink Capacitor Current',
+                  #?-------------------------
+                  'Battery Pack SOC',
+                  'Battery Pack depleted charge [Ah]',
+                  'Battery Pack Voltage [V]',
+                  'Battery Pack Current [A]'
                ]		
 #?----------------------------------------------------------------------------------------------------------------------------------------	
 
