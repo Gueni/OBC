@@ -1237,8 +1237,8 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.763608
-        SliderPosition [0, 15]
+        ZoomFactor    1.30958
+        SliderPosition [0, 137]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1360,7 +1360,7 @@ Plecs {
           Probe {
             Component     "EMI FILTER"
             Path          ""
-            Signals       {"V", "I"}
+            Signals       {"I", "V"}
           }
         }
         Component {
@@ -3564,6 +3564,147 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe7"
+          Show          off
+          Position      [100, 450]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "EVSE/GRID"
+            Path          ""
+            Signals       {"IL1", "VL1"}
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux15"
+          Show          off
+          Position      [165, 450]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "grid vs filter"
+          Show          on
+          Position      [300, 455]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
+"AEAAAAbQAAAAkAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "Grid Current"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "[ A ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalMux
+          Name          "Mux2"
+          Show          off
+          Position      [260, 445]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          SignalMux
+          Name          "Mux3"
+          Show          off
+          Position      [260, 465]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "2"
+            Show          off
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "Demux"
@@ -3653,13 +3794,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Demux1"
-          SrcTerminal   2
-          DstComponent  "EMI_scope"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Probe"
           SrcTerminal   1
           DstComponent  "Demux1"
@@ -3676,8 +3810,15 @@ Plecs {
           }
           Branch {
             Points        [185, 405]
-            DstComponent  "Total Harmonic\nDistortion1"
-            DstTerminal   1
+            Branch {
+              DstComponent  "Total Harmonic\nDistortion1"
+              DstTerminal   1
+            }
+            Branch {
+              Points        [185, 470]
+              DstComponent  "Mux3"
+              DstTerminal   3
+            }
           }
         }
         Connection {
@@ -4124,6 +4265,58 @@ Plecs {
           Points        [595, 665; 595, 655]
           DstComponent  "Mux1"
           DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe7"
+          SrcTerminal   1
+          DstComponent  "Demux15"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Mux2"
+          SrcTerminal   1
+          DstComponent  "grid vs filter"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Mux3"
+          SrcTerminal   1
+          DstComponent  "grid vs filter"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux15"
+          SrcTerminal   2
+          Points        [210, 445; 210, 440]
+          DstComponent  "Mux2"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux1"
+          SrcTerminal   2
+          Points        [175, 335]
+          Branch {
+            DstComponent  "EMI_scope"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [175, 450]
+            DstComponent  "Mux2"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux15"
+          SrcTerminal   3
+          Points        [210, 455; 210, 460]
+          DstComponent  "Mux3"
+          DstTerminal   2
         }
         RectangleAnnotation {
           Position     [220, 155]
@@ -6729,4 +6922,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "T1cP72wzi5iTBtWxhwBBvMdhV3HfU3WMOFX/A5cpQGA="
+DemoSignature "BKonx8uPN4/ribT7X9+YQSNI3cjMrwX9RMHPCnLyVNY="

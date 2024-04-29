@@ -31,7 +31,8 @@ ToFile      =  {
                   'logfile'		   : (os.path.join(current_directory, logfile_path+f"Log_{utc_numeric}_{sim_idx}.log")).replace("\\", "/"),                     
                   'output_html'     : (os.path.join(current_directory, output_html_path+f"Html_{utc_numeric}_{sim_idx}.html")).replace("\\", "/"),
                   'Traces'		      : (os.path.join(current_directory, Traces_path)).replace("\\", "/")  ,                     
-                  'Ts'              : 0         
+                  'Ts'              : 0,
+                  'tsave' 	    	   : Sim_param['tSim']-1     
                }  
 scopes      =  [
 				      "OBC/Scopes/grid_scope",     
@@ -51,7 +52,9 @@ scopes      =  [
 				      "OBC/Scopes/PFC conduction losses",                                
 				      "OBC/Scopes/PFC output capacitor",                                
 				      "OBC/Scopes/PFC input busbar",                                
-				      "OBC/Scopes/PFC output busbar"                               
+				      "OBC/Scopes/PFC output busbar",
+                  "OBC/Scopes/PFC choke vs grid",
+                  "OBC/Scopes/grid vs filter"                               
                            
                ]	
 PFC_glb     =  {
@@ -283,7 +286,7 @@ HV_Filter   =  {
 
             }
 AC_Filter   =  {
-                  'Config'          :  4 ,
+                  'Config'          :  1 ,
                   'Cin'             :  1e-6,  
                   'L_CMC'           :  1.5e-3, 
                   'L_DMC'           :  900e-6, 
