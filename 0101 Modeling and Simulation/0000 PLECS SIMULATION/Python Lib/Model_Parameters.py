@@ -23,6 +23,7 @@ model_directory     = (os.path.join(current_directory, model_path)).replace("\\"
 Sim_param 	=  {
                   'tSim'	    	   : 3.0, 
                   'tsave_i'	    	: 1.0, 
+                  'step'            : 1,
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'rel_tol'		   : 1e-3 
@@ -55,7 +56,8 @@ scopes      =  [
 				      "OBC/Scopes/PFC input busbar",                                
 				      "OBC/Scopes/PFC output busbar",
                   "OBC/Scopes/PFC choke vs grid",
-                  "OBC/Scopes/grid vs filter"                               
+                  "OBC/Scopes/grid vs filter",
+                  "OBC/Scopes/Load_scope"                               
                            
                ]	
 PFC_glb     =  {
@@ -326,6 +328,7 @@ ModelVars   =  {
                   'LLC'             :  LLC, 
                   'HV_Filter'       :  HV_Filter,   
                   'Battery'         :  Battery,
+                  'Load'            :  Load,
                   'Thermals'        :Thermals                                                                                   
                }	
 #?----------------------------------------------------------------------------------------------------------------------------------------	
@@ -424,7 +427,10 @@ Waveforms   =  [
                   'Battery Pack SOC',
                   'Battery Pack depleted charge [Ah]',
                   'Battery Pack Voltage [V]',
-                  'Battery Pack Current [A]'
+                  'Battery Pack Current [A]',
+                  #?-------------------------
+                  'Load Voltage',
+                  'Load Current'
                ]		
 #?----------------------------------------------------------------------------------------------------------------------------------------	
 

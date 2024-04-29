@@ -1532,11 +1532,11 @@ Plecs {
           Type          ConfigurableSubsystem
           Name          "Load"
           Show          on
-          Position      [135, 95]
+          Position      [125, 90]
           Direction     up
           Flipped       off
           LabelPosition none
-          Frame         [-20, -55; 20, 55]
+          Frame         [-15, -20; 15, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
           CodeGenTarget "Generic"
@@ -1596,13 +1596,13 @@ Plecs {
           }
           Terminal {
             Type          Port
-            Position      [-25, -35]
-            Direction     left
+            Position      [0, -25]
+            Direction     up
           }
           Terminal {
             Type          Port
-            Position      [-25, 40]
-            Direction     left
+            Position      [0, 25]
+            Direction     down
           }
           TerminalNames { "L+", "L-" }
           Location      [0, 26; 1536, 760]
@@ -1616,7 +1616,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L+"
-                Show          on
+                Show          off
                 Position      [85, 50]
                 Direction     right
                 Flipped       off
@@ -1635,7 +1635,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L-"
-                Show          on
+                Show          off
                 Position      [85, 210]
                 Direction     right
                 Flipped       off
@@ -1708,7 +1708,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L+"
-                Show          on
+                Show          off
                 Position      [85, 50]
                 Direction     right
                 Flipped       off
@@ -1727,7 +1727,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L-"
-                Show          on
+                Show          off
                 Position      [85, 210]
                 Direction     right
                 Flipped       off
@@ -1870,7 +1870,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L+"
-                Show          on
+                Show          off
                 Position      [85, 50]
                 Direction     right
                 Flipped       off
@@ -1889,7 +1889,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L-"
-                Show          on
+                Show          off
                 Position      [85, 210]
                 Direction     right
                 Flipped       off
@@ -2006,7 +2006,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L+"
-                Show          on
+                Show          off
                 Position      [85, 50]
                 Direction     right
                 Flipped       off
@@ -2025,7 +2025,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L-"
-                Show          on
+                Show          off
                 Position      [85, 210]
                 Direction     right
                 Flipped       off
@@ -2116,7 +2116,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L+"
-                Show          on
+                Show          off
                 Position      [85, 50]
                 Direction     right
                 Flipped       off
@@ -2135,7 +2135,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L-"
-                Show          on
+                Show          off
                 Position      [85, 210]
                 Direction     right
                 Flipped       off
@@ -2204,7 +2204,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L+"
-                Show          on
+                Show          off
                 Position      [85, 50]
                 Direction     right
                 Flipped       off
@@ -2223,7 +2223,7 @@ Plecs {
               Component {
                 Type          Port
                 Name          "L-"
-                Show          on
+                Show          off
                 Position      [85, 210]
                 Direction     right
                 Flipped       off
@@ -53129,4 +53129,4 @@ Plecs {
     }
   }
 }
-DemoSignature "MJox5kn2Tw2PlF8Dq/lekBVc95Wb8uZMcePu3Cxp10E="
+DemoSignature "B7fv4Qi6MW3vHASUzUSovCYdKqkjhTnTspkNKDVVniA="

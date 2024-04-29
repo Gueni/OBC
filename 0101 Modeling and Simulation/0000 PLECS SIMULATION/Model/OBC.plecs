@@ -48,7 +48,7 @@ Plecs {
   ScriptsDialogSplitterPos "0"
   Schematic {
     Location      [0, 26; 1536, 780]
-    ZoomFactor    1.30957
+    ZoomFactor    1.49863
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -445,11 +445,11 @@ Plecs {
           Type          Subsystem
           Name          "TF"
           Show          on
-          Position      [685, 345]
+          Position      [685, 350]
           Direction     up
           Flipped       off
           LabelPosition none
-          Frame         [-35, -30; 35, 30]
+          Frame         [-35, -35; 35, 35]
           TreatAsAtomicUnit on
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -460,39 +460,45 @@ Plecs {
           MaskIconRotates on
           Terminal {
             Type          Input
-            Position      [-35, 10]
+            Position      [-35, 5]
             Direction     left
             Index         "1"
           }
           Terminal {
             Type          Input
-            Position      [-35, 0]
+            Position      [-35, -5]
             Direction     left
             Index         "2"
           }
           Terminal {
             Type          Input
-            Position      [-35, -10]
+            Position      [-35, -15]
             Direction     left
             Index         "3"
           }
           Terminal {
             Type          Input
-            Position      [-35, -20]
+            Position      [-35, -25]
             Direction     left
             Index         "4"
           }
           Terminal {
             Type          Input
-            Position      [35, -5]
+            Position      [35, -10]
             Direction     right
             Index         "5"
           }
           Terminal {
             Type          Input
-            Position      [-35, 20]
+            Position      [-35, 15]
             Direction     left
             Index         "6"
+          }
+          Terminal {
+            Type          Input
+            Position      [-35, 25]
+            Direction     left
+            Index         "7"
           }
           Schematic {
             Location      [744, 55; 1515, 733]
@@ -504,7 +510,7 @@ Plecs {
               Type          ToFile
               Name          "To File"
               Show          off
-              Position      [445, 155]
+              Position      [440, 160]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -534,13 +540,13 @@ Plecs {
               Type          SignalMux
               Name          "Mux1"
               Show          off
-              Position      [390, 155]
+              Position      [385, 160]
               Direction     right
               Flipped       off
               LabelPosition south
               Parameter {
                 Variable      "Width"
-                Value         "[2 2 64 2 4]"
+                Value         "[2 2 64 2 4 2]"
                 Show          off
               }
             }
@@ -644,7 +650,7 @@ Plecs {
               Type          Enable
               Name          "Enable"
               Show          on
-              Position      [445, 120]
+              Position      [440, 125]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -680,6 +686,30 @@ Plecs {
               Parameter {
                 Variable      "Index"
                 Value         "6"
+                Show          on
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "6"
+              Show          off
+              Position      [140, 185]
+              Direction     right
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "7"
                 Show          on
               }
               Parameter {
@@ -735,6 +765,13 @@ Plecs {
               DstComponent  "Mux1"
               DstTerminal   6
             }
+            Connection {
+              Type          Signal
+              SrcComponent  "6"
+              SrcTerminal   1
+              DstComponent  "Mux1"
+              DstTerminal   7
+            }
           }
         }
         Component {
@@ -775,10 +812,24 @@ Plecs {
           Flipped       off
           LabelPosition west
           Probe {
-            Component     "Li-ion\nR model"
+            Component     "BAT"
             Path          ""
             Signals       {"Pack SOC", "Pack Depleted Charge [Ah]", "Pack Term"
 "inal Voltage [V]", "Pack Current [A]"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Load"
+          Show          on
+          Position      [380, 590]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "Load"
+            Path          ""
+            Signals       {"Current", "Voltage"}
           }
         }
         Connection {
@@ -975,6 +1026,14 @@ Plecs {
           DstComponent  "TF"
           DstTerminal   6
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "Load"
+          SrcTerminal   1
+          Points        [590, 590; 590, 375]
+          DstComponent  "TF"
+          DstTerminal   7
+        }
         RectangleAnnotation {
           Position     [280, 140]
           Width        250
@@ -1028,6 +1087,17 @@ Plecs {
           PenColor     4283760767
           PenAlpha     1
           BrushColor   4289718015
+          BrushAlpha   1
+        } 
+        RectangleAnnotation {
+          Position     [280, 590]
+          Width        250
+          Height       30
+          CornerRadius 7
+          Thickness    1
+          PenColor     4291329362
+          PenAlpha     1
+          BrushColor   4294956418
           BrushAlpha   1
         } 
       }
@@ -1257,7 +1327,7 @@ Plecs {
       Schematic {
         Location      [0, 26; 1536, 780]
         ZoomFactor    0.873847
-        SliderPosition [0, -1]
+        SliderPosition [0, 115]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1277,8 +1347,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
-"AEAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
+"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1418,19 +1488,20 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 827]
+          Location      [0, 26; 1536, 843]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACuAAABkvwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAMwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAZIAAAB+AP///wAAAAMAAAeAAAA"
-"AwfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAME"
+"AwfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMY"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALeAMAAAAGA"
-"AAACAAAAGQAAAADAAAAZAAAAAYAAABkAAAABQAAAGQAAAAEAAAAZAAAAAkAAABkAAAHawAAAAsBAA"
-"ABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE1AAAAAQAAAAAAAABkAAAAAQAAAAAAAAB"
-"kAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAUKAAAAAQAAAAAAAAPoAAAAACs="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAGQAAAACAAAAZAAAAAUAAABkAAAABAAAAGQAAAAHAAAAZAAAAAYAAABkAAAACQAAAGQAAA"
+"AIAAAAZAAAAAEAAABkAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE"
+"1AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAY2AAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1613,7 +1684,7 @@ Plecs {
           Flipped       off
           LabelPosition west
           Probe {
-            Component     "Li-ion\nR model"
+            Component     "BAT"
             Path          ""
             Signals       {"Pack Current [A]", "Pack SOC", "Pack Depleted Char"
 "ge [Ah]", "Pack Terminal Voltage [V]"}
@@ -1654,8 +1725,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
-"AEAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
+"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1842,8 +1913,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
-"AEAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
+"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
@@ -3494,17 +3565,17 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 831]
+          Location      [0, 26; 1536, 839]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"AjvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAM8"
+"AjvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANG"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABgAAAG0AAAAHAAAAbQAAAAEAAABtAAAAAgAAAG4AAAADAAAAbQAAAAgAAABtAAAACQAAAG0AAA"
-"AEAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAG"
+"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
+"AIAAAAbQAAAAEAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAG"
 "pAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAXXAAAAAQAAAAAAAAPoAAAAACs="
@@ -3625,8 +3696,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
-"AEAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
+"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
@@ -3806,6 +3877,119 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe8"
+          Show          off
+          Position      [140, 905]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "Load"
+            Path          ""
+            Signals       {"Current", "Voltage"}
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "Load_scope"
+          Show          on
+          Position      [260, 905]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
+"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "Grid Voltage"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "Grid Current"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "[ A ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux16"
+          Show          off
+          Position      [195, 905]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[1 1]"
             Show          off
           }
         }
@@ -4441,6 +4625,27 @@ Plecs {
           DstComponent  "Product1"
           DstTerminal   3
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux16"
+          SrcTerminal   3
+          DstComponent  "Load_scope"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe8"
+          SrcTerminal   1
+          DstComponent  "Demux16"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux16"
+          SrcTerminal   2
+          DstComponent  "Load_scope"
+          DstTerminal   1
+        }
         RectangleAnnotation {
           Position     [220, 155]
           Width        360
@@ -4506,9 +4711,9 @@ Plecs {
           Position      [75, 515]
         } 
         RectangleAnnotation {
-          Position     [220, 845]
+          Position     [220, 785]
           Width        360
-          Height       230
+          Height       110
           CornerRadius 3
           Thickness    2
           PenColor     4283760767
@@ -4576,6 +4781,22 @@ Plecs {
         Annotation {
           Name          "<html><body>\n<p>%</p></body></html>"
           Position      [380, 385]
+        } 
+        RectangleAnnotation {
+          Position     [220, 900]
+          Width        360
+          Height       120
+          CornerRadius 3
+          Thickness    2
+          PenColor     4283760767
+          PenAlpha     1
+          BrushColor   10642217
+          BrushAlpha   0
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
+"weight:600; color:#55007f;\">Load</span></p></body></html>"
+          Position      [70, 855]
         } 
       }
     }
@@ -6867,13 +7088,13 @@ Plecs {
     }
     Component {
       Type          Subsystem
-      Name          "Li-ion\nR model"
+      Name          "BAT"
       Show          on
-      Position      [680, 185]
+      Position      [730, 190]
       Direction     up
       Flipped       off
-      LabelPosition east
-      Frame         [-10, -20; 10, 20]
+      LabelPosition none
+      Frame         [-15, -20; 15, 20]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -7074,15 +7295,15 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    1
-        SliderPosition [1, 0]
+        ZoomFactor    1.14437
+        SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
           Type          Port
           Name          "+"
           Show          on
-          Position      [440, 195]
+          Position      [665, 245]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -7101,7 +7322,7 @@ Plecs {
           Type          Port
           Name          "-"
           Show          on
-          Position      [440, 275]
+          Position      [665, 325]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -7120,7 +7341,7 @@ Plecs {
           Type          VoltageSource
           Name          "V_OC"
           Show          on
-          Position      [260, 235]
+          Position      [485, 285]
           Direction     down
           Flipped       on
           LabelPosition east
@@ -7139,7 +7360,7 @@ Plecs {
           Type          Resistor
           Name          "R"
           Show          on
-          Position      [325, 195]
+          Position      [550, 245]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -7153,7 +7374,7 @@ Plecs {
           Type          Ammeter
           Name          "Am1"
           Show          off
-          Position      [375, 195]
+          Position      [600, 245]
           Direction     left
           Flipped       off
           LabelPosition south
@@ -7162,7 +7383,7 @@ Plecs {
           Type          Subsystem
           Name          "SOC"
           Show          on
-          Position      [315, 65]
+          Position      [540, 115]
           Direction     up
           Flipped       off
           LabelPosition none
@@ -7438,7 +7659,7 @@ Plecs {
           Type          Gain
           Name          "SOC -> it"
           Show          on
-          Position      [135, 65]
+          Position      [360, 115]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -7462,7 +7683,7 @@ Plecs {
           Type          Voltmeter
           Name          "Vbatt"
           Show          on
-          Position      [405, 235]
+          Position      [630, 285]
           Direction     up
           Flipped       off
           LabelPosition west
@@ -7471,7 +7692,7 @@ Plecs {
           Type          Function
           Name          "Fcn1"
           Show          off
-          Position      [205, 65]
+          Position      [430, 115]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -7486,7 +7707,7 @@ Plecs {
           Type          TransferFunction
           Name          "LPF ( i -> i* )"
           Show          on
-          Position      [205, 125]
+          Position      [430, 175]
           Direction     left
           Flipped       off
           LabelPosition north
@@ -7511,7 +7732,7 @@ Plecs {
           Type          Saturation
           Name          "Saturation"
           Show          off
-          Position      [210, 235]
+          Position      [435, 285]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -7530,7 +7751,7 @@ Plecs {
           Type          Subsystem
           Name          "V_OC \nCalculation"
           Show          on
-          Position      [140, 235]
+          Position      [365, 285]
           Direction     left
           Flipped       off
           LabelPosition south
@@ -8627,7 +8848,7 @@ Plecs {
           Type          TransferFunction
           Name          "LPF"
           Show          on
-          Position      [205, 170]
+          Position      [430, 220]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -8652,7 +8873,7 @@ Plecs {
           Type          Goto
           Name          "Goto"
           Show          off
-          Position      [430, 40]
+          Position      [655, 90]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -8671,7 +8892,7 @@ Plecs {
           Type          Wire
           SrcComponent  "R"
           SrcTerminal   2
-          Points        [260, 195]
+          Points        [485, 245]
           DstComponent  "V_OC"
           DstTerminal   1
         }
@@ -8693,7 +8914,7 @@ Plecs {
           Type          Signal
           SrcComponent  "SOC -> it"
           SrcTerminal   2
-          Points        [50, 65; 50, 245]
+          Points        [275, 115; 275, 295]
           DstComponent  "V_OC \nCalculation"
           DstTerminal   2
         }
@@ -8708,7 +8929,7 @@ Plecs {
           Type          Signal
           SrcComponent  "LPF ( i -> i* )"
           SrcTerminal   2
-          Points        [65, 125; 65, 235]
+          Points        [290, 175; 290, 285]
           DstComponent  "V_OC \nCalculation"
           DstTerminal   3
         }
@@ -8716,11 +8937,11 @@ Plecs {
           Type          Signal
           SrcComponent  "Am1"
           SrcTerminal   3
-          Points        [375, 170]
+          Points        [600, 220]
           Branch {
-            Points        [375, 125]
+            Points        [600, 175]
             Branch {
-              Points        [375, 65]
+              Points        [600, 115]
               DstComponent  "SOC"
               DstTerminal   1
             }
@@ -8745,7 +8966,7 @@ Plecs {
           Type          Signal
           SrcComponent  "LPF"
           SrcTerminal   2
-          Points        [80, 170; 80, 225]
+          Points        [305, 220; 305, 275]
           DstComponent  "V_OC \nCalculation"
           DstTerminal   4
         }
@@ -8753,7 +8974,7 @@ Plecs {
           Type          Wire
           SrcComponent  "+"
           SrcTerminal   1
-          Points        [405, 195]
+          Points        [630, 245]
           Branch {
             DstComponent  "Am1"
             DstTerminal   2
@@ -8767,9 +8988,9 @@ Plecs {
           Type          Wire
           SrcComponent  "-"
           SrcTerminal   1
-          Points        [405, 275]
+          Points        [630, 325]
           Branch {
-            Points        [260, 275]
+            Points        [485, 325]
             DstComponent  "V_OC"
             DstTerminal   2
           }
@@ -8782,13 +9003,13 @@ Plecs {
           Type          Signal
           SrcComponent  "SOC"
           SrcTerminal   2
-          Points        [260, 65]
+          Points        [485, 115]
           Branch {
             DstComponent  "Fcn1"
             DstTerminal   1
           }
           Branch {
-            Points        [260, 40]
+            Points        [485, 90]
             DstComponent  "Goto"
             DstTerminal   1
           }
@@ -8825,6 +9046,105 @@ Plecs {
           Path          ""
           Signals       {"Measured current"}
         }
+      }
+    }
+    Component {
+      Type          Switch2
+      Name          "S2"
+      Show          off
+      Position      [685, 150]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Switch2
+      Name          "S3"
+      Show          off
+      Position      [755, 160]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "library/Power Components/Load"
+      Name          "Load"
+      Show          on
+      Position      [805, 190]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-15, -20; 15, 20]
+      Parameter {
+        Variable      "CL"
+        Value         "Load.CL"
+        Show          off
+      }
+      Parameter {
+        Variable      "Vinit"
+        Value         "Load.Vinit"
+        Show          off
+      }
+      Parameter {
+        Variable      "Iinit"
+        Value         "Load.Iinit"
+        Show          off
+      }
+      Parameter {
+        Variable      "LL"
+        Value         "Load.LL"
+        Show          off
+      }
+      Parameter {
+        Variable      "RL"
+        Value         "Load.RL"
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "Load.Config"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [0, -25]
+        Direction     up
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 25]
+        Direction     down
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "Constant"
+      Show          off
+      Position      [805, 130]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Frame         [-10, -10; 10, 10]
+      Parameter {
+        Variable      "Value"
+        Value         "Sim_param.step"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
       }
     }
     Connection {
@@ -8980,17 +9300,59 @@ Plecs {
       Type          Wire
       SrcComponent  "HV DC FILTER"
       SrcTerminal   1
-      Points        [680, 150]
-      DstComponent  "Li-ion\nR model"
+      DstComponent  "S2"
       DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "S3"
+      SrcTerminal   3
+      Points        [805, 150]
+      DstComponent  "Load"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Constant"
+      SrcTerminal   1
+      Points        [755, 130]
+      Branch {
+        DstComponent  "S3"
+        DstTerminal   4
+      }
+      Branch {
+        DstComponent  "S2"
+        DstTerminal   4
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "S2"
+      SrcTerminal   2
+      Points        [730, 160]
+      Branch {
+        DstComponent  "S3"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "BAT"
+        DstTerminal   1
+      }
     }
     Connection {
       Type          Wire
       SrcComponent  "HV DC FILTER"
       SrcTerminal   2
-      Points        [680, 225]
-      DstComponent  "Li-ion\nR model"
-      DstTerminal   2
+      Points        [730, 225]
+      Branch {
+        Points        [805, 225]
+        DstComponent  "Load"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "BAT"
+        DstTerminal   2
+      }
     }
     Annotation {
       Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
@@ -9005,9 +9367,9 @@ Plecs {
       Position      [425, 70]
     } 
     RectangleAnnotation {
-      Position     [425, 220]
-      Width        770
-      Height       360
+      Position     [460, 215]
+      Width        840
+      Height       350
       CornerRadius 17
       Thickness    2
       PenColor     4283760767
@@ -9017,4 +9379,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "wULoNAVcX9FALOxx8XSWtL9QvqwnYvAUW2Qrtl6jeDE="
+DemoSignature "EOKAbmd4fpD8phXVkkzqKeE/tAt1sK05pQC5eNEAxg0="
