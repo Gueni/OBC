@@ -22,7 +22,8 @@ model_directory     = (os.path.join(current_directory, model_path)).replace("\\"
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
                   'tSim'	    	   : 3.0, 
-                  'tsave_i'	    	: 1.0, 
+                  'tsave_i'	    	: 3.0, 
+                  'load_tflip'	   : 1.0, 
                   'step'            : 1,
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
@@ -247,7 +248,8 @@ Load        =  {
                   'RL'		         : 40,  
                   'LL'		         : 0, 
                   'Vinit'		      : 0,  
-                  'Iinit'		      : 0
+                  'Iinit'		      : 0,
+                  't_switch'        : Sim_param['tSim']-Sim_param['load_tflip']
                }
 LLC         =  {
                   'R1'              : 4700/4,          

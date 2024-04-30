@@ -10,6 +10,7 @@
 import plecs as plc
 import Model_Parameters as mdl
 import post_process
+import cleardata
 #?----------------------------------------------------------------------------------------------------------------------------------------
 port                = "1080"                                                               
 url                 = f"http://localhost:{port}/RPC2"                                      
@@ -18,7 +19,8 @@ modelname           = "OBC"
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim              = plc.simpy(url=url , port=port , path=mdl.model_directory , modelvar=mdlvar)    
 plcsim.rpc_connect()                                                                       
-plcsim.load_model()                                                                        
+plcsim.load_model()  
+cleardata.clear_data_folders()                                                                  
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.logParams(str(mdlvar['ToFile']['logfile']),mdlvar)
 plcsim.ClearAllTraces(mdlvar['scopes'])  
