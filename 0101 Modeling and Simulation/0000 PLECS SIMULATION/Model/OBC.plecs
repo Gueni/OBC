@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1.49863
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -9894,7 +9894,7 @@ Plecs {
       Type          ConstantRelationalOperator
       Name          "Compare to\nConstant"
       Show          off
-      Position      [725, 240]
+      Position      [720, 265]
       Direction     left
       Flipped       on
       LabelPosition north
@@ -9914,7 +9914,7 @@ Plecs {
       Type          From
       Name          "From2"
       Show          off
-      Position      [655, 240]
+      Position      [650, 265]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9933,7 +9933,7 @@ Plecs {
       Type          Goto
       Name          "Goto3"
       Show          off
-      Position      [795, 240]
+      Position      [790, 265]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9964,6 +9964,34 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          Switch2
+      Name          "S4"
+      Show          off
+      Position      [745, 235]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Switch2
+      Name          "S5"
+      Show          off
+      Position      [675, 225]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
         Show          off
       }
     }
@@ -10146,21 +10174,6 @@ Plecs {
       }
     }
     Connection {
-      Type          Wire
-      SrcComponent  "HV DC FILTER"
-      SrcTerminal   2
-      Points        [720, 225]
-      Branch {
-        Points        [795, 225]
-        DstComponent  "Load"
-        DstTerminal   2
-      }
-      Branch {
-        DstComponent  "BAT"
-        DstTerminal   2
-      }
-    }
-    Connection {
       Type          Signal
       SrcComponent  "Clock"
       SrcTerminal   1
@@ -10180,13 +10193,26 @@ Plecs {
       SrcTerminal   2
       Points        [715, 130]
       Branch {
-        DstComponent  "S2"
-        DstTerminal   4
+        Points        [675, 130]
+        Branch {
+          DstComponent  "S2"
+          DstTerminal   4
+        }
+        Branch {
+          DstComponent  "S5"
+          DstTerminal   4
+        }
       }
       Branch {
-        Points        [745, 130]
-        DstComponent  "S3"
-        DstTerminal   4
+        Points        [745, 130; 745, 140]
+        Branch {
+          DstComponent  "S3"
+          DstTerminal   4
+        }
+        Branch {
+          DstComponent  "S4"
+          DstTerminal   4
+        }
       }
     }
     Connection {
@@ -10202,6 +10228,35 @@ Plecs {
       SrcTerminal   1
       DstComponent  "ts"
       DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "S5"
+      SrcTerminal   1
+      DstComponent  "HV DC FILTER"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "BAT"
+      SrcTerminal   2
+      Points        [720, 235]
+      Branch {
+        DstComponent  "S5"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "S4"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "S4"
+      SrcTerminal   3
+      Points        [795, 225]
+      DstComponent  "Load"
+      DstTerminal   2
     }
     Annotation {
       Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
@@ -10228,4 +10283,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "EnWpJJ3pr5zECI9p+qGanTd36flpyppoxWi5F0/0TAw="
+DemoSignature "Jy1IqgKBEAzH4GSYGumHOTsDISI1TeFmBODe4hvVFB8="
