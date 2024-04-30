@@ -139,7 +139,7 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    1.14437
+        ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -484,7 +484,7 @@ Plecs {
           }
           Terminal {
             Type          Input
-            Position      [35, -10]
+            Position      [35, 0]
             Direction     right
             Index         "5"
           }
@@ -778,7 +778,7 @@ Plecs {
           Type          ConstantRelationalOperator
           Name          "Compare to\nConstant"
           Show          off
-          Position      [795, 340]
+          Position      [795, 350]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -827,7 +827,7 @@ Plecs {
           Type          From
           Name          "From"
           Show          off
-          Position      [865, 340]
+          Position      [865, 350]
           Direction     left
           Flipped       off
           LabelPosition north
@@ -1187,7 +1187,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth H-A"
       Show          on
-      Position      [420, 315]
+      Position      [410, 315]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -1201,7 +1201,7 @@ Plecs {
       Type          ConstantTemperatureGnd
       Name          "Ambient"
       Show          on
-      Position      [420, 355]
+      Position      [410, 355]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -1277,7 +1277,7 @@ Plecs {
       SrcComponent  "library/Power Components/DC FILTER"
       Name          "HV DC FILTER"
       Show          on
-      Position      [600, 185]
+      Position      [585, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -1337,7 +1337,7 @@ Plecs {
       Schematic {
         Location      [0, 26; 1536, 780]
         ZoomFactor    0.873847
-        SliderPosition [0, 115]
+        SliderPosition [0, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1357,8 +1357,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
-"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAAAQAAAG0AAAADAAAAbQAAAAIAAABuAAAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1735,8 +1735,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
-"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAAAQAAAG0AAAADAAAAbQAAAAIAAABuAAAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -2396,11 +2396,11 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAAJAAAAbQAAAAEAAABtAAAAAgAAAG4AAAADAAAAbQAAAAQAAABtAAAABQAAAG0AAA"
-"AGAAAAbQAAAAcAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
-"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAQAAAG0AAAADAAAAbQAAAAIAAABuAAAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"1AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+"AAAAAa2AAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3706,8 +3706,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAACQAAAG0AAA"
-"AIAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAAAQAAAG0AAAADAAAAbQAAAAIAAABuAAAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
@@ -4814,7 +4814,7 @@ Plecs {
       Type          Ground
       Name          "Ground4"
       Show          off
-      Position      [600, 255]
+      Position      [585, 255]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -6430,7 +6430,7 @@ Plecs {
       Type          Subsystem
       Name          "DUAL LLC"
       Show          on
-      Position      [495, 185]
+      Position      [485, 185]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -6949,7 +6949,7 @@ Plecs {
       Type          Ground
       Name          "Ground5"
       Show          off
-      Position      [495, 255]
+      Position      [485, 255]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -7015,7 +7015,7 @@ Plecs {
       Type          From
       Name          "From1"
       Show          off
-      Position      [470, 260]
+      Position      [460, 260]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -7100,7 +7100,7 @@ Plecs {
       Type          Switch2
       Name          "S2"
       Show          off
-      Position      [685, 150]
+      Position      [675, 150]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -7114,7 +7114,7 @@ Plecs {
       Type          Switch2
       Name          "S3"
       Show          off
-      Position      [755, 160]
+      Position      [745, 160]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -7129,7 +7129,7 @@ Plecs {
       SrcComponent  "library/Power Components/Load"
       Name          "Load"
       Show          on
-      Position      [805, 190]
+      Position      [795, 190]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -7179,11 +7179,11 @@ Plecs {
       Type          ConfigurableSubsystem
       Name          "BAT"
       Show          on
-      Position      [730, 190]
+      Position      [720, 190]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-15, -20; 15, 20]
+      Frame         [-25, -20; 25, 20]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -9792,7 +9792,7 @@ Plecs {
       Type          Subsystem
       Name          "ts"
       Show          on
-      Position      [725, 110]
+      Position      [715, 110]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -9894,7 +9894,7 @@ Plecs {
       Type          ConstantRelationalOperator
       Name          "Compare to\nConstant"
       Show          off
-      Position      [595, 345]
+      Position      [725, 240]
       Direction     left
       Flipped       on
       LabelPosition north
@@ -9914,7 +9914,7 @@ Plecs {
       Type          From
       Name          "From2"
       Show          off
-      Position      [525, 345]
+      Position      [655, 240]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9933,13 +9933,13 @@ Plecs {
       Type          Goto
       Name          "Goto3"
       Show          off
-      Position      [670, 345]
+      Position      [795, 240]
       Direction     right
       Flipped       off
       LabelPosition south
       Parameter {
         Variable      "Tag"
-        Value         "tswitch"
+        Value         "tsw"
         Show          off
       }
       Parameter {
@@ -9952,13 +9952,13 @@ Plecs {
       Type          From
       Name          "From3"
       Show          off
-      Position      [765, 110]
+      Position      [755, 110]
       Direction     left
       Flipped       off
       LabelPosition north
       Parameter {
         Variable      "Tag"
-        Value         "tswitch"
+        Value         "tsw"
         Show          off
       }
       Parameter {
@@ -10048,14 +10048,14 @@ Plecs {
       Type          HeatPipe
       SrcComponent  "Rth H-A"
       SrcTerminal   1
-      Points        [420, 285]
+      Points        [410, 285]
       Branch {
         Points        [330, 285]
         DstComponent  "PFC"
         DstTerminal   6
       }
       Branch {
-        Points        [505, 285]
+        Points        [495, 285]
         DstComponent  "DUAL LLC"
         DstTerminal   3
       }
@@ -10127,7 +10127,7 @@ Plecs {
       Type          Wire
       SrcComponent  "S3"
       SrcTerminal   3
-      Points        [805, 150]
+      Points        [795, 150]
       DstComponent  "Load"
       DstTerminal   1
     }
@@ -10135,7 +10135,7 @@ Plecs {
       Type          Wire
       SrcComponent  "S2"
       SrcTerminal   2
-      Points        [730, 160]
+      Points        [720, 160]
       Branch {
         DstComponent  "S3"
         DstTerminal   1
@@ -10149,9 +10149,9 @@ Plecs {
       Type          Wire
       SrcComponent  "HV DC FILTER"
       SrcTerminal   2
-      Points        [730, 225]
+      Points        [720, 225]
       Branch {
-        Points        [805, 225]
+        Points        [795, 225]
         DstComponent  "Load"
         DstTerminal   2
       }
@@ -10178,13 +10178,13 @@ Plecs {
       Type          Signal
       SrcComponent  "ts"
       SrcTerminal   2
-      Points        [725, 130]
+      Points        [715, 130]
       Branch {
         DstComponent  "S2"
         DstTerminal   4
       }
       Branch {
-        Points        [755, 130]
+        Points        [745, 130]
         DstComponent  "S3"
         DstTerminal   4
       }
@@ -10213,7 +10213,7 @@ Plecs {
 "e UI Emoji'; font-size:xx-large; font-weight:600; color:#55007f; background-c"
 "olor:#ffffff;\">EV Onboard Charger with PFC and LLC Resonant Converter</span>"
 "</h1></body></html>"
-      Position      [425, 70]
+      Position      [435, 70]
     } 
     RectangleAnnotation {
       Position     [435, 220]
@@ -10228,4 +10228,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "efZ1bfLyUaX6WeA0R3cSxkYdh9V72t62GnXWs94l1jU="
+DemoSignature "EnWpJJ3pr5zECI9p+qGanTd36flpyppoxWi5F0/0TAw="
