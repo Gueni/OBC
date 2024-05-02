@@ -21,9 +21,9 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                        
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
-                  'tSim'	    	   : 0.03, 
-                  'tsave_i'	    	: 0.03, 
-                  'load_tflip'	   : 0.03, 
+                  'tSim'	    	   : 2, 
+                  'tsave_i'	    	: 2.0, 
+                  'load_tflip'	   : 1.0, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'rel_tol'		   : 1e-3 
@@ -313,6 +313,23 @@ Battery     =  {
                   'cellExponentialCapacity'   : 100, # cell capacity at end of exponential zone
                   'cellNominalDischargeI'     : 200, # nominal discharge current for cell
                   'cellInternalR'             : 20, # internal cell resistance
+                  'Rdis'                      : 40,
+                  'I_dc'                      : 6,
+                  'Rcell1'                    : 6,
+                  'Rcell2'                    : 6,
+                  'Ccell1'                    : 6,
+                  'Ccell2'                    : 6,
+                  'V_OC1'                     : 300,
+                  'Cdis'                      : {                                                    
+                                                'Config'		      : 1,  
+                                                'Cap_s'    		   : 1e-3,  
+                                                'Resr_s'		      : 0,  
+                                                'Lesl_s'		      : 0,  
+                                                'Npara'		      : 1,  
+                                                'Nseri'		      : 1,  
+                                                'Vinit'		      : 0,  
+                                                'Iinit'		      : 0             
+                                                },
                   'cellLPFTimeConstant'       : 30 # 30 second time constant for LPF for effect of current on voltage
                }
 #?----------------------------------------------------------------------------------------------------------------------------------------

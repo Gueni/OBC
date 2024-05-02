@@ -10111,13 +10111,6 @@ Plecs {
       DstTerminal   7
     }
     Connection {
-      Type          Wire
-      SrcComponent  "HV DC FILTER"
-      SrcTerminal   1
-      DstComponent  "S2"
-      DstTerminal   3
-    }
-    Connection {
       Type          Signal
       SrcComponent  "Clock"
       SrcTerminal   1
@@ -10144,13 +10137,6 @@ Plecs {
       SrcTerminal   1
       DstComponent  "ts"
       DstTerminal   1
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "S3"
-      SrcTerminal   3
-      DstComponent  "HV DC FILTER"
-      DstTerminal   2
     }
     Connection {
       Type          Wire
@@ -10208,8 +10194,15 @@ Plecs {
         DstTerminal   4
       }
       Branch {
-        DstComponent  "S2"
-        DstTerminal   4
+        Points        [675, 190]
+        Branch {
+          DstComponent  "S2"
+          DstTerminal   4
+        }
+        Branch {
+          DstComponent  "BAT"
+          DstTerminal   3
+        }
       }
     }
     Connection {
@@ -10233,6 +10226,20 @@ Plecs {
           DstTerminal   4
         }
       }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "HV DC FILTER"
+      SrcTerminal   1
+      DstComponent  "S2"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "S3"
+      SrcTerminal   3
+      DstComponent  "HV DC FILTER"
+      DstTerminal   2
     }
     Annotation {
       Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
@@ -10259,4 +10266,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "oFH7+Z5Y8QKSmArj73L7bCdBEQkTqK4b1v/K8iWTtk8="
+DemoSignature "G2qC43C39EjrtXqIylRmj2ZkjEnYz2+YZYMTVHgeqdg="
