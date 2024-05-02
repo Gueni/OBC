@@ -21,9 +21,9 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                        
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {
-                  'tSim'	    	   : 2, 
-                  'tsave_i'	    	: 2.0, 
-                  'load_tflip'	   : 1.0, 
+                  'tSim'	    	   : 1, 
+                  'tsave_i'	    	: 1, 
+                  'load_tflip'	   : 0.5, 
                   'maxStep'		   : 1e-3,  
                   'ZeroCross'       : 1000,
                   'rel_tol'		   : 1e-3 
@@ -65,7 +65,7 @@ PFC_glb     =  {
                   'Rbusin'          :  1e-2,
                   'Rbusout'         :  1e-2,
                   'Cout'            :  {
-                                             'Config'		      : 4,
+                                             'Config'		      : 1,
                                              'Cap_s'    		   : 100e-6,  
                                              'Resr_s'		      : 19e-9,  
                                              'Lesl_s'		      : 1e-12,  
@@ -232,7 +232,7 @@ CTRL_PFC    =  {
                   'Rv_Ki'           :  800
                }
 DCLink      =  {
-                  'Config'		      : 4,
+                  'Config'		      : 1,
                   'Cdc'    		   : 500e-6,  
                   'ESR'		         : 19e-9,
                   'ESL'		         : 1e-12, 
