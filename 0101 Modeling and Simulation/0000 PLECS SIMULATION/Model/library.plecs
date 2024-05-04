@@ -35564,7 +35564,7 @@ Plecs {
                   Variable      "RCS"
                   Prompt        "RC Snubber Parameters :"
                   Type          FreeText
-                  Value         ""
+                  Value         "LLC.RC1"
                   Show          off
                   Tunable       off
                   TabName       ""
@@ -36873,7 +36873,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC1.Config"
                   Show          off
                 }
                 MaskProbe {
@@ -36978,7 +36978,7 @@ Plecs {
                   Variable      "RCS"
                   Prompt        "RC Snubber Parameters :"
                   Type          FreeText
-                  Value         ""
+                  Value         "LLC.RC2"
                   Show          off
                   Tunable       off
                   TabName       ""
@@ -38287,7 +38287,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC2.Config"
                   Show          off
                 }
                 MaskProbe {
@@ -38392,7 +38392,7 @@ Plecs {
                   Variable      "RCS"
                   Prompt        "RC Snubber Parameters :"
                   Type          FreeText
-                  Value         ""
+                  Value         "LLC.RC3"
                   Show          off
                   Tunable       off
                   TabName       ""
@@ -39701,7 +39701,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC3.Config"
                   Show          off
                 }
                 MaskProbe {
@@ -39806,7 +39806,7 @@ Plecs {
                   Variable      "RCS"
                   Prompt        "RC Snubber Parameters :"
                   Type          FreeText
-                  Value         ""
+                  Value         "LLC.RC4"
                   Show          off
                   Tunable       off
                   TabName       ""
@@ -41115,7 +41115,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC4.Config"
                   Show          off
                 }
                 MaskProbe {
@@ -41210,12 +41210,12 @@ Plecs {
                 Frame         [-5, -15; 5, 15]
                 Parameter {
                   Variable      "RCS"
-                  Value         ""
+                  Value         "LLC.RC5"
                   Show          off
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC5.Config"
                   Show          off
                 }
                 Terminal {
@@ -41241,12 +41241,12 @@ Plecs {
                 Frame         [-5, -15; 5, 15]
                 Parameter {
                   Variable      "RCS"
-                  Value         ""
+                  Value         "LLC.RC6"
                   Show          off
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC6.Config"
                   Show          off
                 }
                 Terminal {
@@ -41272,12 +41272,12 @@ Plecs {
                 Frame         [-5, -15; 5, 15]
                 Parameter {
                   Variable      "RCS"
-                  Value         ""
+                  Value         "LLC.RC7"
                   Show          off
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC7.Config"
                   Show          off
                 }
                 Terminal {
@@ -41303,12 +41303,12 @@ Plecs {
                 Frame         [-5, -15; 5, 15]
                 Parameter {
                   Variable      "RCS"
-                  Value         ""
+                  Value         "LLC.RC8"
                   Show          off
                 }
                 Parameter {
                   Variable      "Configuration"
-                  Value         "1"
+                  Value         "LLC.RC8.Config"
                   Show          off
                 }
                 Terminal {
@@ -53129,4 +53129,4 @@ Plecs {
     }
   }
 }
-DemoSignature "hUoYKG3815ay9Aa1X2Rivl8tx57G6EfzHPUKCJjeZ5E="
+DemoSignature "2XMo7piC0o0QY+dFPDSeHBb+Zcdh6NNVdqCYqh/vzqM="

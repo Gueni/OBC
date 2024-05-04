@@ -10,7 +10,7 @@ import os
 from datetime import datetime, timezone
 #?----------------------------------------------------------------------------------------------------------------------------------------
 utc_now             = datetime.now(timezone.utc)
-utc_numeric         = utc_now.strftime("%Y%m%d%H%M%S")
+utc_numeric         = utc_now.strftime("#Y#m#d#H#M#S")
 current_directory   = os.getcwd() 
 sim_idx             = 0
 Traces_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces/" 
@@ -250,9 +250,51 @@ Load        =  {
                   'Iinit'		      : 0,
                   't_switch'        : Sim_param['tSim']-Sim_param['load_tflip']
                }
+RCSnub      =  {
+                  'Config'		      : 1, 
+                  'Rsnub'           : 4700/4,          
+                  'Csnub'           : {                                                    
+                                          'Config'		      : 6,  
+                                          'Cap_s'    		   :  160/24,  
+                                          'Resr_s'		      : 0,  
+                                          'Lesl_s'		      : 0,  
+                                          'Npara'		      : 1,  
+                                          'Nseri'		      : 1,  
+                                          'Vinit'		      : 0,  
+                                          'Iinit'		      : 0             
+                                          }
+}
 LLC         =  {
                   'R1'              : 4700/4,          
-                  'R2'              : 160/24,          
+                  'R2'              : 160/24,  
+                  'V_DC'            : 200,                                                # [V] - DC voltage source.
+                  'n_prim'          : 4,                                                  # []  - primary side turn number.
+                  'n_sndry'         : 4,                                                  # []  - secondary side turn number.
+                  'L_r'             : 1.55e-6,                                            # [H] - resonant inductor.
+                  'L_k'             : 1.55e-6,                                            # [H] - resonant inductor.
+                  'L_k_Iinit'       : 0,                                                  # [H] - resonant inductor.
+                  'L_r_Iinit'       : 0,                                                  # []  - 
+                  'Trafo'           : {                                                    
+                                          'Config'		      : 6,  
+                                          'N1'    		      : 10,  
+                                          'N2'		         : 1,  
+                                          'Imaginit'		   : 0  
+                                                 
+                                      },
+                  'C_r'             : {                                                    
+                                          'Config'		      : 6,  
+                                          'Cap_s'    		   : 1.2e-6,  
+                                          'Resr_s'		      : 0,  
+                                          'Lesl_s'		      : 0,  
+                                          'Npara'		      : 1,  
+                                          'Nseri'		      : 1,  
+                                          'Vinit'		      : 0,  
+                                          'Iinit'		      : 0             
+                                          },
+                  'L'               : 1.6e-6,                  # [H] - output inductor
+                  'C_o'             : 480e-6,         # [F] - output capacitor
+                  'C_v_init'        : 0,         # [V] - output capacitor initial voltage
+                  'R_o'             : 100,         # [Ohm] - output resistance       
                   'T_dt'            : 300e-9,
                   'HS1'             :  LLC_SW,   
                   'HS2'             :  LLC_SW,   
@@ -261,7 +303,28 @@ LLC         =  {
                   'SRHS1'           :  LLC_SR,   
                   'SRHS2'           :  LLC_SR,   
                   'SRLS1'           :  LLC_SR,   
-                  'SRLS2'           :  LLC_SR                          					
+                  'SRLS2'           :  LLC_SR,  
+                  'RC1'             :  RCSnub,   
+                  'RC2'             :  RCSnub,   
+                  'RC3'             :  RCSnub,   
+                  'RC4'             :  RCSnub,   
+                  'RC5'             :  RCSnub,   
+                  'RC6'             :  RCSnub,   
+                  'RC7'             :  RCSnub,   
+                  'RC8'             :  RCSnub  
+               }
+LLC_CTRL    =  {
+                  'Vref'    		   :  400 , 
+                  'sys_clk'         : 100e6,	  # [Hz] - 100 MHz
+                  'max_period'      : 2000,  # Maximum system period allowed
+                  'min_period'      : 200,	  # Minimum system period allowed
+                  'SlewStep'        : 0.25/3,  # [V/ms] - slew rate
+                  'StartUpInc'      : 100,   # [] - soft start frequency increment
+                  'R1'              : 4700/4,        # [Ohm] - sensing resistor
+                  'R2'              : 160/24,        # [Ohm] - sensing resistor
+                  'C_sense'         : 10e-9,    # [F] - sensing capacitor
+                  'adc_conv'        : 15,      # [] - Number of system clock cycles required for ADC conversion
+                  'T_dt'            : 300e-9      # [s] - dead time
                }
 Grid        =  {
                   'Config'          :  2,  
@@ -303,7 +366,7 @@ Battery     =  {
                   'n_series'                  : 1, # number of series-connected cells
                   'n_parallel'                : 1, # number of parallel branches
                   'SOC_init'                  : 0, # initial SOC
-                  'polarizingRshift'          : 0.10, # shift polarizing R by 10%
+                  'polarizingRshift'          : 0.10, # shift polarizing R by 10#
                   'cellNominalV'              : 2.9, # voltage at end of nominal zone
                   'cellFullChargeV'           : 400, # voltage at full SOC
                   'cellExponentialV'          : 390, # voltage at end of exponential zone
@@ -314,7 +377,7 @@ Battery     =  {
                   'cellNominalDischargeI'     : 200, # nominal discharge current for cell
                   'cellInternalR'             : 20, # internal cell resistance
                   'Rdis'                      : 40,
-                  'I_dc'                      : 6,
+                  'I_dc'                      : 20,
                   'Rcell1'                    : 6,
                   'Rcell2'                    : 6,
                   'Ccell1'                    : 6,
@@ -347,7 +410,8 @@ ModelVars   =  {
                   'HV_Filter'       :  HV_Filter,   
                   'Battery'         :  Battery,
                   'Load'            :  Load,
-                  'Thermals'        :Thermals                                                                                   
+                  'LLC_CTRL'        :  LLC_CTRL,
+                  'Thermals'        :  Thermals                                                                                   
                }	
 #?----------------------------------------------------------------------------------------------------------------------------------------	
 Waveforms   =  [  
