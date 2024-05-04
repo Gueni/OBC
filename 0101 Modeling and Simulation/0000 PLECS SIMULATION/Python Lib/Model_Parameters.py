@@ -279,9 +279,9 @@ LLC         =  {                                                                
                   'L_k_Iinit'       : 0,                                                                    # [H] - resonant inductor.
                   'L_r_Iinit'       : 0,                                                                    # []  - 
                   'Trafo'           : {                                                                     # []  -  
-                                          'Config'		      : 6,                                            # []  - 
-                                          'N1'    		      : 10,                                           # []  - 
-                                          'N2'		         : 1,                                            # []  - 
+                                          'Config'		      : 1,                                            # []  - 
+                                          'n_prim'    		: 10,                                           # []  - 
+                                          'n_sndry'		   : 1,                                            # []  - 
                                           'Imaginit'		   : 0                                             # []  - 
                                       },
                   'C_r'             : {                                                                     # []  -  
