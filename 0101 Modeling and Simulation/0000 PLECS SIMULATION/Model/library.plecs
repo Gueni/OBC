@@ -52134,7 +52134,7 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    1.71499
+        ZoomFactor    2.94118
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -52142,16 +52142,31 @@ Plecs {
           Type          ConfigurableSubsystem
           Name          "Tr"
           Show          on
-          Position      [200, 120]
+          Position      [100, 60]
           Direction     up
           Flipped       off
-          LabelPosition east
-          Frame         [-35, -50; 35, 50]
+          LabelPosition south
+          Frame         [-10, -20; 10, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
           CodeGenTarget "Generic"
           MaskType      "Switch"
           MaskDescription "Models a configurable switch.\n"
+          MaskDisplay   "local config = Dialog:get('Configuration')\n"
+"\n"
+"Icon:color(0, 0, 0)\n"
+"Icon:line({10, 10, 8, 6, 5, 5, 6, 8, 10, 8, 6, 5, 5, 6, 8, 10, 8, 6, 5, 5, 6,"
+" 8, 10, 8, 6, 5, 5, 6, 8, 10, 10} ,    {-15, -14, -14, -13, -11, -10,  -8,  -"
+"7,  -7,  -7,  -6,  -4,  -3,  -1,   0,   0,   0,   1,   3,   4,   6,   7,   7,"
+"   7,   8,  10,  11,  13,  14,  14,  15})\n"
+"Icon:line({-10, -10, -8, -6, -5, -5, -6, -8, -10, -8, -6, -5, -5, -6, -8, -10"
+", -8, -6, -5, -5, -6, -8, -10, -8, -6, -5, -5, -6, -8, -10, -10} ,    {-15, -"
+"14, -14, -13, -11, -10,  -8,  -7,  -7,  -7,  -6,  -4,  -3,  -1,   0,   0,   0"
+",   1,   3,   4,   6,   7,   7,   7,   8,  10,  11,  13,  14,  14,  15})\n"
+"\n"
+"Icon:line({1,1,1},{-15,0,15})\n"
+"Icon:line({-1,-1,-1},{-15,0,15})"
+          MaskDisplayLang "2"
           MaskIconFrame off
           MaskIconOpaque off
           MaskIconRotates on
@@ -52169,22 +52184,22 @@ Plecs {
           }
           Terminal {
             Type          Port
-            Position      [-40, -40]
+            Position      [-15, -15]
             Direction     left
           }
           Terminal {
             Type          Port
-            Position      [40, -40]
+            Position      [15, -15]
             Direction     right
           }
           Terminal {
             Type          Port
-            Position      [-40, 20]
+            Position      [-15, 15]
             Direction     left
           }
           Terminal {
             Type          Port
-            Position      [40, 25]
+            Position      [15, 15]
             Direction     right
           }
           TerminalNames { "in1", "out1", "in2", "out2" }
@@ -52200,7 +52215,7 @@ Plecs {
                 Type          Constant
                 Name          "PH"
                 Show          on
-                Position      [155, 210]
+                Position      [205, 175]
                 Direction     right
                 Flipped       off
                 LabelPosition south
@@ -52220,7 +52235,7 @@ Plecs {
                 Type          MagneticInterface
                 Name          "MagInt5"
                 Show          off
-                Position      [560, 210]
+                Position      [325, 170]
                 Direction     up
                 Flipped       off
                 LabelPosition east
@@ -52239,7 +52254,7 @@ Plecs {
                 Type          MagneticInterface
                 Name          "MagInt6"
                 Show          off
-                Position      [560, 150]
+                Position      [325, 110]
                 Direction     down
                 Flipped       on
                 LabelPosition west
@@ -52258,7 +52273,7 @@ Plecs {
                 Type          MagneticInterface
                 Name          "MagInt7"
                 Show          off
-                Position      [560, 290]
+                Position      [325, 250]
                 Direction     down
                 Flipped       on
                 LabelPosition west
@@ -52278,7 +52293,7 @@ Plecs {
                 SrcComponent  "Components/Magnetic/Components/P_sat"
                 Name          "P_satTr"
                 Show          off
-                Position      [525, 130]
+                Position      [290, 90]
                 Direction     up
                 Flipped       off
                 LabelPosition east
@@ -52334,7 +52349,7 @@ Plecs {
                 SrcComponent  "Components/Magnetic/Components/P_air"
                 Name          "P_air2"
                 Show          off
-                Position      [560, 245]
+                Position      [325, 205]
                 Direction     up
                 Flipped       on
                 LabelPosition east
@@ -52368,11 +52383,11 @@ Plecs {
               Component {
                 Type          Port
                 Name          "in1"
-                Show          on
-                Position      [295, 60]
+                Show          off
+                Position      [185, 80]
                 Direction     right
                 Flipped       off
-                LabelPosition south
+                LabelPosition west
                 Parameter {
                   Variable      "Index"
                   Value         "1"
@@ -52387,8 +52402,8 @@ Plecs {
               Component {
                 Type          Port
                 Name          "out1"
-                Show          on
-                Position      [970, 70]
+                Show          off
+                Position      [425, 80]
                 Direction     left
                 Flipped       off
                 LabelPosition north
@@ -52406,11 +52421,11 @@ Plecs {
               Component {
                 Type          Port
                 Name          "in2"
-                Show          on
-                Position      [300, 275]
+                Show          off
+                Position      [185, 280]
                 Direction     right
                 Flipped       off
-                LabelPosition south
+                LabelPosition west
                 Parameter {
                   Variable      "Index"
                   Value         "3"
@@ -52425,8 +52440,8 @@ Plecs {
               Component {
                 Type          Port
                 Name          "out2"
-                Show          on
-                Position      [975, 285]
+                Show          off
+                Position      [425, 280]
                 Direction     left
                 Flipped       off
                 LabelPosition north
@@ -52452,7 +52467,7 @@ Plecs {
                 Type          Magnetic
                 SrcComponent  "P_satTr"
                 SrcTerminal   1
-                Points        [525, 100; 560, 100]
+                Points        [290, 60; 325, 60]
                 DstComponent  "MagInt6"
                 DstTerminal   3
               }
@@ -52460,7 +52475,7 @@ Plecs {
                 Type          Magnetic
                 SrcComponent  "MagInt7"
                 SrcTerminal   4
-                Points        [560, 320; 525, 320]
+                Points        [325, 280; 290, 280]
                 DstComponent  "P_satTr"
                 DstTerminal   2
               }
@@ -52482,8 +52497,40 @@ Plecs {
                 Type          Wire
                 SrcComponent  "MagInt6"
                 SrcTerminal   2
-                Points        [580, 165; 580, 275]
+                Points        [345, 125; 345, 235]
                 DstComponent  "MagInt7"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "MagInt7"
+                SrcTerminal   2
+                Points        [335, 280]
+                DstComponent  "out2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "MagInt6"
+                SrcTerminal   1
+                Points        [335, 80]
+                DstComponent  "out1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "MagInt5"
+                SrcTerminal   2
+                Points        [245, 185; 245, 280]
+                DstComponent  "in2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "MagInt5"
+                SrcTerminal   1
+                Points        [245, 155; 245, 80]
+                DstComponent  "in1"
                 DstTerminal   1
               }
             }
@@ -52493,7 +52540,7 @@ Plecs {
                 Type          Constant
                 Name          "PH"
                 Show          on
-                Position      [155, 210]
+                Position      [205, 175]
                 Direction     right
                 Flipped       off
                 LabelPosition south
@@ -52512,11 +52559,11 @@ Plecs {
               Component {
                 Type          Port
                 Name          "in1"
-                Show          on
-                Position      [295, 60]
+                Show          off
+                Position      [185, 80]
                 Direction     right
                 Flipped       off
-                LabelPosition south
+                LabelPosition west
                 Parameter {
                   Variable      "Index"
                   Value         "1"
@@ -52531,11 +52578,11 @@ Plecs {
               Component {
                 Type          Port
                 Name          "out1"
-                Show          on
-                Position      [990, 315]
-                Direction     right
+                Show          off
+                Position      [425, 80]
+                Direction     left
                 Flipped       off
-                LabelPosition south
+                LabelPosition north
                 Parameter {
                   Variable      "Index"
                   Value         "2"
@@ -52550,11 +52597,11 @@ Plecs {
               Component {
                 Type          Port
                 Name          "in2"
-                Show          on
-                Position      [300, 275]
+                Show          off
+                Position      [185, 280]
                 Direction     right
                 Flipped       off
-                LabelPosition south
+                LabelPosition west
                 Parameter {
                   Variable      "Index"
                   Value         "3"
@@ -52569,8 +52616,8 @@ Plecs {
               Component {
                 Type          Port
                 Name          "out2"
-                Show          on
-                Position      [975, 285]
+                Show          off
+                Position      [425, 280]
                 Direction     left
                 Flipped       off
                 LabelPosition north
@@ -52589,7 +52636,7 @@ Plecs {
                 Type          Transformer
                 Name          "Tr2"
                 Show          on
-                Position      [570, 185]
+                Position      [325, 175]
                 Direction     right
                 Flipped       on
                 LabelPosition south
@@ -52600,7 +52647,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "n"
-                  Value         "[2 1]"
+                  Value         "[n_prim n_sndry]"
                   Show          off
                 }
                 Parameter {
@@ -52618,6 +52665,38 @@ Plecs {
                   Value         "0"
                   Show          off
                 }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Tr2"
+                SrcTerminal   2
+                Points        [245, 185; 245, 280]
+                DstComponent  "in2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Tr2"
+                SrcTerminal   1
+                Points        [245, 155; 245, 80]
+                DstComponent  "in1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Tr2"
+                SrcTerminal   3
+                Points        [335, 80]
+                DstComponent  "out1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Tr2"
+                SrcTerminal   4
+                Points        [335, 280]
+                DstComponent  "out2"
+                DstTerminal   1
               }
             }
           }
@@ -53129,4 +53208,4 @@ Plecs {
     }
   }
 }
-DemoSignature "2XMo7piC0o0QY+dFPDSeHBb+Zcdh6NNVdqCYqh/vzqM="
+DemoSignature "L6O4E3ZjZK4cvnlKgliKSEc3juMtv0nEziBeNn0T6Yk="
