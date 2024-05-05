@@ -21,9 +21,9 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                      # []  -                   
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {                                                                                            #![]  - 
-                  'tSim'	    	   : 1,                                                                    # []  - 
-                  'tsave_i'	    	: 1,                                                                    # []  - 
-                  'load_tflip'	   : 0.5,                                                                  # []  -  
+                  'tSim'	    	   : 2,                                                                    # []  - 
+                  'tsave_i'	    	: 2,                                                                    # []  - 
+                  'load_tflip'	   : 1,                                                                    # []  -  
                   'maxStep'		   : 1e-3,                                                                 # []  - 
                   'ZeroCross'       : 1000,                                                                 # []  - 
                   'rel_tol'		   : 1e-3                                                                  # []  - 
@@ -94,7 +94,7 @@ PFC_SW      =  {                                                                
                   'Rds_off'         : 0,                                                                    # []  - 
                   'Iinit'           : 0,                                                                    # []  - 
                   'Coss'            : {                                                                     # []  -                        
-                                          'Config'		      : 6,                                            # []  - 
+                                          'Config'		      : 1,                                            # []  - 
                                           'Cap_s'    		   : 1e-12,                                        # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -141,7 +141,7 @@ LLC_SW      =  {                                                                
                   'Rds_off'         : 0,                                                                    # []  - 
                   'Iinit'           : 0,                                                                    # []  - 
                   'Coss'            : {                                                                     # []  -                        
-                                          'Config'		      : 6,                                            # []  - 
+                                          'Config'		      : 1,                                            # []  - 
                                           'Cap_s'    		   : 1e-12,                                        # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -188,7 +188,7 @@ LLC_SR      =  {                                                                
                   'Rds_off'         : 0,                                                                    # []  - 
                   'Iinit'           : 0,                                                                    # []  - 
                   'Coss'            : {                                                                     # []  -                                            
-                                          'Config'		      : 6,                                            # []  -   
+                                          'Config'		      : 1,                                            # []  -   
                                           'Cap_s'    		   : 1e-12,                                        # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -237,13 +237,13 @@ CTRL_PFC    =  {                                                                
                }
 DCLink      =  {                                                                                            #![]  - 
                   'Config'		      : 1,                                                                    # []  - 
-                  'Cdc'    		   : 500e-6,                                                               # []  -  
+                  'Cdc'    		   : 100e-6,                                                               # []  -  
                   'ESR'		         : 19e-9,                                                                # []  - 
-                  'ESL'		         : 1e-12,                                                                # []  - 
-                  'nPara'		      : 6,                                                                    # []  - 
+                  'ESL'		         : 1e-19,                                                                # []  - 
+                  'nPara'		      : 1,                                                                    # []  - 
                   'nSeri'		      : 1,                                                                    # []  - 
-                  'Vinit'		      : 0,                                                                    # []  - 
-                  'Iinit'		      : 0                                                                     # []  - 
+                  'Vinit'		      : 400,                                                                  # []  - 
+                  'Iinit'		      : 10                                                                    # []  - 
                }
 Load        =  {                                                                                            #![]  - 
                   'Config'		      : 4,                                                                    # []  - 
@@ -258,7 +258,7 @@ RCSnub      =  {                                                                
                   'Config'		      : 1,                                                                    # []  - 
                   'Rsnub'           : 4700/4,                                                               # []  - 
                   'Csnub'           : {                                                                     # []  -               
-                                          'Config'		      : 6,                                            # []  - 
+                                          'Config'		      : 1,                                            # []  - 
                                           'Cap_s'    		   :  160/24,                                      # []  - 
                                           'Resr_s'		      : 0,                                            # []  -           
                                           'Lesl_s'		      : 0,                                            # []  -       
@@ -285,10 +285,10 @@ LLC         =  {                                                                
                                           'Imaginit'		   : 0                                             # []  - 
                                       },
                   'C_r'             : {                                                                     # []  -  
-                                          'Config'		      : 6,                                            # []  - 
+                                          'Config'		      : 1,                                            # []  - 
                                           'Cap_s'    		   : 1.2e-6,                                       # []  - 
-                                          'Resr_s'		      : 0,                                            # []  - 
-                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Resr_s'		      : 1e-10,                                            # []  - 
+                                          'Lesl_s'		      : 1e-10,                                            # []  - 
                                           'Npara'		      : 1,                                            # []  - 
                                           'Nseri'		      : 1,                                            # []  - 
                                           'Vinit'		      : 0,                                            # []  - 
@@ -343,7 +343,7 @@ Thermals    =  {                                                                
 HV_Filter   =  {                                                                                            #![]  - 
                   'Config'         :  1,                                                                    # []  - 
                   'Cy1'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -353,7 +353,7 @@ HV_Filter   =  {                                                                
                                           'Iinit'		      : 0                                             # []  -           
                                           },                                                                # []  -
                   'Cy2'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -363,7 +363,7 @@ HV_Filter   =  {                                                                
                                           'Iinit'		      : 0                                             # []  -           
                                           },                                                                # []  -
                   'Cx1'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -373,7 +373,7 @@ HV_Filter   =  {                                                                
                                           'Iinit'		      : 0                                             # []  -           
                                           },                                                                # []  -
                   'Cx2'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -383,7 +383,7 @@ HV_Filter   =  {                                                                
                                           'Iinit'		      : 0                                             # []  -           
                                           },                                                                # []  -
                   'Cx3'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -393,7 +393,7 @@ HV_Filter   =  {                                                                
                                           'Iinit'		      : 0                                             # []  -           
                                           },                                                                # []  -
                   'Cx4'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -403,7 +403,7 @@ HV_Filter   =  {                                                                
                                           'Iinit'		      : 0                                             # []  -           
                                           },                                                                # []  -
                   'Cx5'            : {                                                                      # []  -                       
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -443,8 +443,8 @@ Battery     =  {
                   'I_dc'                      : 20,                                                         # []  - 
                   'Rcell1'                    : 6,                                                          # []  - 
                   'Rcell2'                    : 6,                                                          # []  - 
-                  'Ccell1'                    : 6,                                                          # []  - 
-                  'Ccell2'                    : 6,                                                          # []  - 
+                  'Ccell1'                    : 1e-3,                                                       # []  - 
+                  'Ccell2'                    : 1e-3,                                                       # []  - 
                   'V_OC1'                     : 300,                                                        # []  - 
                   'Cdis'                      : {                                                           # []  -                                          
                                                 'Config'		      : 1,                                      # []  - 
