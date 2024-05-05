@@ -2526,41 +2526,6 @@ Plecs {
                 }
               }
               Component {
-                Type          Capacitor
-                Name          "Cd"
-                Show          on
-                Position      [735, 100]
-                Direction     down
-                Flipped       on
-                LabelPosition west
-                CommentOut    DisabledOpenCircuit
-                Parameter {
-                  Variable      "C"
-                  Value         "Cd"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "v_init"
-                  Value         "0"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Resistor
-                Name          "Rd"
-                Show          on
-                Position      [735, 145]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                CommentOut    DisabledOpenCircuit
-                Parameter {
-                  Variable      "R"
-                  Value         "Rd"
-                  Show          off
-                }
-              }
-              Component {
                 Type          Port
                 Name          "LF"
                 Show          on
@@ -2712,7 +2677,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "L"
-                  Value         "[2 1; 1 2]*AC_Filter.L_DMC"
+                  Value         "[2 1; 1 2]*AC_Filter.L_CMC"
                   Show          off
                 }
                 Parameter {
@@ -2918,13 +2883,6 @@ Plecs {
               }
               Connection {
                 Type          Wire
-                SrcComponent  "Cd"
-                SrcTerminal   2
-                DstComponent  "Rd"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Wire
                 SrcComponent  "Cx"
                 SrcTerminal   1
                 Points        [560, 75]
@@ -2961,22 +2919,15 @@ Plecs {
                 SrcTerminal   1
                 Points        [795, 195]
                 Branch {
-                  Points        [735, 195]
+                  Points        [700, 195]
                   Branch {
-                    DstComponent  "Rd"
+                    DstComponent  "Co"
                     DstTerminal   2
                   }
                   Branch {
-                    Points        [700, 195]
-                    Branch {
-                      DstComponent  "Co"
-                      DstTerminal   2
-                    }
-                    Branch {
-                      Points        [655, 195; 655, 145]
-                      DstComponent  "DMC1"
-                      DstTerminal   3
-                    }
+                    Points        [655, 195; 655, 145]
+                    DstComponent  "DMC1"
+                    DstTerminal   3
                   }
                 }
                 Branch {
@@ -3112,15 +3063,8 @@ Plecs {
                   DstTerminal   1
                 }
                 Branch {
-                  Points        [735, 75]
-                  Branch {
-                    DstComponent  "Cd"
-                    DstTerminal   1
-                  }
-                  Branch {
-                    DstComponent  "Am1"
-                    DstTerminal   1
-                  }
+                  DstComponent  "Am1"
+                  DstTerminal   1
                 }
               }
             }
@@ -6674,7 +6618,7 @@ Plecs {
                 Type          Inductor
                 Name          "L"
                 Show          on
-                Position      [220, 70]
+                Position      [540, 70]
                 Direction     left
                 Flipped       off
                 LabelPosition north
@@ -6693,7 +6637,7 @@ Plecs {
                 Type          Port
                 Name          "VBAT+"
                 Show          on
-                Position      [340, 70]
+                Position      [660, 70]
                 Direction     right
                 Flipped       on
                 LabelPosition east
@@ -6712,7 +6656,7 @@ Plecs {
                 Type          Port
                 Name          "VBAT-"
                 Show          on
-                Position      [340, 215]
+                Position      [660, 215]
                 Direction     right
                 Flipped       on
                 LabelPosition east
@@ -6769,7 +6713,7 @@ Plecs {
                 Type          Ammeter
                 Name          "iL1"
                 Show          off
-                Position      [260, 70]
+                Position      [580, 70]
                 Direction     left
                 Flipped       off
                 LabelPosition south
@@ -6778,2150 +6722,16 @@ Plecs {
                 Type          Voltmeter
                 Name          "Vout"
                 Show          off
-                Position      [310, 140]
+                Position      [630, 140]
                 Direction     up
                 Flipped       off
                 LabelPosition west
               }
               Component {
-                Type          ConfigurableSubsystem
-                Name          "Cx1"
-                Show          on
-                Position      [160, 140]
-                Direction     left
-                Flipped       off
-                LabelPosition west
-                Frame         [-10, -20; 10, 20]
-                SampleTime    "-1"
-                CodeGenDiscretizationMethod "2"
-                CodeGenTarget "Generic"
-                MaskType      "Configurable DCLINK"
-                MaskDescription "Configurable DCLINK"
-                MaskDisplay   "local drawANSI = Preferences:get('DrawANSI')\n"
-"Icon:text( 7 ,-7  ,'+')\n"
-"Icon:line({0, 0}, {-9, 9})\n"
-"Icon:line({-5, -5}, {-9, 9})\n"
-"Icon:line({1, 19}, {0,0})\n"
-"Icon:line({-5, -19}, {0,0})\n"
-"\n"
-"\n"
-"\n"
-"  \n"
-"\n"
-" \n"
-                MaskDisplayLang "2"
-                MaskIconFrame off
-                MaskIconOpaque on
-                MaskIconRotates on
-                MaskInit      "% calculate the total values :\n"
-"Cap_t  = Cap_dict.Cap_s  * Cap_dict.Npara/Cap_dict.Nseri ;\n"
-"Resr_t = Cap_dict.Resr_s * Cap_dict.Npara/Cap_dict.Nseri ;\n"
-"Lesl_t = Cap_dict.Lesl_s * Cap_dict.Npara/Cap_dict.Nseri ;"
-                Parameter {
-                  Variable      "Cap_dict"
-                  Prompt        "Capacitor Dictionary :"
-                  Type          FreeText
-                  Value         "param.C_o"
-                  Show          off
-                  Tunable       off
-                  TabName       ""
-                }
-                Terminal {
-                  Type          Port
-                  Position      [-25, 0]
-                  Direction     left
-                }
-                Terminal {
-                  Type          Port
-                  Position      [25, 0]
-                  Direction     right
-                }
-                TerminalNames { "Port1", "Port2" }
-                Location      [0, 26; 1536, 760]
-                ZoomFactor    1
-                SliderPosition [0, 0]
-                ShowBrowser   off
-                BrowserWidth  100
-                Configurations {
-                  Name          "Ideal Capacitor"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 125]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [205, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [90, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [205, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "C"
-                        DstTerminal   2
-                      }
-                      Branch {
-                        Points        [205, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                  }
-                  Name          "Capacitor with ESR"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Resistor
-                      Name          "ESR"
-                      Show          on
-                      Position      [160, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "R"
-                        Value         "Resr_t"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [200, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 90]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [90, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESR"
-                      SrcTerminal   1
-                      DstComponent  "C"
-                      DstTerminal   2
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [200, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "ESR"
-                        DstTerminal   2
-                      }
-                      Branch {
-                        Points        [200, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                  }
-                  Name          "Capacitor with ESL"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Inductor
-                      Name          "ESL"
-                      Show          on
-                      Position      [160, 165]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "L"
-                        Value         "Lesl_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "i_init"
-                        Value         "Cap_dict.Iinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [195, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 90]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [85, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [195, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESL"
-                      SrcTerminal   2
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "Port2"
-                        DstTerminal   1
-                      }
-                      Branch {
-                        Points        [195, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   2
-                      DstComponent  "ESL"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                  }
-                  Name          "Capacitor with ESR and ESL"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [195, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 90]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Resistor
-                      Name          "ESR"
-                      Show          on
-                      Position      [160, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "R"
-                        Value         "Resr_t"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Inductor
-                      Name          "ESL"
-                      Show          on
-                      Position      [160, 165]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "L"
-                        Value         "Lesl_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "i_init"
-                        Value         "Cap_dict.Iinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [85, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESR"
-                      SrcTerminal   1
-                      DstComponent  "C"
-                      DstTerminal   2
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [195, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESL"
-                      SrcTerminal   2
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "Port2"
-                        DstTerminal   1
-                      }
-                      Branch {
-                        Points        [195, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESL"
-                      SrcTerminal   1
-                      DstComponent  "ESR"
-                      DstTerminal   2
-                    }
-                  }
-                  Name          "Pass"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [125, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [200, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [85, 130]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      Points        [215, 210; 200, 210]
-                      Branch {
-                        Points        [180, 210]
-                      }
-                      Branch {
-                        DstComponent  "Vm1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Vm1"
-                      SrcTerminal   1
-                      Points        [200, 50]
-                      Branch {
-                        Points        [215, 50]
-                      }
-                      Branch {
-                        Points        [175, 50]
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [145, 210]
-                    }
-                  }
-                  Name          "Short"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [160, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [210, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [90, 130]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port1"
-                      SrcTerminal   1
-                      DstComponent  "Am1"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   2
-                      Points        [210, 50]
-                      Branch {
-                        Points        [215, 50]
-                      }
-                      Branch {
-                        DstComponent  "Vm1"
-                        DstTerminal   1
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [210, 210]
-                      Branch {
-                        Points        [215, 210]
-                      }
-                      Branch {
-                        DstComponent  "Vm1"
-                        DstTerminal   2
-                      }
-                    }
-                  }
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "param.C_o.Config"
-                  Show          off
-                }
-                MaskProbe {
-                  Name          "Capacitor Voltage"
-                  Probe {
-                    Component     "C"
-                    Path          "Ideal Capacitor"
-                    Signals       {"Capacitor voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Capacitor with ESR"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Capacitor with ESL"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Capacitor with ESR and ESL"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Pass"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Short"
-                    Signals       {"Measured voltage"}
-                  }
-                }
-                MaskProbe {
-                  Name          "Capacitor Current"
-                  Probe {
-                    Component     "C"
-                    Path          "Ideal Capacitor"
-                    Signals       {"Capacitor current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Capacitor with ESR"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Capacitor with ESL"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Capacitor with ESR and ESL"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Pass"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Short"
-                    Signals       {"Measured current"}
-                  }
-                }
-                MaskProbe {
-                  Name          "Capacitor Dissipation"
-                  Probe {
-                    Component     "PH"
-                    Path          "Ideal Capacitor"
-                    Signals       {"Constant"}
-                  }
-                  Probe {
-                    Component     "ESR"
-                    Path          "Capacitor with ESR"
-                    Signals       {"Resistor power"}
-                  }
-                  Probe {
-                    Component     "PH"
-                    Path          "Capacitor with ESL"
-                    Signals       {"Constant"}
-                  }
-                  Probe {
-                    Component     "ESR"
-                    Path          "Capacitor with ESR and ESL"
-                    Signals       {"Resistor power"}
-                  }
-                  Probe {
-                    Component     "PH"
-                    Path          "Pass"
-                    Signals       {"Constant"}
-                  }
-                  Probe {
-                    Component     "PH"
-                    Path          "Short"
-                    Signals       {"Constant"}
-                  }
-                }
-              }
-              Component {
-                Type          ConfigurableSubsystem
-                Name          "Cx2"
-                Show          on
-                Position      [280, 140]
-                Direction     left
-                Flipped       off
-                LabelPosition west
-                Frame         [-10, -20; 10, 20]
-                SampleTime    "-1"
-                CodeGenDiscretizationMethod "2"
-                CodeGenTarget "Generic"
-                MaskType      "Configurable DCLINK"
-                MaskDescription "Configurable DCLINK"
-                MaskDisplay   "local drawANSI = Preferences:get('DrawANSI')\n"
-"Icon:text( 7 ,-7  ,'+')\n"
-"Icon:line({0, 0}, {-9, 9})\n"
-"Icon:line({-5, -5}, {-9, 9})\n"
-"Icon:line({1, 19}, {0,0})\n"
-"Icon:line({-5, -19}, {0,0})\n"
-"\n"
-"\n"
-"\n"
-"  \n"
-"\n"
-" \n"
-                MaskDisplayLang "2"
-                MaskIconFrame off
-                MaskIconOpaque on
-                MaskIconRotates on
-                MaskInit      "% calculate the total values :\n"
-"Cap_t  = Cap_dict.Cap_s  * Cap_dict.Npara/Cap_dict.Nseri ;\n"
-"Resr_t = Cap_dict.Resr_s * Cap_dict.Npara/Cap_dict.Nseri ;\n"
-"Lesl_t = Cap_dict.Lesl_s * Cap_dict.Npara/Cap_dict.Nseri ;"
-                Parameter {
-                  Variable      "Cap_dict"
-                  Prompt        "Capacitor Dictionary :"
-                  Type          FreeText
-                  Value         "param.C_o"
-                  Show          off
-                  Tunable       off
-                  TabName       ""
-                }
-                Terminal {
-                  Type          Port
-                  Position      [-25, 0]
-                  Direction     left
-                }
-                Terminal {
-                  Type          Port
-                  Position      [25, 0]
-                  Direction     right
-                }
-                TerminalNames { "Port1", "Port2" }
-                Location      [0, 26; 1536, 760]
-                ZoomFactor    1
-                SliderPosition [0, 0]
-                ShowBrowser   off
-                BrowserWidth  100
-                Configurations {
-                  Name          "Ideal Capacitor"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 125]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [205, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [90, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [205, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "C"
-                        DstTerminal   2
-                      }
-                      Branch {
-                        Points        [205, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                  }
-                  Name          "Capacitor with ESR"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Resistor
-                      Name          "ESR"
-                      Show          on
-                      Position      [160, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "R"
-                        Value         "Resr_t"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [200, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 90]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [90, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESR"
-                      SrcTerminal   1
-                      DstComponent  "C"
-                      DstTerminal   2
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [200, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "ESR"
-                        DstTerminal   2
-                      }
-                      Branch {
-                        Points        [200, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                  }
-                  Name          "Capacitor with ESL"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Inductor
-                      Name          "ESL"
-                      Show          on
-                      Position      [160, 165]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "L"
-                        Value         "Lesl_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "i_init"
-                        Value         "Cap_dict.Iinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [195, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 90]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [85, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [195, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESL"
-                      SrcTerminal   2
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "Port2"
-                        DstTerminal   1
-                      }
-                      Branch {
-                        Points        [195, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   2
-                      DstComponent  "ESL"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                  }
-                  Name          "Capacitor with ESR and ESL"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [135, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [195, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Capacitor
-                      Name          "C"
-                      Show          on
-                      Position      [160, 90]
-                      Direction     down
-                      Flipped       on
-                      LabelPosition west
-                      Parameter {
-                        Variable      "C"
-                        Value         "Cap_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "v_init"
-                        Value         "Cap_dict.Vinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Resistor
-                      Name          "ESR"
-                      Show          on
-                      Position      [160, 125]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "R"
-                        Value         "Resr_t"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Inductor
-                      Name          "ESL"
-                      Show          on
-                      Position      [160, 165]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                      Parameter {
-                        Variable      "L"
-                        Value         "Lesl_t"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "i_init"
-                        Value         "Cap_dict.Iinit"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [85, 125]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESR"
-                      SrcTerminal   1
-                      DstComponent  "C"
-                      DstTerminal   2
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "C"
-                      SrcTerminal   1
-                      Points        [160, 50]
-                      Branch {
-                        Points        [195, 50]
-                        Branch {
-                          Points        [215, 50]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   1
-                        }
-                      }
-                      Branch {
-                        DstComponent  "Am1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESL"
-                      SrcTerminal   2
-                      Points        [160, 210]
-                      Branch {
-                        DstComponent  "Port2"
-                        DstTerminal   1
-                      }
-                      Branch {
-                        Points        [195, 210]
-                        Branch {
-                          Points        [215, 210]
-                        }
-                        Branch {
-                          DstComponent  "Vm1"
-                          DstTerminal   2
-                        }
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "ESL"
-                      SrcTerminal   1
-                      DstComponent  "ESR"
-                      DstTerminal   2
-                    }
-                  }
-                  Name          "Pass"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [125, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [200, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [85, 130]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   1
-                      DstComponent  "Port1"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      Points        [215, 210; 200, 210]
-                      Branch {
-                        Points        [180, 210]
-                      }
-                      Branch {
-                        DstComponent  "Vm1"
-                        DstTerminal   2
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Vm1"
-                      SrcTerminal   1
-                      Points        [200, 50]
-                      Branch {
-                        Points        [215, 50]
-                      }
-                      Branch {
-                        Points        [175, 50]
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [145, 210]
-                    }
-                  }
-                  Name          "Short"
-                  Schematic {
-                    Component {
-                      Type          Port
-                      Name          "Port1"
-                      Show          off
-                      Position      [85, 50]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "1"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Port
-                      Name          "Port2"
-                      Show          off
-                      Position      [85, 210]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Parameter {
-                        Variable      "Index"
-                        Value         "2"
-                        Show          on
-                      }
-                      Parameter {
-                        Variable      "Width"
-                        Value         "-1"
-                        Show          off
-                      }
-                    }
-                    Component {
-                      Type          Ammeter
-                      Name          "Am1"
-                      Show          off
-                      Position      [160, 50]
-                      Direction     left
-                      Flipped       off
-                      LabelPosition south
-                    }
-                    Component {
-                      Type          Voltmeter
-                      Name          "Vm1"
-                      Show          off
-                      Position      [210, 130]
-                      Direction     up
-                      Flipped       off
-                      LabelPosition west
-                    }
-                    Component {
-                      Type          Constant
-                      Name          "PH"
-                      Show          on
-                      Position      [90, 130]
-                      Direction     right
-                      Flipped       off
-                      LabelPosition south
-                      Frame         [-10, -10; 10, 10]
-                      Parameter {
-                        Variable      "Value"
-                        Value         "0"
-                        Show          off
-                      }
-                      Parameter {
-                        Variable      "DataType"
-                        Value         "10"
-                        Show          off
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port1"
-                      SrcTerminal   1
-                      DstComponent  "Am1"
-                      DstTerminal   1
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Am1"
-                      SrcTerminal   2
-                      Points        [210, 50]
-                      Branch {
-                        Points        [215, 50]
-                      }
-                      Branch {
-                        DstComponent  "Vm1"
-                        DstTerminal   1
-                      }
-                    }
-                    Connection {
-                      Type          Wire
-                      SrcComponent  "Port2"
-                      SrcTerminal   1
-                      Points        [210, 210]
-                      Branch {
-                        Points        [215, 210]
-                      }
-                      Branch {
-                        DstComponent  "Vm1"
-                        DstTerminal   2
-                      }
-                    }
-                  }
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "param.C_o.Config"
-                  Show          off
-                }
-                MaskProbe {
-                  Name          "Capacitor Voltage"
-                  Probe {
-                    Component     "C"
-                    Path          "Ideal Capacitor"
-                    Signals       {"Capacitor voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Capacitor with ESR"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Capacitor with ESL"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Capacitor with ESR and ESL"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Pass"
-                    Signals       {"Measured voltage"}
-                  }
-                  Probe {
-                    Component     "Vm1"
-                    Path          "Short"
-                    Signals       {"Measured voltage"}
-                  }
-                }
-                MaskProbe {
-                  Name          "Capacitor Current"
-                  Probe {
-                    Component     "C"
-                    Path          "Ideal Capacitor"
-                    Signals       {"Capacitor current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Capacitor with ESR"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Capacitor with ESL"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Capacitor with ESR and ESL"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Pass"
-                    Signals       {"Measured current"}
-                  }
-                  Probe {
-                    Component     "Am1"
-                    Path          "Short"
-                    Signals       {"Measured current"}
-                  }
-                }
-                MaskProbe {
-                  Name          "Capacitor Dissipation"
-                  Probe {
-                    Component     "PH"
-                    Path          "Ideal Capacitor"
-                    Signals       {"Constant"}
-                  }
-                  Probe {
-                    Component     "ESR"
-                    Path          "Capacitor with ESR"
-                    Signals       {"Resistor power"}
-                  }
-                  Probe {
-                    Component     "PH"
-                    Path          "Capacitor with ESL"
-                    Signals       {"Constant"}
-                  }
-                  Probe {
-                    Component     "ESR"
-                    Path          "Capacitor with ESR and ESL"
-                    Signals       {"Resistor power"}
-                  }
-                  Probe {
-                    Component     "PH"
-                    Path          "Pass"
-                    Signals       {"Constant"}
-                  }
-                  Probe {
-                    Component     "PH"
-                    Path          "Short"
-                    Signals       {"Constant"}
-                  }
-                }
-              }
-              Component {
                 Type          Port
                 Name          "GND"
                 Show          off
-                Position      [215, 235]
+                Position      [165, 245]
                 Direction     down
                 Flipped       on
                 LabelPosition south
@@ -8936,19 +6746,1296 @@ Plecs {
                   Show          off
                 }
               }
+              Component {
+                Type          MutInductor
+                Name          "DMC1"
+                Show          off
+                Position      [395, 140]
+                Direction     left
+                Flipped       on
+                LabelPosition north
+                Parameter {
+                  Variable      "Windings"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "L"
+                  Value         "[2 1; 1 2]*param.L_DMC"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "i_init"
+                  Value         "0"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ConfigurableSubsystem
+                Name          "Cx1"
+                Show          on
+                Position      [215, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                SampleTime    "-1"
+                CodeGenDiscretizationMethod "2"
+                CodeGenTarget "Generic"
+                MaskType      "Configurable DCLINK"
+                MaskDescription "Configurable DCLINK"
+                MaskDisplay   "local drawANSI = Preferences:get('DrawANSI')\n"
+"Icon:text( 7 ,-7  ,'+')\n"
+"Icon:line({0, 0}, {-9, 9})\n"
+"Icon:line({-5, -5}, {-9, 9})\n"
+"Icon:line({1, 19}, {0,0})\n"
+"Icon:line({-5, -19}, {0,0})\n"
+"\n"
+"\n"
+"\n"
+"  \n"
+"\n"
+" \n"
+                MaskDisplayLang "2"
+                MaskIconFrame off
+                MaskIconOpaque on
+                MaskIconRotates on
+                MaskInit      "% calculate the total values :\n"
+"Cap_t  = Cap_dict.Cap_s  * Cap_dict.Npara/Cap_dict.Nseri ;\n"
+"Resr_t = Cap_dict.Resr_s * Cap_dict.Npara/Cap_dict.Nseri ;\n"
+"Lesl_t = Cap_dict.Lesl_s * Cap_dict.Npara/Cap_dict.Nseri ;"
+                Parameter {
+                  Variable      "Cap_dict"
+                  Prompt        "Capacitor Dictionary :"
+                  Type          FreeText
+                  Value         "param.Cx1"
+                  Show          off
+                  Tunable       off
+                  TabName       ""
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+                TerminalNames { "Port1", "Port2" }
+                Location      [0, 26; 1536, 760]
+                ZoomFactor    1
+                SliderPosition [0, 0]
+                ShowBrowser   off
+                BrowserWidth  100
+                Configurations {
+                  Name          "Ideal Capacitor"
+                  Schematic {
+                    Component {
+                      Type          Port
+                      Name          "Port1"
+                      Show          off
+                      Position      [85, 50]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "1"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Port
+                      Name          "Port2"
+                      Show          off
+                      Position      [85, 210]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "2"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Capacitor
+                      Name          "C"
+                      Show          on
+                      Position      [160, 125]
+                      Direction     down
+                      Flipped       on
+                      LabelPosition west
+                      Parameter {
+                        Variable      "C"
+                        Value         "Cap_t"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "v_init"
+                        Value         "Cap_dict.Vinit"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Ammeter
+                      Name          "Am1"
+                      Show          off
+                      Position      [135, 50]
+                      Direction     left
+                      Flipped       off
+                      LabelPosition south
+                    }
+                    Component {
+                      Type          Voltmeter
+                      Name          "Vm1"
+                      Show          off
+                      Position      [205, 125]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                    }
+                    Component {
+                      Type          Constant
+                      Name          "PH"
+                      Show          on
+                      Position      [90, 125]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Frame         [-10, -10; 10, 10]
+                      Parameter {
+                        Variable      "Value"
+                        Value         "0"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataType"
+                        Value         "10"
+                        Show          off
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "C"
+                      SrcTerminal   1
+                      Points        [160, 50]
+                      Branch {
+                        Points        [205, 50]
+                        Branch {
+                          Points        [215, 50]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   1
+                        }
+                      }
+                      Branch {
+                        DstComponent  "Am1"
+                        DstTerminal   2
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Port2"
+                      SrcTerminal   1
+                      Points        [160, 210]
+                      Branch {
+                        DstComponent  "C"
+                        DstTerminal   2
+                      }
+                      Branch {
+                        Points        [205, 210]
+                        Branch {
+                          Points        [215, 210]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   2
+                        }
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Am1"
+                      SrcTerminal   1
+                      DstComponent  "Port1"
+                      DstTerminal   1
+                    }
+                  }
+                  Name          "Capacitor with ESR"
+                  Schematic {
+                    Component {
+                      Type          Port
+                      Name          "Port1"
+                      Show          off
+                      Position      [85, 50]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "1"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Port
+                      Name          "Port2"
+                      Show          off
+                      Position      [85, 210]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "2"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Resistor
+                      Name          "ESR"
+                      Show          on
+                      Position      [160, 125]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                      Parameter {
+                        Variable      "R"
+                        Value         "Resr_t"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Ammeter
+                      Name          "Am1"
+                      Show          off
+                      Position      [135, 50]
+                      Direction     left
+                      Flipped       off
+                      LabelPosition south
+                    }
+                    Component {
+                      Type          Voltmeter
+                      Name          "Vm1"
+                      Show          off
+                      Position      [200, 130]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                    }
+                    Component {
+                      Type          Capacitor
+                      Name          "C"
+                      Show          on
+                      Position      [160, 90]
+                      Direction     down
+                      Flipped       on
+                      LabelPosition west
+                      Parameter {
+                        Variable      "C"
+                        Value         "Cap_t"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "v_init"
+                        Value         "Cap_dict.Vinit"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Constant
+                      Name          "PH"
+                      Show          on
+                      Position      [90, 125]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Frame         [-10, -10; 10, 10]
+                      Parameter {
+                        Variable      "Value"
+                        Value         "0"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataType"
+                        Value         "10"
+                        Show          off
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "ESR"
+                      SrcTerminal   1
+                      DstComponent  "C"
+                      DstTerminal   2
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "C"
+                      SrcTerminal   1
+                      Points        [160, 50]
+                      Branch {
+                        Points        [200, 50]
+                        Branch {
+                          Points        [215, 50]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   1
+                        }
+                      }
+                      Branch {
+                        DstComponent  "Am1"
+                        DstTerminal   2
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Port2"
+                      SrcTerminal   1
+                      Points        [160, 210]
+                      Branch {
+                        DstComponent  "ESR"
+                        DstTerminal   2
+                      }
+                      Branch {
+                        Points        [200, 210]
+                        Branch {
+                          Points        [215, 210]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   2
+                        }
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Am1"
+                      SrcTerminal   1
+                      DstComponent  "Port1"
+                      DstTerminal   1
+                    }
+                  }
+                  Name          "Capacitor with ESL"
+                  Schematic {
+                    Component {
+                      Type          Port
+                      Name          "Port1"
+                      Show          off
+                      Position      [85, 50]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "1"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Port
+                      Name          "Port2"
+                      Show          off
+                      Position      [85, 210]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "2"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Inductor
+                      Name          "ESL"
+                      Show          on
+                      Position      [160, 165]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                      Parameter {
+                        Variable      "L"
+                        Value         "Lesl_t"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "i_init"
+                        Value         "Cap_dict.Iinit"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Ammeter
+                      Name          "Am1"
+                      Show          off
+                      Position      [135, 50]
+                      Direction     left
+                      Flipped       off
+                      LabelPosition south
+                    }
+                    Component {
+                      Type          Voltmeter
+                      Name          "Vm1"
+                      Show          off
+                      Position      [195, 125]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                    }
+                    Component {
+                      Type          Capacitor
+                      Name          "C"
+                      Show          on
+                      Position      [160, 90]
+                      Direction     down
+                      Flipped       on
+                      LabelPosition west
+                      Parameter {
+                        Variable      "C"
+                        Value         "Cap_t"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "v_init"
+                        Value         "Cap_dict.Vinit"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Constant
+                      Name          "PH"
+                      Show          on
+                      Position      [85, 125]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Frame         [-10, -10; 10, 10]
+                      Parameter {
+                        Variable      "Value"
+                        Value         "0"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataType"
+                        Value         "10"
+                        Show          off
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "C"
+                      SrcTerminal   1
+                      Points        [160, 50]
+                      Branch {
+                        Points        [195, 50]
+                        Branch {
+                          Points        [215, 50]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   1
+                        }
+                      }
+                      Branch {
+                        DstComponent  "Am1"
+                        DstTerminal   2
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "ESL"
+                      SrcTerminal   2
+                      Points        [160, 210]
+                      Branch {
+                        DstComponent  "Port2"
+                        DstTerminal   1
+                      }
+                      Branch {
+                        Points        [195, 210]
+                        Branch {
+                          Points        [215, 210]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   2
+                        }
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "C"
+                      SrcTerminal   2
+                      DstComponent  "ESL"
+                      DstTerminal   1
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Am1"
+                      SrcTerminal   1
+                      DstComponent  "Port1"
+                      DstTerminal   1
+                    }
+                  }
+                  Name          "Capacitor with ESR and ESL"
+                  Schematic {
+                    Component {
+                      Type          Port
+                      Name          "Port1"
+                      Show          off
+                      Position      [85, 50]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "1"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Port
+                      Name          "Port2"
+                      Show          off
+                      Position      [85, 210]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "2"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Ammeter
+                      Name          "Am1"
+                      Show          off
+                      Position      [135, 50]
+                      Direction     left
+                      Flipped       off
+                      LabelPosition south
+                    }
+                    Component {
+                      Type          Voltmeter
+                      Name          "Vm1"
+                      Show          off
+                      Position      [195, 130]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                    }
+                    Component {
+                      Type          Capacitor
+                      Name          "C"
+                      Show          on
+                      Position      [160, 90]
+                      Direction     down
+                      Flipped       on
+                      LabelPosition west
+                      Parameter {
+                        Variable      "C"
+                        Value         "Cap_t"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "v_init"
+                        Value         "Cap_dict.Vinit"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Resistor
+                      Name          "ESR"
+                      Show          on
+                      Position      [160, 125]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                      Parameter {
+                        Variable      "R"
+                        Value         "Resr_t"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Inductor
+                      Name          "ESL"
+                      Show          on
+                      Position      [160, 165]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                      Parameter {
+                        Variable      "L"
+                        Value         "Lesl_t"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "i_init"
+                        Value         "Cap_dict.Iinit"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Constant
+                      Name          "PH"
+                      Show          on
+                      Position      [85, 125]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Frame         [-10, -10; 10, 10]
+                      Parameter {
+                        Variable      "Value"
+                        Value         "0"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataType"
+                        Value         "10"
+                        Show          off
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "ESR"
+                      SrcTerminal   1
+                      DstComponent  "C"
+                      DstTerminal   2
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "C"
+                      SrcTerminal   1
+                      Points        [160, 50]
+                      Branch {
+                        Points        [195, 50]
+                        Branch {
+                          Points        [215, 50]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   1
+                        }
+                      }
+                      Branch {
+                        DstComponent  "Am1"
+                        DstTerminal   2
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "ESL"
+                      SrcTerminal   2
+                      Points        [160, 210]
+                      Branch {
+                        DstComponent  "Port2"
+                        DstTerminal   1
+                      }
+                      Branch {
+                        Points        [195, 210]
+                        Branch {
+                          Points        [215, 210]
+                        }
+                        Branch {
+                          DstComponent  "Vm1"
+                          DstTerminal   2
+                        }
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Am1"
+                      SrcTerminal   1
+                      DstComponent  "Port1"
+                      DstTerminal   1
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "ESL"
+                      SrcTerminal   1
+                      DstComponent  "ESR"
+                      DstTerminal   2
+                    }
+                  }
+                  Name          "Pass"
+                  Schematic {
+                    Component {
+                      Type          Port
+                      Name          "Port1"
+                      Show          off
+                      Position      [85, 50]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "1"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Port
+                      Name          "Port2"
+                      Show          off
+                      Position      [85, 210]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "2"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Ammeter
+                      Name          "Am1"
+                      Show          off
+                      Position      [125, 50]
+                      Direction     left
+                      Flipped       off
+                      LabelPosition south
+                    }
+                    Component {
+                      Type          Voltmeter
+                      Name          "Vm1"
+                      Show          off
+                      Position      [200, 130]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                    }
+                    Component {
+                      Type          Constant
+                      Name          "PH"
+                      Show          on
+                      Position      [85, 130]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Frame         [-10, -10; 10, 10]
+                      Parameter {
+                        Variable      "Value"
+                        Value         "0"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataType"
+                        Value         "10"
+                        Show          off
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Am1"
+                      SrcTerminal   1
+                      DstComponent  "Port1"
+                      DstTerminal   1
+                    }
+                    Connection {
+                      Type          Wire
+                      Points        [215, 210; 200, 210]
+                      Branch {
+                        Points        [180, 210]
+                      }
+                      Branch {
+                        DstComponent  "Vm1"
+                        DstTerminal   2
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Vm1"
+                      SrcTerminal   1
+                      Points        [200, 50]
+                      Branch {
+                        Points        [215, 50]
+                      }
+                      Branch {
+                        Points        [175, 50]
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Port2"
+                      SrcTerminal   1
+                      Points        [145, 210]
+                    }
+                  }
+                  Name          "Short"
+                  Schematic {
+                    Component {
+                      Type          Port
+                      Name          "Port1"
+                      Show          off
+                      Position      [85, 50]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "1"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Port
+                      Name          "Port2"
+                      Show          off
+                      Position      [85, 210]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Parameter {
+                        Variable      "Index"
+                        Value         "2"
+                        Show          on
+                      }
+                      Parameter {
+                        Variable      "Width"
+                        Value         "-1"
+                        Show          off
+                      }
+                    }
+                    Component {
+                      Type          Ammeter
+                      Name          "Am1"
+                      Show          off
+                      Position      [160, 50]
+                      Direction     left
+                      Flipped       off
+                      LabelPosition south
+                    }
+                    Component {
+                      Type          Voltmeter
+                      Name          "Vm1"
+                      Show          off
+                      Position      [210, 130]
+                      Direction     up
+                      Flipped       off
+                      LabelPosition west
+                    }
+                    Component {
+                      Type          Constant
+                      Name          "PH"
+                      Show          on
+                      Position      [90, 130]
+                      Direction     right
+                      Flipped       off
+                      LabelPosition south
+                      Frame         [-10, -10; 10, 10]
+                      Parameter {
+                        Variable      "Value"
+                        Value         "0"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataType"
+                        Value         "10"
+                        Show          off
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Port1"
+                      SrcTerminal   1
+                      DstComponent  "Am1"
+                      DstTerminal   1
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Am1"
+                      SrcTerminal   2
+                      Points        [210, 50]
+                      Branch {
+                        Points        [215, 50]
+                      }
+                      Branch {
+                        DstComponent  "Vm1"
+                        DstTerminal   1
+                      }
+                    }
+                    Connection {
+                      Type          Wire
+                      SrcComponent  "Port2"
+                      SrcTerminal   1
+                      Points        [210, 210]
+                      Branch {
+                        Points        [215, 210]
+                      }
+                      Branch {
+                        DstComponent  "Vm1"
+                        DstTerminal   2
+                      }
+                    }
+                  }
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cx1.Config"
+                  Show          off
+                }
+                MaskProbe {
+                  Name          "Capacitor Voltage"
+                  Probe {
+                    Component     "C"
+                    Path          "Ideal Capacitor"
+                    Signals       {"Capacitor voltage"}
+                  }
+                  Probe {
+                    Component     "Vm1"
+                    Path          "Capacitor with ESR"
+                    Signals       {"Measured voltage"}
+                  }
+                  Probe {
+                    Component     "Vm1"
+                    Path          "Capacitor with ESL"
+                    Signals       {"Measured voltage"}
+                  }
+                  Probe {
+                    Component     "Vm1"
+                    Path          "Capacitor with ESR and ESL"
+                    Signals       {"Measured voltage"}
+                  }
+                  Probe {
+                    Component     "Vm1"
+                    Path          "Pass"
+                    Signals       {"Measured voltage"}
+                  }
+                  Probe {
+                    Component     "Vm1"
+                    Path          "Short"
+                    Signals       {"Measured voltage"}
+                  }
+                }
+                MaskProbe {
+                  Name          "Capacitor Current"
+                  Probe {
+                    Component     "C"
+                    Path          "Ideal Capacitor"
+                    Signals       {"Capacitor current"}
+                  }
+                  Probe {
+                    Component     "Am1"
+                    Path          "Capacitor with ESR"
+                    Signals       {"Measured current"}
+                  }
+                  Probe {
+                    Component     "Am1"
+                    Path          "Capacitor with ESL"
+                    Signals       {"Measured current"}
+                  }
+                  Probe {
+                    Component     "Am1"
+                    Path          "Capacitor with ESR and ESL"
+                    Signals       {"Measured current"}
+                  }
+                  Probe {
+                    Component     "Am1"
+                    Path          "Pass"
+                    Signals       {"Measured current"}
+                  }
+                  Probe {
+                    Component     "Am1"
+                    Path          "Short"
+                    Signals       {"Measured current"}
+                  }
+                }
+                MaskProbe {
+                  Name          "Capacitor Dissipation"
+                  Probe {
+                    Component     "PH"
+                    Path          "Ideal Capacitor"
+                    Signals       {"Constant"}
+                  }
+                  Probe {
+                    Component     "ESR"
+                    Path          "Capacitor with ESR"
+                    Signals       {"Resistor power"}
+                  }
+                  Probe {
+                    Component     "PH"
+                    Path          "Capacitor with ESL"
+                    Signals       {"Constant"}
+                  }
+                  Probe {
+                    Component     "ESR"
+                    Path          "Capacitor with ESR and ESL"
+                    Signals       {"Resistor power"}
+                  }
+                  Probe {
+                    Component     "PH"
+                    Path          "Pass"
+                    Signals       {"Constant"}
+                  }
+                  Probe {
+                    Component     "PH"
+                    Path          "Short"
+                    Signals       {"Constant"}
+                  }
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Power Components/DC FILTER/Pi/Cx1"
+                Name          "Cx2"
+                Show          on
+                Position      [265, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "param.Cx2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cx2.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Power Components/DC FILTER/Pi/Cx1"
+                Name          "Cx3"
+                Show          on
+                Position      [310, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "param.Cx3"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cx3.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Power Components/DC FILTER/Pi/Cx1"
+                Name          "Cx4"
+                Show          on
+                Position      [480, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition east
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "param.Cx4"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cx4.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Power Components/DC FILTER/Pi/Cx1"
+                Name          "Cx5"
+                Show          on
+                Position      [600, 140]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "param.Cx5"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cx5.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Power Components/DC FILTER/Pi/Cx1"
+                Name          "Cy1"
+                Show          on
+                Position      [145, 110]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "param.Cy1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cy1.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "library/Power Components/DC FILTER/Pi/Cx1"
+                Name          "Cy2"
+                Show          on
+                Position      [145, 165]
+                Direction     left
+                Flipped       off
+                LabelPosition west
+                Frame         [-10, -20; 10, 20]
+                Parameter {
+                  Variable      "Cap_dict"
+                  Value         "param.Cy2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "param.Cy2.Config"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-25, 0]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [25, 0]
+                  Direction     right
+                }
+              }
               Connection {
                 Type          Wire
                 SrcComponent  "VBAT+"
                 SrcTerminal   1
-                Points        [310, 70]
+                Points        [630, 70]
                 Branch {
-                  Points        [280, 70]
+                  Points        [600, 70]
                   Branch {
                     DstComponent  "iL1"
                     DstTerminal   2
                   }
                   Branch {
-                    DstComponent  "Cx2"
+                    DstComponent  "Cx5"
                     DstTerminal   2
                   }
                 }
@@ -8961,30 +8048,67 @@ Plecs {
                 Type          Wire
                 SrcComponent  "VBAT-"
                 SrcTerminal   1
-                Points        [310, 215]
+                Points        [630, 215]
                 Branch {
-                  Points        [280, 215]
+                  Points        [600, 215]
                   Branch {
-                    Points        [215, 215]
-                    Branch {
-                      Points        [160, 215]
-                      Branch {
-                        DstComponent  "VDC-"
-                        DstTerminal   1
-                      }
-                      Branch {
-                        DstComponent  "Cx1"
-                        DstTerminal   1
-                      }
-                    }
-                    Branch {
-                      DstComponent  "GND"
-                      DstTerminal   1
-                    }
+                    DstComponent  "Cx5"
+                    DstTerminal   1
                   }
                   Branch {
-                    DstComponent  "Cx2"
-                    DstTerminal   1
+                    Points        [480, 215]
+                    Branch {
+                      Points        [440, 215]
+                      Branch {
+                        Points        [350, 215]
+                        Branch {
+                          Points        [310, 215]
+                          Branch {
+                            Points        [265, 215]
+                            Branch {
+                              Points        [215, 215]
+                              Branch {
+                                Points        [145, 215]
+                                Branch {
+                                  DstComponent  "VDC-"
+                                  DstTerminal   1
+                                }
+                                Branch {
+                                  DstComponent  "Cy2"
+                                  DstTerminal   1
+                                }
+                              }
+                              Branch {
+                                DstComponent  "Cx1"
+                                DstTerminal   1
+                              }
+                            }
+                            Branch {
+                              DstComponent  "Cx2"
+                              DstTerminal   1
+                            }
+                          }
+                          Branch {
+                            DstComponent  "Cx3"
+                            DstTerminal   1
+                          }
+                        }
+                        Branch {
+                          Points        [350, 150]
+                          DstComponent  "DMC1"
+                          DstTerminal   4
+                        }
+                      }
+                      Branch {
+                        Points        [440, 150]
+                        DstComponent  "DMC1"
+                        DstTerminal   3
+                      }
+                    }
+                    Branch {
+                      DstComponent  "Cx4"
+                      DstTerminal   1
+                    }
                   }
                 }
                 Branch {
@@ -9001,16 +8125,75 @@ Plecs {
               }
               Connection {
                 Type          Wire
-                SrcComponent  "VDC+"
+                SrcComponent  "L"
                 SrcTerminal   1
-                Points        [160, 70]
+                Points        [480, 70]
                 Branch {
-                  DstComponent  "L"
+                  Points        [440, 70]
+                  Branch {
+                    Points        [350, 70]
+                    Branch {
+                      Points        [310, 70]
+                      Branch {
+                        Points        [265, 70]
+                        Branch {
+                          Points        [215, 70]
+                          Branch {
+                            Points        [145, 70]
+                            Branch {
+                              DstComponent  "VDC+"
+                              DstTerminal   1
+                            }
+                            Branch {
+                              DstComponent  "Cy1"
+                              DstTerminal   2
+                            }
+                          }
+                          Branch {
+                            DstComponent  "Cx1"
+                            DstTerminal   2
+                          }
+                        }
+                        Branch {
+                          DstComponent  "Cx2"
+                          DstTerminal   2
+                        }
+                      }
+                      Branch {
+                        DstComponent  "Cx3"
+                        DstTerminal   2
+                      }
+                    }
+                    Branch {
+                      Points        [350, 130]
+                      DstComponent  "DMC1"
+                      DstTerminal   2
+                    }
+                  }
+                  Branch {
+                    Points        [440, 130]
+                    DstComponent  "DMC1"
+                    DstTerminal   1
+                  }
+                }
+                Branch {
+                  DstComponent  "Cx4"
+                  DstTerminal   2
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "Cy2"
+                SrcTerminal   2
+                Points        [145, 140]
+                Branch {
+                  DstComponent  "Cy1"
                   DstTerminal   1
                 }
                 Branch {
-                  DstComponent  "Cx1"
-                  DstTerminal   2
+                  Points        [165, 140]
+                  DstComponent  "GND"
+                  DstTerminal   1
                 }
               }
             }
@@ -53777,4 +52960,4 @@ Plecs {
     }
   }
 }
-DemoSignature "ZAznmasoRCP39GHbV8aRxAXVjLqGNFOXXjw1uAvd9k0="
+DemoSignature "dB6mdd/p8EZomQEeGAWqVs1DiNA8CZA+1eoo0aMJzwQ="

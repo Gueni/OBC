@@ -341,9 +341,9 @@ Thermals    =  {                                                                
                   'rth_Amb'         :  0.09                                                                 # []  - 
                }
 HV_Filter   =  {                                                                                            #![]  - 
-                  'Config'         :  2,                                                                    # []  - 
-                  'C_o'            : {                                                                      # []  -                       
-                                          'Config'		      : 6,                                            # []  - 
+                  'Config'         :  1,                                                                    # []  - 
+                  'Cy1'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
@@ -351,8 +351,69 @@ HV_Filter   =  {                                                                
                                           'Nseri'		      : 1,                                            # []  - 
                                           'Vinit'		      : 0,                                            # []  - 
                                           'Iinit'		      : 0                                             # []  -           
-                                          },
-                  'L'              :  40e-6                                                                 # []  - 
+                                          },                                                                # []  -
+                  'Cy2'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
+                                          'Cap_s'    		   : 1e-3,                                         # []  - 
+                                          'Resr_s'		      : 0,                                            # []  - 
+                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Npara'		      : 1,                                            # []  - 
+                                          'Nseri'		      : 1,                                            # []  - 
+                                          'Vinit'		      : 0,                                            # []  - 
+                                          'Iinit'		      : 0                                             # []  -           
+                                          },                                                                # []  -
+                  'Cx1'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
+                                          'Cap_s'    		   : 1e-3,                                         # []  - 
+                                          'Resr_s'		      : 0,                                            # []  - 
+                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Npara'		      : 1,                                            # []  - 
+                                          'Nseri'		      : 1,                                            # []  - 
+                                          'Vinit'		      : 0,                                            # []  - 
+                                          'Iinit'		      : 0                                             # []  -           
+                                          },                                                                # []  -
+                  'Cx2'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
+                                          'Cap_s'    		   : 1e-3,                                         # []  - 
+                                          'Resr_s'		      : 0,                                            # []  - 
+                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Npara'		      : 1,                                            # []  - 
+                                          'Nseri'		      : 1,                                            # []  - 
+                                          'Vinit'		      : 0,                                            # []  - 
+                                          'Iinit'		      : 0                                             # []  -           
+                                          },                                                                # []  -
+                  'Cx3'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
+                                          'Cap_s'    		   : 1e-3,                                         # []  - 
+                                          'Resr_s'		      : 0,                                            # []  - 
+                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Npara'		      : 1,                                            # []  - 
+                                          'Nseri'		      : 1,                                            # []  - 
+                                          'Vinit'		      : 0,                                            # []  - 
+                                          'Iinit'		      : 0                                             # []  -           
+                                          },                                                                # []  -
+                  'Cx4'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
+                                          'Cap_s'    		   : 1e-3,                                         # []  - 
+                                          'Resr_s'		      : 0,                                            # []  - 
+                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Npara'		      : 1,                                            # []  - 
+                                          'Nseri'		      : 1,                                            # []  - 
+                                          'Vinit'		      : 0,                                            # []  - 
+                                          'Iinit'		      : 0                                             # []  -           
+                                          },                                                                # []  -
+                  'Cx5'            : {                                                                      # []  -                       
+                                          'Config'		      : 1,                                            # []  - 
+                                          'Cap_s'    		   : 1e-3,                                         # []  - 
+                                          'Resr_s'		      : 0,                                            # []  - 
+                                          'Lesl_s'		      : 0,                                            # []  - 
+                                          'Npara'		      : 1,                                            # []  - 
+                                          'Nseri'		      : 1,                                            # []  - 
+                                          'Vinit'		      : 0,                                            # []  - 
+                                          'Iinit'		      : 0                                             # []  -           
+                                          },                                                                # []  -
+                  'L'              :  40e-6,                                                                # []  - 
+                  'L_DMC'          :  900e-6                                                                # []  - 
             }
 AC_Filter   =  {                                                                                            #![]  - 
                   'Config'          :  1 ,                                                                  # []  - 
@@ -364,20 +425,20 @@ AC_Filter   =  {                                                                
                   'Cy2'             :  4.7e-12,                                                             # []  -    
                   'Ll'              :  10e-6                                                                # []  -    
                }
-Battery     =  {                                                                                            #![]  - 
-                  'n_series'                  : 1,                                                          # []  - number of series-connected cells
-                  'n_parallel'                : 1,                                                          # []  -  number of parallel branches
-                  'SOC_init'                  : 0,                                                          # []  -  initial SOC
+Battery     =  {          
+                  'n_series'                  : 75,                                                         # []  -  number of series-connected cells
+                  'n_parallel'                : 5,                                                          # []  -  number of parallel branches
+                  'SOC_init'                  : 0.5,                                                        # []  -  initial SOC
                   'polarizingRshift'          : 0.10,                                                       # []  -  shift polarizing R by 10#
                   'cellNominalV'              : 2.9,                                                        # []  -  voltage at end of nominal zone
-                  'cellFullChargeV'           : 400,                                                        # []  -  voltage at full SOC
-                  'cellExponentialV'          : 390,                                                        # []  -  voltage at end of exponential zone
-                  'cellRatedCapacity'         : 400,                                                        # []  -  cell rated capacity
-                  'cellMaximumCapacity'       : 400,                                                        # []  -  cell maximum capacity
-                  'cellNominalCapacity'       : 350,                                                        # []  -  cell capacity at end of nominal zone
-                  'cellExponentialCapacity'   : 100,                                                        # []  -  cell capacity at end of exponential zone
-                  'cellNominalDischargeI'     : 200,                                                        # []  -  nominal discharge current for cell
-                  'cellInternalR'             : 20,                                                         # []  -  internal cell resistance
+                  'cellFullChargeV'           : 3.3,                                                        # []  -  voltage at full SOC
+                  'cellExponentialV'          : 3.05,                                                       # []  -  voltage at end of exponential zone
+                  'cellRatedCapacity'         : 2.4,                                                        # []  -  cell rated capacity
+                  'cellMaximumCapacity'       : 2.4,                                                        # []  -  cell maximum capacity
+                  'cellNominalCapacity'       : 2.1,                                                        # []  -  cell capacity at end of nominal zone
+                  'cellExponentialCapacity'   : 0.25,                                                       # []  -  cell capacity at end of exponential zone
+                  'cellNominalDischargeI'     : 2.3,                                                        # []  -  nominal discharge current for cell
+                  'cellInternalR'             : 6e-3,                                                       # []  -  internal cell resistance
                   'Rdis'                      : 40,                                                         # []  - 
                   'I_dc'                      : 20,                                                         # []  - 
                   'Rcell1'                    : 6,                                                          # []  - 
@@ -394,7 +455,7 @@ Battery     =  {                                                                
                                                 'Nseri'		      : 1,                                      # []  - 
                                                 'Vinit'		      : 0,                                      # []  - 
                                                 'Iinit'		      : 0                                       # []  - 
-                                                },
+                                                },                                                          # []  - 
                   'cellLPFTimeConstant'       : 30                                                          # []  - # 30 second time constant for LPF for effect of current on voltage
                }
 #?----------------------------------------------------------------------------------------------------------------------------------------
