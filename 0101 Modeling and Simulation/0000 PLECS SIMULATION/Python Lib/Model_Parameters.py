@@ -240,7 +240,7 @@ DCLink      =  {                                                                
                   'Cdc'    		   : 100e-6,                                                               # []  -  
                   'ESR'		         : 19e-9,                                                                # []  - 
                   'ESL'		         : 1e-19,                                                                # []  - 
-                  'nPara'		      : 1,                                                                    # []  - 
+                  'nPara'		      : 2,                                                                    # []  - 
                   'nSeri'		      : 1,                                                                    # []  - 
                   'Vinit'		      : 400,                                                                  # []  - 
                   'Iinit'		      : 10                                                                    # []  - 
@@ -256,10 +256,10 @@ Load        =  {                                                                
                }
 RCSnub      =  {                                                                                            #![]  - 
                   'Config'		      : 1,                                                                    # []  - 
-                  'Rsnub'           : 4700/4,                                                               # []  - 
+                  'Rsnub'           : 1e-3,                                                               # []  - 
                   'Csnub'           : {                                                                     # []  -               
                                           'Config'		      : 1,                                            # []  - 
-                                          'Cap_s'    		   :  160/24,                                      # []  - 
+                                          'Cap_s'    		   :  1e-3,                                      # []  - 
                                           'Resr_s'		      : 0,                                            # []  -           
                                           'Lesl_s'		      : 0,                                            # []  -       
                                           'Npara'		      : 1,                                            # []  -          
