@@ -282,7 +282,18 @@ LLC         =  {                                                                
                                           'Config'		      : 1,                                            # []  - 
                                           'n_prim'    		: 10,                                           # []  - 
                                           'n_sndry'		   : 1,                                            # []  - 
-                                          'Imaginit'		   : 0                                             # []  - 
+                                          'Imaginit'		   : 0,                                            # []  - 
+                                          'Lp'		         : 0,                                            # []  - 
+                                          'Rp'		         : 1e-3,                                         # []  - 
+                                          'Rc'		         : 1e-3,                                         # []  - 
+                                          'Lm'		         : 0,                                            # []  - 
+                                          'Rs'		         : 1e-3,                                         # []  - 
+                                          'Ls'		         : 0,                                            # []  -
+                                          'LpIinit'		   : 0,                                            # []  - 
+                                          'LmIinit'		   : 0,                                            # []  - 
+                                          'LsIinit'		   : 0                                             # []  - 
+ 
+
                                       },
                   'C_r'             : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
