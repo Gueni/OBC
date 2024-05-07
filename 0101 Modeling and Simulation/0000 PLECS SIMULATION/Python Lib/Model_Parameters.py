@@ -65,7 +65,7 @@ scopes      =  [                                                                
                            
                ]	
 PFC_glb     =  {                                                                                            #![]  - 
-                  'L'               :  40e-6,                                                               # []  - 
+                  'L'               :  100e-6,                                                               # []  - 
                   'Rbusin'          :  1e-2,                                                                # []  - 
                   'Rbusout'         :  1e-2,                                                                # []  - 
                   'Cout'            :  {                                                                    # []  - 
@@ -236,7 +236,7 @@ CTRL_PFC    =  {                                                                
                   'Rv_Ki'           :  800                                                                  # []  - 
                }
 DCLink      =  {                                                                                            #![]  - 
-                  'Config'		      : 1,                                                                    # []  - 
+                  'Config'		      : 6,                                                                    # []  - 
                   'Cdc'    		   : 100e-6,                                                               # []  -  
                   'ESR'		         : 19e-9,                                                                # []  - 
                   'ESL'		         : 1e-19,                                                                # []  - 
@@ -280,8 +280,8 @@ LLC         =  {                                                                
                   'L_r_Iinit'       : 0,                                                                    # []  - 
                   'Trafo'           : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'n_prim'    		: 10,                                           # []  - 
-                                          'n_sndry'		   : 1,                                            # []  - 
+                                          'n_prim'    		: 2,                                           # []  - 
+                                          'n_sndry'		   : 10,                                            # []  - 
                                           'Imaginit'		   : 0,                                            # []  - 
                                           'Lp'		         : 0,                                            # []  - 
                                           'Rp'		         : 1e-3,                                         # []  - 
@@ -297,7 +297,7 @@ LLC         =  {                                                                
                                       },
                   'C_r'             : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'Cap_s'    		   : 1.2e-6,                                       # []  - 
+                                          'Cap_s'    		   : 1.2e-9,                                       # []  - 
                                           'Resr_s'		      : 1e-10,                                            # []  - 
                                           'Lesl_s'		      : 1e-10,                                            # []  - 
                                           'Npara'		      : 1,                                            # []  - 
@@ -352,7 +352,7 @@ Thermals    =  {                                                                
                   'rth_Amb'         :  0.09                                                                 # []  - 
                }
 HV_Filter   =  {                                                                                            #![]  - 
-                  'Config'         :  1,                                                                    # []  - 
+                  'Config'         :  2,                                                                    # []  - 
                   'Cy1'            : {                                                                      # []  -                       
                                           'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
@@ -427,7 +427,7 @@ HV_Filter   =  {                                                                
                   'L_DMC'          :  900e-6                                                                # []  - 
             }
 AC_Filter   =  {                                                                                            #![]  - 
-                  'Config'          :  1 ,                                                                  # []  - 
+                  'Config'          :  4 ,                                                                  # []  - 
                   'Cin'             :  1e-6,                                                                # []  - 
                   'L_CMC'           :  1.5e-3,                                                              # []  - 
                   'L_DMC'           :  900e-6,                                                              # []  - 

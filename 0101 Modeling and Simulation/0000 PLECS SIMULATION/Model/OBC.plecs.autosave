@@ -1348,11 +1348,11 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 30; 1536, 839]
+          Location      [0, 30; 1536, 843]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANg"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANl"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -3706,7 +3706,7 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAQAAAG0AAAADAAAAbQAAAAIAAABuAAAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
+"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
 "AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
@@ -13374,7 +13374,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "1"
+        Value         "2"
         Show          off
       }
     }
@@ -13572,14 +13572,6 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "Load"
-      SrcTerminal   1
-      Points        [830, 140]
-      DstComponent  "plus load"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Wire
       SrcComponent  "BAT"
       SrcTerminal   2
       Points        [745, 225]
@@ -13592,14 +13584,6 @@ Plecs {
         DstComponent  "minus load"
         DstTerminal   1
       }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "Load"
-      SrcTerminal   2
-      Points        [830, 225; 800, 225; 800, 215]
-      DstComponent  "minus load"
-      DstTerminal   2
     }
     Connection {
       Type          Signal
@@ -13649,6 +13633,19 @@ Plecs {
         DstComponent  "Vm1"
         DstTerminal   2
       }
+      Branch {
+        Points        [670, 260; 815, 260; 815, 225]
+        Branch {
+          Points        [830, 225]
+          DstComponent  "Load"
+          DstTerminal   2
+        }
+        Branch {
+          Points        [800, 225; 800, 215]
+          DstComponent  "minus load"
+          DstTerminal   2
+        }
+      }
     }
     Connection {
       Type          Wire
@@ -13662,6 +13659,18 @@ Plecs {
       Branch {
         DstComponent  "plus bat"
         DstTerminal   3
+      }
+      Branch {
+        Points        [670, 115; 805, 115; 805, 140]
+        Branch {
+          Points        [830, 140]
+          DstComponent  "Load"
+          DstTerminal   1
+        }
+        Branch {
+          DstComponent  "plus load"
+          DstTerminal   2
+        }
       }
     }
     Connection {
@@ -13696,4 +13705,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "L2LW2KT+6eU27lDmMGpZVDFT6jdlxJm7gt76h7Z/Qc8="
+DemoSignature "Tpsh9iTQi75bbOSy4FXXC30p2bo9UJ7XAbnMPGi1oYE="
