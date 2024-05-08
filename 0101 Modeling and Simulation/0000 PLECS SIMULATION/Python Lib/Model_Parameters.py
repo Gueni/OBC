@@ -280,15 +280,15 @@ LLC         =  {                                                                
                   'L_r_Iinit'       : 0,                                                                    # []  - 
                   'Trafo'           : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'n_prim'    		: 2,                                           # []  - 
-                                          'n_sndry'		   : 10,                                            # []  - 
+                                          'n_prim'    		: 1,                                           # []  - 
+                                          'n_sndry'		   : 1,                                            # []  - 
                                           'Imaginit'		   : 0,                                            # []  - 
-                                          'Lp'		         : 0,                                            # []  - 
-                                          'Rp'		         : 1e-3,                                         # []  - 
-                                          'Rc'		         : 1e-3,                                         # []  - 
-                                          'Lm'		         : 0,                                            # []  - 
-                                          'Rs'		         : 1e-3,                                         # []  - 
-                                          'Ls'		         : 0,                                            # []  -
+                                          'Lp'		         : 1e-9,                                            # []  - 
+                                          'Rp'		         : 1e-2,                                         # []  - 
+                                          'Rc'		         : 10,                                         # []  - 
+                                          'Lm'		         : 1e-9,                                            # []  - 
+                                          'Rs'		         : 1e-2,                                         # []  - 
+                                          'Ls'		         : 1e-9,                                            # []  -
                                           'LpIinit'		   : 0,                                            # []  - 
                                           'LmIinit'		   : 0,                                            # []  - 
                                           'LsIinit'		   : 0                                             # []  - 
@@ -352,7 +352,7 @@ Thermals    =  {                                                                
                   'rth_Amb'         :  0.09                                                                 # []  - 
                }
 HV_Filter   =  {                                                                                            #![]  - 
-                  'Config'         :  2,                                                                    # []  - 
+                  'Config'         :  1,                                                                    # []  - 
                   'Cy1'            : {                                                                      # []  -                       
                                           'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
@@ -427,7 +427,7 @@ HV_Filter   =  {                                                                
                   'L_DMC'          :  900e-6                                                                # []  - 
             }
 AC_Filter   =  {                                                                                            #![]  - 
-                  'Config'          :  4 ,                                                                  # []  - 
+                  'Config'          :  1 ,                                                                  # []  - 
                   'Cin'             :  1e-6,                                                                # []  - 
                   'L_CMC'           :  1.5e-3,                                                              # []  - 
                   'L_DMC'           :  900e-6,                                                              # []  - 
