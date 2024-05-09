@@ -246,13 +246,14 @@ DCLink      =  {                                                                
                   'Iinit'		      : 10                                                                    # []  - 
                }
 Load        =  {                                                                                            #![]  - 
-                  'Config'		      : 4,                                                                    # []  - 
+                  'Config'		      : 1,                                                                    # []  - 
                   'CL'    		      : 0,                                                                    # []  - 
                   'RL'		         : 40,                                                                   # []  - 
                   'LL'		         : 0,                                                                    # []  - 
                   'Vinit'		      : 0,                                                                    # []  - 
                   'Iinit'		      : 0,                                                                    # []  - 
-                  't_switch'        : Sim_param['tSim']-Sim_param['load_tflip']                             # []  - 
+                  't_switch'        : Sim_param['tSim']-Sim_param['load_tflip'],                            # []  - 
+                  't_dead'          : (Sim_param['tSim']-Sim_param['load_tflip'])/2                         # []  - 
                }
 RCSnub      =  {                                                                                            #![]  - 
                   'Config'		      : 1,                                                                    # []  - 
@@ -280,15 +281,15 @@ LLC         =  {                                                                
                   'L_r_Iinit'       : 0,                                                                    # []  - 
                   'Trafo'           : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'n_prim'    		: 1,                                           # []  - 
+                                          'n_prim'    		: 1,                                            # []  - 
                                           'n_sndry'		   : 1,                                            # []  - 
                                           'Imaginit'		   : 0,                                            # []  - 
-                                          'Lp'		         : 1e-9,                                            # []  - 
+                                          'Lp'		         : 1e-9,                                         # []  - 
                                           'Rp'		         : 1e-2,                                         # []  - 
-                                          'Rc'		         : 10,                                         # []  - 
-                                          'Lm'		         : 1e-9,                                            # []  - 
-                                          'Rs'		         : 1e-2,                                         # []  - 
-                                          'Ls'		         : 1e-9,                                            # []  -
+                                          'Rc'		         : 10,                                           # []  - 
+                                          'Lm'		         : 1e-9,                                         # []  - 
+                                          'Rs'		         : 10,                                           # []  - 
+                                          'Ls'		         : 1e-9,                                         # []  -
                                           'LpIinit'		   : 0,                                            # []  - 
                                           'LmIinit'		   : 0,                                            # []  - 
                                           'LsIinit'		   : 0                                             # []  - 
@@ -436,7 +437,8 @@ AC_Filter   =  {                                                                
                   'Cy2'             :  4.7e-12,                                                             # []  -    
                   'Ll'              :  10e-6                                                                # []  -    
                }
-Battery     =  {          
+Battery     =  {  
+                  'Config'                    : 1,                                                          # []  -         
                   'n_series'                  : 75,                                                         # []  -  number of series-connected cells
                   'n_parallel'                : 5,                                                          # []  -  number of parallel branches
                   'SOC_init'                  : 0.5,                                                        # []  -  initial SOC
