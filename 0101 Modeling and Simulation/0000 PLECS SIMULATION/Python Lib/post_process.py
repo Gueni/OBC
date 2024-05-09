@@ -22,7 +22,7 @@ def png_to_hex_base64():
     img_path = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
     try:
         with Image.open(img_path) as img:
-            resized_img = img.resize((1100,550), resample=Image.LANCZOS)
+            resized_img = img.resize((1100,490), resample=Image.LANCZOS) #todo : get the size of screen and make a ratio 
             resized_img.save("img.png")
         img.close()
     except IOError:

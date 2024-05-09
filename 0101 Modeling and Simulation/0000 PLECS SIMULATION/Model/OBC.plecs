@@ -48,7 +48,7 @@ Plecs {
   ScriptsDialogSplitterPos "0"
   Schematic {
     Location      [0, 23; 1536, 777]
-    ZoomFactor    1.14436
+    ZoomFactor    1.49862
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -138,9 +138,9 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 26; 1536, 780]
+        Location      [8, 31; 1528, 769]
         ZoomFactor    1
-        SliderPosition [0, 0]
+        SliderPosition [0, 91]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -805,8 +805,8 @@ Plecs {
           Probe {
             Component     "BAT"
             Path          ""
-            Signals       {"Pack SOC", "Pack Depleted Charge [Ah]", "Pack Term"
-"inal Voltage [V]", "Pack Current [A]"}
+            Signals       {"Pack Current [A]", "Pack SOC", "Pack Depleted Char"
+"ge [Ah]", "Pack Terminal Voltage [V]"}
           }
         }
         Component {
@@ -1336,7 +1336,7 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.763608
+        ZoomFactor    0.763607
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -1348,17 +1348,17 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 30; 1536, 847]
+          Location      [0, 30; 1536, 854]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANq"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAQAAAG0AAAAIAAAAbQAAAAkAAABtAAAABgAAAG0AAAAHAAAAbQAAAAQAAABtAAAABQAAAG0AAA"
-"ACAAAAbgAAAAMAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAAAgAAAG4AAAADAAAAbQAAAAEAAABtAAAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1492,9 +1492,9 @@ Plecs {
         }
         Component {
           Type          Scope
-          Name          "load_scope"
+          Name          "battery"
           Show          on
-          Position      [255, 795]
+          Position      [305, 715]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1623,7 +1623,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux2"
           Show          off
-          Position      [190, 795]
+          Position      [235, 715]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -1689,10 +1689,16 @@ Plecs {
           Type          PlecsProbe
           Name          "Probe2"
           Show          off
-          Position      [140, 795]
+          Position      [190, 715]
           Direction     right
           Flipped       off
           LabelPosition west
+          Probe {
+            Component     "BAT"
+            Path          ""
+            Signals       {"Pack SOC", "Pack Depleted Charge [Ah]", "Pack Term"
+"inal Voltage [V]", "Pack Current [A]"}
+          }
         }
         Component {
           Type          PlecsProbe
@@ -1720,17 +1726,17 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 850]
+          Location      [0, 23; 1536, 796]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMz"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABgAAAG0AAAAHAAAAbQAAAAQAAABtAAAABQAAAG0AAAACAAAAbgAAAAMAAABtAAAAAQAAAG0AAA"
-"AIAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAAAgAAAG4AAAADAAAAbQAAAAEAAABtAAAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -1890,7 +1896,7 @@ Plecs {
           Type          PlecsProbe
           Name          "Probe4"
           Show          off
-          Position      [135, 580]
+          Position      [180, 575]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -1904,7 +1910,7 @@ Plecs {
           Type          Scope
           Name          "DCLink_scope"
           Show          on
-          Position      [260, 580]
+          Position      [305, 575]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1989,7 +1995,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux3"
           Show          off
-          Position      [195, 580]
+          Position      [240, 575]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -2021,17 +2027,17 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 839]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADZfwCAAAAA/sAAAAQAFoAb"
+          Location      [0, 26; 1536, 843]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADavwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAA2UAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAANl"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMBAAAAOAAAA2oAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAABscAAANq"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAJAAAAbQAAAAgAAABtAAAABwAAAG0AAA"
-"AGAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAAAQAAAG0AAAACAAAAbgAAAAMAAABtAAAABAAAAG0AAAAFAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AIAAAAbQAAAAkAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
@@ -2093,8 +2099,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAQAAAG0AAAADAAAAbQAAAAIAAABuAAAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAAAgAAAG4AAAADAAAAbQAAAAEAAABtAAAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
@@ -2155,8 +2161,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAQAAAG0AAAAIAAAAbQAAAAkAAABtAAAABgAAAG0AAAAHAAAAbQAAAAQAAABtAAAABQAAAG0AAA"
-"ACAAAAbgAAAAMAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAAAgAAAG4AAAADAAAAbQAAAAEAAABtAAAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
@@ -2278,8 +2284,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
-"AEAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"AAACQAAAG0AAAAIAAAAbQAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAAAQAAAG0AAA"
+"ADAAAAbQAAAAIAAABuAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
 "xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
@@ -3578,8 +3584,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABgAAAG0AAAAHAAAAbQAAAAEAAABtAAAAAgAAAG4AAAADAAAAbQAAAAgAAABtAAAACQAAAG0AAA"
-"AEAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAG"
+"AAACQAAAG0AAAAIAAAAbQAAAAUAAABtAAAABAAAAG0AAAAHAAAAbQAAAAYAAABtAAAAAQAAAG0AAA"
+"ADAAAAbQAAAAIAAABuAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAG"
 "pAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAXXAAAAAQAAAAAAAAPoAAAAACs="
@@ -3886,122 +3892,9 @@ Plecs {
         }
         Component {
           Type          PlecsProbe
-          Name          "Probe8"
-          Show          off
-          Position      [160, 875]
-          Direction     right
-          Flipped       off
-          LabelPosition west
-          Probe {
-            Component     "Load"
-            Path          ""
-            Signals       {"Current", "Voltage"}
-          }
-        }
-        Component {
-          Type          Scope
-          Name          "Load_scope"
-          Show          on
-          Position      [280, 875]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Location      [0, 26; 1536, 850]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
-"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
-"AAAAAAAAA=="
-          SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAQAAAG0AAAAIAAAAbQAAAAkAAABtAAAABgAAAG0AAAAHAAAAbQAAAAQAAABtAAAABQAAAG0AAA"
-"ACAAAAbgAAAAMAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
-"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
-          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-          Axes          "2"
-          TimeRange     "0"
-          ScrollingMode "1"
-          SingleTimeAxis "1"
-          Open          "0"
-          Ts            "-1"
-          SampleLimit   "0"
-          XAxisLabel    "Time / s"
-          ShowLegend    "2"
-          Axis {
-            Name          "Grid Voltage"
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {"IL"}
-            SignalTypes   [ ]
-            AxisLabel     "[ V ]"
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Axis {
-            Name          "Grid Current"
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {}
-            SignalTypes   [ ]
-            AxisLabel     "[ A ]"
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Fourier {
-            SingleXAxis       on
-            AxisLabel         "Frequency"
-            Scaling           0
-            PhaseDisplay      0
-            ShowFourierLegend off
-            Axis {
-              Name          ""
-              AutoScale     1
-              MinValue      0
-              MaxValue      1
-              Signals       {"IL"}
-              Untangle      0
-              KeepBaseline  off
-              BaselineValue 0
-            }
-            Axis {
-              Name          ""
-              AutoScale     1
-              MinValue      0
-              MaxValue      1
-              Signals       {}
-              Untangle      0
-              KeepBaseline  off
-              BaselineValue 0
-            }
-          }
-        }
-        Component {
-          Type          SignalDemux
-          Name          "Demux16"
-          Show          off
-          Position      [215, 875]
-          Direction     right
-          Flipped       on
-          LabelPosition south
-          Parameter {
-            Variable      "Width"
-            Value         "[1 1]"
-            Show          off
-          }
-        }
-        Component {
-          Type          PlecsProbe
           Name          "Probe9"
           Show          off
-          Position      [160, 925]
+          Position      [190, 780]
           Direction     right
           Flipped       off
           LabelPosition west
@@ -4050,27 +3943,26 @@ Plecs {
           Type          Scope
           Name          "relays"
           Show          on
-          Position      [280, 925]
+          Position      [305, 780]
           Direction     up
           Flipped       off
           LabelPosition south
           Location      [0, 26; 1536, 850]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
 "Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAJAAAAbQAAAAgAAABtAAAABwAAAG0AAA"
-"AGAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
-"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAgAAAG4AAAADAAAAbQAAAAEAAABtAAAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAD"
+"7AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAcPAAAAAQAAAAAAAAPoAAAAACs="
-          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-          Axes          "2"
+"AAAAAZwAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
           TimeRange     "0"
           ScrollingMode "1"
           SingleTimeAxis "1"
@@ -4079,18 +3971,6 @@ Plecs {
           SampleLimit   "0"
           XAxisLabel    "Time / s"
           ShowLegend    "2"
-          Axis {
-            Name          "Grid Voltage"
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {"IL"}
-            SignalTypes   [ ]
-            AxisLabel     "[ V ]"
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
           Axis {
             Name          "Grid Current"
             AutoScale     1
@@ -4119,70 +3999,41 @@ Plecs {
               KeepBaseline  off
               BaselineValue 0
             }
-            Axis {
-              Name          ""
-              AutoScale     1
-              MinValue      0
-              MaxValue      1
-              Signals       {}
-              Untangle      0
-              KeepBaseline  off
-              BaselineValue 0
-            }
-          }
-        }
-        Component {
-          Type          SignalDemux
-          Name          "Demux17"
-          Show          off
-          Position      [215, 925]
-          Direction     right
-          Flipped       on
-          LabelPosition south
-          Parameter {
-            Variable      "Width"
-            Value         "[4 4]"
-            Show          off
           }
         }
         Component {
           Type          PlecsProbe
           Name          "Probe12"
           Show          off
-          Position      [1275, 725]
+          Position      [125, 895]
           Direction     right
           Flipped       off
           LabelPosition west
           Probe {
-            Component     "Vm1"
+            Component     "Load"
             Path          ""
-            Signals       {"Measured voltage"}
-          }
-          Probe {
-            Component     "Am1"
-            Path          ""
-            Signals       {"Measured current"}
+            Signals       {"Current", "Voltage"}
           }
         }
         Component {
           Type          Scope
-          Name          "Pout"
+          Name          "load_scope"
           Show          on
-          Position      [1440, 730]
+          Position      [290, 900]
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 807]
+          Location      [0, 26; 1536, 811]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAJ0A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAA"
-"AwfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALr"
+"AwfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALw"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAH0AAAACAAAAfQAAAAEAAAB9AAAABwAAAH0AAAAGAAAAfQAAAAUAAAB9AAAABAAAAH0AAA"
-"AJAAAAfQAAAAgAAAB9AAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAD"
+"AAAAgAAAH0AAAADAAAAfQAAAAEAAAB9AAAACAAAAH0AAAAJAAAAfQAAAAYAAAB9AAAABwAAAH0AAA"
+"AEAAAAfQAAAAUAAAB9AAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAD"
 "QAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAawAAAAAQAAAAAAAAPoAAAAACs="
@@ -4273,7 +4124,7 @@ Plecs {
           Type          Product
           Name          "Product2"
           Show          off
-          Position      [1380, 750]
+          Position      [230, 920]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -4297,7 +4148,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux18"
           Show          off
-          Position      [1325, 725]
+          Position      [175, 895]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -4305,82 +4156,6 @@ Plecs {
             Variable      "Width"
             Value         "[1 1]"
             Show          off
-          }
-        }
-        Component {
-          Type          PlecsProbe
-          Name          "Probe14"
-          Show          on
-          Position      [935, 475]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Probe {
-            Component     "Tr"
-            Path          "DUAL LLC/Enable/LLC1/LLC"
-            Signals       {"dissipation", "Currents", "Voltages", "MMF", "Flux"
-" "}
-          }
-        }
-        Component {
-          Type          Scope
-          Name          "Scope"
-          Show          on
-          Position      [1020, 475]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Location      [0, 26; 1536, 823]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAA"
-"CSPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAF4"
-"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
-"AAAAAAAAA=="
-          SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACQAAAH0AAAAIAAAAfQAAAAUAAAB9AAAABAAAAH0AAAAHAAAAfQAAAAYAAAB9AAAAAQAAAH0AAA"
-"ADAAAAfQAAAAIAAAB9AAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAE"
-"pAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAZXAAAAAQAAAAAAAAPoAAAAACs="
-          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-          Axes          "1"
-          TimeRange     "0.0"
-          ScrollingMode "1"
-          SingleTimeAxis "1"
-          Open          "0"
-          Ts            "-1"
-          SampleLimit   "0"
-          XAxisLabel    "Time / s"
-          ShowLegend    "2"
-          Axis {
-            Name          ""
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {}
-            SignalTypes   [ ]
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Fourier {
-            SingleXAxis       on
-            AxisLabel         "Frequency / Hz"
-            Scaling           0
-            PhaseDisplay      0
-            ShowFourierLegend off
-            Axis {
-              Name          ""
-              AutoScale     1
-              MinValue      0
-              MaxValue      1
-              Signals       {}
-              Untangle      0
-              KeepBaseline  off
-              BaselineValue 0
-            }
           }
         }
         Connection {
@@ -4948,28 +4723,28 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux2"
           SrcTerminal   2
-          DstComponent  "load_scope"
+          DstComponent  "battery"
           DstTerminal   1
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux2"
           SrcTerminal   3
-          DstComponent  "load_scope"
+          DstComponent  "battery"
           DstTerminal   2
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux2"
           SrcTerminal   4
-          DstComponent  "load_scope"
+          DstComponent  "battery"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux2"
           SrcTerminal   5
-          DstComponent  "load_scope"
+          DstComponent  "battery"
           DstTerminal   4
         }
         Connection {
@@ -5017,48 +4792,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Demux16"
-          SrcTerminal   3
-          DstComponent  "Load_scope"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Probe8"
-          SrcTerminal   1
-          DstComponent  "Demux16"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux16"
-          SrcTerminal   2
-          DstComponent  "Load_scope"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux17"
-          SrcTerminal   3
-          DstComponent  "relays"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Probe9"
-          SrcTerminal   1
-          DstComponent  "Demux17"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux17"
-          SrcTerminal   2
-          DstComponent  "relays"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Probe12"
           SrcTerminal   1
           DstComponent  "Demux18"
@@ -5068,17 +4801,17 @@ Plecs {
           Type          Signal
           SrcComponent  "Product2"
           SrcTerminal   1
-          Points        [1405, 750; 1405, 740]
-          DstComponent  "Pout"
+          Points        [255, 920; 255, 910]
+          DstComponent  "load_scope"
           DstTerminal   3
         }
         Connection {
           Type          Signal
           SrcComponent  "Demux18"
           SrcTerminal   2
-          Points        [1350, 720]
+          Points        [200, 890]
           Branch {
-            DstComponent  "Pout"
+            DstComponent  "load_scope"
             DstTerminal   1
           }
           Branch {
@@ -5090,22 +4823,22 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux18"
           SrcTerminal   3
-          Points        [1340, 730]
+          Points        [190, 900]
           Branch {
-            DstComponent  "Pout"
+            DstComponent  "load_scope"
             DstTerminal   2
           }
           Branch {
-            Points        [1340, 755]
+            Points        [190, 925]
             DstComponent  "Product2"
             DstTerminal   3
           }
         }
         Connection {
           Type          Signal
-          SrcComponent  "Probe14"
+          SrcComponent  "Probe9"
           SrcTerminal   1
-          DstComponent  "Scope"
+          DstComponent  "relays"
           DstTerminal   1
         }
         RectangleAnnotation {
@@ -5157,9 +4890,9 @@ Plecs {
           Position      [450, 55]
         } 
         RectangleAnnotation {
-          Position     [220, 615]
+          Position     [220, 570]
           Width        360
-          Height       230
+          Height       140
           CornerRadius 3
           Thickness    2
           PenColor     4283760767
@@ -5173,9 +4906,9 @@ Plecs {
           Position      [75, 515]
         } 
         RectangleAnnotation {
-          Position     [220, 785]
+          Position     [220, 740]
           Width        360
-          Height       110
+          Height       200
           CornerRadius 3
           Thickness    2
           PenColor     4283760767
@@ -5186,7 +4919,7 @@ Plecs {
         Annotation {
           Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
 "weight:600; color:#55007f;\">Battery</span></p></body></html>"
-          Position      [85, 745]
+          Position      [80, 660]
         } 
         RectangleAnnotation {
           Position     [1015, 500]
@@ -5300,7 +5033,7 @@ Plecs {
       Schematic {
         Location      [0, 26; 1536, 780]
         ZoomFactor    0.999997
-        SliderPosition [0, 168]
+        SliderPosition [0, 205]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -6508,7 +6241,7 @@ Plecs {
           Type          SignalMux
           Name          "Mux1"
           Show          off
-          Position      [1005, 575]
+          Position      [1020, 575]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -9039,7 +8772,45 @@ Plecs {
           Type          SignalSelector
           Name          "Selector"
           Show          off
-          Position      [940, 555]
+          Position      [690, 655]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "InputWidth"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputIndices"
+            Value         "[1 1 1 1 ]"
+            Show          off
+          }
+        }
+        Component {
+          Type          SignalSelector
+          Name          "Selector1"
+          Show          off
+          Position      [690, 685]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "InputWidth"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputIndices"
+            Value         "[1 1 1 1]"
+            Show          off
+          }
+        }
+        Component {
+          Type          SignalSelector
+          Name          "Selector2"
+          Show          off
+          Position      [945, 645]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -9056,9 +8827,9 @@ Plecs {
         }
         Component {
           Type          SignalSelector
-          Name          "Selector1"
+          Name          "Selector3"
           Show          off
-          Position      [940, 585]
+          Position      [945, 675]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -9455,30 +9226,15 @@ Plecs {
           Type          Signal
           SrcComponent  "Vout1"
           SrcTerminal   1
+          Points        [635, 605]
           DstComponent  "Simplified Sensing"
           DstTerminal   2
         }
         Connection {
           Type          Signal
-          SrcComponent  "Selector"
-          SrcTerminal   2
-          Points        [975, 555; 975, 570]
-          DstComponent  "Mux1"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Selector1"
-          SrcTerminal   2
-          Points        [975, 585; 975, 580]
-          DstComponent  "Mux1"
-          DstTerminal   3
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Controller"
           SrcTerminal   1
-          Points        [675, 665; 675, 555]
+          Points        [660, 665]
           DstComponent  "Selector"
           DstTerminal   1
         }
@@ -9486,7 +9242,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Controller"
           SrcTerminal   2
-          Points        [695, 675; 695, 585]
+          Points        [660, 675]
           DstComponent  "Selector1"
           DstTerminal   1
         }
@@ -10704,42 +10460,14 @@ Plecs {
             Flipped       off
             LabelPosition south
           }
-          Component {
-            Type          Resistor
-            Name          "R1"
-            Show          off
-            Position      [325, 100]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "R"
-              Value         "1"
-              Show          off
-            }
-          }
-          Component {
-            Type          Resistor
-            Name          "R2"
-            Show          off
-            Position      [330, 295]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "R"
-              Value         "1"
-              Show          off
-            }
-          }
           Connection {
             Type          Wire
             SrcComponent  "Am2"
             SrcTerminal   2
             Points        [210, 100]
             Branch {
-              DstComponent  "R1"
-              DstTerminal   2
+              DstComponent  "Am1"
+              DstTerminal   1
             }
             Branch {
               DstComponent  "Vm2"
@@ -10752,25 +10480,18 @@ Plecs {
             SrcTerminal   1
             Points        [210, 295]
             Branch {
-              DstComponent  "R2"
-              DstTerminal   2
+              Points        [620, 295]
+              Branch {
+                DstComponent  "VLLC-"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "Vm1"
+                DstTerminal   2
+              }
             }
             Branch {
               DstComponent  "Vm2"
-              DstTerminal   2
-            }
-          }
-          Connection {
-            Type          Wire
-            SrcComponent  "VLLC-"
-            SrcTerminal   1
-            Points        [620, 295]
-            Branch {
-              DstComponent  "R2"
-              DstTerminal   1
-            }
-            Branch {
-              DstComponent  "Vm1"
               DstTerminal   2
             }
           }
@@ -10795,18 +10516,11 @@ Plecs {
             DstComponent  "Am2"
             DstTerminal   1
           }
-          Connection {
-            Type          Wire
-            SrcComponent  "R1"
-            SrcTerminal   1
-            DstComponent  "Am1"
-            DstTerminal   1
-          }
         }
       }
       Parameter {
         Variable      "Configuration"
-        Value         "1"
+        Value         "2"
         Show          off
       }
     }
@@ -10960,6 +10674,148 @@ Plecs {
         Type          Input
         Position      [-15, 5]
         Direction     left
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Probe"
+      Show          off
+      Position      [640, 365]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "EVSE/GRID"
+        Path          ""
+        Signals       {"IL1", "VL1"}
+      }
+      Probe {
+        Component     "DCLink"
+        Path          ""
+        Signals       {"Voltage", "Current"}
+      }
+      Probe {
+        Component     "Load"
+        Path          ""
+        Signals       {"Voltage", "Current"}
+      }
+    }
+    Component {
+      Type          SignalDemux
+      Name          "Demux"
+      Show          off
+      Position      [730, 365]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "[3 3]"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalSelector
+      Name          "Selector"
+      Show          off
+      Position      [690, 365]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "InputWidth"
+        Value         "6"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutputIndices"
+        Value         "[1 3 5 2 4 6]"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          off
+      Position      [770, 365]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 850]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAAA4/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAL/AAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHAAAAA"
+"wAAAH0AAAAIAAAAfQAAAAkAAAB9AAAABgAAAH0AAAAHAAAAfQAAAAQAAAB9AAAABQAAAH0AAAeAAA"
+"AACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAMMAAAABAAAAAAAAAH0AAAABAAA"
+"AAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAB"
+"AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABcMAAAABAAAAAAAAA+gAA"
+"AAAKw=="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
+"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+      Axes          "2"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "2"
+      Axis {
+        Name          "Currents"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        AxisLabel     "[ A ]"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Voltages"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        AxisLabel     "[ V ]"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
       }
     }
     Connection {
@@ -11145,12 +11001,12 @@ Plecs {
       SrcTerminal   1
       Points        [745, 150]
       Branch {
-        Points        [730, 150]
-        DstComponent  "plus bat"
+        DstComponent  "plus load"
         DstTerminal   1
       }
       Branch {
-        DstComponent  "plus load"
+        Points        [730, 150]
+        DstComponent  "plus bat"
         DstTerminal   1
       }
     }
@@ -11160,12 +11016,12 @@ Plecs {
       SrcTerminal   2
       Points        [745, 225]
       Branch {
-        Points        [730, 225]
-        DstComponent  "minus bat"
+        DstComponent  "minus load"
         DstTerminal   1
       }
       Branch {
-        DstComponent  "minus load"
+        Points        [730, 225]
+        DstComponent  "minus bat"
         DstTerminal   1
       }
     }
@@ -11269,6 +11125,34 @@ Plecs {
       DstComponent  "Load"
       DstTerminal   3
     }
+    Connection {
+      Type          Signal
+      SrcComponent  "Probe"
+      SrcTerminal   1
+      DstComponent  "Selector"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Selector"
+      SrcTerminal   2
+      DstComponent  "Demux"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux"
+      SrcTerminal   2
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux"
+      SrcTerminal   3
+      DstComponent  "Scope"
+      DstTerminal   2
+    }
     Annotation {
       Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
 ":16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
@@ -11294,4 +11178,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "54Cbs2X2DHcMBR6EGh8VQtyy1Iz5JNuJarglhvECaEA="
+DemoSignature "friT7CUW5VIF5O1cpDFI97M2wOFyLgdxo/vOlJjbcgU="

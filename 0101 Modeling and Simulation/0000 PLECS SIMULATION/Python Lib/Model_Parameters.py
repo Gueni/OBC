@@ -21,9 +21,9 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                      # []  -                   
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {                                                                                            #![]  - 
-                  'tSim'	    	   : 2,                                                                    # []  - 
-                  'tsave_i'	    	: 2,                                                                    # []  - 
-                  'load_tflip'	   : 1,                                                                    # []  -  
+                  'tSim'	    	   : 0.6,                                                                  # []  - 
+                  'tsave_i'	    	: 0.6,                                                                  # []  - 
+                  'load_tflip'	   : 0.6 * 0.5,                                                            # []  -  
                   'maxStep'		   : 1e-3,                                                                 # []  - 
                   'ZeroCross'       : 1000,                                                                 # []  - 
                   'rel_tol'		   : 1e-3                                                                  # []  - 
@@ -41,6 +41,7 @@ ToFile      =  {                                                                
                   'tsave' 	    	   : Sim_param['tSim']-Sim_param['tsave_i']                                # []  - 
                }  
 scopes      =  [                                                                                            #![]  - 
+				      "OBC/Scope",                                                                              # []  - 
 				      "OBC/Scopes/grid_scope",                                                                  # []  - 
 				      "OBC/Scopes/EMI_scope",                                                                   # []  -                          
 				      "OBC/Scopes/DCLink_scope",                                                                # []  -                             
@@ -61,15 +62,17 @@ scopes      =  [                                                                
 				      "OBC/Scopes/PFC output busbar",                                                           # []  - 
                   "OBC/Scopes/PFC choke vs grid",                                                           # []  - 
                   "OBC/Scopes/grid vs filter",                                                              # []  - 
-                  "OBC/Scopes/Load_scope"                                                                   # []  -                
-                           
+                  "OBC/Scopes/load_scope",                                                                  # []  -                
+                  "OBC/Scopes/relays",                                                                      # []  -                
+                  "OBC/Scopes/battery"                                                                      # []  -                
+
                ]	
 PFC_glb     =  {                                                                                            #![]  - 
-                  'L'               :  100e-6,                                                               # []  - 
+                  'L'               :  50e-6,                                                               # []  - 
                   'Rbusin'          :  1e-2,                                                                # []  - 
                   'Rbusout'         :  1e-2,                                                                # []  - 
                   'Cout'            :  {                                                                    # []  - 
-                                             'Config'		      : 1,                                         # []  - 
+                                             'Config'		      : 6,                                         # []  - 
                                              'Cap_s'    		   : 100e-6,                                    # []  - 
                                              'Resr_s'		      : 19e-9,                                     # []  - 
                                              'Lesl_s'		      : 1e-12,                                     # []  - 
@@ -242,7 +245,7 @@ DCLink      =  {                                                                
                   'ESL'		         : 1e-19,                                                                # []  - 
                   'nPara'		      : 2,                                                                    # []  - 
                   'nSeri'		      : 1,                                                                    # []  - 
-                  'Vinit'		      : 400,                                                                  # []  - 
+                  'Vinit'		      : 0,                                                                  # []  - 
                   'Iinit'		      : 10                                                                    # []  - 
                }
 Load        =  {                                                                                            #![]  - 
@@ -275,7 +278,7 @@ LLC         =  {                                                                
                   'V_DC'            : 200,                                                                  # [V] - DC voltage source.
                   'n_prim'          : 4,                                                                    # []  - primary side turn number.
                   'n_sndry'         : 4,                                                                    # []  - secondary side turn number.
-                  'L_r'             : 1.55e-6,                                                              # [H] - resonant inductor.
+                  'L_r'             : 16.9e-6,                                                              # [H] - resonant inductor.
                   'L_k'             : 1.55e-6,                                                              # [H] - resonant inductor.
                   'L_k_Iinit'       : 0,                                                                    # [H] - resonant inductor.
                   'L_r_Iinit'       : 0,                                                                    # []  - 
@@ -298,7 +301,7 @@ LLC         =  {                                                                
                                       },
                   'C_r'             : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'Cap_s'    		   : 1.2e-9,                                       # []  - 
+                                          'Cap_s'    		   : 30e-9,                                       # []  - 
                                           'Resr_s'		      : 1e-10,                                            # []  - 
                                           'Lesl_s'		      : 1e-10,                                            # []  - 
                                           'Npara'		      : 1,                                            # []  - 
@@ -353,7 +356,7 @@ Thermals    =  {                                                                
                   'rth_Amb'         :  0.09                                                                 # []  - 
                }
 HV_Filter   =  {                                                                                            #![]  - 
-                  'Config'         :  1,                                                                    # []  - 
+                  'Config'         :  2,                                                                    # []  - 
                   'Cy1'            : {                                                                      # []  -                       
                                           'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
@@ -428,7 +431,7 @@ HV_Filter   =  {                                                                
                   'L_DMC'          :  900e-6                                                                # []  - 
             }
 AC_Filter   =  {                                                                                            #![]  - 
-                  'Config'          :  1 ,                                                                  # []  - 
+                  'Config'          :  4 ,                                                                  # []  - 
                   'Cin'             :  1e-6,                                                                # []  - 
                   'L_CMC'           :  1.5e-3,                                                              # []  - 
                   'L_DMC'           :  900e-6,                                                              # []  - 
@@ -438,7 +441,7 @@ AC_Filter   =  {                                                                
                   'Ll'              :  10e-6                                                                # []  -    
                }
 Battery     =  {  
-                  'Config'                    : 1,                                                          # []  -         
+                  'Config'                    : 2,                                                          # []  -         
                   'n_series'                  : 75,                                                         # []  -  number of series-connected cells
                   'n_parallel'                : 5,                                                          # []  -  number of parallel branches
                   'SOC_init'                  : 0.5,                                                        # []  -  initial SOC
@@ -454,11 +457,11 @@ Battery     =  {
                   'cellInternalR'             : 6e-3,                                                       # []  -  internal cell resistance
                   'Rdis'                      : 40,                                                         # []  - 
                   'I_dc'                      : 20,                                                         # []  - 
-                  'Rcell1'                    : 6,                                                          # []  - 
-                  'Rcell2'                    : 6,                                                          # []  - 
-                  'Ccell1'                    : 1e-3,                                                       # []  - 
-                  'Ccell2'                    : 1e-3,                                                       # []  - 
-                  'V_OC1'                     : 300,                                                        # []  - 
+                  'Rcell1'                    : 64,                                                         # []  - 
+                  'Rcell2'                    : 64,                                                         # []  - 
+                  'Ccell1'                    : 0.1 ,                                                       # []  - 
+                  'Ccell2'                    : 0.1,                                                        # []  - 
+                  'V_OC1'                     : 0,                                                          # []  - 
                   'Cdis'                      : {                                                           # []  -                                          
                                                 'Config'		      : 1,                                      # []  - 
                                                 'Cap_s'    		   : 1e-3,                                   # []  - 

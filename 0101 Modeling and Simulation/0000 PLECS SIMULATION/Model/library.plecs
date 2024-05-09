@@ -46340,6 +46340,26 @@ Plecs {
                   Show          off
                 }
               }
+              Component {
+                Type          Constant
+                Name          "PH"
+                Show          on
+                Position      [615, 245]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
             }
           }
           Parameter {
@@ -46354,6 +46374,11 @@ Plecs {
               Path          "BAT/SOC"
               Signals       {"Output"}
             }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
+            }
           }
           MaskProbe {
             Name          "Pack Depleted Charge [Ah]"
@@ -46361,6 +46386,11 @@ Plecs {
               Component     "SOC -> it"
               Path          "BAT"
               Signals       {"Output"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
             }
           }
           MaskProbe {
@@ -46370,6 +46400,11 @@ Plecs {
               Path          "BAT"
               Signals       {"Measured voltage"}
             }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
+            }
           }
           MaskProbe {
             Name          "Pack Current [A]"
@@ -46377,6 +46412,54 @@ Plecs {
               Component     "Am1"
               Path          "BAT"
               Signals       {"Measured current"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
+            }
+          }
+          MaskProbe {
+            Name          "Switches status"
+            Probe {
+              Component     "lbatmod plus"
+              Path          "BAT"
+              Signals       {"Switch position"}
+            }
+            Probe {
+              Component     "lbatmod minus"
+              Path          "BAT"
+              Signals       {"Switch position"}
+            }
+            Probe {
+              Component     "source plus"
+              Path          "BAT"
+              Signals       {"Switch position"}
+            }
+            Probe {
+              Component     "source minus"
+              Path          "BAT"
+              Signals       {"Switch position"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
+            }
+            Probe {
+              Component     "PH"
+              Path          "Pass"
+              Signals       {"Constant"}
             }
           }
         }
@@ -57836,4 +57919,4 @@ Plecs {
     }
   }
 }
-DemoSignature "O0jXNBZ+63BeA87Gno7qaMt5zKjEnjHX1C7I8KIiiTA="
+DemoSignature "1SUX3aBod1YPXv9djvTTbKkGoZe8UtNWDHZAofjV/kY="
