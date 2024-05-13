@@ -1,0 +1,20 @@
+* D:\4 WORKSPACE\24-OBC\OBC\0101 Modeling and Simulation\0001 LT SPICE SIMULATION\Trafo\Trafo.asc
+V5 Vin 0 PULSE(-400 400 0 2u 2u 50u 100u) Rser=0.0001
+L§W2 N003 Vsec 1u Ipk=40 Rser=0 Rpar=0 Cpar=0
+L§W1 0 Vpri 1u Ipk=40 Rser=0 Rpar=0 Cpar=0
+Lm Vpri 0 4.5u Ipk=40 Rser=1e-10 Rpar=0 Cpar=0
+Rc Vpri 0 10
+Rp N001 Vin 0.0001
+Lp N001 Vpri 1e-10 Ipk=40 Rser=0 Rpar=0 Cpar=0
+Rs N002 Vsec 0.001
+Ls N002 Vo 1e-9 Ipk=40 Rser=0 Rpar=0 Cpar=0
+Rs1 N003 0 100E
+C1 0 N003 100E
+R§Load N003 Vo 40
+* Real Trafo Model
+.tran 0 1 0 1e-3
+K1 W1 W2 1
+* Lpri/Lsec = (Npri/Nsec)²
+* Ideal Trafo
+.backanno
+.end
