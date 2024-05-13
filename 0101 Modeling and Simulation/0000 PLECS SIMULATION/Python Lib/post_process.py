@@ -15,14 +15,19 @@ import Model_Parameters as mdl
 import os
 import base64
 from PIL import Image
+import screeninfo
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 def png_to_hex_base64():
-    imghexdata = ''
-    img_path = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
+    imghexdata      = ''
+    img_path        = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
+    screen = screeninfo.get_monitors()[0]
+    screen_width, screen_height = screen.width, screen.height
+    target_width    = int(screen_width * 0.5)  
+    target_height   = int(screen_height * 0.4)  
     try:
         with Image.open(img_path) as img:
-            resized_img = img.resize((1100,490), resample=Image.LANCZOS) #todo : get the size of screen and make a ratio 
+            resized_img = img.resize((target_width, target_height), resample=Image.LANCZOS) #todo : get the size of screen and make a ratio 
             resized_img.save("img.png")
         img.close()
     except IOError:

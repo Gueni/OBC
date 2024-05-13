@@ -349,14 +349,14 @@ Grid        =  {                                                                
                   'Vin'             :  230,                                                                 # []  - 
                   'Ts'              :  0,                                                                   # []  - 
                   'Fgrid'           :  50,                                                                  # []  - 
-                  'Rg'              :  1e-3                                                                 # []  -                                                                                 
+                  'Rg'              :  1e-2                                                                 # []  -                                                                                 
                }
 Thermals    =  {                                                                                            #![]  - 
                   'T_amb'           :  25.0,                                                                # []  - 
                   'rth_Amb'         :  0.09                                                                 # []  - 
                }
 HV_Filter   =  {                                                                                            #![]  - 
-                  'Config'         :  2,                                                                    # []  - 
+                  'Config'         :  3,                                                                    # []  - 
                   'Cy1'            : {                                                                      # []  -                       
                                           'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 

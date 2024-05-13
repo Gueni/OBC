@@ -8083,6 +8083,177 @@ Plecs {
                 DstTerminal   1
               }
             }
+            Name          "Pass load"
+            Schematic {
+              Component {
+                Type          Port
+                Name          "VBAT+"
+                Show          on
+                Position      [340, 70]
+                Direction     right
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "VBAT-"
+                Show          on
+                Position      [340, 215]
+                Direction     right
+                Flipped       on
+                LabelPosition east
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "VDC-"
+                Show          on
+                Position      [95, 215]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Port
+                Name          "VDC+"
+                Show          on
+                Position      [100, 70]
+                Direction     right
+                Flipped       off
+                LabelPosition west
+                Parameter {
+                  Variable      "Index"
+                  Value         "4"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Ammeter
+                Name          "iL1"
+                Show          off
+                Position      [260, 70]
+                Direction     left
+                Flipped       off
+                LabelPosition south
+              }
+              Component {
+                Type          Voltmeter
+                Name          "Vout"
+                Show          off
+                Position      [310, 140]
+                Direction     up
+                Flipped       off
+                LabelPosition west
+              }
+              Component {
+                Type          Port
+                Name          "GND"
+                Show          off
+                Position      [200, 235]
+                Direction     down
+                Flipped       on
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "5"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Resistor
+                Name          "R1"
+                Show          off
+                Position      [200, 140]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "R"
+                  Value         "40"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "VDC-"
+                SrcTerminal   1
+                Points        [200, 215]
+                Branch {
+                  Points        [310, 215]
+                  DstComponent  "Vout"
+                  DstTerminal   2
+                }
+                Branch {
+                  DstComponent  "GND"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "R1"
+                  DstTerminal   2
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "VDC+"
+                SrcTerminal   1
+                Points        [200, 70]
+                Branch {
+                  DstComponent  "iL1"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "R1"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Wire
+                SrcComponent  "iL1"
+                SrcTerminal   2
+                Points        [310, 70]
+                DstComponent  "Vout"
+                DstTerminal   1
+              }
+            }
           }
           Parameter {
             Variable      "Configuration"
@@ -57919,4 +58090,4 @@ Plecs {
     }
   }
 }
-DemoSignature "1SUX3aBod1YPXv9djvTTbKkGoZe8UtNWDHZAofjV/kY="
+DemoSignature "fjEs9e81528MxrYITlyr8ebn+GD7KDe4wudLSYyBDS0="
