@@ -455,16 +455,16 @@ Battery     =  {
                   'cellExponentialCapacity'   : 0.25,                                                       # []  -  cell capacity at end of exponential zone
                   'cellNominalDischargeI'     : 2.3,                                                        # []  -  nominal discharge current for cell
                   'cellInternalR'             : 6e-3,                                                       # []  -  internal cell resistance
-                  'Rdis'                      : 40,                                                         # []  - 
-                  'I_dc'                      : 20,                                                         # []  - 
-                  'Rcell1'                    : 64,                                                         # []  - 
-                  'Rcell2'                    : 64,                                                         # []  - 
-                  'Ccell1'                    : 0.1 ,                                                       # []  - 
-                  'Ccell2'                    : 0.1,                                                        # []  - 
+                  'Rdis'                      : 0,                                                         # []  - 
+                  'I_dc'                      : 0,                                                         # []  - 
+                  'Rcell1'                    : 0,                                                         # []  - 
+                  'Rcell2'                    : 0,                                                         # []  - 
+                  'Ccell1'                    : 0,                                                       # []  - 
+                  'Ccell2'                    : 0,                                                        # []  - 
                   'V_OC1'                     : 0,                                                          # []  - 
                   'Cdis'                      : {                                                           # []  -                                          
                                                 'Config'		      : 1,                                      # []  - 
-                                                'Cap_s'    		   : 1e-3,                                   # []  - 
+                                                'Cap_s'    		   : 0,                                   # []  - 
                                                 'Resr_s'		      : 0,                                      # []  - 
                                                 'Lesl_s'		      : 0,                                      # []  - 
                                                 'Npara'		      : 1,                                      # []  - 
