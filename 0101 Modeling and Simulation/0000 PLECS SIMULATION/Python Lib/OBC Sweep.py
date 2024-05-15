@@ -28,7 +28,7 @@ for i in range(len(L_CMC)):
     # plcsim.ClearAllTraces(mdlvar['scopes'])     
     plcsim.Set_sim_param()
     plcsim.launch_sim(modelname=modelname)
-    plcsim.HoldAllTraces(mdlvar['scopes'])
+    # plcsim.HoldAllTraces(mdlvar['scopes'])
     plcsim.saveAllTraces(mdlvar['scopes'],mdl,mdlvar['ToFile']['Traces'])
 post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------------------------------------------------------------------------------------------------------------
