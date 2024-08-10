@@ -5033,7 +5033,7 @@ Plecs {
       Schematic {
         Location      [0, 26; 1536, 780]
         ZoomFactor    0.999997
-        SliderPosition [0, 205]
+        SliderPosition [0, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -6247,7 +6247,7 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "Width"
-            Value         "[8 8]"
+            Value         "[4 4]"
             Show          off
           }
         }
@@ -8764,7 +8764,7 @@ Plecs {
           LabelPosition west
           Probe {
             Component     "Vm1"
-            Path          ""
+            Path          "DUAL LLC/Enable/LLC1/LLC Async"
             Signals       {"Measured voltage"}
           }
         }
@@ -8803,44 +8803,6 @@ Plecs {
           Parameter {
             Variable      "OutputIndices"
             Value         "[1 1 1 1]"
-            Show          off
-          }
-        }
-        Component {
-          Type          SignalSelector
-          Name          "Selector2"
-          Show          off
-          Position      [945, 645]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "InputWidth"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "OutputIndices"
-            Value         "[1 1 1 1 1 1 1 1]"
-            Show          off
-          }
-        }
-        Component {
-          Type          SignalSelector
-          Name          "Selector3"
-          Show          off
-          Position      [945, 675]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "InputWidth"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "OutputIndices"
-            Value         "[1 1 1 1 1 1 1 1]"
             Show          off
           }
         }
@@ -9244,6 +9206,22 @@ Plecs {
           Points        [660, 675]
           DstComponent  "Selector1"
           DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Selector"
+          SrcTerminal   2
+          Points        [860, 655; 860, 570]
+          DstComponent  "Mux1"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Selector1"
+          SrcTerminal   2
+          Points        [865, 685; 865, 580]
+          DstComponent  "Mux1"
+          DstTerminal   3
         }
         RectangleAnnotation {
           Position     [625, 280]
@@ -9854,7 +9832,7 @@ Plecs {
             }
             Parameter {
               Variable      "Configuration"
-              Value         "1"
+              Value         "2"
               Show          off
             }
             Terminal {
@@ -9910,7 +9888,7 @@ Plecs {
             }
             Parameter {
               Variable      "Configuration"
-              Value         "1"
+              Value         "2"
               Show          off
             }
             Terminal {
@@ -10092,7 +10070,7 @@ Plecs {
             LabelPosition south
             Parameter {
               Variable      "Width"
-              Value         "[8 8]"
+              Value         "[4 4]"
               Show          off
             }
           }
@@ -10519,7 +10497,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "2"
+        Value         "1"
         Show          off
       }
     }
@@ -10740,17 +10718,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 26; 1536, 811]
+      Location      [0, 26; 1536, 815]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAAA4/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALOAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALTAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"QAAAH0AAAAIAAAAfQAAAAMAAAB9AAAAAgAAAH0AAAABAAAAfQAAAAcAAAB9AAAABgAAAH0AAAAFAA"
-"AAfQAAAAQAAAB9AAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADDAAA"
+"QAAAH0AAAAIAAAAfQAAAAcAAAB9AAAABgAAAH0AAAAFAAAAfQAAAAQAAAB9AAAAAwAAAH0AAAACAA"
+"AAfQAAAAEAAAB9AAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADDAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "Aa9AAAAAQAAAAAAAAPoAAAAACs="
@@ -11068,34 +11046,6 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "minus bat"
-      SrcTerminal   3
-      Points        [670, 225]
-      Branch {
-        DstComponent  "HV DC FILTER"
-        DstTerminal   2
-      }
-      Branch {
-        DstComponent  "Vm1"
-        DstTerminal   2
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "Vm1"
-      SrcTerminal   1
-      Points        [670, 150]
-      Branch {
-        DstComponent  "Am1"
-        DstTerminal   2
-      }
-      Branch {
-        DstComponent  "plus bat"
-        DstTerminal   3
-      }
-    }
-    Connection {
-      Type          Wire
       SrcComponent  "HV DC FILTER"
       SrcTerminal   1
       DstComponent  "Am1"
@@ -11152,6 +11102,22 @@ Plecs {
       DstComponent  "Scope"
       DstTerminal   2
     }
+    Connection {
+      Type          Wire
+      SrcComponent  "Vm1"
+      SrcTerminal   1
+      Points        [670, 150]
+      DstComponent  "Am1"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "HV DC FILTER"
+      SrcTerminal   2
+      Points        [670, 225]
+      DstComponent  "Vm1"
+      DstTerminal   2
+    }
     Annotation {
       Name          "<html><body>\n<h1 style=\" margin-top:24px; margin-bottom"
 ":16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
@@ -11177,4 +11143,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "Sx9XV+GxXmjbm+vKIYONN2NIhcQEC+fxNYTBK+e1L7Q="
+DemoSignature "Y2/DTtjiRdmWIcbHw+lxP+3CJEmBcOH3fO03OnWJASU="

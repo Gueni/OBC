@@ -40281,130 +40281,6 @@ Plecs {
                 }
               }
               Component {
-                Type          Reference
-                SrcComponent  "library/Power Components/LLC/LLC/RC1"
-                Name          "RC5"
-                Show          on
-                Position      [820, 210]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Frame         [-5, -15; 5, 15]
-                Parameter {
-                  Variable      "RCS"
-                  Value         "LLC.RC5"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "LLC.RC5.Config"
-                  Show          off
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, -20]
-                  Direction     up
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, 20]
-                  Direction     down
-                }
-              }
-              Component {
-                Type          Reference
-                SrcComponent  "library/Power Components/LLC/LLC/RC1"
-                Name          "RC6"
-                Show          on
-                Position      [995, 210]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Frame         [-5, -15; 5, 15]
-                Parameter {
-                  Variable      "RCS"
-                  Value         "LLC.RC6"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "LLC.RC6.Config"
-                  Show          off
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, -20]
-                  Direction     up
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, 20]
-                  Direction     down
-                }
-              }
-              Component {
-                Type          Reference
-                SrcComponent  "library/Power Components/LLC/LLC/RC1"
-                Name          "RC7"
-                Show          on
-                Position      [820, 390]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Frame         [-5, -15; 5, 15]
-                Parameter {
-                  Variable      "RCS"
-                  Value         "LLC.RC7"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "LLC.RC7.Config"
-                  Show          off
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, -20]
-                  Direction     up
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, 20]
-                  Direction     down
-                }
-              }
-              Component {
-                Type          Reference
-                SrcComponent  "library/Power Components/LLC/LLC/RC1"
-                Name          "RC8"
-                Show          on
-                Position      [995, 390]
-                Direction     up
-                Flipped       off
-                LabelPosition east
-                Frame         [-5, -15; 5, 15]
-                Parameter {
-                  Variable      "RCS"
-                  Value         "LLC.RC8"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "LLC.RC8.Config"
-                  Show          off
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, -20]
-                  Direction     up
-                }
-                Terminal {
-                  Type          Port
-                  Position      [0, 20]
-                  Direction     down
-                }
-              }
-              Component {
                 Type          From
                 Name          "From3"
                 Show          off
@@ -42209,32 +42085,15 @@ Plecs {
               }
               Connection {
                 Type          Wire
-                SrcComponent  "SRHS1"
-                SrcTerminal   3
-                Points        [790, 235]
+                SrcComponent  "Tr"
+                SrcTerminal   2
+                Points        [710, 280; 710, 260; 790, 260]
                 Branch {
-                  Points        [790, 260]
-                  Branch {
-                    Points        [790, 365]
-                    Branch {
-                      DstComponent  "SRLS1"
-                      DstTerminal   2
-                    }
-                    Branch {
-                      Points        [820, 365]
-                      DstComponent  "RC7"
-                      DstTerminal   1
-                    }
-                  }
-                  Branch {
-                    Points        [710, 260; 710, 280]
-                    DstComponent  "Tr"
-                    DstTerminal   2
-                  }
+                  DstComponent  "SRHS1"
+                  DstTerminal   3
                 }
                 Branch {
-                  Points        [820, 235]
-                  DstComponent  "RC5"
+                  DstComponent  "SRLS1"
                   DstTerminal   2
                 }
               }
@@ -42246,28 +42105,13 @@ Plecs {
                 Branch {
                   Points        [965, 440]
                   Branch {
-                    Points        [790, 440; 790, 415]
-                    Branch {
-                      DstComponent  "SRLS1"
-                      DstTerminal   3
-                    }
-                    Branch {
-                      Points        [820, 415]
-                      DstComponent  "RC7"
-                      DstTerminal   2
-                    }
+                    Points        [790, 440]
+                    DstComponent  "SRLS1"
+                    DstTerminal   3
                   }
                   Branch {
-                    Points        [965, 415]
-                    Branch {
-                      DstComponent  "SRLS2"
-                      DstTerminal   3
-                    }
-                    Branch {
-                      Points        [995, 415]
-                      DstComponent  "RC8"
-                      DstTerminal   2
-                    }
+                    DstComponent  "SRLS2"
+                    DstTerminal   3
                   }
                 }
                 Branch {
@@ -42363,63 +42207,31 @@ Plecs {
               }
               Connection {
                 Type          Wire
-                SrcComponent  "SRLS2"
-                SrcTerminal   2
-                Points        [965, 365]
+                SrcComponent  "Tr"
+                SrcTerminal   4
+                Points        [710, 310; 710, 330; 965, 330]
                 Branch {
-                  Points        [965, 330]
-                  Branch {
-                    Points        [965, 235]
-                    Branch {
-                      DstComponent  "SRHS2"
-                      DstTerminal   3
-                    }
-                    Branch {
-                      Points        [995, 235]
-                      DstComponent  "RC6"
-                      DstTerminal   2
-                    }
-                  }
-                  Branch {
-                    Points        [710, 330; 710, 310]
-                    DstComponent  "Tr"
-                    DstTerminal   4
-                  }
+                  DstComponent  "SRLS2"
+                  DstTerminal   2
                 }
                 Branch {
-                  Points        [995, 365]
-                  DstComponent  "RC8"
-                  DstTerminal   1
+                  DstComponent  "SRHS2"
+                  DstTerminal   3
                 }
               }
               Connection {
                 Type          Wire
-                SrcComponent  "SRHS1"
-                SrcTerminal   2
-                Points        [790, 185]
+                SrcComponent  "Am1"
+                SrcTerminal   1
+                Points        [965, 160]
                 Branch {
-                  Points        [790, 160; 965, 160]
-                  Branch {
-                    DstComponent  "Am1"
-                    DstTerminal   1
-                  }
-                  Branch {
-                    Points        [965, 185]
-                    Branch {
-                      DstComponent  "SRHS2"
-                      DstTerminal   2
-                    }
-                    Branch {
-                      Points        [995, 185]
-                      DstComponent  "RC6"
-                      DstTerminal   1
-                    }
-                  }
+                  Points        [790, 160]
+                  DstComponent  "SRHS1"
+                  DstTerminal   2
                 }
                 Branch {
-                  Points        [820, 185]
-                  DstComponent  "RC5"
-                  DstTerminal   1
+                  DstComponent  "SRHS2"
+                  DstTerminal   2
                 }
               }
               Connection {
@@ -42652,7 +42464,7 @@ Plecs {
                 Type          Input
                 Name          "Gates"
                 Show          off
-                Position      [185, 80]
+                Position      [200, 60]
                 Direction     right
                 Flipped       off
                 LabelPosition west
@@ -42721,20 +42533,6 @@ Plecs {
                 Parameter {
                   Variable      "i_init"
                   Value         "LLC.L_k_Iinit"
-                  Show          off
-                }
-              }
-              Component {
-                Type          SignalDemux
-                Name          "Demux"
-                Show          off
-                Position      [225, 80]
-                Direction     right
-                Flipped       on
-                LabelPosition south
-                Parameter {
-                  Variable      "Width"
-                  Value         "[4 4]"
                   Show          off
                 }
               }
@@ -50083,20 +49881,6 @@ Plecs {
                 }
               }
               Component {
-                Type          SignalDemux
-                Name          "Demux2"
-                Show          off
-                Position      [270, 100]
-                Direction     right
-                Flipped       on
-                LabelPosition south
-                Parameter {
-                  Variable      "Width"
-                  Value         "4"
-                  Show          off
-                }
-              }
-              Component {
                 Type          Goto
                 Name          "Goto2"
                 Show          off
@@ -50126,82 +49910,6 @@ Plecs {
                 Parameter {
                   Variable      "Tag"
                   Value         "LS2"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "2"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Goto
-                Name          "Goto4"
-                Show          off
-                Position      [300, 85]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "SRHS1"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "2"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Goto
-                Name          "Goto5"
-                Show          off
-                Position      [350, 95]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "SRHS2"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "2"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Goto
-                Name          "Goto6"
-                Show          off
-                Position      [400, 105]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "SRLS1"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Visibility"
-                  Value         "2"
-                  Show          off
-                }
-              }
-              Component {
-                Type          Goto
-                Name          "Goto7"
-                Show          off
-                Position      [450, 115]
-                Direction     right
-                Flipped       off
-                LabelPosition south
-                Parameter {
-                  Variable      "Tag"
-                  Value         "SRLS2"
                   Show          off
                 }
                 Parameter {
@@ -59307,13 +59015,6 @@ Plecs {
               }
               Connection {
                 Type          Signal
-                SrcComponent  "Gates"
-                SrcTerminal   1
-                DstComponent  "Demux"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
                 SrcComponent  "From1"
                 SrcTerminal   1
                 DstComponent  "LS1"
@@ -59399,22 +59100,6 @@ Plecs {
               }
               Connection {
                 Type          Signal
-                SrcComponent  "Demux"
-                SrcTerminal   2
-                Points        [245, 75; 245, 60]
-                DstComponent  "Demux1"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux"
-                SrcTerminal   3
-                Points        [245, 85; 245, 100]
-                DstComponent  "Demux2"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
                 SrcComponent  "Demux1"
                 SrcTerminal   2
                 DstComponent  "Goto"
@@ -59439,34 +59124,6 @@ Plecs {
                 SrcComponent  "Demux1"
                 SrcTerminal   5
                 DstComponent  "Goto3"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux2"
-                SrcTerminal   2
-                DstComponent  "Goto4"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux2"
-                SrcTerminal   3
-                DstComponent  "Goto5"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux2"
-                SrcTerminal   4
-                DstComponent  "Goto6"
-                DstTerminal   1
-              }
-              Connection {
-                Type          Signal
-                SrcComponent  "Demux2"
-                SrcTerminal   5
-                DstComponent  "Goto7"
                 DstTerminal   1
               }
               Connection {
@@ -59529,6 +59186,13 @@ Plecs {
                   DstComponent  "Tr_mid"
                   DstTerminal   5
                 }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gates"
+                SrcTerminal   1
+                DstComponent  "Demux1"
+                DstTerminal   1
               }
             }
             Name          "Pass"
@@ -76569,4 +76233,4 @@ Plecs {
     }
   }
 }
-DemoSignature "+ipUFGSUwvyc5AdqhsG0864cvCp00eZGlYGx3otOseI="
+DemoSignature "YkomhBZaWTKkCmeycU7C9KPAZ02EIN43SECPTzmbrTM="

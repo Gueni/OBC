@@ -28,7 +28,7 @@ class simpy:
             self.server.plecs.scope(val,'ClearTraces')
 
     def Set_sim_param(self):
-        self.opts =  {'ModelVars' :  self.modelvar} #! implement parallel sim from plexim 
+        self.opts =  {'ModelVars' :  self.modelvar} 
 
     def launch_sim(self,modelname):
         self.server.plecs.simulate(modelname, self.opts)

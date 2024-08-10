@@ -26,7 +26,7 @@ Sim_param 	=  {                                                                 
                   'load_tflip'	   : 0.6 * 0.5,                                                            # []  -  
                   'maxStep'		   : 1e-3,                                                                 # []  - 
                   'ZeroCross'       : 1000,                                                                 # []  - 
-                  'rel_tol'		   : 1e-3                                                                  # []  - 
+                  'rel_tol'		   : 1e-7                                                                  # []  - 
                }
 ToFile      =  {                                                                                            #![]  - 
                   'ToFile_path'		: (os.path.join(current_directory,                                      # []  - 
@@ -272,20 +272,30 @@ RCSnub      =  {                                                                
                                           'Iinit'		      : 0                                             # []  -                 
                                           }
                }
+Diode       =  {
+               
+                  'diode'		         : 'file:C4D40120D',                                            # []     - diode thermal description       
+                  'ron_diode'		      : 1,                                                           # [V]    - diode forward voltage    
+                  'vf_diode'		      : 1.4,                                                         # [V]    - diode forward voltage
+                  'rth_ch_diode'		   : 0.5,                                                         # [K/W]  - thermal resistance case-heatsink (grease)       
+                  'num_par_diode'		: 4,                                                           # []     - Number of parallel diodes      
+                  'Rth'		            : 0.1,                                                         # [K/W]  - Heatsink to ambient thermal resistance    
+                  't_init'		         : 25                                                           # [C]    - initial temperature   
+               }
 LLC         =  {                                                                                            #![]  - 
                   'R1'              : 4700/4,                                                               # []  -         
                   'R2'              : 160/24,                                                               # []  - 
                   'V_DC'            : 200,                                                                  # [V] - DC voltage source.
                   'n_prim'          : 4,                                                                    # []  - primary side turn number.
                   'n_sndry'         : 4,                                                                    # []  - secondary side turn number.
-                  'L_r'             : 16.9e-6,                                                              # [H] - resonant inductor.
+                  'L_r'             : 1.55e-6,                                                              # [H] - resonant inductor.
                   'L_k'             : 1.55e-6,                                                              # [H] - resonant inductor.
                   'L_k_Iinit'       : 0,                                                                    # [H] - resonant inductor.
                   'L_r_Iinit'       : 0,                                                                    # []  - 
                   'Trafo'           : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'n_prim'    		: 1,                                            # []  - 
-                                          'n_sndry'		   : 1,                                            # []  - 
+                                          'n_prim'    		: 4,                                            # []  - 
+                                          'n_sndry'		   : 4,                                            # []  - 
                                           'Imaginit'		   : 0,                                            # []  - 
                                           'Lp'		         : 1e-9,                                         # []  - 
                                           'Rp'		         : 1e-2,                                         # []  - 
@@ -301,7 +311,7 @@ LLC         =  {                                                                
                                       },
                   'C_r'             : {                                                                     # []  -  
                                           'Config'		      : 1,                                            # []  - 
-                                          'Cap_s'    		   : 30e-9,                                       # []  - 
+                                          'Cap_s'    		   : 1.2e-6,                                       # []  - 
                                           'Resr_s'		      : 1e-10,                                            # []  - 
                                           'Lesl_s'		      : 1e-10,                                            # []  - 
                                           'Npara'		      : 1,                                            # []  - 
@@ -326,13 +336,11 @@ LLC         =  {                                                                
                   'RC2'             :  RCSnub,                                                              # []  -    
                   'RC3'             :  RCSnub,                                                              # []  -    
                   'RC4'             :  RCSnub,                                                              # []  -    
-                  'RC5'             :  RCSnub,                                                              # []  -    
-                  'RC6'             :  RCSnub,                                                              # []  -    
-                  'RC7'             :  RCSnub,                                                              # []  -    
-                  'RC8'             :  RCSnub                                                               # []  -  
+                  'HS3'             :  Diode,                                                               # []  -    
+                  'LS3'             :  Diode                                                                # []  -  
                }
 LLC_CTRL    =  {                                                                                            #![]  - 
-                  'Vref'    		   :  400 ,                                                                # []  - 
+                  'Vref'    		   : 400 ,                                                                 # []  - 
                   'sys_clk'         : 100e6,	                                                               # [Hz] - 100 MHz
                   'max_period'      : 2000,                                                                 # Maximum system period allowed
                   'min_period'      : 200,	                                                               # Minimum system period allowed
@@ -356,7 +364,7 @@ Thermals    =  {                                                                
                   'rth_Amb'         :  0.09                                                                 # []  - 
                }
 HV_Filter   =  {                                                                                            #![]  - 
-                  'Config'         :  3,                                                                    # []  - 
+                  'Config'         :  2,                                                                    # []  - 
                   'Cy1'            : {                                                                      # []  -                       
                                           'Config'		      : 4,                                            # []  - 
                                           'Cap_s'    		   : 1e-3,                                         # []  - 
