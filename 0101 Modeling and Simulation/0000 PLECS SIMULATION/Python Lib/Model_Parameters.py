@@ -68,12 +68,12 @@ scopes      =  [                                                                
 
                ]	
 PFC_glb     =  {                                                                                            #![]  - 
-                  'L'               :  50e-6,                                                               # []  - 
-                  'Rbusin'          :  1e-2,                                                                # []  - 
-                  'Rbusout'         :  1e-2,                                                                # []  - 
+                  'L'               :  1.5e-3,                                                              # []  - 
+                  'Rbusin'          :  0.001,                                                               # []  - 
+                  'Rbusout'         :  0.001,                                                               # []  - 
                   'Cout'            :  {                                                                    # []  - 
-                                             'Config'		      : 6,                                         # []  - 
-                                             'Cap_s'    		   : 100e-6,                                    # []  - 
+                                             'Config'		      : 1,                                         # []  - 
+                                             'Cap_s'    		   : 400e-6,                                    # []  - 
                                              'Resr_s'		      : 19e-9,                                     # []  - 
                                              'Lesl_s'		      : 1e-12,                                     # []  - 
                                              'Npara'		      : 1,                                         # []  - 

@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1.49862
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -1268,7 +1268,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "2"
+        Value         "1"
         Show          off
       }
       Terminal {
@@ -1361,6 +1361,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
+      CommentOut    DisabledOpenCircuit
       Frame         [-70, -15; 70, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -1370,9 +1371,9 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 26; 1536, 780]
+        Location      [10, 30; 1546, 784]
         ZoomFactor    1.14437
-        SliderPosition [67, 463]
+        SliderPosition [67, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1745,9 +1746,9 @@ Plecs {
             Path          ""
             Signals       {"Input Voltage", "Input Current", "Output Voltage", ""
 "Gate Signals", "Input Choke", "SW Voltages", "SW Currents", "SW Junction Temp"
-"erature", "Device Switching Losses", "Device Conduction Losses", "Output Capa"
-"citor Voltage", "Output Capacitor Current", "Output Capacitor Dissipation", ""
-"Input Busbar Resistance", "Output Busbar Resistance"}
+"erature", "SW Case Temperature", "Device Switching Losses", "Device Conductio"
+"n Losses", "Output Capacitor Voltage", "Output Capacitor Current", "Output Ca"
+"pacitor Dissipation", "Input Busbar Resistance", "Output Busbar Resistance"}
           }
         }
         Component {
@@ -2246,20 +2247,20 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 823]
+          Location      [0, 23; 1536, 796]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"AsPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMQ"
+"AsPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQD/////QAAA2gAAAeAAAAAlgAAB4AAAAOn"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAACAAAAG0AAAAJAAAAbQAAAAIAAABuAAAAAwAAAG0AAAABAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
-"AEAAAAbQAAAAUAAABtAAAHgAAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAG"
-"pAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAXXAAAAAQAAAAAAAAPoAAAAACs="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHA"
+"AAACAAAAG0AAAAJAAAAbQAAAAMAAABtAAAABgAAAG0AAAAHAAAAbQAAAAQAAABtAAAABQAAAG0AAA"
+"eAAAAACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAakAAAABAAAAAAAAAG0AAAA"
+"BAAAAAAAAAG4AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAA"
+"AAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABPwAAAABAAAAAAAAA"
+"+gAAAAAKw=="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0"
@@ -5026,8 +5027,8 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.873844
-        SliderPosition [0, -1]
+        ZoomFactor    1.71498
+        SliderPosition [431, 249]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -6126,7 +6127,7 @@ Plecs {
           Type          From
           Name          "From9"
           Show          off
-          Position      [910, 260]
+          Position      [910, 245]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -6145,7 +6146,7 @@ Plecs {
           Type          From
           Name          "From10"
           Show          off
-          Position      [910, 245]
+          Position      [910, 275]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -6164,7 +6165,7 @@ Plecs {
           Type          From
           Name          "From11"
           Show          off
-          Position      [910, 275]
+          Position      [910, 260]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -8800,6 +8801,67 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          Scope
+          Name          "Scope"
+          Show          on
+          Position      [1055, 305]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 26; 1536, 815]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAA"
+"AsPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMG"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHA"
+"AAACAAAAH0AAAAJAAAAfQAAAAMAAAB9AAAABgAAAH0AAAAHAAAAfQAAAAQAAAB9AAAABQAAAH0AAA"
+"eAAAAACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAMcAAAABAAAAAAAAAH0AAAA"
+"BAAAAAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAA"
+"AAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABb8AAAABAAAAAAAAA"
+"+gAAAAAKw=="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
+          TimeRange     "0.0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency / Hz"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "CTRL_PFC.Vref"
@@ -9091,14 +9153,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "From11"
-          SrcTerminal   1
-          Points        [935, 275]
-          DstComponent  "Mux"
-          DstTerminal   5
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Mux1"
           SrcTerminal   1
           DstComponent  "g_LLC"
@@ -9199,23 +9253,39 @@ Plecs {
           Type          Signal
           SrcComponent  "Mux"
           SrcTerminal   1
-          DstComponent  "g_PFC"
-          DstTerminal   1
+          Points        [985, 250]
+          Branch {
+            DstComponent  "g_PFC"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [985, 305]
+            DstComponent  "Scope"
+            DstTerminal   1
+          }
         }
         Connection {
           Type          Signal
-          SrcComponent  "From10"
+          SrcComponent  "From9"
           SrcTerminal   1
           DstComponent  "Mux"
           DstTerminal   3
         }
         Connection {
           Type          Signal
-          SrcComponent  "From9"
+          SrcComponent  "From11"
           SrcTerminal   1
           Points        [930, 260; 930, 255]
           DstComponent  "Mux"
           DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From10"
+          SrcTerminal   1
+          Points        [935, 275]
+          DstComponent  "Mux"
+          DstTerminal   5
         }
         RectangleAnnotation {
           Position     [625, 280]
@@ -11276,4 +11346,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "TKUYr/+Cr5Vsjo3LPM39dQB7x6q/WSy8VuFbVYg4WMo="
+DemoSignature "G5nBSlV/w+CWyCm+tA1VH3Ztc6K9A79ZTCGxk+jsnf4="
