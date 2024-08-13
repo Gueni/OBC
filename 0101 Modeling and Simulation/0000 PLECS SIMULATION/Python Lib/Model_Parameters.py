@@ -21,9 +21,9 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                      # []  -                   
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {                                                                                            #![]  - 
-                  'tSim'	    	   : 0.6,                                                                  # []  - 
-                  'tsave_i'	    	: 0.6,                                                                  # []  - 
-                  'load_tflip'	   : 0.6 * 0.5,                                                            # []  -  
+                  'tSim'	    	   : 1,                                                                  # []  - 
+                  'tsave_i'	    	: 1,                                                                  # []  - 
+                  'load_tflip'	   : 1 * 0.5,                                                            # []  -  
                   'maxStep'		   : 1e-3,                                                                 # []  - 
                   'ZeroCross'       : 1000,                                                                 # []  - 
                   'rel_tol'		   : 1e-7                                                                  # []  - 
@@ -72,7 +72,7 @@ PFC_glb     =  {                                                                
                   'Rbusin'          :  0.001,                                                               # []  - 
                   'Rbusout'         :  0.001,                                                               # []  - 
                   'Cout'            :  {                                                                    # []  - 
-                                             'Config'		      : 1,                                         # []  - 
+                                             'Config'		      : 6,                                         # []  - 
                                              'Cap_s'    		   : 400e-6,                                    # []  - 
                                              'Resr_s'		      : 19e-9,                                     # []  - 
                                              'Lesl_s'		      : 1e-12,                                     # []  - 
@@ -239,8 +239,8 @@ CTRL_PFC    =  {                                                                
                   'Rv_Ki'           :  800                                                                  # []  - 
                }
 DCLink      =  {                                                                                            #![]  - 
-                  'Config'		      : 6,                                                                    # []  - 
-                  'Cdc'    		   : 100e-6,                                                               # []  -  
+                  'Config'		      : 1,                                                                    # []  - 
+                  'Cdc'    		   : 500e-6,                                                               # []  -  
                   'ESR'		         : 19e-9,                                                                # []  - 
                   'ESL'		         : 1e-19,                                                                # []  - 
                   'nPara'		      : 2,                                                                    # []  - 
