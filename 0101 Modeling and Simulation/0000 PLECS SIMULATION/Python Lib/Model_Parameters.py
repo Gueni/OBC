@@ -10,7 +10,7 @@ import os
 from datetime import datetime, timezone
 #?----------------------------------------------------------------------------------------------------------------------------------------
 utc_now             = datetime.now(timezone.utc)                                                            # []  - 
-utc_numeric         = utc_now.strftime("#Y#m#d#H#M#S")                                                      # []  - 
+utc_numeric         = utc_now.strftime("%H%M%S")                                                            # []  - 
 current_directory   = os.getcwd()                                                                           # []  - 
 sim_idx             = 0                                                                                     # []  - 
 Traces_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces/"           # []  - 
@@ -21,9 +21,9 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                      # []  -                   
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	=  {                                                                                            #![]  - 
-                  'tSim'	    	   : 1,                                                                  # []  - 
-                  'tsave_i'	    	: 1,                                                                  # []  - 
-                  'load_tflip'	   : 1 * 0.5,                                                            # []  -  
+                  'tSim'	    	   : 0.4,                                                                  # []  - 
+                  'tsave_i'	    	: 0.1,                                                                    # []  - 
+                  'load_tflip'	   : 0.4 * 0.5,                                                            # []  -  
                   'maxStep'		   : 1e-3,                                                                 # []  - 
                   'ZeroCross'       : 1000,                                                                 # []  - 
                   'rel_tol'		   : 1e-7                                                                  # []  - 
@@ -240,13 +240,13 @@ CTRL_PFC    =  {                                                                
                }
 DCLink      =  {                                                                                            #![]  - 
                   'Config'		      : 1,                                                                    # []  - 
-                  'Cdc'    		   : 500e-6,                                                               # []  -  
+                  'Cdc'    		   : 9*100e-6,                                                             # []  -  
                   'ESR'		         : 19e-9,                                                                # []  - 
                   'ESL'		         : 1e-19,                                                                # []  - 
-                  'nPara'		      : 2,                                                                    # []  - 
+                  'nPara'		      : 1,                                                                    # []  - 
                   'nSeri'		      : 1,                                                                    # []  - 
-                  'Vinit'		      : 0,                                                                  # []  - 
-                  'Iinit'		      : 10                                                                    # []  - 
+                  'Vinit'		      : 0,                                                                    # []  - 
+                  'Iinit'		      : 1e-3                                                                     # []  - 
                }
 Load        =  {                                                                                            #![]  - 
                   'Config'		      : 1,                                                                    # []  - 

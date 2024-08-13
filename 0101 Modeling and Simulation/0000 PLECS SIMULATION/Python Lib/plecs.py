@@ -8,6 +8,8 @@
 #?                              
 #?----------------------------------------------------------------------------------------------------------------------------------------
 import xmlrpc.client
+import subprocess
+import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 class simpy:
     
@@ -16,8 +18,41 @@ class simpy:
         self.port       =   port
         self.path       =   path
         self.modelvar   =   modelvar
-    
+
+    def is_running(self,process_name):
+        try:
+            # For Windows
+            tasks = os.popen('tasklist').read().strip().split('\n')
+            for task in tasks:
+                if process_name.lower() in task.lower():
+                    return True
+            return False
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
+
+    def find_executable(self,exe_name):
+        documents_folder = os.path.expanduser("~/Documents")
+        for root, dirs, files in os.walk(documents_folder):
+            if exe_name in files:
+                return os.path.join(root, exe_name)
+        return None
+
+    def launch_if_not_running(self):
+        exe_name = "PLECS.exe"
+        exe_path = self.find_executable(exe_name)
+        if not exe_path:
+            print(f"Could not find {exe_name} on your system.")
+            return
+        
+        if not self.is_running(exe_name):
+            subprocess.Popen(exe_path)
+            print(f"{exe_name} has been launched from {exe_path}.")
+        else:
+            print(f"{exe_name} is already running.")
+
     def rpc_connect(self):
+        self.launch_if_not_running()
         self.server =   xmlrpc.client.ServerProxy(self.url + ':' + self.port)
 
     def load_model(self):
@@ -53,6 +88,7 @@ class simpy:
             current_keys = parent_keys + [key]
             if isinstance(value, dict):
                 self.log_parameters(file, value, current_keys)
+                file.write("---------------------------------------------------------------------------------------------------\n")
             else:
                 parent_path = "[" + "][".join(current_keys) + "]"
                 file.write("{:<40}= {}\n".format(parent_path, value))
