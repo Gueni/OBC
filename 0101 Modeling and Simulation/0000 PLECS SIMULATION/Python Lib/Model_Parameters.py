@@ -97,7 +97,7 @@ PFC_SW      =  {                                                                
                   'Rds_off'         : 0,                                                                    # []  - 
                   'Iinit'           : 0,                                                                    # []  - 
                   'Coss'            : {                                                                     # []  -                        
-                                          'Config'		      : 1,                                            # []  - 
+                                          'Config'		      : 5,                                            # []  - 
                                           'Cap_s'    		   : 1e-12,                                        # []  - 
                                           'Resr_s'		      : 0,                                            # []  - 
                                           'Lesl_s'		      : 0,                                            # []  - 
