@@ -72,6 +72,8 @@ def gen_plots(resFile, html_file, OPEN=False):
         title           =   dict(font    =  dict(family  ="Arial", size=30 ))
                         )
     mdlvar_flat         = flatten_dict(copy.deepcopy(mdl.ModelVars))
+    del mdlvar_flat['scopes']
+    del mdlvar_flat['ToFile']
     table_fig           = go.Figure(data=[go.Table(
         header=dict(values=["Parameter", "Value"],
                     fill_color='paleturquoise',
