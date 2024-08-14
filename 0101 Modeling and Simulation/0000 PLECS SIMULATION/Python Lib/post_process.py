@@ -16,6 +16,7 @@ import os
 import base64
 from PIL import Image
 import screeninfo
+import copy
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 def png_to_hex_base64():
@@ -49,6 +50,16 @@ def png_to_hex_base64():
         os.remove("img.png")
     return imghexdata
 
+def flatten_dict(d, parent_key='', sep='.'):
+    items = {}
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.update(flatten_dict(v, new_key, sep=sep))
+        else:
+            items[new_key] = v
+    return items
+
 def gen_plots(resFile, html_file, OPEN=False):
     df                  = pd.read_csv(resFile)
     fig                 = make_subplots(rows=len(mdl.Waveforms), cols=1, subplot_titles=tuple(mdl.Waveforms))
@@ -56,10 +67,20 @@ def gen_plots(resFile, html_file, OPEN=False):
         fig.add_trace(go.Scatter(x=df.iloc[:,0], y=df.iloc[:,i], mode='lines', name=mdl.Waveforms[i-1]), row=i, col=1)
     fig.update_layout   (
         plot_bgcolor='#e9f5f9',
-        title_text      =   None,
+        title_text      =   "OBC WAVEFORMES",
         showlegend      =   False,
         title           =   dict(font    =  dict(family  ="Arial", size=30 ))
                         )
+    mdlvar_flat         = flatten_dict(copy.deepcopy(mdl.ModelVars))
+    table_fig           = go.Figure(data=[go.Table(
+        header=dict(values=["Parameter", "Value"],
+                    fill_color='paleturquoise',
+                    align='left'),
+        cells=dict(values=[list(mdlvar_flat.keys()), list(mdlvar_flat.values())],
+                   fill_color='lavender',
+                   align='left')
+    )])
+
     for i in range(len(mdl.Waveforms)):
         fig.update_xaxes(title_text="Time [s]", row=i+1, col=1)
     fig.update_layout(height=300*len(mdl.Waveforms))  
@@ -83,6 +104,7 @@ def gen_plots(resFile, html_file, OPEN=False):
         f.write('<style>.center {display: flex;justify-content: center;}</style>')
         f.write(html_content)
         f.write(fig.to_html(full_html = False,include_plotlyjs='cdn'))
+        f.write(table_fig.to_html(full_html=False, include_plotlyjs=False))
     f.close()
     if OPEN:
         webbrowser.open(html_file)

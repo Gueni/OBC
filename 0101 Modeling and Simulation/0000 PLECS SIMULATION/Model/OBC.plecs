@@ -16,12 +16,12 @@ Plecs {
   TurnOnThreshold "1.2"
   SyncFixedStepTasks "2"
   UseSingleCommonBaseRate "2"
-  LossVariableLimitExceededMsg "3"
-  NegativeSwitchLossMsg "3"
+  LossVariableLimitExceededMsg "1"
+  NegativeSwitchLossMsg "2"
   DivisionByZeroMsg "3"
   StiffnessDetectionMsg "2"
   MaxConsecutiveZCs "Sim_param.ZeroCross"
-  AlgebraicLoopWithStateMachineMsg "3"
+  AlgebraicLoopWithStateMachineMsg "2"
   AssertionAction "2"
   InitializationCommands "\n"
   InitialState  "1"
@@ -43,7 +43,7 @@ Plecs {
   DiscretizationMethod "2"
   ExternalModeSettings ""
   AlgebraicLoopMethod "1"
-  AlgebraicLoopTolerance "1e-6"
+  AlgebraicLoopTolerance "1e-7"
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
@@ -1370,8 +1370,8 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.873849
-        SliderPosition [-1, -1]
+        ZoomFactor    0.76361
+        SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1391,8 +1391,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAABAAAAG0AAAAFAAAAbQAAAAIAAABuAAAAAwAAAG0AAAABAAAAbQAAAAgAAABtAAAACQAAAG0AAA"
-"AGAAAAbQAAAAcAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAAAEAAAAbQAAAAUAAABtAAAAAgAAAG4AAA"
+"ADAAAAbQAAAAEAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "cAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbPAAAAAQAAAAAAAAPoAAAAACs="
@@ -12311,33 +12311,13 @@ Plecs {
         }
         Component {
           Type          Constant
-          Name          "CTRL_PFC.Vref1"
-          Show          off
-          Position      [760, 335]
-          Direction     left
-          Flipped       on
-          LabelPosition west
-          Frame         [-20, -10; 20, 10]
-          Parameter {
-            Variable      "Value"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "10"
-            Show          off
-          }
-        }
-        Component {
-          Type          Constant
           Name          "Vdc*1"
           Show          on
-          Position      [90, 180]
+          Position      [85, 180]
           Direction     right
           Flipped       off
           LabelPosition south
-          Frame         [-15, -10; 15, 10]
+          Frame         [-20, -10; 20, 10]
           Parameter {
             Variable      "Value"
             Value         "300"
@@ -13802,6 +13782,11 @@ Plecs {
               DstTerminal   2
             }
           }
+          Branch {
+            Points        [115, 335; 840, 335]
+            DstComponent  "pwm"
+            DstTerminal   8
+          }
         }
         Connection {
           Type          Signal
@@ -13883,14 +13868,6 @@ Plecs {
           Points        [840, 100]
           DstComponent  "pwm"
           DstTerminal   7
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "CTRL_PFC.Vref1"
-          SrcTerminal   1
-          Points        [840, 335; 840, 225]
-          DstComponent  "pwm"
-          DstTerminal   8
         }
         Connection {
           Type          Signal
@@ -15839,20 +15816,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 26; 1536, 831]
+      Location      [0, 26; 1536, 850]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAAAffw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANNAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANlAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"AAAAH0AAAAFAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAABAAAAfQAAAAgAAAB9AAAACQAAAH0AAAAGAA"
-"AAfQAAAAcAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADDAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAH0AAAAJAAAAfQAAAAYAAAB9AAAABwAAAH0AAAAEAAAAfQAAAAUAAAB9AAAAAgAAAH0AAAADAA"
+"AAfQAAAAEAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAChAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AaoAAAAAQAAAAAAAAPoAAAAACs="
+"AbKAAAAAQAAAAAAAAPoAAAAACs="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
       Axes          "2"
@@ -16190,4 +16167,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "s+YVGlmsshfkJjDn+vvln44Uqg6irgGQnYAGCVpnR34="
+DemoSignature "y2Pe647M71YPhT2QcKsvmpdjFKSzzVY5SB6bkhlV5cE="
