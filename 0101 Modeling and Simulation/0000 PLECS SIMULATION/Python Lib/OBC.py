@@ -23,10 +23,10 @@ plcsim.load_model()
 cleardata.clear_data_folders()                                                                  
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.logParams(str(mdlvar['ToFile']['logfile']),mdlvar)
-plcsim.ClearAllTraces(mdlvar['scopes'])  
+plcsim.ClearAllTraces(mdl.scopes)  
 plcsim.Set_sim_param()
 plcsim.launch_sim(modelname=modelname)
-# plcsim.HoldAllTraces(mdlvar['scopes'])
-# plcsim.saveAllTraces(mdlvar['scopes'],mdl,mdlvar['ToFile']['Traces'])
+# plcsim.HoldAllTraces(mdl.scopes)
+# plcsim.saveAllTraces(mdl.scopes,mdl,mdlvar['ToFile']['Traces'])
 post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------------------------------------------------------------------------------------------------------------
