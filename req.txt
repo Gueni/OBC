@@ -2,3 +2,4 @@ screeninfo  ==  0.8.1
 pillow      ==  10.4.0
 plotly      ==  5.23.0
 pandas      ==  2.2.2
+pyfiglet    ==  1.0.2
