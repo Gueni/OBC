@@ -17,6 +17,8 @@ import base64
 from PIL import Image
 import screeninfo
 import copy
+from collections import OrderedDict
+import re
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 def png_to_hex_base64():
@@ -60,6 +62,35 @@ def flatten_dict(d, parent_key='', sep='.'):
             items[new_key] = v
     return items
 
+def extract_comments(filename):
+    prefix_list = []
+    comment_list = []
+
+    with open(filename, 'r') as file:
+        for line in file:
+            # Look for '#?' anywhere in the line
+            if '#?' in line:
+                start_index = line.index('#?')
+                prefix = line[start_index+2:start_index+2+8]
+                rest_of_comment = line[start_index+2+8:].strip()
+
+                prefix_list.append(prefix)
+                comment_list.append(rest_of_comment)
+    
+    return prefix_list, comment_list
+
+def convert_to_ordereddict(d):
+    # Base case: if d is not a dictionary, return it as is
+    if not isinstance(d, dict):
+        return d
+    # Recursively convert each nested dictionary to OrderedDict
+    return OrderedDict((key, convert_to_ordereddict(value)) for key, value in d.items())
+
+def delete_keys_from_dict(keys_to_delete, input_dict,key2):
+    for key in keys_to_delete:
+            del input_dict[key2][key]
+    return input_dict
+
 def gen_plots(resFile, html_file, OPEN=False):
     df                  = pd.read_csv(resFile)
     fig                 = make_subplots(rows=len(mdl.Waveforms), cols=1, subplot_titles=tuple(mdl.Waveforms))
@@ -71,14 +102,18 @@ def gen_plots(resFile, html_file, OPEN=False):
         showlegend      =   False,
         title           =   dict(font    =  dict(family  ="Arial", size=30 ))
                         )
-    mdlvar_flat         = flatten_dict(copy.deepcopy(mdl.ModelVars))
-    del mdlvar_flat['scopes']
-    del mdlvar_flat['ToFile']
+    LLC                 = ['HS1','HS2','LS1','LS2','SRHS1','SRHS2','SRLS1','SRLS2','RC1','RC2','RC3','RC4','HS3','LS3']             
+    PFC                 = ['HS1','HS2','LS1','LS2']
+    mdlvar_flat         = delete_keys_from_dict(LLC, mdl.ModelVars,'LLC')
+    mdlvar_flat         = delete_keys_from_dict(PFC, mdlvar_flat,'PFC')
+    mdlvar_flat         = flatten_dict(convert_to_ordereddict(copy.deepcopy(mdl.ModelVars)))
+    file_path           = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Model_Parameters.py"  # Replace with your Python file path
+    unit ,comments      = extract_comments(file_path)
     table_fig           = go.Figure(data=[go.Table(
-        header=dict(values=["Parameter", "Value"],
+        header=dict(values=["PARAMETERS", "VALUES" , "UNITS","COMMENTS"],
                     fill_color='paleturquoise',
                     align='left'),
-        cells=dict(values=[list(mdlvar_flat.keys()), list(mdlvar_flat.values())],
+        cells=dict(values=[list(mdlvar_flat.keys()), list(mdlvar_flat.values()) ,unit ,comments  ],
                    fill_color='lavender',
                    align='left')
     )])

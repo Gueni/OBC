@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1.49862
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -129,6 +129,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
+      CommentOut    DisabledOpenCircuit
       Frame         [-70, -15; 70, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -1267,7 +1268,7 @@ Plecs {
       }
       Parameter {
         Variable      "Configuration"
-        Value         "1"
+        Value         "2"
         Show          off
       }
       Terminal {
@@ -1360,6 +1361,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
+      CommentOut    DisabledOpenCircuit
       Frame         [-70, -15; 70, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -7564,20 +7566,20 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 739; 358, 900]
+          Location      [0, 23; 1536, 796]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACFAAAAm/wCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAA"
-"NKAAACMwAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAJsAAABmAP///wAAAAMAAAH4AAA"
-"AWPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAfgAAABCAP///wAAAWYAAACF"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAA"
+"NKAAACMwAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAJsAAAB+AP///wAAAAMAAAH4AAA"
+"AWPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAfgAAABfAP///wAAB4AAAAOn"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAGQAAAACAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAA"
-"AGAAAAZAAAAAEAAABkAAAAlgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC"
+"AAACQAAAGQAAAABAAAAZAAAAAIAAABkAAAAAwAAAGQAAAAEAAAAZAAAAAUAAABkAAAABgAAAGQAAA"
+"AHAAAAZAAAAAgAAABkAAAArgAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "DAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAATAAAAAQAAAAAAAAPoAAAAABM="
+"AAAAAArAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0"
@@ -12380,16 +12382,16 @@ Plecs {
           Flipped       off
           LabelPosition south
           Probe {
-            Component     "EVSE/GRID"
-            Path          ""
-            Signals       {"VL1"}
+            Component     "Rl2"
+            Path          "PFC/1PH PFC"
+            Signals       {"Resistor current"}
           }
         }
         Component {
           Type          Constant
           Name          "Vdc*2"
           Show          on
-          Position      [565, 75]
+          Position      [665, 75]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -15825,8 +15827,8 @@ Plecs {
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"AAAAH0AAAAJAAAAfQAAAAYAAAB9AAAABwAAAH0AAAAEAAAAfQAAAAUAAAB9AAAAAgAAAH0AAAADAA"
-"AAfQAAAAEAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAChAAA"
+"QAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAAEAAAAfQAAAAUAAAB9AAAABgAAAH0AAAAHAA"
+"AAfQAAAAgAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAChAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AbKAAAAAQAAAAAAAAPoAAAAACs="
@@ -16167,4 +16169,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "y2Pe647M71YPhT2QcKsvmpdjFKSzzVY5SB6bkhlV5cE="
+DemoSignature "DTJNw4JpHH4/y4d+qGmCecTsq58ASOxbyQT9yTTjiv4="
