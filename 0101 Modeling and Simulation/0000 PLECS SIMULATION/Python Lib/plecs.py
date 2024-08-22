@@ -21,7 +21,6 @@ class simpy:
 
     def is_running(self,process_name):
         try:
-            # For Windows
             tasks = os.popen('tasklist').read().strip().split('\n')
             for task in tasks:
                 if process_name.lower() in task.lower():
@@ -62,7 +61,8 @@ class simpy:
         for val in scopelist:
             self.server.plecs.scope(val,'ClearTraces')
 
-    def Set_sim_param(self):
+    def Set_sim_param(self,mdlvars):
+        self.modelvar = mdlvars
         self.opts =  {'ModelVars' :  self.modelvar} 
 
     def launch_sim(self,modelname):
@@ -94,4 +94,3 @@ class simpy:
                 file.write("{:<40}= {}\n".format(parent_path, value))
 
 #?----------------------------------------------------------------------------------------------------------------------------------------
-

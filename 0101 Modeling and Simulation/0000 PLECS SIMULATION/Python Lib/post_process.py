@@ -18,19 +18,18 @@ from PIL import Image
 import screeninfo
 import copy
 from collections import OrderedDict
-import re
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 def png_to_hex_base64():
-    imghexdata      = ''
-    img_path        = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
-    screen = screeninfo.get_monitors()[0]
+    imghexdata                  = ''
+    img_path                    = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/flyback.png")).replace("\\", "/") 
+    screen                      = screeninfo.get_monitors()[0]
     screen_width, screen_height = screen.width, screen.height
-    target_width    = int(screen_width * 0.5)  
-    target_height   = int(screen_height * 0.4)  
+    target_width                = int(screen_width * 0.5)  
+    target_height               = int(screen_height * 0.4)  
     try:
         with Image.open(img_path) as img:
-            resized_img = img.resize((target_width, target_height), resample=Image.LANCZOS) #todo : get the size of screen and make a ratio 
+            resized_img         = img.resize((target_width, target_height), resample=Image.LANCZOS)
             resized_img.save("img.png")
         img.close()
     except IOError:
@@ -53,26 +52,25 @@ def png_to_hex_base64():
     return imghexdata
 
 def flatten_dict(d, parent_key='', sep='.'):
-    items = {}
+    items                   = {}
     for k, v in d.items():
-        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        new_key             = f"{parent_key}{sep}{k}" if parent_key else k
         if isinstance(v, dict):
             items.update(flatten_dict(v, new_key, sep=sep))
         else:
-            items[new_key] = v
+            items[new_key]  = v
     return items
 
 def extract_comments(filename):
-    prefix_list = []
-    comment_list = []
+    prefix_list                     = []
+    comment_list                    = []
 
     with open(filename, 'r') as file:
         for line in file:
-            # Look for '#?' anywhere in the line
             if '#?' in line:
-                start_index = line.index('#?')
-                prefix = line[start_index+2:start_index+2+8]
-                rest_of_comment = line[start_index+2+8:].strip()
+                start_index         = line.index('#?')
+                prefix              = line[start_index+2:start_index+2+8]
+                rest_of_comment     = line[start_index+2+8:].strip()
 
                 prefix_list.append(prefix)
                 comment_list.append(rest_of_comment)
@@ -80,10 +78,8 @@ def extract_comments(filename):
     return prefix_list, comment_list
 
 def convert_to_ordereddict(d):
-    # Base case: if d is not a dictionary, return it as is
     if not isinstance(d, dict):
         return d
-    # Recursively convert each nested dictionary to OrderedDict
     return OrderedDict((key, convert_to_ordereddict(value)) for key, value in d.items())
 
 def delete_keys_from_dict(keys_to_delete, input_dict,key2):
@@ -98,16 +94,14 @@ def gen_plots(resFile, html_file, OPEN=False):
         fig.add_trace(go.Scatter(x=df.iloc[:,0], y=df.iloc[:,i], mode='lines', name=mdl.Waveforms[i-1]), row=i, col=1)
     fig.update_layout   (
         plot_bgcolor='#e9f5f9',
-        title_text      =   "OBC WAVEFORMES",
+        title_text      =   "FLYBACK CONVERTER WAVEFORMES",
         showlegend      =   False,
         title           =   dict(font    =  dict(family  ="Arial", size=30 ))
                         )
-    LLC                 = ['HS1','HS2','LS1','LS2','SRHS1','SRHS2','SRLS1','SRLS2','RC1','RC2','RC3','RC4','HS3','LS3']             
-    PFC                 = ['HS1','HS2','LS1','LS2']
-    mdlvar_flat         = delete_keys_from_dict(LLC, mdl.ModelVars,'LLC')
-    mdlvar_flat         = delete_keys_from_dict(PFC, mdlvar_flat,'PFC')
-    mdlvar_flat         = flatten_dict(convert_to_ordereddict(copy.deepcopy(mdl.ModelVars)))
-    file_path           = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Model_Parameters.py"  # Replace with your Python file path
+    ToFile              = ['sim_idx','utc_numeric','ToFile_path','logfile','output_html','Traces']
+    mdlvar_flat         = delete_keys_from_dict(ToFile, copy.deepcopy(mdl.ModelVars),'ToFile')
+    mdlvar_flat         = flatten_dict(convert_to_ordereddict(mdlvar_flat))
+    file_path           = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Model_Parameters.py"  
     unit ,comments      = extract_comments(file_path)
     table_fig           = go.Figure(data=[go.Table(
         header=dict(values=["PARAMETERS", "VALUES" , "UNITS","COMMENTS"],
@@ -120,8 +114,9 @@ def gen_plots(resFile, html_file, OPEN=False):
 
     for i in range(len(mdl.Waveforms)):
         fig.update_xaxes(title_text="Time [s]", row=i+1, col=1)
+        fig.update_yaxes(title_text=mdl.Units[i], row=i+1, col=1)
     fig.update_layout(height=300*len(mdl.Waveforms))  
-    title        = f"Single Phase EV OBC_{mdl.utc_numeric}_{mdl.sim_idx}"
+    title        = f"flyback_{mdl.ModelVars['ToFile']['utc_numeric']}_{mdl.ModelVars['ToFile']['sim_idx']}_MOHAMED_GUENI"
     html_content = f"""
                         <!DOCTYPE html>
                         <html lang="en">
@@ -132,7 +127,7 @@ def gen_plots(resFile, html_file, OPEN=False):
                         </head>
                         <body>
                             <div class="center">
-                                <img src="data:image/png;base64,{png_to_hex_base64()}" alt="OBC.png">
+                                <img src="data:image/png;base64,{png_to_hex_base64()}" alt="flyback.png">
                             </div>
                         </body>
                         </html>
