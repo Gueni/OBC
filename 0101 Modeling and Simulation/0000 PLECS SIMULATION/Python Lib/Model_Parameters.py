@@ -209,7 +209,6 @@ LLC               = {
                               'Iinit'        : 0                                                                                       #? [A]      - Initial current through the snubber capacitor
                            }
                         },
-
                      'Diode'                 : {
                         'diode'              : 'file:C4D40120D',                                                                       #? [/]      - diode thermal description       
                         'ron_diode'          : 1,                                                                                      #? [Ohm]    - diode forward resistance    
