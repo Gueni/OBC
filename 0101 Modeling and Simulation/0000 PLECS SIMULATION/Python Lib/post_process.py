@@ -22,7 +22,7 @@ from collections import OrderedDict
 
 def png_to_hex_base64():
     imghexdata                  = ''
-    img_path                    = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/flyback.png")).replace("\\", "/") 
+    img_path                    = (os.path.join(os.getcwd(), "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
     screen                      = screeninfo.get_monitors()[0]
     screen_width, screen_height = screen.width, screen.height
     target_width                = int(screen_width * 0.5)  
@@ -94,7 +94,7 @@ def gen_plots(resFile, html_file, OPEN=False):
         fig.add_trace(go.Scatter(x=df.iloc[:,0], y=df.iloc[:,i], mode='lines', name=mdl.Waveforms[i-1]), row=i, col=1)
     fig.update_layout   (
         plot_bgcolor='#e9f5f9',
-        title_text      =   "FLYBACK CONVERTER WAVEFORMES",
+        title_text      =   "OBC WAVEFORMES",
         showlegend      =   False,
         title           =   dict(font    =  dict(family  ="Arial", size=30 ))
                         )
@@ -116,7 +116,7 @@ def gen_plots(resFile, html_file, OPEN=False):
         fig.update_xaxes(title_text="Time [s]", row=i+1, col=1)
         fig.update_yaxes(title_text=mdl.Units[i], row=i+1, col=1)
     fig.update_layout(height=300*len(mdl.Waveforms))  
-    title        = f"flyback_{mdl.ModelVars['ToFile']['utc_numeric']}_{mdl.ModelVars['ToFile']['sim_idx']}_MOHAMED_GUENI"
+    title        = f"OBC_{mdl.ModelVars['ToFile']['utc_numeric']}_{mdl.ModelVars['ToFile']['sim_idx']}_MOHAMED_GUENI"
     html_content = f"""
                         <!DOCTYPE html>
                         <html lang="en">
