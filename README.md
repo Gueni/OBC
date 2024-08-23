@@ -63,6 +63,10 @@ The magnetic component design covers the design and selection of transformers an
 
 Modeling and simulation involve using software tools to analyze and optimize the performance of the onboard charger.
 
+<p align="center">
+  <img  src="0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/report.gif">
+</p>
+
 ## Schematic Capture
 
 Schematic capture involves creating the electrical schematics of the onboard charger.
