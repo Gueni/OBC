@@ -17,8 +17,8 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                                     
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            
-                  'tSim'	    	   : 1,                                                                  #? [s]     - Total simulation time
-                  'load_tflip'	   : 0.5/2,                                                                #? [s]     - Time at which the load changes state 
+                  'tSim'	    	   : 1.0,                                                                  #? [s]     - Total simulation time
+                  'load_tflip'	   : 1.0/2,                                                                #? [s]     - Time at which the load changes state 
                   'maxStep'		   : 1e-3,                                                                 #? [s]     - Maximum simulation time step
                   'ZeroCross'       : 1000,                                                                 #? [/]     - Zero-crossing detection limit
                   'rel_tol'		   : 1e-7                                                                  #? [/]     - Relative tolerance for the numerical solver
