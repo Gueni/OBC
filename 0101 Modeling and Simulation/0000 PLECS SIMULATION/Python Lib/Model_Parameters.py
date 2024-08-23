@@ -17,7 +17,7 @@ model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/
 model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                                     
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            
-                  'tSim'	    	   : 0.5,                                                                  #? [s]     - Total simulation time
+                  'tSim'	    	   : 1,                                                                  #? [s]     - Total simulation time
                   'load_tflip'	   : 0.5/2,                                                                #? [s]     - Time at which the load changes state 
                   'maxStep'		   : 1e-3,                                                                 #? [s]     - Maximum simulation time step
                   'ZeroCross'       : 1000,                                                                 #? [/]     - Zero-crossing detection limit
@@ -47,7 +47,7 @@ PFC_SW      = {
                   'therm_mosfet'    : 'file:C3M0021120K',                                                   #? [/]      - MOSFET thermal model file path
                   'Rgon'            : 2.5,                                                                  #? [Ohm]    - Gate resistance for turn-on 
                   'Rgoff'           : 2.5,                                                                  #? [Ohm]    - Gate resistance for turn-off
-                  'ron_mosfet'      : 67e-3,                                                                #? [Ohm]    - MOSFET on-state resistance 
+                  'ron_mosfet'      : 0,                                                                #? [Ohm]    - MOSFET on-state resistance 
                   'Iinit'           : 0,                                                                    #? [A]      - Initial current through the MOSFET 
                   'Coss'            :  {                                                                                           
                                           'Config'		      : 5,                                            #? [/]      - Capacitance configuration
@@ -153,14 +153,14 @@ CTRL_PFC    = {
                   'Rv_Ki'           :  800                                                                  #? [/]      - 
                }
 DCLink      = {                                                                                             
-                  'Config'		      : 1,                                                                    #? [/]      - 
-                  'Cdc'    		   : 470e-6,                                                               #? [/]      -  
-                  'ESR'		         : 19e-9,                                                                #? [Ohm]    - 
-                  'ESL'		         : 1e-19,                                                                #? [/]      - 
-                  'nPara'		      : 1,                                                                    #? [/]      - 
-                  'nSeri'		      : 1,                                                                    #? [/]      - 
-                  'Vinit'		      : 0,                                                                    #? [/]      - 
-                  'Iinit'		      : 1e-3                                                                  #? [/]      - 
+                      'Config'		      : 5,                                                              #? [/]      - Capacitance configuration
+                      'Cap_s'    		   : 100e-6,                                      #? [F]      - Capacitance value 
+                      'Resr_s'		      : 1e-12,                                        #? [F]      - Equivalent series resistance of the capacitance
+                      'Lesl_s'		      : 1e-12,                                        #? [H]      - Equivalent series inductance of the capacitance
+                      'Npara'		      : 10,                                            #? [/]      - Number of parallel capacitors
+                      'Nseri'		      : 1,                                            #? [/]      - Number of series capacitors
+                      'Vinit'		      : 0,                                            #? [V]      - Initial voltage across the capacitance
+                      'Iinit'		      : 0                                             #? [A]      - Initial current through the capacitance   
                }
 Load        = {                                                                                             
                   'Config'		      : 1,                                                                    #? [/]      - 
