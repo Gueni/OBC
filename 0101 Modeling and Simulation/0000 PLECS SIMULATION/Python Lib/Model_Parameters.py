@@ -88,7 +88,7 @@ PFC               = {
                   }
                }
 DCLink            = {                                                                                             
-                      'Config'		   : 5,                                                                                            #? [/]      - Capacitance configuration
+                      'Config'		   : 1,                                                                                            #? [/]      - Capacitance configuration
                       'Cap_s'    		: 100e-6,                                                                                       #? [F]      - Capacitance value 
                       'Resr_s'		   : 1e-12,                                                                                        #? [F]      - Equivalent series resistance of the capacitance
                       'Lesl_s'		   : 1e-12,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
