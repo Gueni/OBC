@@ -28,14 +28,15 @@ ToFile            = {
                   'tsave' 	    	   : Sim_param['tSim']-0.1                                                                            #? [s]     - Time point at which the data is saved
                }
 Grid              = {
-                  'Config'          : 2,                                                                                               #? [/]     - Configuration setting for the grid
+                  'Config'          : 1,                                                                                               #? [/]     - Configuration setting for the grid
                   'Vin'             : 230,                                                                                             #? [V]     - Input voltage of the grid
                   'Ts'              : 0,                                                                                               #? [s]     - Sampling time for grid operations
-                  'Fgrid'           : 50,                                                                                              #? [Hz]    - Grid frequency
-                  'Rg'              : 1e-2                                                                                             #? [Ohm]   - Grid resistance
+                  'f'               : 50,                                                                                              #? [Hz]    - Grid frequency
+                  'phase'           : 0,                                                                                               #? [Hz]    - Grid frequency
+                  'R'               : 0                                                                                                #? [Ohm]   - Grid resistance
                }
 AC_Filter         = {
-                  'Config'          : 4,                                                                                               #? [/]      - Configuration setting for the AC filter
+                  'Config'          : 5,                                                                                               #? [/]      - Configuration setting for the AC filter
                   'Cin'             : 1e-6,                                                                                            #? [F]      - Input capacitance
                   'L_CMC'           : 1.5e-3,                                                                                          #? [H]      - Common-mode choke inductance
                   'L_DMC'           : 900e-6,                                                                                          #? [H]      - Differential-mode choke inductance
@@ -47,16 +48,26 @@ AC_Filter         = {
 PFC               = {
                   'Config'          : 1,                                                                                               #? [/]      - Diode thermal description
                   'Choke'           : {
+                     'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
                      'L1'           : 1.5e-3,                                                                                          #? [H]      - Inductance of the first choke winding
                      'L2'           : 1.5e-3,                                                                                          #? [H]      - Inductance of the second choke winding
-                     'R1'           : 0.06,                                                                                            #? [Ohm]    - Resistance of the first choke winding
-                     'R2'           : 0.06,                                                                                            #? [Ohm]    - Resistance of the second choke winding
+                     'R1'           : 1,                                                                                            #? [Ohm]    - Resistance of the first choke winding
+                     'R2'           : 1,                                                                                            #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
                      'Rm'           : 0.001,                                                                                           #? [Ohm]    - Resistance of the mutual inductance
                      'i1'           : 0,                                                                                               #? [A]      - Initial current in the first choke winding
                      'i2'           : 0                                                                                                #? [A]      - Initial current in the second choke winding
                   },
-                  'Cout'            : 470e-6,                                                                                          #? [F]      - Output capacitance
+                  'Cout'            : {
+                           'Config' : 5,                                                                                               #? [/]      - Capacitance configuration
+                           'Cap_s'  : 470e-6,                                                                                          #? [F]      - Capacitance value
+                           'Resr_s' : 1e-12,                                                                                           #? [Ohm]    - Equivalent series resistance of the capacitance
+                           'Lesl_s' : 1e-12,                                                                                           #? [H]      - Equivalent series inductance of the capacitance
+                           'Npara'  : 5,                                                                                               #? [/]      - Number of parallel capacitors
+                           'Nseri'  : 1,                                                                                               #? [/]      - Number of series capacitors
+                           'Vinit'  : 0,                                                                                               #? [V]      - Initial voltage across the capacitance
+                           'Iinit'  : 0                                                                                                #? [A]      - Initial current through the capacitance
+                                    },
                   'SW'              : {
                      'Config'       : 1,                                                                                               #? [/]      - Switch configuration
                      'therm_mosfet' : 'file:C3M0021120K',                                                                              #? [/]      - MOSFET thermal model file path
@@ -88,7 +99,7 @@ PFC               = {
                   }
                }
 DCLink            = {                                                                                             
-                      'Config'		   : 1,                                                                                            #? [/]      - Capacitance configuration
+                      'Config'		   : 5,                                                                                            #? [/]      - Capacitance configuration
                       'Cap_s'    		: 100e-6,                                                                                       #? [F]      - Capacitance value 
                       'Resr_s'		   : 1e-12,                                                                                        #? [F]      - Equivalent series resistance of the capacitance
                       'Lesl_s'		   : 1e-12,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
@@ -121,6 +132,16 @@ LLC               = {
                         'LpIinit'      : 0,                                                                                            #? [H]      - Initial inductance of primary winding
                         'LmIinit'      : 0,                                                                                            #? [H]      - Initial inductance of magnetizing winding
                         'LsIinit'      : 0                                                                                             #? [H]      - Initial inductance of secondary winding
+                        #                   Cross sectional Area m2 676e-6          Gap_CS_area 
+                        # length of flux path m 1.5e-3*2            Gap_flux_len
+                        # Initial MMF A 0                         Gap_init_MMF
+
+                        # Cross sectional Area m2 676e-6          Core_CS_area 
+                        # saturated relative permeability 1       Core_U_r_sat
+                        # flux density saturation B_sat 0.49 T    Core_B_sat
+                        # Initial MMF A 0                         Core_init_MMF
+                        # unsaturated relative permeability 6500  Core_U_r_unsat
+                        # length of flux path m 149e-3            Core_flux_len
                      },
                      'C_r'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
@@ -238,9 +259,9 @@ CTRL              = {
                      'Rv_Ki'                 : 800                                                                                     #? [/]      - Integral gain for voltage control
                   }
 HV_Filter         = {                                                                                             
-                     'Config'                : 2,                                                                                      #? [/]      - Filter configuration
+                     'Config'                : 3,                                                                                      #? [/]      - Filter configuration
                      'Cy1'                   : {                                                                                        
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
+                        'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
                         'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
                         'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
@@ -250,7 +271,7 @@ HV_Filter         = {
                         'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
                                                 },                                                             
                      'Cy2'                   : {                                                                                 
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
+                        'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
                         'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
                         'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
@@ -259,8 +280,8 @@ HV_Filter         = {
                         'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
                         'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
                                                 },                                                                 
-                     'Cx1'                   : {                                                                                      
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
+                     'Cx'                    : {                                                                                      
+                        'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
                         'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
                         'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
@@ -269,53 +290,25 @@ HV_Filter         = {
                         'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
                         'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
                                                 },                                                          
-                     'Cx2'                   : {                                                                                       
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
-                        'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
-                        'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
-                        'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
-                        'Npara'              : 1,                                                                                      #? [/]      - Number of parallel capacitors
-                        'Nseri'              : 1,                                                                                      #? [/]      - Number of series capacitors
-                        'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
-                        'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
-                                                },                                                            
-                     'Cx3'                   : {                                                                                    
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
-                        'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
-                        'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
-                        'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
-                        'Npara'              : 1,                                                                                      #? [/]      - Number of parallel capacitors
-                        'Nseri'              : 1,                                                                                      #? [/]      - Number of series capacitors
-                        'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
-                        'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
-                                                },                                                               
-                     'Cx4'                   : {                                                                              
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
-                        'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
-                        'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
-                        'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
-                        'Npara'              : 1,                                                                                      #? [/]      - Number of parallel capacitors
-                        'Nseri'              : 1,                                                                                      #? [/]      - Number of series capacitors
-                        'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
-                        'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
-                                                },                                                              
-                     'Cx5'                   : {                                              
-                        'Config'             : 4,                                                                                      #? [/]      - Capacitance configuration
-                        'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
-                        'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
-                        'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
-                        'Npara'              : 1,                                                                                      #? [/]      - Number of parallel capacitors
-                        'Nseri'              : 1,                                                                                      #? [/]      - Number of series capacitors
-                        'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
-                        'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
-                                                },                                                       
                      'L'                     : 40e-6,                                                                                  #? [H]      - Inductor value
-                     'L_DMC'                 : 900e-6                                                                                  #? [H]      - Inductor value for DMC
+                     'DMC'                   : {                                                                                       
+                        'Config'             : 1,                                                                                      #? [/]      - 
+                        'Cap_s'              : 1e-3,                                                                                   #? [/]      - 
+                        'Resr_s'             : 0,                                                                                      #? [/]      - 
+                        'Lesl_s'             : 0,                                                                                      #? [/]      - 
+                        'Npara'              : 1,                                                                                      #? [/]      - 
+                        'Nseri'              : 1,                                                                                      #? [/]      - 
+                        'Vinit'              : 0,                                                                                      #? [/]      - 
+                        'Iinit'              : 0                                                                                       #? [/]      - 
+                                                }
+                  
+                  
+                  
                   }
 Load              = {
                      'Config'                : 1,                                                                                      #? [/]      - Configuration type for the load setup
                      'CL'                    : 0,                                                                                      #? [F]      - Load capacitance value
-                     'RL'                    : 50,                                                                                     #? [Ohm]    - Load resistance value
+                     'R'                     : 50,                                                                                     #? [Ohm]    - Load resistance value
                      'LL'                    : 0,                                                                                      #? [H]      - Load inductance value
                      'Vinit'                 : 0,                                                                                      #? [V]      - Initial voltage across the load
                      'Iinit'                 : 0,                                                                                      #? [A]      - Initial current through the load
@@ -326,7 +319,6 @@ Thermals          = {
                      'T_amb'                 : 25.0,                                                                                   #? [°C]    - Ambient temperature
                      'rth_Amb'               : 0.09                                                                                    #? [K/W]   - Thermal resistance from junction to ambient
                   }
-
 #!----------------------------------------------------------------------------------------------------------------------------------------
 ModelVars   = {                                                                                             
                   'Sim_param'       :  Sim_param   ,      
