@@ -298,7 +298,7 @@ Load        = {
                      'Config'                : 1,                                                                                      #? [/]      - Configuration type for the load setup
                      'CL'                    : 0,                                                                                      #? [F]      - Load capacitance value
                      'R'                     : 50,                                                                                     #? [Ohm]    - Load resistance value
-                     'LL'                    : 0,                                                                                      #? [H]      - Load inductance value
+                     'L'                     : 0,                                                                                      #? [H]      - Load inductance value
                      'Vinit'                 : 0,                                                                                      #? [V]      - Initial voltage across the load
                      'Iinit'                 : 0,                                                                                      #? [A]      - Initial current through the load
                      't_switch'              : Sim_param['tSim'] - Sim_param['load_tflip'],                                            #? [s]      - Time when the load switching occurs
