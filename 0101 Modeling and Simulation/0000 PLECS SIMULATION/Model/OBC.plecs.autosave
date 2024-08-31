@@ -4685,8 +4685,8 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.763603
-        SliderPosition [0, 0]
+        ZoomFactor    1.96256
+        SliderPosition [333, 1219]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -4726,10 +4726,11 @@ Plecs {
           Type          Subsystem
           Name          "Controller"
           Show          on
-          Position      [395, 630]
+          Position      [1230, 225]
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-50, -35; 50, 35]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -6435,10 +6436,11 @@ Plecs {
           Type          Subsystem
           Name          "Voltage\nSetpoint\nControl"
           Show          on
-          Position      [310, 650]
+          Position      [1145, 245]
           Direction     down
           Flipped       on
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-20, -15; 20, 15]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -6772,10 +6774,11 @@ Plecs {
           Type          Subsystem
           Name          "Simplified Sensing"
           Show          on
-          Position      [515, 560]
+          Position      [1350, 155]
           Direction     down
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-20, -10; 20, 10]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -6882,10 +6885,11 @@ Plecs {
           Type          Subsystem
           Name          "Simplified ADC"
           Show          on
-          Position      [395, 565]
+          Position      [1230, 160]
           Direction     down
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Frame         [-50, -20; 50, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -7146,10 +7150,11 @@ Plecs {
           Type          Constant
           Name          "Vdc*"
           Show          on
-          Position      [260, 650]
+          Position      [1095, 245]
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-15, -10; 15, 10]
           Parameter {
             Variable      "Value"
@@ -7166,10 +7171,11 @@ Plecs {
           Type          Scope
           Name          "Frequency"
           Show          on
-          Position      [510, 655]
+          Position      [1345, 250]
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Location      [0, 26; 1536, 803]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACFAAAAm/wCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAA"
@@ -7228,10 +7234,11 @@ Plecs {
           Type          PlecsProbe
           Name          "Vout1"
           Show          on
-          Position      [525, 520]
+          Position      [1360, 115]
           Direction     right
           Flipped       off
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Scope
@@ -8368,6 +8375,361 @@ Plecs {
             Signals       {"Input Current"}
           }
         }
+        Component {
+          Type          Subsystem
+          Name          "Resonant Frequency Control (Primary Side)"
+          Show          on
+          Position      [375, 575]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-140, -20; 140, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [144, 5]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-140, 5]
+            Direction     left
+          }
+          Schematic {
+            Location      [703, 149; 1379, 449]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Output
+              Name          "High"
+              Show          on
+              Position      [570, 80]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "V_out"
+              Show          on
+              Position      [40, 100]
+              Direction     left
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "Gate Drivers"
+          Show          on
+          Position      [375, 655]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-140, -20; 140, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [144, 5]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-140, 5]
+            Direction     left
+          }
+          Schematic {
+            Location      [703, 149; 1379, 449]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Output
+              Name          "High"
+              Show          on
+              Position      [570, 80]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "V_out"
+              Show          on
+              Position      [40, 100]
+              Direction     left
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "Synchronous Rectification"
+          Show          on
+          Position      [375, 735]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-140, -20; 140, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [144, 5]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-140, 5]
+            Direction     left
+          }
+          Schematic {
+            Location      [703, 149; 1379, 449]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Output
+              Name          "High"
+              Show          on
+              Position      [570, 80]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "V_out"
+              Show          on
+              Position      [40, 100]
+              Direction     left
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "soft start control"
+          Show          on
+          Position      [705, 740]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-140, -20; 140, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [144, 5]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-140, 5]
+            Direction     left
+          }
+          Schematic {
+            Location      [703, 149; 1379, 449]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Output
+              Name          "High"
+              Show          on
+              Position      [570, 80]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "V_out"
+              Show          on
+              Position      [40, 100]
+              Direction     left
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "protection"
+          Show          on
+          Position      [700, 660]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-140, -20; 140, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [144, 5]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-140, 5]
+            Direction     left
+          }
+          Schematic {
+            Location      [703, 149; 1379, 449]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Output
+              Name          "High"
+              Show          on
+              Position      [570, 80]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "V_out"
+              Show          on
+              Position      [40, 100]
+              Direction     left
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "Mux1"
@@ -8393,7 +8755,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Simplified ADC"
           SrcTerminal   2
-          Points        [315, 560; 315, 620]
+          Points        [1150, 155; 1150, 215]
           DstComponent  "Controller"
           DstTerminal   4
         }
@@ -8408,7 +8770,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Simplified ADC"
           SrcTerminal   3
-          Points        [325, 575; 325, 605]
+          Points        [1160, 170; 1160, 200]
           DstComponent  "Controller"
           DstTerminal   7
         }
@@ -8416,7 +8778,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Controller"
           SrcTerminal   6
-          Points        [465, 605; 465, 575]
+          Points        [1300, 200; 1300, 170]
           DstComponent  "Simplified ADC"
           DstTerminal   4
         }
@@ -8617,22 +8979,6 @@ Plecs {
             DstComponent  "Scope"
             DstTerminal   1
           }
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Controller"
-          SrcTerminal   1
-          Points        [575, 620; 575, 610; 775, 610; 775, 525]
-          DstComponent  "Mux1"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Controller"
-          SrcTerminal   2
-          Points        [575, 630; 575, 640; 780, 640; 780, 535]
-          DstComponent  "Mux1"
-          DstTerminal   3
         }
         RectangleAnnotation {
           Position     [540, 240]
@@ -11438,4 +11784,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "3LsCS9SySnaYfZFq2skClRaD7ZrhzQ8N+1p53NgngOI="
+DemoSignature "fpvrHt+gDo2QfM0BUtc3pu7KHticMmkqAgHyy8fHZTQ="

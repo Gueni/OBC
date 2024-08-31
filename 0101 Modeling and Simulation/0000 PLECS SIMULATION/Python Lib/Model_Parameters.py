@@ -100,39 +100,40 @@ DCLink      = {
                       'Iinit'		      : 0                                                                                             #? [A]      - Initial current through the capacitance   
                      }
 LLC         = {
-                     'R1'              : 4700/4,                                                                                       #? [Ohm]    - Resistor 1 value
-                     'R2'              : 160/24,                                                                                       #? [Ohm]    - Resistor 2 value
-                     'V_DC'            : 200,                                                                                          #? [V]      - DC voltage source
-                     'n_prim'          : 4,                                                                                            #? [/]      - Primary side turn number
-                     'n_sndry'         : 4,                                                                                            #? [/]      - Secondary side turn number
-                     'L_r'             : 1.55e-6,                                                                                      #? [H]      - Resonant inductor
-                     'L_k'             : 1.55e-6,                                                                                      #? [H]      - Resonant inductor
-                     'L_k_Iinit'       : 0,                                                                                            #? [H]      - Initial inductance of resonant inductor
-                     'L_r_Iinit'       : 0,                                                                                            #? [/]      - Initial current in resonant inductor
-                     'Trafo'           : {
-                        'Config'       : 1,                                                                                            #? [/]      - Transformer configuration
-                        'n_prim'       : 4,                                                                                            #? [/]      - Primary side turn number
-                        'n_sndry'      : 4,                                                                                            #? [/]      - Secondary side turn number
-                        'Imaginit'     : 0,                                                                                            #? [/]      - Initial magnetizing current
-                        'Lp'           : 1e-9,                                                                                         #? [H]      - Primary inductance
-                        'Rp'           : 1e-2,                                                                                         #? [Ohm]    - Primary resistance
-                        'Rc'           : 10,                                                                                           #? [Ohm]    - Core resistance
-                        'Lm'           : 1e-9,                                                                                         #? [H]      - Magnetizing inductance
-                        'Rs'           : 10,                                                                                           #? [Ohm]    - Secondary resistance
-                        'Ls'           : 1e-9,                                                                                         #? [H]      - Secondary inductance
-                        'LpIinit'      : 0,                                                                                            #? [H]      - Initial inductance of primary winding
-                        'LmIinit'      : 0,                                                                                            #? [H]      - Initial inductance of magnetizing winding
-                        'LsIinit'      : 0                                                                                             #? [H]      - Initial inductance of secondary winding
-                        #                   Cross sectional Area m2 676e-6          Gap_CS_area 
-                        # length of flux path m 1.5e-3*2            Gap_flux_len
-                        # Initial MMF A 0                         Gap_init_MMF
-
-                        # Cross sectional Area m2 676e-6          Core_CS_area 
-                        # saturated relative permeability 1       Core_U_r_sat
-                        # flux density saturation B_sat 0.49 T    Core_B_sat
-                        # Initial MMF A 0                         Core_init_MMF
-                        # unsaturated relative permeability 6500  Core_U_r_unsat
-                        # length of flux path m 149e-3            Core_flux_len
+                     'Config'		            : 1,                                                                                      #? [/]      - configuration
+                     'R1'                    : 4700/4,                                                                                 #? [Ohm]    - Resistor 1 value
+                     'R2'                    : 160/24,                                                                                 #? [Ohm]    - Resistor 2 value
+                     'V_DC'                  : 200,                                                                                    #? [V]      - DC voltage source
+                     'n_prim'                : 4,                                                                                      #? [/]      - Primary side turn number
+                     'n_sndry'               : 4,                                                                                      #? [/]      - Secondary side turn number
+                     'L_r'                   : 1.55e-6,                                                                                #? [H]      - Resonant inductor
+                     'L_k'                   : 1.55e-6,                                                                                #? [H]      - Resonant inductor
+                     'L_k_Iinit'             : 0,                                                                                      #? [H]      - Initial inductance of resonant inductor
+                     'L_r_Iinit'             : 0,                                                                                      #? [/]      - Initial current in resonant inductor
+                     'Trafo'                 : {
+                        'Config'             : 1,                                                                                      #? [/]      - Transformer configuration
+                        'n_prim'             : 4,                                                                                      #? [/]      - Primary side turn number
+                        'n_sndry'            : 4,                                                                                      #? [/]      - Secondary side turn number
+                        'Imaginit'           : 0,                                                                                      #? [/]      - Initial magnetizing current
+                        'Lp'                 : 1e-9,                                                                                   #? [H]      - Primary inductance
+                        'Rp'                 : 1e-2,                                                                                   #? [Ohm]    - Primary resistance
+                        'Rc'                 : 10,                                                                                     #? [Ohm]    - Core resistance
+                        'Lm'                 : 1e-9,                                                                                   #? [H]      - Magnetizing inductance
+                        'Rs'                 : 10,                                                                                     #? [Ohm]    - Secondary resistance
+                        'Ls'                 : 1e-9,                                                                                   #? [H]      - Secondary inductance
+                        'LpIinit'            : 0,                                                                                      #? [H]      - Initial inductance of primary winding
+                        'LmIinit'            : 0,                                                                                      #? [H]      - Initial inductance of magnetizing winding
+                        'LsIinit'            : 0,                                                                                      #? [H]      - Initial inductance of secondary winding
+                       
+                        'Gap_CS_area'        : 676e-6 ,                                                                                #? [m2]     - Cross sectional Area
+                        'Gap_flux_len'       : 1.5e-3*2,                                                                               #? [m]      - length of flux path
+                        'Gap_init_MMF'       : 0,                                                                                      #? [A]      - Initial MMF
+                        'Core_CS_area'       : 676e-6,                                                                                 #? [m2]     - Cross sectional Area
+                        'Core_U_r_sat'       : 1,                                                                                      #? [/]      - saturated relative permeability
+                        'Core_B_sat'         : 0.49,                                                                                   #? [T]      - flux density saturation
+                        'Core_init_MMF'      : 0,                                                                                      #? [A]      - Initial MMF
+                        'Core_U_r_unsat'     : 6500,                                                                                   #? [/]      - unsaturated relative permeability
+                        'Core_flux_len'      : 149e-3                                                                                  #? [m]      - length of flux path
                      },
                      'C_r'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
@@ -143,6 +144,9 @@ LLC         = {
                         'Nseri'        : 1,                                                                                            #? [/]      - Number of series capacitors
                         'Vinit'        : 0,                                                                                            #? [V]      - Initial voltage across the capacitance
                         'Iinit'        : 0                                                                                             #? [A]      - Initial current through the capacitance
+                     },
+                     'CT'              : {
+                        'Config'       : 1                                                                                             #? [/]      - Capacitance configuration
                      },
                      'L'               : 1.6e-6,                                                                                       #? [H]      - Output inductor
                      'C_o'             : 480e-6,                                                                                       #? [F]      - Output capacitor
@@ -220,16 +224,8 @@ LLC         = {
                               'Vinit'        : 0,                                                                                      #? [V]      - Initial voltage across the snubber capacitor
                               'Iinit'        : 0                                                                                       #? [A]      - Initial current through the snubber capacitor
                            }
-                        },
-                     'Diode'                 : {
-                        'diode'              : 'file:C4D40120D',                                                                       #? [/]      - diode thermal description       
-                        'ron_diode'          : 1,                                                                                      #? [Ohm]    - diode forward resistance    
-                        'vf_diode'           : 1.4,                                                                                    #? [V]      - diode forward voltage
-                        'rth_ch_diode'       : 0.5,                                                                                    #? [K/W]    - Thermal resistance case-heatsink (grease)       
-                        'num_par_diode'      : 4,                                                                                      #? [/]      - Number of parallel diodes      
-                        'Rth'                : 0.1,                                                                                    #? [K/W]    - Heatsink to ambient thermal resistance    
-                        't_init'             : 25                                                                                      #? [°C]     - Initial temperature   
-                     }
+                        }
+         
                   }
 CTRL        = {                                                                                             
                      'Vref'                  : 400,                                                                                    #? [V]      - Reference voltage
