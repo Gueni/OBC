@@ -106,8 +106,8 @@ LLC         = {
                      'V_DC'                  : 200,                                                                                    #? [V]      - DC voltage source
                      'n_prim'                : 4,                                                                                      #? [/]      - Primary side turn number
                      'n_sndry'               : 4,                                                                                      #? [/]      - Secondary side turn number
-                     'L_r'                   : 1.55e-6,                                                                                #? [H]      - Resonant inductor
-                     'L_k'                   : 1.55e-6,                                                                                #? [H]      - Resonant inductor
+                     'L_r'                   : 20e-6,                                                                                  #? [H]      - Resonant inductor
+                     'L_k'                   : 5e-6,                                                                                   #? [H]      - Resonant inductor
                      'L_k_Iinit'             : 0,                                                                                      #? [H]      - Initial inductance of resonant inductor
                      'L_r_Iinit'             : 0,                                                                                      #? [/]      - Initial current in resonant inductor
                      'Trafo'                 : {
@@ -137,7 +137,7 @@ LLC         = {
                      },
                      'C_r'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
-                        'Cap_s'        : 1.2e-6,                                                                                       #? [F]      - Capacitance value
+                        'Cap_s'        : 47e-6,                                                                                        #? [F]      - Capacitance value
                         'Resr_s'       : 1e-10,                                                                                        #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'       : 1e-10,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
                         'Npara'        : 1,                                                                                            #? [/]      - Number of parallel capacitors
@@ -212,7 +212,7 @@ LLC         = {
                         'Rth'                : 0.34 	                                                                                 #? [K/W]    - Total thermal resistance 				    	                           
                      },
                      'RC1' : {
-                           'Config'          : 1,                                                                                      #? [/]      - Configuration setting (e.g., 1 for enabled)
+                           'Config'          : 2,                                                                                      #? [/]      - Configuration setting (e.g., 1 for enabled)
                            'Rsnub'           : 1e-3,                                                                                   #? [Ohm]    - Snubber resistor value
                            'Csnub'           : {
                               'Config'       : 1,                                                                                      #? [/]      - Configuration setting for the snubber capacitor
