@@ -247,7 +247,7 @@ CTRL        = {
                   }
 HV_Filter   = {                                                                                             
                      'Config'                : 3,                                                                                      #? [/]      - Filter configuration
-                     'Cy1'                   : {                                                                                        
+                     'Cy'                    : {                                                                                        
                         'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
                         'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
                         'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
@@ -257,16 +257,6 @@ HV_Filter   = {
                         'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
                         'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
                                                 },                                                             
-                     'Cy2'                   : {                                                                                 
-                        'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
-                        'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
-                        'Resr_s'             : 0,                                                                                      #? [Ohm]    - Equivalent series resistance of the capacitance
-                        'Lesl_s'             : 0,                                                                                      #? [H]      - Equivalent series inductance of the capacitance
-                        'Npara'              : 1,                                                                                      #? [/]      - Number of parallel capacitors
-                        'Nseri'              : 1,                                                                                      #? [/]      - Number of series capacitors
-                        'Vinit'              : 0,                                                                                      #? [V]      - Initial voltage across the capacitance
-                        'Iinit'              : 0                                                                                       #? [A]      - Initial current through the capacitance
-                                                },                                                                 
                      'Cx'                    : {                                                                                      
                         'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
                         'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
@@ -318,6 +308,23 @@ ModelVars   = {
                   'Load'            :  Load        ,                                                                
                   'Thermals'        :  Thermals    
                }	
+SolverOpts  = {
+
+               }
+AnalysisOpts= {
+                  'system_period'   :  1/50        ,      
+                  'freq_range_min'  :  10          ,
+                  'freq_range_max'  :  1e5         ,
+                  'amplitude'       :  1e-1        ,                                                                   
+                  'sim_Tstart'      :  0           ,                                                           
+                  'NB_pts'          :  10000       ,                                                                 
+                  'additional_freq' :  []          ,                                                              
+                  'NB_init_cycles'  :  0           ,                                                                 
+                  'Termination_tol' :  1e-6        ,                                                            
+                  'max_iter_NB'     :  50          ,   
+                  'Jacobian_rel_tol':  1e-6        ,
+                  'DC_Filter'       :  ModelVars['HV_Filter']                                                         
+              }
 #!----------------------------------------------------------------------------------------------------------------------------------------	
 scopes      =  [                                                                                            
 				      "OBC/Scope",                                                                             

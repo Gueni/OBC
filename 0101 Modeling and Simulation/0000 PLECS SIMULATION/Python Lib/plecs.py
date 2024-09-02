@@ -13,11 +13,13 @@ import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 class simpy:
     
-    def __init__(self,url,port,path,modelvar):
-        self.url        =   url
-        self.port       =   port
-        self.path       =   path
-        self.modelvar   =   modelvar
+    def __init__(self,url,port,path,modelvar,analysisvars,analysisName=''):
+        self.url            =   url
+        self.port           =   port
+        self.path           =   path
+        self.modelvar       =   modelvar
+        self.analysisvars   =   analysisvars
+        self.analysisName   =   analysisName
 
     def is_running(self,process_name):
         try:
@@ -64,7 +66,14 @@ class simpy:
     def Set_sim_param(self,mdlvars):
         self.modelvar = mdlvars
         self.opts =  {'ModelVars' :  self.modelvar} 
+    
+    def set_analysis_param(self,analysisvars):
+        self.analysisvars = analysisvars
+        self.analysisopts =  {'ModelVars' :  self.analysisvars }
 
+    def launch_analysis(self,modelname):
+        self.server.plecs.analyze(modelname, self.analysisName, self.analysisopts)
+        
     def launch_sim(self,modelname):
         self.server.plecs.simulate(modelname, self.opts)
 
