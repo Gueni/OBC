@@ -13,7 +13,7 @@ import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 class simpy:
     
-    def __init__(self,url,port,path,modelvar,analysisvars,analysisName=''):
+    def __init__(self,url,port,path,modelvar,analysisvars='',analysisName=''):
         self.url            =   url
         self.port           =   port
         self.path           =   path

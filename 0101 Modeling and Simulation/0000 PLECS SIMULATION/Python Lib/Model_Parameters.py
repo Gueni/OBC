@@ -309,7 +309,7 @@ ModelVars   = {
                   'Thermals'        :  Thermals    
                }	
 SolverOpts  = {
-
+                  'Sim_param'       :  ModelVars['Sim_param'] 
                }
 AnalysisOpts= {
                   'system_period'   :  1/50        ,      
@@ -322,8 +322,8 @@ AnalysisOpts= {
                   'NB_init_cycles'  :  0           ,                                                                 
                   'Termination_tol' :  1e-6        ,                                                            
                   'max_iter_NB'     :  50          ,   
-                  'Jacobian_rel_tol':  1e-6        ,
-                  'DC_Filter'       :  ModelVars['HV_Filter']                                                         
+                  'Jacobian_rel_tol':  1e-6        
+                                                                           
               }
 #!----------------------------------------------------------------------------------------------------------------------------------------	
 scopes      =  [                                                                                            

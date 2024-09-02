@@ -46,6 +46,11 @@ plcsim.load_model()
 cleardata.clear_data_folders()  
 utc_numeric                            = str(int(time.strftime("%Y%m%d%H%M%S",  time.gmtime() )))
 sim_idx                                = 1
+mdlvar['ToFile']['sim_idx']            = sim_idx
+mdlvar['ToFile']['utc_numeric']        = utc_numeric
+mdlvar['ToFile']['logfile']            = str((os.path.join(mdl.current_directory,mdl.logfile_path+f"Log_{utc_numeric}_{sim_idx}.log")).replace("\\", "/"))
+analvar['DC_Filter']                   = mdlvar['HV_Filter']
+plcsim.logParams(str(mdlvar['ToFile']['logfile']),analvar)
 plcsim.set_analysis_param(analvar)
 plcsim.launch_analysis(modelname=modelname)
 #? -------------------------------------------------------------------------------
