@@ -1,0 +1,246 @@
+\documentclass{article}
+%-------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{tocloft} % For custom Table of Contents formatting
+%-------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------
+\title{PFC Totem-Pole Converter Control Strategy}
+\author{Mohamed Gueni}
+\date{\today}
+%-------------------------------------------------------
+\maketitle
+%-------------------------------------------------------
+\tableofcontents
+%-------------------------------------------------------
+\section{Introduction}
+\label{sec:introduction}
+This document outlines the control strategy for a PFC Totem-Pole Converter with 3 legs, where each leg contains MOSFETs. The converter has an AC input and provides a 400V DC output. A coupled choke is placed on the line to improve the performance of the power factor correction.
+
+%-------------------------------------------------------
+\section{Control Strategy Overview}
+\label{sec:control_strategy_overview}
+\subsection{Purpose}
+To regulate the output voltage, maintain high power factor, and ensure efficient operation of the PFC Totem-Pole Converter.
+
+\subsection{Key Control Blocks}
+The control strategy includes the following key blocks:
+\begin{itemize}
+    \item Voltage Regulation
+    \item Power Factor Correction (PFC)
+    \item Current Limiting
+    \item Soft-Start
+    \item Temperature Monitoring
+\end{itemize}
+
+%-------------------------------------------------------
+\section{Voltage Regulation}
+\label{sec:voltage_regulation}
+\subsection{Purpose}
+To maintain the desired DC output voltage of 400V despite variations in input voltage and load conditions.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{PI or PID Controller:} A Proportional-Integral (PI) or Proportional-Integral-Derivative (PID) controller processes the error between the actual output voltage and the reference voltage.
+    \item \textbf{Feedback Loop:} Measures the output voltage and adjusts the duty cycle of the MOSFETs to maintain the output at 400V.
+\end{itemize}
+
+\subsection{Controller}
+The output of the voltage regulation loop controls the duty cycle of the MOSFETs in the PFC circuit.
+
+\subsection{Detailed Implementation}
+\begin{itemize}
+    \item \textbf{Objective:} Ensure that the DC output voltage is regulated to 400V by adjusting the duty cycle of the MOSFETs.
+    \item \textbf{Components Needed in PLECS:}
+    \begin{itemize}
+        \item \textbf{PI or PID Controller:}
+        \begin{itemize}
+            \item Processes the error between the measured output voltage and the reference voltage.
+        \end{itemize}
+        \item \textbf{Voltage Feedback:}
+        \begin{itemize}
+            \item Measures the output voltage and provides feedback to the controller.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Block Diagram in PLECS:}
+    \begin{itemize}
+        \item \textbf{Input:} Error signal from the output voltage regulation loop.
+        \item \textbf{Processing:} Use a PI or PID controller to process the error signal and adjust the MOSFET duty cycle.
+        \item \textbf{Output:} Control signals for the MOSFETs to maintain the desired output voltage.
+    \end{itemize}
+    \item \textbf{Implementation Steps in PLECS:}
+    \begin{enumerate}
+        \item \textbf{Create a PI or PID Controller block} that takes the voltage error signal as input.
+        \item \textbf{Link the output of the Voltage Feedback} to the input of the PI or PID Controller.
+        \item \textbf{Generate gate drive signals} for the MOSFETs based on the controller output.
+    \end{enumerate}
+\end{itemize}
+
+%-------------------------------------------------------
+\section{Power Factor Correction (PFC)}
+\label{sec:power_factor_correction}
+\subsection{Purpose}
+To correct the power factor by ensuring that the current drawn from the AC source is in phase with the input voltage, thus improving the efficiency of the converter.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Current Feedback:} Measures the input current and provides feedback for phase and amplitude correction.
+    \item \textbf{Control Algorithm:} Adjusts the duty cycle of the MOSFETs to correct the phase angle between the voltage and current.
+\end{itemize}
+
+\subsection{Controller}
+A control algorithm such as a sliding mode controller or another advanced PFC technique can be used to ensure proper power factor correction.
+
+\subsection{Detailed Implementation}
+\begin{itemize}
+    \item \textbf{Objective:} Achieve a power factor close to unity by adjusting the duty cycle of the MOSFETs in response to current and voltage feedback.
+    \item \textbf{Components Needed in PLECS:}
+    \begin{itemize}
+        \item \textbf{Current Sensor:}
+        \begin{itemize}
+            \item Measures the input current and provides feedback.
+        \end{itemize}
+        \item \textbf{Control Algorithm Block:}
+        \begin{itemize}
+            \item Adjusts the duty cycle of the MOSFETs based on current and voltage feedback.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Block Diagram in PLECS:}
+    \begin{itemize}
+        \item \textbf{Input:} Current feedback and voltage measurements.
+        \item \textbf{Processing:} Use the control algorithm to process the feedback and adjust the duty cycle.
+        \item \textbf{Output:} Control signals for the MOSFETs to correct the power factor.
+    \end{itemize}
+    \item \textbf{Implementation Steps in PLECS:}
+    \begin{enumerate}
+        \item \textbf{Create a Current Sensor block} to measure the input current.
+        \item \textbf{Implement the Control Algorithm} to process current and voltage feedback.
+        \item \textbf{Generate gate drive signals} for the MOSFETs based on the control algorithm output.
+    \end{enumerate}
+\end{itemize}
+
+%-------------------------------------------------------
+\section{Current Limiting}
+\label{sec:current_limiting}
+\subsection{Purpose}
+To protect the converter from excessive current that could damage components.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Current Limiting Circuit:} Monitors the current and limits it to safe levels by adjusting the duty cycle of the MOSFETs or shutting down the converter.
+\end{itemize}
+
+\subsection{Controller}
+Current protection logic integrated with the control loop or as a separate protection circuit.
+
+\subsection{Detailed Implementation}
+\begin{itemize}
+    \item \textbf{Objective:} Prevent damage by limiting the current to safe levels.
+    \item \textbf{Components Needed in PLECS:}
+    \begin{itemize}
+        \item \textbf{Current Sensor:}
+        \begin{itemize}
+            \item Measures the current and provides feedback to the limiting circuit.
+        \end{itemize}
+        \item \textbf{Current Limiting Block:}
+        \begin{itemize}
+            \item Adjusts the duty cycle or shuts down the converter based on current feedback.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Block Diagram in PLECS:}
+    \begin{itemize}
+        \item \textbf{Input:} Current measurement feedback.
+        \item \textbf{Processing:} Use the current limiting block to process feedback and adjust the duty cycle or shut down.
+        \item \textbf{Output:} Adjusted control signals or shutdown command.
+    \end{itemize}
+    \item \textbf{Implementation Steps in PLECS:}
+    \begin{enumerate}
+        \item \textbf{Create a Current Sensor block} to measure the input current.
+        \item \textbf{Implement the Current Limiting Block} to process the current feedback.
+        \item \textbf{Generate control signals} based on the limiting block's output.
+    \end{enumerate}
+\end{itemize}
+
+%-------------------------------------------------------
+\section{Soft-Start}
+\label{sec:soft_start}
+\subsection{Purpose}
+To gradually ramp up the output voltage and current to prevent inrush currents and ensure smooth startup.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Soft-Start Circuit:} Gradually increases the duty cycle or switching frequency from a low value to the normal operating point during startup.
+\end{itemize}
+
+\subsection{Controller}
+Typically integrated with the voltage regulation loop, where the reference voltage or duty cycle is gradually ramped up.
+
+\subsection{Detailed Implementation}
+\begin{itemize}
+    \item \textbf{Objective:} Smoothly ramp up the operation of the converter to avoid inrush currents.
+    \item \textbf{Components Needed in PLECS:}
+    \begin{itemize}
+        \item \textbf{Soft-Start Block:}
+        \begin{itemize}
+            \item Gradually increases the duty cycle or frequency during startup.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Block Diagram in PLECS:}
+    \begin{itemize}
+        \item \textbf{Input:} Soft-start control signal.
+        \item \textbf{Processing:} Ramp up the duty cycle or frequency.
+        \item \textbf{Output:} Gradually increased control signals for the MOSFETs.
+    \end{itemize}
+    \item \textbf{Implementation Steps in PLECS:}
+    \begin{enumerate}
+        \item \textbf{Create a Soft-Start Block} that controls the ramp-up of the duty cycle or frequency.
+        \item \textbf{Link the Soft-Start Block} to the control signals for the MOSFETs.
+    \end{enumerate}
+\end{itemize}
+
+%-------------------------------------------------------
+\section{Temperature Monitoring and Protection}
+\label{sec:temperature_monitoring}
+\subsection{Purpose}
+To protect the MOSFETs and other critical components from overheating.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Thermal Sensors:} Measure the temperature of the MOSFETs and other critical components.
+    \item \textbf{Thermal Protection Logic:} Reduces the duty cycle, shuts down the converter, or engages cooling mechanisms if temperatures exceed safe limits.
+\end{itemize}
+
+\subsection{Controller}
+Thermal protection circuit integrated with the main control loop or as a separate module.
+
+\subsection{Detailed Implementation}
+\begin{itemize}
+    \item \textbf{Objective:} Ensure safe operation by monitoring and managing temperatures.
+    \item \textbf{Components Needed in PLECS:}
+    \begin{itemize}
+        \item \textbf{Temperature Sensors:}
+        \begin{itemize}
+            \item Measure temperatures and provide feedback.
+        \end{itemize}
+        \item \textbf{Thermal Protection Block:}
+        \begin{itemize}
+            \item Adjusts the operation based on temperature feedback.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Block Diagram in PLECS:}
+    \begin{itemize}
+        \item \textbf{Input:} Temperature feedback.
+        \item \textbf{Processing:} Use thermal protection logic to adjust operation or shut down.
+        \item \textbf{Output:} Adjusted control signals or shutdown command.
+    \end{itemize}
+    \item \textbf{Implementation Steps in PLECS:}
+    \begin{enumerate}
+        \item \textbf{Create Temperature Sensors} to monitor critical components.
+        \item \textbf{Implement Thermal Protection Logic} based on sensor feedback.
+        \item \textbf{Generate control signals} or shutdown commands based on the protection logic.
+    \end{enumerate}
+\end{itemize}
+
+\end{document}

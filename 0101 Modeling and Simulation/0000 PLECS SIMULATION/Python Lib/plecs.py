@@ -13,15 +13,16 @@ import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 class simpy:
     
-    def __init__(self,url,port,path,modelvar):
-        self.url        =   url
-        self.port       =   port
-        self.path       =   path
-        self.modelvar   =   modelvar
+    def __init__(self,url,port,path,modelvar,analysisvars='',analysisName=''):
+        self.url            =   url
+        self.port           =   port
+        self.path           =   path
+        self.modelvar       =   modelvar
+        self.analysisvars   =   analysisvars
+        self.analysisName   =   analysisName
 
     def is_running(self,process_name):
         try:
-            # For Windows
             tasks = os.popen('tasklist').read().strip().split('\n')
             for task in tasks:
                 if process_name.lower() in task.lower():
@@ -62,9 +63,18 @@ class simpy:
         for val in scopelist:
             self.server.plecs.scope(val,'ClearTraces')
 
-    def Set_sim_param(self):
+    def Set_sim_param(self,mdlvars):
+        self.modelvar = mdlvars
         self.opts =  {'ModelVars' :  self.modelvar} 
+    
+    def set_analysis_param(self,analysisvars):
+        self.analysisvars = analysisvars
+        self.analysisopts =  {'ModelVars' :  self.analysisvars }
 
+    def launch_analysis(self,modelname):
+        results = self.server.plecs.analyze(modelname, self.analysisName, self.analysisopts)
+        return results
+    
     def launch_sim(self,modelname):
         self.server.plecs.simulate(modelname, self.opts)
 
@@ -80,7 +90,7 @@ class simpy:
         self.server.plecs.close(modelname) 
 
     def logParams(self,file_path, nested_dict):
-        with open(file_path, 'w') as file:
+        with open(file_path, 'a') as file:
             self.log_parameters(file, nested_dict, parent_keys=[])
 
     def log_parameters(self,file, nested_dict, parent_keys):
@@ -94,4 +104,3 @@ class simpy:
                 file.write("{:<40}= {}\n".format(parent_path, value))
 
 #?----------------------------------------------------------------------------------------------------------------------------------------
-
