@@ -45,11 +45,11 @@ plcsim                                 = plc.simpy(
                                                     analysisName    =   'DC Filter AC Sweep'
                                                     )  
 
-Cx                                     = np.arange(1e-6     , 20e-6 +1e-6  , 10e-6).tolist()       
-Cy                                     = np.linspace(1e-6   , 100e-6 +1e-6  , num=len(Cx)).tolist()    
-L                                      = np.linspace(10e-6  , 100e-6+10e-6 , num=len(Cx)).tolist()    
-chokeL1                                = np.linspace(1e-3 , 100e-3+1e-3, num=len(Cx)).tolist()  
-chokeL2                                = np.linspace(1e-3 , 100e-3+1e-3, num=len(Cx)).tolist() 
+Cx                                     = np.arange(10e-6     , 10e-6 +1e-6  , 10e-6).tolist()       
+Cy                                     = np.linspace(50e-6   , 50e-6 +50e-6  , num=len(Cx)).tolist()    
+L                                      = np.linspace(50e-6   , 50e-6 +50e-6 , num=len(Cx)).tolist()    
+chokeL1                                = np.linspace(50e-3 , 50e-3+50e-3, num=len(Cx)).tolist()  
+chokeL2                                = np.linspace(50e-3 , 50e-3+50e-3, num=len(Cx)).tolist() 
 
 plcsim.rpc_connect()                                                                       
 plcsim.load_model()  
@@ -77,7 +77,7 @@ for i, (item1, item2, item3, item4, item5) in enumerate(combinations):
     plcsim.set_analysis_param(analvar)
     results                                = plcsim.launch_analysis(modelname=modelname)
     result_list.append(results)
-
+    plcsim.logParams(str(mdlvar['ToFile']['logfile']),result_list[0])
 post_process.plot_ac_analysis_sweep(result_list, html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #? -------------------------------------------------------------------------------
 

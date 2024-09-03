@@ -143,13 +143,18 @@ def gen_plots(resFile, html_file, OPEN=False):
     if OPEN:
         webbrowser.open(html_file)
 
+import plotly.graph_objects as go
+import plotly.subplots as sp
+import webbrowser
+
 def plot_ac_analysis_sweep(results_list, html_file, OPEN=False):
     """
-    Plots the magnitude (Gr) and phase (Gi) for multiple iterations.
+    Plots the magnitude (Gr) and phase (Gi) for multiple iterations with a logarithmic frequency axis.
 
     Parameters:
     - results_list: A list of dictionaries, each containing 'F', 'Gr', and 'Gi' values.
     - html_file: The file path to save the HTML output.
+    - mdl: The model object containing AnalysisOpts and other metadata.
     - OPEN: If True, the HTML file will be opened in the default web browser.
     """
 
@@ -187,21 +192,27 @@ def plot_ac_analysis_sweep(results_list, html_file, OPEN=False):
         xaxis_title='Frequency (Hz)',
         yaxis_title='Magnitude (dB)',
         yaxis2_title='Phase (deg)',
-        showlegend=True,
         margin=dict(l=50, r=50, t=100, b=50),
         height=600
     )
-    mdlvar_flat         = flatten_dict(convert_to_ordereddict(mdl.AnalysisOpts))
-    # Update x-axis properties for shared x-axis
-    fig.update_xaxes(title_text='Frequency (Hz)', type='log', row=2, col=1)
-    table_fig           = go.Figure(data=[go.Table(
+
+    # Ensure logarithmic x-axis
+    fig.update_xaxes(type='log', title_text='Frequency (Hz)', row=1, col=1)
+    fig.update_xaxes(type='log', title_text='Frequency (Hz)', row=2, col=1)
+    
+    # Extracting and flattening model variables for the table
+    mdlvar_flat = flatten_dict(convert_to_ordereddict(mdl.AnalysisOpts))
+    
+    # Create a table with model variables
+    table_fig = go.Figure(data=[go.Table(
         header=dict(values=["PARAMETERS", "VALUES"],
                     fill_color='paleturquoise',
                     align='left'),
-        cells=dict(values=[list(mdlvar_flat.keys()), list(mdlvar_flat.values())  ],
+        cells=dict(values=[list(mdlvar_flat.keys()), list(mdlvar_flat.values())],
                    fill_color='lavender',
                    align='left')
     )])
+
     # HTML title
     title = f"AC Sweep Analysis_{mdl.ModelVars['ToFile']['utc_numeric']}_{mdl.ModelVars['ToFile']['sim_idx']}_MOHAMED_GUENI"
     
@@ -213,7 +224,6 @@ def plot_ac_analysis_sweep(results_list, html_file, OPEN=False):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{title}</title>
-
     </head>
     <body>
         <div class="center">
@@ -225,9 +235,10 @@ def plot_ac_analysis_sweep(results_list, html_file, OPEN=False):
         f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
         f.write(table_fig.to_html(full_html=False, include_plotlyjs=False))
 
-    
+    # Optionally open the HTML file
     if OPEN:
         webbrowser.open(html_file)
+
 
 
 #?----------------------------------------------------------------------------------------------------------------------------------------
