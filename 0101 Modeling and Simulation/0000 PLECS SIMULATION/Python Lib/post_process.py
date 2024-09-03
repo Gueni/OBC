@@ -18,6 +18,8 @@ from PIL import Image
 import screeninfo
 import copy
 from collections import OrderedDict
+import plotly.graph_objs as go
+import plotly.subplots as sp
 #?----------------------------------------------------------------------------------------------------------------------------------------
 
 def png_to_hex_base64():
@@ -140,4 +142,92 @@ def gen_plots(resFile, html_file, OPEN=False):
     f.close()
     if OPEN:
         webbrowser.open(html_file)
+
+def plot_ac_analysis_sweep(results_list, html_file, OPEN=False):
+    """
+    Plots the magnitude (Gr) and phase (Gi) for multiple iterations.
+
+    Parameters:
+    - results_list: A list of dictionaries, each containing 'F', 'Gr', and 'Gi' values.
+    - html_file: The file path to save the HTML output.
+    - OPEN: If True, the HTML file will be opened in the default web browser.
+    """
+
+    # Create a subplot with 2 rows: one for Gr and one for Gi
+    fig = sp.make_subplots(rows=2, cols=1, shared_xaxes=True,
+                           subplot_titles=('Magnitude (Gr)', 'Phase (Gi)'),
+                           vertical_spacing=0.20)
+
+    # Loop through each result and add traces for Gr and Gi
+    for idx, data in enumerate(results_list):
+        frequencies = data['F']
+        Gr_values = data['Gr'][0]
+        Gi_values = data['Gi'][0]
+
+        # Add Magnitude (Gr) plot
+        fig.add_trace(
+            go.Scatter(x=frequencies, y=Gr_values, mode='lines',
+                       name=f'Magnitude (Gr) Iteration {idx+1}',
+                       showlegend=True),
+            row=1, col=1
+        )
+
+        # Add Phase (Gi) plot
+        fig.add_trace(
+            go.Scatter(x=frequencies, y=Gi_values, mode='lines',
+                       name=f'Phase (Gi) Iteration {idx+1}',
+                       showlegend=True),
+            row=2, col=1
+        )
+    
+    # Update layout
+    fig.update_layout(
+        autosize=True,
+        title_text='AC Sweep Analysis',
+        xaxis_title='Frequency (Hz)',
+        yaxis_title='Magnitude (dB)',
+        yaxis2_title='Phase (deg)',
+        showlegend=True,
+        margin=dict(l=50, r=50, t=100, b=50),
+        height=600
+    )
+    mdlvar_flat         = flatten_dict(convert_to_ordereddict(mdl.AnalysisOpts))
+    # Update x-axis properties for shared x-axis
+    fig.update_xaxes(title_text='Frequency (Hz)', type='log', row=2, col=1)
+    table_fig           = go.Figure(data=[go.Table(
+        header=dict(values=["PARAMETERS", "VALUES"],
+                    fill_color='paleturquoise',
+                    align='left'),
+        cells=dict(values=[list(mdlvar_flat.keys()), list(mdlvar_flat.values())  ],
+                   fill_color='lavender',
+                   align='left')
+    )])
+    # HTML title
+    title = f"AC Sweep Analysis_{mdl.ModelVars['ToFile']['utc_numeric']}_{mdl.ModelVars['ToFile']['sim_idx']}_MOHAMED_GUENI"
+    
+    # Create the HTML structure
+    html_content = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{title}</title>
+
+    </head>
+    <body>
+        <div class="center">
+    """
+    
+    # Write the HTML file with the embedded Plotly figure
+    with open(html_file, "w") as f:
+        f.write(html_content)
+        f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
+        f.write(table_fig.to_html(full_html=False, include_plotlyjs=False))
+
+    
+    if OPEN:
+        webbrowser.open(html_file)
+
+
 #?----------------------------------------------------------------------------------------------------------------------------------------

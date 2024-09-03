@@ -314,14 +314,14 @@ SolverOpts  = {
 AnalysisOpts= {
                   'system_period'   :  1/50        ,      
                   'freq_range_min'  :  10          ,
-                  'freq_range_max'  :  1e5         ,
+                  'freq_range_max'  :  1e3         ,
                   'amplitude'       :  1e-1        ,                                                                   
                   'sim_Tstart'      :  0           ,                                                           
-                  'NB_pts'          :  10000       ,                                                                 
+                  'NB_pts'          :  1000        ,                                                                 
                   'additional_freq' :  []          ,                                                              
                   'NB_init_cycles'  :  0           ,                                                                 
                   'Termination_tol' :  1e-6        ,                                                            
-                  'max_iter_NB'     :  50          ,   
+                  'max_iter_NB'     :  20          ,   
                   'Jacobian_rel_tol':  1e-6        
                                                                            
               }

@@ -72,8 +72,9 @@ class simpy:
         self.analysisopts =  {'ModelVars' :  self.analysisvars }
 
     def launch_analysis(self,modelname):
-        self.server.plecs.analyze(modelname, self.analysisName, self.analysisopts)
-        
+        results = self.server.plecs.analyze(modelname, self.analysisName, self.analysisopts)
+        return results
+    
     def launch_sim(self,modelname):
         self.server.plecs.simulate(modelname, self.opts)
 
@@ -89,7 +90,7 @@ class simpy:
         self.server.plecs.close(modelname) 
 
     def logParams(self,file_path, nested_dict):
-        with open(file_path, 'w') as file:
+        with open(file_path, 'a') as file:
             self.log_parameters(file, nested_dict, parent_keys=[])
 
     def log_parameters(self,file, nested_dict, parent_keys):
