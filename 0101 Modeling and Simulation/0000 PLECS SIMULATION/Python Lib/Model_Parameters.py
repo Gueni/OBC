@@ -91,7 +91,7 @@ PFC         = {
                }
 DCLink      = {                                                                                             
                       'Config'		   : 1,                                                                                            #? [/]      - Capacitance configuration
-                      'Cap_s'    		: 5*100e-6,                                                                                     #? [F]      - Capacitance value 
+                      'Cap_s'    		: 100e-6,                                                                                       #? [F]      - Capacitance value 
                       'Resr_s'		   : 1e-12,                                                                                        #? [F]      - Equivalent series resistance of the capacitance
                       'Lesl_s'		   : 1e-12,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
                       'Npara'		      : 10,                                                                                           #? [/]      - Number of parallel capacitors
@@ -101,19 +101,14 @@ DCLink      = {
                      }
 LLC         = {
                      'Config'		            : 1,                                                                                      #? [/]      - configuration
-                     'R1'                    : 4700/4,                                                                                 #? [Ohm]    - Resistor 1 value
-                     'R2'                    : 160/24,                                                                                 #? [Ohm]    - Resistor 2 value
-                     'V_DC'                  : 200,                                                                                    #? [V]      - DC voltage source
-                     'n_prim'                : 4,                                                                                      #? [/]      - Primary side turn number
-                     'n_sndry'               : 4,                                                                                      #? [/]      - Secondary side turn number
                      'L_r'                   : 20e-6,                                                                                  #? [H]      - Resonant inductor
                      'L_k'                   : 5e-6,                                                                                   #? [H]      - Resonant inductor
                      'L_k_Iinit'             : 0,                                                                                      #? [H]      - Initial inductance of resonant inductor
                      'L_r_Iinit'             : 0,                                                                                      #? [/]      - Initial current in resonant inductor
                      'Trafo'                 : {
                         'Config'             : 1,                                                                                      #? [/]      - Transformer configuration
-                        'n_prim'             : 4,                                                                                      #? [/]      - Primary side turn number
-                        'n_sndry'            : 4,                                                                                      #? [/]      - Secondary side turn number
+                        'n_prim'             : 10,                                                                                     #? [/]      - Primary side turn number
+                        'n_sndry'            : 1,                                                                                      #? [/]      - Secondary side turn number
                         'Imaginit'           : 0,                                                                                      #? [/]      - Initial magnetizing current
                         'Lp'                 : 1e-9,                                                                                   #? [H]      - Primary inductance
                         'Rp'                 : 1e-2,                                                                                   #? [Ohm]    - Primary resistance
@@ -124,7 +119,6 @@ LLC         = {
                         'LpIinit'            : 0,                                                                                      #? [H]      - Initial inductance of primary winding
                         'LmIinit'            : 0,                                                                                      #? [H]      - Initial inductance of magnetizing winding
                         'LsIinit'            : 0,                                                                                      #? [H]      - Initial inductance of secondary winding
-                       
                         'Gap_CS_area'        : 676e-6 ,                                                                                #? [m2]     - Cross sectional Area
                         'Gap_flux_len'       : 1.5e-3*2,                                                                               #? [m]      - length of flux path
                         'Gap_init_MMF'       : 0,                                                                                      #? [A]      - Initial MMF
@@ -137,7 +131,7 @@ LLC         = {
                      },
                      'C_r'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
-                        'Cap_s'        : 47e-6,                                                                                        #? [F]      - Capacitance value
+                        'Cap_s'        : 47e-9,                                                                                        #? [F]      - Capacitance value
                         'Resr_s'       : 1e-10,                                                                                        #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'       : 1e-10,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
                         'Npara'        : 1,                                                                                            #? [/]      - Number of parallel capacitors
@@ -149,10 +143,16 @@ LLC         = {
                         'Config'       : 1                                                                                             #? [/]      - Capacitance configuration
                      },
                      'L'               : 1.6e-6,                                                                                       #? [H]      - Output inductor
-                     'C_o'             : 480e-6,                                                                                       #? [F]      - Output capacitor
-                     'C_v_init'        : 0,                                                                                            #? [V]      - Initial voltage across the output capacitor
-                     'R_o'             : 100,                                                                                          #? [Ohm]    - Output resistance
-                     'T_dt'            : 300e-9,                                                                                       #? [s]      - Time delay for switching
+                     'C_o'             : {
+                        'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
+                        'Cap_s'        : 100e-6,                                                                                        #? [F]      - Capacitance value
+                        'Resr_s'       : 1e-10,                                                                                        #? [Ohm]    - Equivalent series resistance of the capacitance
+                        'Lesl_s'       : 1e-10,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
+                        'Npara'        : 1,                                                                                            #? [/]      - Number of parallel capacitors
+                        'Nseri'        : 1,                                                                                            #? [/]      - Number of series capacitors
+                        'Vinit'        : 0,                                                                                            #? [V]      - Initial voltage across the capacitance
+                        'Iinit'        : 0                                                                                             #? [A]      - Initial current through the capacitance
+                     },
                      'HS1'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Switch configuration
                         'therm_mosfet' : 'file:C3M0021120K',                                                                           #? [/]      - MOSFET thermal model file path

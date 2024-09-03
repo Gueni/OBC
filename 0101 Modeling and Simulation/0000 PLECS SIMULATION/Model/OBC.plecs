@@ -4638,8 +4638,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAACAAAAG0AAAADAAAAbQAAAAIAAABuAAAAAQAAAG0AAAAHAAAAbQAAAAYAAABtAAAABQAAAG0AAA"
+"AEAAAAbQAAAAkAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "6AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAaxAAAAAQAAAAAAAAPoAAAAACs="
@@ -4761,20 +4761,19 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
-          Location      [0, 26; 1536, 850]
+          Location      [0, 23; 1536, 796]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
-"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"BBfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAKd"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
-"xAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAb6AAAAAQAAAAAAAAPoAAAAACs="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGA"
+"AAACAAAAG0AAAAJAAAAbQAAAAYAAABtAAAABwAAAG0AAAAEAAAAbQAAAAUAAABtAAAHgAAAAAsBAA"
+"ABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAABxAAAAAQAAAAAAAABtAAAAAQAAAAAAAAB"
+"uAAAAAQAAAAAAAABtAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAXHAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
           Axes          "2"
@@ -4874,8 +4873,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAACAAAAG0AAAAJAAAAbQAAAAIAAABuAAAAAwAAAG0AAAABAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "KAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbhAAAAAQAAAAAAAAPoAAAAACs="
@@ -5401,8 +5400,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAAAJAAAAbQAAAAgAAABtAAAAAQAAAG0AAA"
+"ADAAAAbQAAAAIAAABuAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "KAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbhAAAAAQAAAAAAAAPoAAAAACs="
@@ -5635,8 +5634,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAAAJAAAAbQAAAAgAAABtAAAAAQAAAG0AAA"
+"ADAAAAbQAAAAIAAABuAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "KAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbhAAAAAQAAAAAAAAPoAAAAACs="
@@ -5890,8 +5889,8 @@ Plecs {
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAG0AAAACAAAAbgAAAAEAAABtAAAABwAAAG0AAAAGAAAAbQAAAAUAAABtAAAABAAAAG0AAA"
-"AJAAAAbQAAAAgAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"AAABQAAAG0AAAAEAAAAbQAAAAcAAABtAAAABgAAAG0AAAAJAAAAbQAAAAgAAABtAAAAAQAAAG0AAA"
+"ADAAAAbQAAAAIAAABuAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
 "KAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAAbhAAAAAQAAAAAAAAPoAAAAACs="
@@ -6104,6 +6103,145 @@ Plecs {
           Parameter {
             Variable      "Width"
             Value         "8"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe11"
+          Show          off
+          Position      [860, 725]
+          Direction     right
+          Flipped       off
+          LabelPosition west
+          Probe {
+            Component     "LLC1"
+            Path          "DUAL LLC/Dual LLC"
+            Signals       {"Trafo Secondary Voltage", "Trafo Primary Current", ""
+"Trafo Secondary Current", "Trafo Primary Voltage"}
+          }
+          Probe {
+            Component     "LLC"
+            Path          "DUAL LLC/Single LLC"
+            Signals       {"Trafo Secondary Voltage", "Trafo Primary Current", ""
+"Trafo Secondary Current", "Trafo Primary Voltage"}
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "Demux37"
+          Show          off
+          Position      [965, 725]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Width"
+            Value         "[2 2]"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "Trafo"
+          Show          on
+          Position      [1065, 725]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Location      [0, 26; 1536, 850]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACyfwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAG4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAOAAAAskAAAB+AP///wAAAAMAAAeAAAA"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAANz"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAACAAAAG0AAAAJAAAAbQAAAAIAAABuAAAAAwAAAG0AAAABAAAAbQAAAAYAAABtAAAABwAAAG0AAA"
+"AEAAAAbQAAAAUAAABtAAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"6AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAaxAAAAAQAAAAAAAAPoAAAAACs="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          Axes          "2"
+          TimeRange     "0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          "TRAFO Voltages"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {"IL"}
+            SignalTypes   [ ]
+            AxisLabel     "[ V ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Axis {
+            Name          "TRAFO Currents"
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            AxisLabel     "[ A ]"
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {"IL"}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          SignalSelector
+          Name          "Selector4"
+          Show          off
+          Position      [915, 725]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "InputWidth"
+            Value         "4"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputIndices"
+            Value         "[ 3 4 1 2 ]"
             Show          off
           }
         }
@@ -7240,6 +7378,34 @@ Plecs {
           SrcTerminal   4
           DstComponent  "LLC SW conduction losses"
           DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux37"
+          SrcTerminal   2
+          DstComponent  "Trafo"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux37"
+          SrcTerminal   3
+          DstComponent  "Trafo"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe11"
+          SrcTerminal   1
+          DstComponent  "Selector4"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Selector4"
+          SrcTerminal   2
+          DstComponent  "Demux37"
+          DstTerminal   1
         }
         Annotation {
           Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
@@ -9127,7 +9293,7 @@ Plecs {
               Frame         [-20, -20; 20, 20]
               Parameter {
                 Variable      "CarrierType"
-                Value         "2"
+                Value         "1"
                 Show          off
               }
               Parameter {
@@ -9137,59 +9303,7 @@ Plecs {
               }
               Parameter {
                 Variable      "Frequency"
-                Value         "50e3"
-                Show          off
-              }
-              Parameter {
-                Variable      "CarrierLimits"
-                Value         "[0 1]"
-                Show          off
-              }
-              Parameter {
-                Variable      "OutputValues"
-                Value         "[0 1]"
-                Show          off
-              }
-              Terminal {
-                Type          Input
-                Position      [-20, -10]
-                Direction     left
-              }
-              Terminal {
-                Type          Input
-                Position      [-20, 10]
-                Direction     left
-              }
-              Terminal {
-                Type          Output
-                Position      [24, 0]
-                Direction     right
-              }
-            }
-            Component {
-              Type          Reference
-              SrcComponent  "Components/Control/Modulators/Variable Frequency "
-"PWM"
-              Name          "Variable\nFrequency PWM1"
-              Show          on
-              Position      [140, 235]
-              Direction     up
-              Flipped       off
-              LabelPosition south
-              Frame         [-20, -20; 20, 20]
-              Parameter {
-                Variable      "CarrierType"
-                Value         "2"
-                Show          off
-              }
-              Parameter {
-                Variable      "Sampling"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "Frequency"
-                Value         "50e3"
+                Value         "250e3"
                 Show          off
               }
               Parameter {
@@ -9236,6 +9350,58 @@ Plecs {
                 Variable      "DataType"
                 Value         "10"
                 Show          off
+              }
+            }
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Modulators/Variable Frequency "
+"PWM"
+              Name          "Variable\nFrequency PWM1"
+              Show          on
+              Position      [140, 235]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-20, -20; 20, 20]
+              Parameter {
+                Variable      "CarrierType"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Sampling"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Frequency"
+                Value         "250e3"
+                Show          off
+              }
+              Parameter {
+                Variable      "CarrierLimits"
+                Value         "[0 1]"
+                Show          off
+              }
+              Parameter {
+                Variable      "OutputValues"
+                Value         "[0 1]"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-20, -10]
+                Direction     left
+              }
+              Terminal {
+                Type          Input
+                Position      [-20, 10]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [24, 0]
+                Direction     right
               }
             }
             Connection {
@@ -11212,7 +11378,7 @@ Plecs {
           Frame         [-35, -10; 35, 10]
           Parameter {
             Variable      "Value"
-            Value         "CTRL.T_dt"
+            Value         "0"
             Show          off
           }
           Parameter {
@@ -11314,1047 +11480,6 @@ Plecs {
           }
         }
         Component {
-          Type          PlecsProbe
-          Name          "Vdc1"
-          Show          on
-          Position      [1105, 660]
-          Direction     right
-          Flipped       off
-          LabelPosition west
-          Probe {
-            Component     "Vm1"
-            Path          "DUAL LLC/Single LLC/LLC/LLC SR"
-            Signals       {"Measured voltage"}
-          }
-        }
-        Component {
-          Type          PlecsProbe
-          Name          "Vac1"
-          Show          on
-          Position      [1095, 530]
-          Direction     right
-          Flipped       off
-          LabelPosition west
-          Probe {
-            Component     "Tr"
-            Path          "DUAL LLC/Single LLC/LLC/LLC SR"
-            Signals       {"Transformer Output Voltage"}
-          }
-        }
-        Component {
-          Type          Sum
-          Name          "Sum4"
-          Show          off
-          Position      [1545, 570]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "IconShape"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "+-|"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "11"
-            Show          off
-          }
-        }
-        Component {
-          Type          Reference
-          SrcComponent  "Components/Control/Modulators/Symmetrical PWM"
-          Name          "Symmetrical PWM1"
-          Show          on
-          Position      [1680, 580]
-          Direction     up
-          Flipped       on
-          LabelPosition north
-          Frame         [-20, -20; 20, 20]
-          Parameter {
-            Variable      "sampling"
-            Value         "4"
-            Show          off
-          }
-          Parameter {
-            Variable      "fc"
-            Value         "1e5"
-            Show          off
-          }
-          Parameter {
-            Variable      "carrier_phaseshift"
-            Value         "0"
-            Show          off
-          }
-          Parameter {
-            Variable      "carrier_limits"
-            Value         "[-1 1]"
-            Show          off
-          }
-          Parameter {
-            Variable      "output_values"
-            Value         "[-1 1]"
-            Show          off
-          }
-          Terminal {
-            Type          Output
-            Position      [24, 0]
-            Direction     right
-          }
-          Terminal {
-            Type          Input
-            Position      [-20, 0]
-            Direction     left
-          }
-        }
-        Component {
-          Type          Subsystem
-          Name          "Current Compensator\n(PR)1"
-          Show          on
-          Position      [1480, 570]
-          Direction     up
-          Flipped       on
-          LabelPosition south
-          Frame         [-25, -20; 25, 20]
-          SampleTime    "-1"
-          CodeGenDiscretizationMethod "2"
-          CodeGenTarget "Generic"
-          MaskIconFrame on
-          MaskIconOpaque off
-          MaskIconRotates on
-          Parameter {
-            Variable      "kp"
-            Prompt        "Proportional gain"
-            Type          FreeText
-            Value         "1.5/0.02"
-            Show          off
-            Tunable       off
-            TabName       ""
-          }
-          Parameter {
-            Variable      "ki"
-            Prompt        "Integral gain"
-            Type          FreeText
-            Value         "1/0.02"
-            Show          off
-            Tunable       off
-            TabName       ""
-          }
-          Parameter {
-            Variable      "fn"
-            Prompt        "Mains frequency (Hz)"
-            Type          FreeText
-            Value         "Grid.f"
-            Show          off
-            Tunable       off
-            TabName       ""
-          }
-          Terminal {
-            Type          Input
-            Position      [-25, 0]
-            Direction     left
-          }
-          Terminal {
-            Type          Output
-            Position      [29, 0]
-            Direction     right
-          }
-          Schematic {
-            Location      [680, 301; 1062, 454]
-            ZoomFactor    1
-            SliderPosition [1, 0]
-            ShowBrowser   off
-            BrowserWidth  100
-            Component {
-              Type          TransferFunction
-              Name          "Transfer Fcn"
-              Show          on
-              Position      [180, 80]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Frame         [-30, -15; 30, 15]
-              Parameter {
-                Variable      "Numerator"
-                Value         "[1 0]"
-                Show          on
-              }
-              Parameter {
-                Variable      "Denominator"
-                Value         "[1 0 (2*pi*fn)^2]"
-                Show          on
-              }
-              Parameter {
-                Variable      "X0"
-                Value         "0"
-                Show          off
-              }
-            }
-            Component {
-              Type          Gain
-              Name          "Gain"
-              Show          off
-              Position      [110, 30]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "K"
-                Value         "kp"
-                Show          off
-              }
-              Parameter {
-                Variable      "Multiplication"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-            }
-            Component {
-              Type          Gain
-              Name          "Gain1"
-              Show          off
-              Position      [110, 80]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "K"
-                Value         "ki"
-                Show          off
-              }
-              Parameter {
-                Variable      "Multiplication"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-            }
-            Component {
-              Type          Sum
-              Name          "Sum1"
-              Show          off
-              Position      [270, 55]
-              Direction     up
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "IconShape"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "Inputs"
-                Value         "|++"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-            }
-            Component {
-              Type          Input
-              Name          "err"
-              Show          on
-              Position      [35, 55]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Index"
-                Value         "1"
-                Show          on
-              }
-              Parameter {
-                Variable      "Width"
-                Value         "-1"
-                Show          off
-              }
-            }
-            Component {
-              Type          Output
-              Name          "out*"
-              Show          on
-              Position      [325, 55]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Index"
-                Value         "2"
-                Show          on
-              }
-              Parameter {
-                Variable      "Width"
-                Value         "-1"
-                Show          off
-              }
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Gain"
-              SrcTerminal   2
-              Points        [230, 30; 230, 50]
-              DstComponent  "Sum1"
-              DstTerminal   2
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Sum1"
-              SrcTerminal   1
-              DstComponent  "out*"
-              DstTerminal   1
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "err"
-              SrcTerminal   1
-              Points        [70, 55]
-              Branch {
-                Points        [70, 30]
-                DstComponent  "Gain"
-                DstTerminal   1
-              }
-              Branch {
-                Points        [70, 80]
-                DstComponent  "Gain1"
-                DstTerminal   1
-              }
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Gain1"
-              SrcTerminal   2
-              DstComponent  "Transfer Fcn"
-              DstTerminal   1
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Transfer Fcn"
-              SrcTerminal   2
-              Points        [230, 80; 230, 60]
-              DstComponent  "Sum1"
-              DstTerminal   3
-            }
-          }
-        }
-        Component {
-          Type          Sum
-          Name          "Sum5"
-          Show          off
-          Position      [1410, 570]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "IconShape"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "|+-"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "11"
-            Show          off
-          }
-        }
-        Component {
-          Type          Product
-          Name          "Product2"
-          Show          off
-          Position      [1355, 570]
-          Direction     up
-          Flipped       on
-          LabelPosition north
-          Parameter {
-            Variable      "IconShape"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "11"
-            Show          off
-          }
-        }
-        Component {
-          Type          Gain
-          Name          "Gain2"
-          Show          off
-          Position      [1225, 530]
-          Direction     right
-          Flipped       off
-          LabelPosition northNortheast
-          Parameter {
-            Variable      "K"
-            Value         "1/Grid.Vin*sqrt(2)"
-            Show          on
-          }
-          Parameter {
-            Variable      "Multiplication"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "11"
-            Show          off
-          }
-        }
-        Component {
-          Type          Sum
-          Name          "Sum6"
-          Show          off
-          Position      [1165, 575]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "IconShape"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "|+-"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "11"
-            Show          off
-          }
-        }
-        Component {
-          Type          ZeroOrderHold
-          Name          "Zero-Order\nHold4"
-          Show          off
-          Position      [1225, 695]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Ts"
-            Value         "1/50e3"
-            Show          off
-          }
-        }
-        Component {
-          Type          Subsystem
-          Name          "Modulator1"
-          Show          on
-          Position      [1610, 580]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Frame         [-25, -20; 25, 20]
-          SampleTime    "-1"
-          CodeGenDiscretizationMethod "2"
-          CodeGenTarget "Generic"
-          MaskIconFrame on
-          MaskIconOpaque off
-          MaskIconRotates on
-          Terminal {
-            Type          Input
-            Position      [-25, 10]
-            Direction     left
-          }
-          Terminal {
-            Type          Input
-            Position      [-25, -10]
-            Direction     left
-          }
-          Terminal {
-            Type          Output
-            Position      [29, 0]
-            Direction     right
-          }
-          Schematic {
-            Location      [1063, 302; 1423, 506]
-            ZoomFactor    1
-            SliderPosition [0, 0]
-            ShowBrowser   off
-            BrowserWidth  100
-            Component {
-              Type          Product
-              Name          "Divide1"
-              Show          off
-              Position      [170, 80]
-              Direction     up
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "IconShape"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "Inputs"
-                Value         "*/"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-            }
-            Component {
-              Type          PulseGenerator
-              Name          "Pulse\nGenerator4"
-              Show          off
-              Position      [250, 35]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Hi"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "Lo"
-                Value         "-1"
-                Show          off
-              }
-              Parameter {
-                Variable      "f"
-                Value         "50.0"
-                Show          off
-              }
-              Parameter {
-                Variable      "DutyCycle"
-                Value         "0.5"
-                Show          off
-              }
-              Parameter {
-                Variable      "Delay"
-                Value         "1/50.0/2"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "10"
-                Show          off
-              }
-            }
-            Component {
-              Type          Sum
-              Name          "Sum5"
-              Show          off
-              Position      [275, 80]
-              Direction     up
-              Flipped       on
-              LabelPosition north
-              Parameter {
-                Variable      "IconShape"
-                Value         "2"
-                Show          off
-              }
-              Parameter {
-                Variable      "Inputs"
-                Value         "|++"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-            }
-            Component {
-              Type          Gain
-              Name          "Gain1"
-              Show          off
-              Position      [225, 80]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "K"
-                Value         "2"
-                Show          off
-              }
-              Parameter {
-                Variable      "Multiplication"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-            }
-            Component {
-              Type          Input
-              Name          "Vdc"
-              Show          on
-              Position      [40, 115]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Index"
-                Value         "1"
-                Show          on
-              }
-              Parameter {
-                Variable      "Width"
-                Value         "-1"
-                Show          off
-              }
-            }
-            Component {
-              Type          Input
-              Name          "V*"
-              Show          on
-              Position      [40, 75]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Index"
-                Value         "2"
-                Show          on
-              }
-              Parameter {
-                Variable      "Width"
-                Value         "-1"
-                Show          off
-              }
-            }
-            Component {
-              Type          MinMax
-              Name          "Min/Max"
-              Show          off
-              Position      [110, 135]
-              Direction     up
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Operation"
-                Value         "2"
-                Show          off
-              }
-              Parameter {
-                Variable      "Inputs"
-                Value         "2"
-                Show          off
-              }
-            }
-            Component {
-              Type          Constant
-              Name          "V4"
-              Show          off
-              Position      [40, 155]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Frame         [-15, -10; 15, 10]
-              Parameter {
-                Variable      "Value"
-                Value         "200"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "10"
-                Show          off
-              }
-            }
-            Component {
-              Type          Output
-              Name          "m"
-              Show          on
-              Position      [325, 80]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Index"
-                Value         "3"
-                Show          on
-              }
-              Parameter {
-                Variable      "Width"
-                Value         "-1"
-                Show          off
-              }
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Gain1"
-              SrcTerminal   2
-              DstComponent  "Sum5"
-              DstTerminal   2
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Divide1"
-              SrcTerminal   1
-              DstComponent  "Gain1"
-              DstTerminal   1
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Pulse\nGenerator4"
-              SrcTerminal   1
-              Points        [275, 35]
-              DstComponent  "Sum5"
-              DstTerminal   3
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "V*"
-              SrcTerminal   1
-              DstComponent  "Divide1"
-              DstTerminal   2
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Vdc"
-              SrcTerminal   1
-              Points        [70, 115; 70, 130]
-              DstComponent  "Min/Max"
-              DstTerminal   2
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "V4"
-              SrcTerminal   1
-              Points        [70, 155; 70, 140]
-              DstComponent  "Min/Max"
-              DstTerminal   3
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Min/Max"
-              SrcTerminal   1
-              Points        [135, 135; 135, 85]
-              DstComponent  "Divide1"
-              DstTerminal   3
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Sum5"
-              SrcTerminal   1
-              DstComponent  "m"
-              DstTerminal   1
-            }
-          }
-        }
-        Component {
-          Type          ZeroOrderHold
-          Name          "Zero-Order\nHold5"
-          Show          off
-          Position      [1225, 660]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Ts"
-            Value         "1/50e3"
-            Show          off
-          }
-        }
-        Component {
-          Type          ZeroOrderHold
-          Name          "Zero-Order\nHold6"
-          Show          off
-          Position      [1165, 620]
-          Direction     up
-          Flipped       off
-          LabelPosition east
-          Parameter {
-            Variable      "Ts"
-            Value         "1/50e3"
-            Show          off
-          }
-        }
-        Component {
-          Type          LogicalOperator
-          Name          "Logical\nOperator4"
-          Show          off
-          Position      [1820, 570]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Operator"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "1"
-            Show          off
-          }
-        }
-        Component {
-          Type          LogicalOperator
-          Name          "Logical\nOperator5"
-          Show          off
-          Position      [1820, 590]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Operator"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "1"
-            Show          off
-          }
-        }
-        Component {
-          Type          ConstantRelationalOperator
-          Name          "Compare to\nConstant2"
-          Show          off
-          Position      [1755, 590]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Frame         [-20, -10; 20, 10]
-          Parameter {
-            Variable      "Operator"
-            Value         "3"
-            Show          off
-          }
-          Parameter {
-            Variable      "Threshold"
-            Value         "0"
-            Show          off
-          }
-        }
-        Component {
-          Type          ConstantRelationalOperator
-          Name          "Compare to\nConstant3"
-          Show          off
-          Position      [1755, 570]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-          Frame         [-20, -10; 20, 10]
-          Parameter {
-            Variable      "Operator"
-            Value         "6"
-            Show          off
-          }
-          Parameter {
-            Variable      "Threshold"
-            Value         "0"
-            Show          off
-          }
-        }
-        Component {
-          Type          Reference
-          SrcComponent  "Components/Control/Continuous/Continuous PID\\nContro"
-"ller"
-          Name          "Voltage Compensator\n(PI)1"
-          Show          on
-          Position      [1255, 575]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Frame         [-40, -25; 40, 25]
-          Parameter {
-            Variable      "cont_type"
-            Value         "3"
-            Show          off
-          }
-          Parameter {
-            Variable      "par_source"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "kp"
-            Value         "0.04/22"
-            Show          off
-          }
-          Parameter {
-            Variable      "ki"
-            Value         "1/2"
-            Show          off
-          }
-          Parameter {
-            Variable      "kd"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "kf"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "ex_reset"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "x0_source"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "x0"
-            Value         "0"
-            Show          off
-          }
-          Parameter {
-            Variable      "ex_sat"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "sat_lim"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "up_limit"
-            Value         "inf"
-            Show          off
-          }
-          Parameter {
-            Variable      "low_limit"
-            Value         "-inf"
-            Show          off
-          }
-          Parameter {
-            Variable      "aw_method"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "kbc"
-            Value         "1"
-            Show          off
-          }
-          Terminal {
-            Type          Input
-            Position      [-40, 0]
-            Direction     left
-          }
-          Terminal {
-            Type          Output
-            Position      [44, 0]
-            Direction     right
-          }
-          Terminal {
-            Type          Input
-            Position      [-5, -25]
-            Direction     up
-          }
-          Terminal {
-            Type          Input
-            Position      [5, -25]
-            Direction     up
-          }
-          Terminal {
-            Type          Input
-            Position      [15, -25]
-            Direction     up
-          }
-          Terminal {
-            Type          Input
-            Position      [-40, -15]
-            Direction     left
-          }
-          Terminal {
-            Type          Input
-            Position      [-40, 10]
-            Direction     left
-          }
-          Terminal {
-            Type          Input
-            Position      [25, -25]
-            Direction     up
-          }
-          Terminal {
-            Type          Input
-            Position      [35, -25]
-            Direction     up
-          }
-          Terminal {
-            Type          Input
-            Position      [-40, -20]
-            Direction     left
-          }
-          Terminal {
-            Type          Input
-            Position      [-40, -10]
-            Direction     left
-          }
-          Terminal {
-            Type          Input
-            Position      [-40, 20]
-            Direction     left
-          }
-        }
-        Component {
-          Type          Constant
-          Name          "Vdc* reference2"
-          Show          off
-          Position      [1110, 575]
-          Direction     left
-          Flipped       on
-          LabelPosition north
-          Frame         [-15, -10; 15, 10]
-          Parameter {
-            Variable      "Value"
-            Value         "400"
-            Show          off
-          }
-          Parameter {
-            Variable      "DataType"
-            Value         "10"
-            Show          off
-          }
-        }
-        Component {
-          Type          PlecsProbe
-          Name          "Iac1"
-          Show          on
-          Position      [1105, 695]
-          Direction     right
-          Flipped       off
-          LabelPosition west
-          Probe {
-            Component     "Tr"
-            Path          "DUAL LLC/Single LLC/LLC/LLC SR"
-            Signals       {"Transformer Output Current"}
-          }
-        }
-        Component {
           Type          SignalMux
           Name          "Mux6"
           Show          off
@@ -12376,20 +11501,20 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 23; 1536, 796]
+          Location      [0, 26; 1536, 803]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAA"
-"AjvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMU"
+"AjvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAMZ"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHA"
-"AAAAwAAAH0AAAAHAAAAfQAAAAYAAAB9AAAABQAAAH0AAAAEAAAAfQAAAAkAAAB9AAAACAAAAH0AAA"
-"drAAAACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAEkAAAABAAAAAAAAAH0AAAA"
-"BAAAAAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAA"
-"AAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABigAAAABAAAAAAAAA"
-"+gAAAAAKw=="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAACAAAAH0AAAADAAAAfQAAAAIAAAB9AAAAAQAAAH0AAAAHAAAAfQAAAAYAAAB9AAAABQAAAH0AAA"
+"AEAAAAfQAAAAkAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"JAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAciAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"
@@ -12437,20 +11562,20 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 23; 1536, 796]
+          Location      [0, 26; 1536, 807]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAeAAAA"
-"AsPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAALy"
+"Ab/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABfAP///wAAB4AAAAM9"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHA"
-"AAAAwAAAH0AAAAHAAAAfQAAAAYAAAB9AAAABQAAAH0AAAAEAAAAfQAAAAkAAAB9AAAACAAAAH0AAA"
-"eAAAAACwEAAAEAAAAAAAAAAAAAAAB9/////wAAAIEAAAAAAAAACwAAAEkAAAABAAAAAAAAAH0AAAA"
-"BAAAAAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAA"
-"AAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAABj0AAAABAAAAAAAAA"
-"+gAAAAAKw=="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAACAAAAH0AAAAJAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAABAAAAfQAAAAYAAAB9AAAABwAAAH0AAA"
+"AEAAAAfQAAAAUAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAB"
+"JAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAciAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"
@@ -12487,6 +11612,831 @@ Plecs {
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "LLC SW Modulator1"
+          Show          on
+          Position      [1725, 590]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-40, -50; 40, 50]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [44, -30]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [44, -10]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [44, 10]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [44, 30]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-40, -30]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-40, -10]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-40, 10]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-40, 30]
+            Direction     left
+          }
+          Schematic {
+            Location      [0, 26; 1536, 780]
+            ZoomFactor    1.14437
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Delays/Turn-on Delay"
+              Name          "Turn-on Delay"
+              Show          off
+              Position      [415, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-15, -15; 15, 15]
+              Parameter {
+                Variable      "DeadTimeSource"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "T_d"
+                Value         "2e-3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Rounding"
+                Value         "1"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, -5]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [19, 0]
+                Direction     right
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, 5]
+                Direction     left
+              }
+            }
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Delays/Turn-on Delay"
+              Name          "Turn-on Delay1"
+              Show          off
+              Position      [415, 195]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-15, -15; 15, 15]
+              Parameter {
+                Variable      "DeadTimeSource"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "T_d"
+                Value         "2e-3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Rounding"
+                Value         "1"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, -5]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [19, 0]
+                Direction     right
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, 5]
+                Direction     left
+              }
+            }
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Delays/Turn-on Delay"
+              Name          "Turn-on Delay2"
+              Show          off
+              Position      [415, 235]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-15, -15; 15, 15]
+              Parameter {
+                Variable      "DeadTimeSource"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "T_d"
+                Value         "2e-3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Rounding"
+                Value         "1"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, -5]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [19, 0]
+                Direction     right
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, 5]
+                Direction     left
+              }
+            }
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Delays/Turn-on Delay"
+              Name          "Turn-on Delay3"
+              Show          off
+              Position      [415, 275]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-15, -15; 15, 15]
+              Parameter {
+                Variable      "DeadTimeSource"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "T_d"
+                Value         "2e-3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Rounding"
+                Value         "1"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, -5]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [19, 0]
+                Direction     right
+              }
+              Terminal {
+                Type          Input
+                Position      [-15, 5]
+                Direction     left
+              }
+            }
+            Component {
+              Type          Output
+              Name          "SW1"
+              Show          on
+              Position      [500, 155]
+              Direction     right
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "SW2"
+              Show          on
+              Position      [500, 195]
+              Direction     right
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "SW3"
+              Show          on
+              Position      [500, 235]
+              Direction     right
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "3"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "SW4"
+              Show          on
+              Position      [500, 275]
+              Direction     right
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "4"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "Td"
+              Show          on
+              Position      [360, 75]
+              Direction     down
+              Flipped       off
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "5"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Product
+              Name          "Product"
+              Show          off
+              Position      [300, 150]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "**"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+            }
+            Component {
+              Type          Product
+              Name          "Product1"
+              Show          off
+              Position      [300, 190]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "**"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+            }
+            Component {
+              Type          Product
+              Name          "Product2"
+              Show          off
+              Position      [300, 230]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "**"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+            }
+            Component {
+              Type          Product
+              Name          "Product3"
+              Show          off
+              Position      [300, 270]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "**"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "EN"
+              Show          on
+              Position      [240, 70]
+              Direction     down
+              Flipped       off
+              LabelPosition north
+              Parameter {
+                Variable      "Index"
+                Value         "6"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          LogicalOperator
+              Name          "Logical\nOperator"
+              Show          off
+              Position      [215, 195]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "6"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "2"
+                Show          off
+              }
+            }
+            Component {
+              Type          LogicalOperator
+              Name          "Logical\nOperator1"
+              Show          off
+              Position      [215, 275]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "6"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "2"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "m1"
+              Show          on
+              Position      [65, 145]
+              Direction     right
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "7"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "m2"
+              Show          on
+              Position      [70, 225]
+              Direction     right
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "8"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Modulators/Variable Frequency "
+"PWM"
+              Name          "Variable\nFrequency PWM"
+              Show          on
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-20, -20; 20, 20]
+              Parameter {
+                Variable      "CarrierType"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Sampling"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Frequency"
+                Value         "50e3"
+                Show          off
+              }
+              Parameter {
+                Variable      "CarrierLimits"
+                Value         "[0 1]"
+                Show          off
+              }
+              Parameter {
+                Variable      "OutputValues"
+                Value         "[0 1]"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-20, -10]
+                Direction     left
+              }
+              Terminal {
+                Type          Input
+                Position      [-20, 10]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [24, 0]
+                Direction     right
+              }
+            }
+            Component {
+              Type          Reference
+              SrcComponent  "Components/Control/Modulators/Variable Frequency "
+"PWM"
+              Name          "Variable\nFrequency PWM1"
+              Show          on
+              Position      [140, 235]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Frame         [-20, -20; 20, 20]
+              Parameter {
+                Variable      "CarrierType"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Sampling"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Frequency"
+                Value         "50e3"
+                Show          off
+              }
+              Parameter {
+                Variable      "CarrierLimits"
+                Value         "[0 1]"
+                Show          off
+              }
+              Parameter {
+                Variable      "OutputValues"
+                Value         "[0 1]"
+                Show          off
+              }
+              Terminal {
+                Type          Input
+                Position      [-20, -10]
+                Direction     left
+              }
+              Terminal {
+                Type          Input
+                Position      [-20, 10]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [24, 0]
+                Direction     right
+              }
+            }
+            Component {
+              Type          Constant
+              Name          "Constant"
+              Show          off
+              Position      [65, 165]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Frame         [-15, -10; 15, 10]
+              Parameter {
+                Variable      "Value"
+                Value         "0.5"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Turn-on Delay3"
+              SrcTerminal   2
+              DstComponent  "SW4"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Turn-on Delay2"
+              SrcTerminal   2
+              DstComponent  "SW3"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Turn-on Delay1"
+              SrcTerminal   2
+              DstComponent  "SW2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Turn-on Delay"
+              SrcTerminal   2
+              DstComponent  "SW1"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Td"
+              SrcTerminal   1
+              Points        [360, 160]
+              Branch {
+                DstComponent  "Turn-on Delay"
+                DstTerminal   3
+              }
+              Branch {
+                Points        [360, 200]
+                Branch {
+                  DstComponent  "Turn-on Delay1"
+                  DstTerminal   3
+                }
+                Branch {
+                  Points        [360, 240]
+                  Branch {
+                    DstComponent  "Turn-on Delay2"
+                    DstTerminal   3
+                  }
+                  Branch {
+                    Points        [360, 280]
+                    DstComponent  "Turn-on Delay3"
+                    DstTerminal   3
+                  }
+                }
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Product"
+              SrcTerminal   1
+              DstComponent  "Turn-on Delay"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Product1"
+              SrcTerminal   1
+              DstComponent  "Turn-on Delay1"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Product2"
+              SrcTerminal   1
+              DstComponent  "Turn-on Delay2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Product3"
+              SrcTerminal   1
+              DstComponent  "Turn-on Delay3"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "EN"
+              SrcTerminal   1
+              Points        [240, 145]
+              Branch {
+                DstComponent  "Product"
+                DstTerminal   2
+              }
+              Branch {
+                Points        [240, 185]
+                Branch {
+                  DstComponent  "Product1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [240, 225]
+                  Branch {
+                    DstComponent  "Product2"
+                    DstTerminal   2
+                  }
+                  Branch {
+                    Points        [240, 265]
+                    DstComponent  "Product3"
+                    DstTerminal   2
+                  }
+                }
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Logical\nOperator"
+              SrcTerminal   1
+              DstComponent  "Product1"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Logical\nOperator1"
+              SrcTerminal   1
+              DstComponent  "Product3"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "m1"
+              SrcTerminal   1
+              DstComponent  "Variable\nFrequency PWM"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "m2"
+              SrcTerminal   1
+              DstComponent  "Variable\nFrequency PWM1"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Variable\nFrequency PWM"
+              SrcTerminal   3
+              Points        [180, 155]
+              Branch {
+                DstComponent  "Product"
+                DstTerminal   3
+              }
+              Branch {
+                Points        [180, 195]
+                DstComponent  "Logical\nOperator"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Variable\nFrequency PWM1"
+              SrcTerminal   3
+              Points        [180, 235]
+              Branch {
+                DstComponent  "Product2"
+                DstTerminal   3
+              }
+              Branch {
+                Points        [180, 275]
+                DstComponent  "Logical\nOperator1"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Constant"
+              SrcTerminal   1
+              Points        [90, 165]
+              Branch {
+                DstComponent  "Variable\nFrequency PWM"
+                DstTerminal   2
+              }
+              Branch {
+                Points        [90, 245]
+                DstComponent  "Variable\nFrequency PWM1"
+                DstTerminal   2
+              }
             }
           }
         }
@@ -12736,22 +12686,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Vdc* reference3"
-          SrcTerminal   1
-          Points        [1650, 185; 1650, 205]
-          DstComponent  "LLC SW Modulator"
-          DstTerminal   5
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Constant1"
-          SrcTerminal   1
-          Points        [1645, 215; 1645, 225]
-          DstComponent  "LLC SW Modulator"
-          DstTerminal   6
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Gain1"
           SrcTerminal   2
           DstComponent  "Selector"
@@ -12806,22 +12740,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Demux"
-          SrcTerminal   2
-          Points        [1635, 265; 1635, 245]
-          DstComponent  "LLC SW Modulator"
-          DstTerminal   7
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux"
-          SrcTerminal   3
-          Points        [1640, 275; 1640, 265]
-          DstComponent  "LLC SW Modulator"
-          DstTerminal   8
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Vout_LLC"
           SrcTerminal   1
           DstComponent  "Transfer Fcn"
@@ -12833,189 +12751,6 @@ Plecs {
           SrcTerminal   2
           DstComponent  "Simplified ADC"
           DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Sum5"
-          SrcTerminal   1
-          DstComponent  "Current Compensator\n(PR)1"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Product2"
-          SrcTerminal   1
-          DstComponent  "Sum5"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Gain2"
-          SrcTerminal   2
-          Points        [1310, 530; 1310, 565]
-          DstComponent  "Product2"
-          DstTerminal   3
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Vdc* reference2"
-          SrcTerminal   1
-          DstComponent  "Sum6"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Zero-Order\nHold4"
-          SrcTerminal   2
-          Points        [1410, 695]
-          DstComponent  "Sum5"
-          DstTerminal   3
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Iac1"
-          SrcTerminal   1
-          DstComponent  "Zero-Order\nHold4"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Modulator1"
-          SrcTerminal   3
-          DstComponent  "Symmetrical PWM1"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Zero-Order\nHold5"
-          SrcTerminal   2
-          Points        [1560, 660; 1560, 590]
-          DstComponent  "Modulator1"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Zero-Order\nHold6"
-          SrcTerminal   2
-          DstComponent  "Sum6"
-          DstTerminal   3
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Current Compensator\n(PR)1"
-          SrcTerminal   2
-          DstComponent  "Sum4"
-          DstTerminal   3
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Sum4"
-          SrcTerminal   1
-          DstComponent  "Modulator1"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Compare to\nConstant3"
-          SrcTerminal   2
-          DstComponent  "Logical\nOperator4"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Compare to\nConstant2"
-          SrcTerminal   2
-          DstComponent  "Logical\nOperator5"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Vdc1"
-          SrcTerminal   1
-          Points        [1165, 660]
-          Branch {
-            DstComponent  "Zero-Order\nHold6"
-            DstTerminal   1
-          }
-          Branch {
-            DstComponent  "Zero-Order\nHold5"
-            DstTerminal   1
-          }
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Symmetrical PWM1"
-          SrcTerminal   1
-          Points        [1715, 580]
-          Branch {
-            Points        [1715, 570]
-            DstComponent  "Compare to\nConstant3"
-            DstTerminal   1
-          }
-          Branch {
-            Points        [1715, 590]
-            DstComponent  "Compare to\nConstant2"
-            DstTerminal   1
-          }
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Voltage Compensator\n(PI)1"
-          SrcTerminal   2
-          DstComponent  "Product2"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Sum6"
-          SrcTerminal   1
-          DstComponent  "Voltage Compensator\n(PI)1"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Vac1"
-          SrcTerminal   1
-          Points        [1165, 530]
-          Branch {
-            DstComponent  "Gain2"
-            DstTerminal   1
-          }
-          Branch {
-            Points        [1165, 500; 1545, 500]
-            DstComponent  "Sum4"
-            DstTerminal   2
-          }
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Logical\nOperator4"
-          SrcTerminal   1
-          Points        [1875, 570]
-          Branch {
-            DstComponent  "Mux6"
-            DstTerminal   2
-          }
-          Branch {
-            Points        [1875, 600]
-            DstComponent  "Mux6"
-            DstTerminal   5
-          }
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Logical\nOperator5"
-          SrcTerminal   1
-          Points        [1870, 590; 1870, 580; 1880, 580]
-          Branch {
-            DstComponent  "Mux6"
-            DstTerminal   3
-          }
-          Branch {
-            Points        [1880, 590]
-            DstComponent  "Mux6"
-            DstTerminal   4
-          }
         }
         Connection {
           Type          Signal
@@ -13047,6 +12782,99 @@ Plecs {
             Points        [1850, 340; 1775, 340]
             DstComponent  "Scope2"
             DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "LLC SW Modulator1"
+          SrcTerminal   1
+          Points        [1835, 560; 1835, 570]
+          DstComponent  "Mux6"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "LLC SW Modulator1"
+          SrcTerminal   2
+          DstComponent  "Mux6"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "LLC SW Modulator1"
+          SrcTerminal   3
+          Points        [1835, 600; 1835, 590]
+          DstComponent  "Mux6"
+          DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "LLC SW Modulator1"
+          SrcTerminal   4
+          Points        [1840, 620; 1840, 600]
+          DstComponent  "Mux6"
+          DstTerminal   5
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Vdc* reference3"
+          SrcTerminal   1
+          Points        [1650, 185; 1650, 205; 1670, 205]
+          Branch {
+            DstComponent  "LLC SW Modulator"
+            DstTerminal   5
+          }
+          Branch {
+            DstComponent  "LLC SW Modulator1"
+            DstTerminal   5
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Constant1"
+          SrcTerminal   1
+          Points        [1630, 215]
+          Branch {
+            Points        [1645, 215; 1645, 225]
+            DstComponent  "LLC SW Modulator"
+            DstTerminal   6
+          }
+          Branch {
+            Points        [1630, 580]
+            DstComponent  "LLC SW Modulator1"
+            DstTerminal   6
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux"
+          SrcTerminal   2
+          Points        [1615, 265]
+          Branch {
+            Points        [1635, 265; 1635, 245]
+            DstComponent  "LLC SW Modulator"
+            DstTerminal   7
+          }
+          Branch {
+            Points        [1615, 600]
+            DstComponent  "LLC SW Modulator1"
+            DstTerminal   7
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux"
+          SrcTerminal   3
+          Points        [1600, 275]
+          Branch {
+            Points        [1640, 275; 1640, 265]
+            DstComponent  "LLC SW Modulator"
+            DstTerminal   8
+          }
+          Branch {
+            Points        [1600, 620]
+            DstComponent  "LLC SW Modulator1"
+            DstTerminal   8
           }
         }
         RectangleAnnotation {
@@ -14523,8 +14351,8 @@ Plecs {
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"wAAAH0AAAACAAAAfQAAAAEAAAB9AAAABwAAAH0AAAAGAAAAfQAAAAUAAAB9AAAABAAAAH0AAAAJAA"
-"AAfQAAAAgAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC3AAA"
+"wAAAH0AAAACAAAAfQAAAAkAAAB9AAAACAAAAH0AAAAFAAAAfQAAAAQAAAB9AAAABwAAAH0AAAAGAA"
+"AAfQAAAAEAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC3AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "Aa0AAAAAQAAAAAAAAPoAAAAACs="
@@ -15853,4 +15681,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "SJImujS0QLfoaGPaI23J6UdyZhwhbf/XrCQU6mD/nSA="
+DemoSignature "I0rszsC3Z/uPNqaQEuASBXCmZxg5r0DAJSMy1KIXfKc="
