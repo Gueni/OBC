@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 777]
+    Location      [0, 26; 1536, 780]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -770,8 +770,8 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.667277
-        SliderPosition [0, 0]
+        ZoomFactor    1.96258
+        SliderPosition [115, 565]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -893,8 +893,8 @@ Plecs {
           Probe {
             Component     "EMI FILTER"
             Path          ""
-            Signals       {"EMI Filter Output Current", "EMI Filter Output Vol"
-"tage"}
+            Signals       {"EMI Filter Output Voltage", "EMI Filter Output Cur"
+"rent"}
           }
         }
         Component {
@@ -1162,7 +1162,7 @@ Plecs {
           Probe {
             Component     "EVSE/GRID"
             Path          ""
-            Signals       {"VL1", "IL1"}
+            Signals       {"IL1", "VL1"}
           }
         }
         Component {
@@ -6283,28 +6283,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Demux1"
-          SrcTerminal   3
-          Points        [190, 340]
-          Branch {
-            DstComponent  "EMI_scope"
-            DstTerminal   2
-          }
-          Branch {
-            Points        [190, 380]
-            Branch {
-              DstComponent  "Total Harmonic\nDistortion1"
-              DstTerminal   1
-            }
-            Branch {
-              Points        [190, 470]
-              DstComponent  "Mux3"
-              DstTerminal   3
-            }
-          }
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Total Harmonic\nDistortion1"
           SrcTerminal   2
           Points        [245, 380]
@@ -6346,21 +6324,6 @@ Plecs {
           Points        [210, 445; 210, 440]
           DstComponent  "Mux2"
           DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Demux1"
-          SrcTerminal   2
-          Points        [180, 330]
-          Branch {
-            DstComponent  "EMI_scope"
-            DstTerminal   1
-          }
-          Branch {
-            Points        [180, 450]
-            DstComponent  "Mux2"
-            DstTerminal   3
-          }
         }
         Connection {
           Type          Signal
@@ -7406,6 +7369,43 @@ Plecs {
           SrcTerminal   2
           DstComponent  "Demux37"
           DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux1"
+          SrcTerminal   2
+          Points        [185, 330]
+          Branch {
+            Points        [195, 330]
+            Branch {
+              DstComponent  "EMI_scope"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "Total Harmonic\nDistortion1"
+              DstTerminal   1
+            }
+          }
+          Branch {
+            Points        [185, 470]
+            DstComponent  "Mux3"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Demux1"
+          SrcTerminal   3
+          Points        [175, 340]
+          Branch {
+            DstComponent  "EMI_scope"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [175, 450]
+            DstComponent  "Mux2"
+            DstTerminal   3
+          }
         }
         Annotation {
           Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
@@ -15681,4 +15681,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "I0rszsC3Z/uPNqaQEuASBXCmZxg5r0DAJSMy1KIXfKc="
+DemoSignature "cs26vefjadRCLGcbVx+hV9klGbeOgRhwlsNWeJaUXBo="

@@ -12,9 +12,7 @@ current_directory   = os.getcwd()
 Traces_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces/"           
 ToFile_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/"              
 logfile_path        = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/"              
-output_html_path    = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"             
-model_path          = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/OBC.plecs"                  
-model_directory     = (os.path.join(current_directory, model_path)).replace("\\", "/")                                     
+output_html_path    = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            
                   'tSim'	    	   : 2.0,                                                                                             #? [s]     - Total simulation time
@@ -49,8 +47,8 @@ PFC         = {
                   'Config'          : 1,                                                                                               #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 1.5e-3,                                                                                          #? [H]      - Inductance of the first choke winding
-                     'L2'           : 1.5e-3,                                                                                          #? [H]      - Inductance of the second choke winding
+                     'L1'           : 150e-6,                                                                                          #? [H]      - Inductance of the first choke winding
+                     'L2'           : 150e-6,                                                                                          #? [H]      - Inductance of the second choke winding
                      'R1'           : 0.01,                                                                                            #? [Ohm]    - Resistance of the first choke winding
                      'R2'           : 0.01,                                                                                            #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
@@ -325,25 +323,28 @@ AnalysisOpts= {
                   'Jacobian_rel_tol':  1e-6        
                                                                            
               }
-#!----------------------------------------------------------------------------------------------------------------------------------------	
-scopes      =  [                                                                                            
-				      "OBC/Scope",                                                                             
-				      "OBC/Scopes/grid_scope",                                                                 
-				      "OBC/Scopes/EMI_scope",                                                                                         
-                  "OBC/Scopes/grid vs filter",                                                             
-				      "OBC/Scopes/PFC Input Output",                                                                                        
-				      "OBC/Scopes/PFC Gates",                                                                                        
-				      "OBC/Scopes/PFC Choke",                                                                                      
-				      "OBC/Scopes/PFC SW Voltages",                                                                                    
-				      "OBC/Scopes/PFC SW Currents",                                                                                    
-				      "OBC/Scopes/PFC SW junction Temp",                                                                                    
-				      "OBC/Scopes/PFC SW switching losses",                                                                                  
-				      "OBC/Scopes/PFC SW conduction losses",                                                                                
-				      "OBC/Scopes/PFC Cout",  
-				      "OBC/Scopes/Efficiency",   
-				      "OBC/Scopes/Load",                                                                                                                                                                                                                                                                                                                         
-				      "OBC/Scopes/PFC TL"                                                                                 
-               ]	
+#!----------------------------------------------------------------------------------------------------------------------------------------
+def set_scopes(model):
+    	
+   scopes      =  [                                                                                            
+                     f"{model}/Scope",                                                                             
+                     f"{model}/Scopes/grid_scope",                                                                 
+                     f"{model}/Scopes/EMI_scope",                                                                                         
+                     f"{model}/Scopes/grid vs filter",                                                             
+                     f"{model}/Scopes/PFC Input Output",                                                                                        
+                     f"{model}/Scopes/PFC Gates",                                                                                        
+                     f"{model}/Scopes/PFC Choke",                                                                                      
+                     f"{model}/Scopes/PFC SW Voltages",                                                                                    
+                     f"{model}/Scopes/PFC SW Currents",                                                                                    
+                     f"{model}/Scopes/PFC SW junction Temp",                                                                                    
+                     f"{model}/Scopes/PFC SW switching losses",                                                                                  
+                     f"{model}/Scopes/PFC SW conduction losses",                                                                                
+                     f"{model}/Scopes/PFC Cout",  
+                     f"{model}/Scopes/Efficiency",   
+                     f"{model}/Scopes/Load",                                                                                                                                                                                                                                                                                                                         
+                     f"{model}/Scopes/PFC TL"                                                                                 
+                  ]	
+   return scopes
 Waveforms   =  [                                                                                            
                   'Grid Voltage',                  
                   'Grid Current',

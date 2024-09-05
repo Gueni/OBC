@@ -17,11 +17,12 @@ import time
 port                                   = "1080"                                                               
 url                                    = f"http://localhost:{port}/RPC2"                                      
 mdlvar                                 = mdl.ModelVars                                                        
-modelname                              = "OBC" 
-mdl.model                              = modelname   
-model_directory                        = (os.path.join(mdl.current_directory, mdl.model_path)).replace("\\", "/")                                                                                                                           
+modelname                              = "PFC"                                                                            
+model_path                             = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/" + modelname + ".plecs" 
+model_directory                        = (os.path.join(mdl.current_directory, model_path)).replace("\\", "/")                                                                                                                           
+
 #?----------------------------------------------------------------------------------------------------------------------------------------
-plcsim                                 = plc.simpy(url=url , port=port , path=mdl.model_directory , modelvar=mdlvar)    
+plcsim                                 = plc.simpy(url=url , port=port , path=model_directory , modelvar=mdlvar)    
 plcsim.rpc_connect()                                                                       
 plcsim.load_model()  
 cleardata.clear_data_folders()                                                                  
@@ -36,10 +37,10 @@ mdlvar['ToFile']['output_html']        = str((os.path.join(mdl.current_directory
 mdlvar['ToFile']['Traces']             = str((os.path.join(mdl.current_directory,mdl.Traces_path)).replace("\\", "/"))
 
 plcsim.logParams(str(mdlvar['ToFile']['logfile']),mdlvar)
-plcsim.ClearAllTraces(mdl.scopes)  
+plcsim.ClearAllTraces(mdl.set_scopes(modelname))  
 plcsim.Set_sim_param(mdlvar)
 plcsim.launch_sim(modelname=modelname)
 # plcsim.HoldAllTraces(mdl.scopes)
 # plcsim.saveAllTraces(mdl.scopes,mdl,mdlvar['ToFile']['Traces'])
-post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
+# post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------
