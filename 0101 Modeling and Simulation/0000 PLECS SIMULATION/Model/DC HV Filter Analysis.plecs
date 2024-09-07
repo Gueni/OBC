@@ -1903,7 +1903,7 @@ Plecs {
     Perturbation  "Simple Model/Enable/Perturbation1"
     Response      "Simple Model/Enable/vo_oi'2"
     JacobianPerturbation "Jacobian_rel_tol"
-    JacobianCalculation "2"
+    JacobianCalculation "1"
     InitCycles    "NB_init_cycles"
   }
   Analysis {
@@ -1936,4 +1936,4 @@ Plecs {
     Response      ""
   }
 }
-DemoSignature "OATu/qFau7JtzRohiQHoz8GArFLXEmZbcodgt0GXo1I="
+DemoSignature "DSuNJmPUaVOOrSBrRK933Shk6phGf6KxvgnW/TwCoF0="
