@@ -15,7 +15,7 @@ logfile_path        = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python
 output_html_path    = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            
-                  'tSim'	    	   : 2.0,                                                                                             #? [s]     - Total simulation time
+                  'tSim'	    	   : 20.0,                                                                                             #? [s]     - Total simulation time
                   'load_tflip'	   : 2.0/2,                                                                                           #? [s]     - Time at which the load changes state 
                   'maxStep'		   : 1e-3,                                                                                            #? [s]     - Maximum simulation time step
                   'ZeroCross'       : 1000,                                                                                            #? [/]     - Zero-crossing detection limit
@@ -47,8 +47,8 @@ PFC         = {
                   'Config'          : 1,                                                                                               #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 150e-6,                                                                                          #? [H]      - Inductance of the first choke winding
-                     'L2'           : 150e-6,                                                                                          #? [H]      - Inductance of the second choke winding
+                     'L1'           : 15e-6,                                                                                          #? [H]      - Inductance of the first choke winding
+                     'L2'           : 15e-6,                                                                                          #? [H]      - Inductance of the second choke winding
                      'R1'           : 0.01,                                                                                            #? [Ohm]    - Resistance of the first choke winding
                      'R2'           : 0.01,                                                                                            #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
@@ -62,7 +62,7 @@ PFC         = {
                      'therm_mosfet' : 'file:C3M0021120K',                                                                              #? [/]      - MOSFET thermal model file path
                      'Rgon'         : 2.5,                                                                                             #? [Ohm]    - Gate resistance for turn-on
                      'Rgoff'        : 2.5,                                                                                             #? [Ohm]    - Gate resistance for turn-off
-                     'ron_mosfet'   : 50e-3,                                                                                           #? [Ohm]    - MOSFET on-state resistance
+                     'ron_mosfet'   : 20e-3,                                                                                           #? [Ohm]    - MOSFET on-state resistance
                      'Iinit'        : 0,                                                                                               #? [A]      - Initial current through the MOSFET
                      'Coss'         : {
                            'Config' : 5,                                                                                               #? [/]      - Capacitance configuration
@@ -82,9 +82,9 @@ PFC         = {
                      'T_init'          : 25,                                                                                           #? [°C]     - Initial temperature of the MOSFET
                      'Tamb'            : 25,                                                                                           #? [°C]     - Ambient temperature
                      't_init'          : 25,                                                                                           #? [s]      - Initial time for thermal calculations
-                     'rth_sw'          : 0.72,                                                                                         #? [K/W]    - Thermal resistance between the switch junction and case
-                     'rth_ch'          : 62.5,                                                                                         #? [K/W]    - Thermal resistance between the case and heatsink
-                     'Rth'             : 0.34                                                                                          #? [K/W]    - Total thermal resistance
+                     'rth_sw'          : 0,                                                                                         #? [K/W]    - Thermal resistance between the switch junction and case
+                     'rth_ch'          : 0,                                                                                         #? [K/W]    - Thermal resistance between the case and heatsink
+                     'Rth'             : 0                                                                                          #? [K/W]    - Total thermal resistance
                   }
                }
 DCLink      = {                                                                                             
@@ -290,7 +290,7 @@ Load        = {
                   }
 Thermals    = {
                      'T_amb'                 : 25.0,                                                                                   #? [°C]     - Ambient temperature
-                     'rth_Amb'               : 0.09                                                                                    #? [K/W]    - Thermal resistance from junction to ambient
+                     'rth_Amb'               : 0                                                                                    #? [K/W]    - Thermal resistance from junction to ambient
                   }
 #!----------------------------------------------------------------------------------------------------------------------------------------
 ModelVars   = {                                                                                             
