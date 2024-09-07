@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="MOSFET" vendor="Wolfspeed" partnumber="C3M0075120J">
+        <Variables>
+            <Variable>
+                <Name>Rgon</Name>
+                <Description>External turn-on gate resistance</Description>
+            </Variable>
+            <Variable>
+                <Name>Rgoff</Name>
+                <Description>External turn-off gate resistance</Description>
+            </Variable>
+        </Variables>
+        <SemiconductorData type="MOSFET">
+            <TurnOnLoss>
+                <ComputationMethod>Table and formula</ComputationMethod>
+                <Formula>E/(0.1624e-6)*(0.0134e-6*Rgon+0.1624e-6)</Formula>
+                <CurrentAxis> -1 0 4.76 9.800000000000001 14.84 19.32 24.36 29.12 33.88 38.64</CurrentAxis>
+                <VoltageAxis> -10 0 600 800</VoltageAxis>
+                <TemperatureAxis> 25 75 125 150 900</TemperatureAxis>
+                <Energy scale="0.001">
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.022991053 0.04040401 0.060557232 0.08937048 0.121335136 0.160355013 0.208864343 0.264819491</Voltage>
+                        <Voltage> 0 0 0.04320604 0.06724155599999999 0.096280746 0.133048485 0.176548565 0.230341887 0.293804286 0.371719727</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.023958129 0.044784977 0.068413394 0.1032661 0.142905354 0.189890987 0.250026495 0.315777987</Voltage>
+                        <Voltage> 0 0 0.045023423 0.07453249200000001 0.108771362 0.153735307 0.207934289 0.272768823 0.351706064 0.443248746</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.026033552 0.050205022 0.079249711 0.121525569 0.168647572 0.224728824 0.294355981 0.369884185</Voltage>
+                        <Voltage> 0 0 0.048923671 0.083552691 0.126000165 0.18091872 0.245390477 0.322811619 0.414063252 0.519196106</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.028181872 0.055863468 0.08807658 0.134102769 0.185830798 0.247230017 0.323305423 0.406641763</Voltage>
+                        <Voltage> 0 0 0.052960911 0.092969645 0.140034122 0.199642771 0.270392912 0.355133447 0.454785713 0.570791692</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.029590966 0.058656641 0.092480409 0.140807907 0.195122338 0.259591518 0.339470694 0.426973851</Voltage>
+                        <Voltage> 0 0 0.055608956 0.097618127 0.147035828 0.209624909 0.283912558 0.372890119 0.477524998 0.599331277</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table and formula</ComputationMethod>
+                <Formula>E/(0.0853e-6)*(0.0046e-6*Rgoff+0.0853e-6)</Formula>
+                <CurrentAxis> -1 0 4.76 9.800000000000001 14.84 19.32 24.36 29.12 33.88 38.64</CurrentAxis>
+                <VoltageAxis> -10 0 600 800</VoltageAxis>
+                <TemperatureAxis> 25 75 125 150 900</TemperatureAxis>
+                <Energy scale="0.001">
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.015598703 0.026486459 0.044443551 0.065387895 0.088563738 0.114078942 0.140290636 0.169077714</Voltage>
+                        <Voltage> 0 0 0.020211243 0.036031584 0.056417782 0.082527665 0.11236078 0.145090285 0.178968159 0.215513839</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.01706779 0.028242531 0.046345637 0.06924089899999999 0.092920762 0.119814538 0.148020937 0.175764825</Voltage>
+                        <Voltage> 0 0 0.022114738 0.038420505 0.058832338 0.08739063599999999 0.117888534 0.152385052 0.188829671 0.224037523</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.013457448 0.028040523 0.04763015 0.069404014 0.094492744 0.121783287 0.150469403 0.180214724</Voltage>
+                        <Voltage> 0 0 0.017436818 0.038145698 0.060462932 0.087596506 0.119882906 0.154888988 0.191953168 0.229709558</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.012020019 0.025785482 0.047899009 0.072321156 0.09707549 0.125572323 0.15594384 0.187734149</Voltage>
+                        <Voltage> 0 0 0.015574342 0.035077992 0.060804228 0.09127830300000001 0.123159635 0.15970804 0.198936884 0.239294146</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0.01262102 0.027074757 0.050293959 0.075937214 0.101929264 0.131850939 0.163741032 0.197120857</Voltage>
+                        <Voltage> 0 0 0.016353059 0.036831891 0.063844439 0.09584221800000001 0.129317617 0.167693442 0.208883729 0.251258853</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> -80 -60 -30 -20 -12 -6 -2.95 0 2 5 10 20 30 45 60</CurrentAxis>
+                <TemperatureAxis> -55 25 150 900</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> -4.42 -3.3 -1.77 -1.25 -0.84 -0.435 -0.22 0 0.14 0.37 0.76 1.6 2.45 3.904 5.62</Temperature>
+                    <Temperature> -6 -4.05 -2.02 -1.3 -0.83 -0.422 -0.212 0 0.14 0.356 0.723 1.52 2.4 4.05 6.06</Temperature>
+                    <Temperature> -7.88 -6.56 -3.21 -2.12 -1.31 -0.58 -0.28 0 0.2 0.53 1.08 2.225 3.55 6.33 12.5</Temperature>
+                    <Temperature> -9.061999999999999 -7.544 -3.6915 -2.438 -1.5065 -0.667 -0.322 0 0.22 0.583 1.188 2.4475 3.905 6.963 13.75</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.0238" C="0.0004"/>
+                <RCElement R="0.0517" C="0.0012"/>
+                <RCElement R="0.4162" C="0.0035"/>
+                <RCElement R="0.606" C="0.1467"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line></Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>

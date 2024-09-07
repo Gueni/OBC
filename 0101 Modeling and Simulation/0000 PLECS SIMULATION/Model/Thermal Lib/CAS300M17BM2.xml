@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="MOSFET" vendor="Wolfspeed" partnumber="CAS300M17BM2">
+        <Variables>
+            <Variable>
+                <Name>Rgon</Name>
+                <Description>External turn-on gate resistance</Description>
+            </Variable>
+            <Variable>
+                <Name>Rgoff</Name>
+                <Description>External turn-off gate resistance</Description>
+            </Variable>
+        </Variables>
+        <SemiconductorData type="MOSFET">
+            <TurnOnLoss>
+                <ComputationMethod>Table and formula</ComputationMethod>
+                <Formula>E/(1.88e-3*2.5+8.8e-3)*(1.88e-3*Rgon+8.8e-3)</Formula>
+                <CurrentAxis> -10 0 60.11 120.2 180.3 240.4 300.6</CurrentAxis>
+                <VoltageAxis> -10 0 900 1200</VoltageAxis>
+                <TemperatureAxis> -40 25 150 900 1000</TemperatureAxis>
+                <Energy scale="0.001">
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 3.783 7.082 9.431 11.8 14.22</Voltage>
+                        <Voltage> 0 0 6.165 11.52 15.2 18.91 22.86</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 3.659 6.851 9.123 11.42 13.76</Voltage>
+                        <Voltage> 0 0 5.964 11.14 14.71 18.29 22.12</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 3.457 6.472 8.619 10.78 12.99</Voltage>
+                        <Voltage> 0 0 5.634 10.52 13.89 17.28 20.9</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 3.284 6.148 8.188 10.24 12.34</Voltage>
+                        <Voltage> 0 0 5.352 9.994 13.2 16.42 19.85</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 3.284 6.148 8.188 10.24 12.34</Voltage>
+                        <Voltage> 0 0 5.352 9.994 13.2 16.42 19.85</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table and formula</ComputationMethod>
+                <Formula>E/(1.84e-3*2.5+5.4e-3)*(1.84e-3*Rgoff+5.4e-3)</Formula>
+                <CurrentAxis> -10 0 60.11 120.2 180.3 240.4 300.6</CurrentAxis>
+                <VoltageAxis> -10 0 900 1200</VoltageAxis>
+                <TemperatureAxis> -40 25 150 900 1000</TemperatureAxis>
+                <Energy scale="0.001">
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 1.281 2.81 4.949 7.382 9.969</Voltage>
+                        <Voltage> 0 0 1.835 4.016 7.022 10.63 14.28</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 1.281 2.81 4.949 7.382 9.969</Voltage>
+                        <Voltage> 0 0 1.835 4.016 7.022 10.63 14.28</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 1.307 2.867 5.05 7.532 10.17</Voltage>
+                        <Voltage> 0 0 1.872 4.098 7.164 10.84 14.57</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 1.307 2.867 5.05 7.532 10.17</Voltage>
+                        <Voltage> 0 0 1.872 4.098 7.164 10.84 14.57</Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 0 0 0 0 0</Voltage>
+                        <Voltage> 0 0 1.307 2.867 5.05 7.532 10.17</Voltage>
+                        <Voltage> 0 0 1.872 4.098 7.164 10.84 14.57</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> -599.8 -166.1 -45.48 -11.93 -2.595 0 2.594 11.92 45.44 165.9 598.9</CurrentAxis>
+                <TemperatureAxis> -40 25 150</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> -1.56 -0.8582 -0.2393 -0.06427 -0.01868 0 0.01385 0.06362 0.2425 0.9903 5.952</Temperature>
+                    <Temperature> -1.848 -0.9739 -0.2898 -0.07553 -0.01644 0 0.01799 0.08266 0.3151 1.287 7.081</Temperature>
+                    <Temperature> -2.96 -1.24 -0.5877 -0.1512 -0.0329 0 0.03791 0.1741 0.6639 2.578 13.5</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.00752" C="0.142"/>
+                <RCElement R="0.0176" C="0.445"/>
+                <RCElement R="0.0112" C="1.33"/>
+                <RCElement R="0.0342" C="11.7"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>DISCLAIMER</Line>
+            <Line>This model is provided as is, where is, and with no warranty of any kind either</Line>
+            <Line>expressed or implied, including but not limited to any implied warranties of</Line>
+            <Line>merchantability and fitness for a particular purpose.</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>Cree SiC Module PLECS Library</Line>
+            <Line></Line>
+            <Line>	CAS300M17BM2</Line>
+            <Line>	Half Bridge Module - MOSFET Model</Line>
+            <Line>	Version  1.4	 Date: 11-12-2020</Line>
+            <Line>	Version  1.5	 Date: 12-15-2020</Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>To find other WOLFSPEED SiC models, please visit: </Line>
+            <Line>https://www.wolfspeed.com/power/tools-and-support/all-models</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>

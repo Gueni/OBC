@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="Diode" vendor="Wolfspeed" partnumber="E4D02120E">
+        <Variables/>
+        <SemiconductorData type="Diode">
+            <TurnOnLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> -5 0 0.4 1 2 5 10</CurrentAxis>
+                <TemperatureAxis> -55 25 75 125 175 900</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0 0 1.11 1.248 1.451 2.043 3.046</Temperature>
+                    <Temperature> 0 0 1.039 1.213 1.4704 2.229 3.56</Temperature>
+                    <Temperature> 0 0 1.015 1.235 1.577 2.584 4.3929</Temperature>
+                    <Temperature> 0 0 1.003 1.299 1.7561 3.124 5.462</Temperature>
+                    <Temperature> 0 0 0.977 1.394 2.003 3.816 6.367</Temperature>
+                    <Temperature> 0 0 0.849 1.6031 2.303 4.388 7.32</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.142975168" C="8.110000000000001e-05"/>
+                <RCElement R="0.306087757" C="0.000429965"/>
+                <RCElement R="1.578533109" C="0.000795896"/>
+                <RCElement R="0.964253048" C="0.002179786"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line>Datasheet Rev. 0, 10-2021 </Line>
+            <Line>It is customer's responsibility to verify the performance of the diode with an actual prototype. </Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>
