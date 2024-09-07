@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="Diode" vendor="Wolfspeed" partnumber="CAB003M09DM3">
+        <Variables/>
+        <SemiconductorData type="Diode">
+            <TurnOnLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0 0.02 0.1 1 2.5 5 25 50 75 100 150 200 250 300 350 400 450 500 550 600</CurrentAxis>
+                <TemperatureAxis> -40 -25 0 25 100 125 150 175 1000</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0.000 3.168 3.169 3.183 3.205 3.243 3.526 3.819 4.033 4.211 4.497 4.730 4.930 5.106 5.266 5.410 5.556 5.703 5.849 5.995</Temperature>
+                    <Temperature> 0.000 3.073 3.074 3.087 3.109 3.144 3.413 3.687 3.885 4.050 4.319 4.545 4.737 4.911 5.069 5.216 5.360 5.504 5.647 5.791</Temperature>
+                    <Temperature> 0.000 2.955 2.956 2.968 2.987 3.020 3.265 3.519 3.705 3.861 4.115 4.329 4.518 4.690 4.847 4.995 5.142 5.289 5.436 5.583</Temperature>
+                    <Temperature> 0.000 2.851 2.852 2.864 2.883 2.914 3.151 3.394 3.572 3.723 3.972 4.185 4.374 4.544 4.699 4.846 4.984 5.122 5.259 5.397</Temperature>
+                    <Temperature> 0.000 2.635 2.636 2.647 2.664 2.692 2.908 3.136 3.312 3.458 3.705 3.910 4.092 4.257 4.409 4.554 4.696 4.839 4.983 5.126</Temperature>
+                    <Temperature> 0.000 2.566 2.567 2.578 2.595 2.624 2.841 3.070 3.247 3.391 3.633 3.840 4.020 4.185 4.337 4.481 4.625 4.770 4.914 5.058</Temperature>
+                    <Temperature> 0.000 2.499 2.500 2.511 2.528 2.558 2.777 3.007 3.180 3.329 3.571 3.774 3.958 4.125 4.279 4.426 4.571 4.718 4.865 5.012</Temperature>
+                    <Temperature> 0.000 2.442 2.443 2.453 2.471 2.500 2.717 2.945 3.120 3.265 3.507 3.713 3.896 4.065 4.221 4.369 4.521 4.672 4.824 4.975</Temperature>
+                    <Temperature> 0.000 2.392 2.393 2.403 2.420 2.448 2.659 2.884 3.059 3.200 3.439 3.649 3.831 4.000 4.157 4.309 4.467 4.624 4.781 4.939</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.007400" C="0.015058"/>
+                <RCElement R="0.032813" C="0.104936"/>
+                <RCElement R="0.090761" C="0.450056"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>DISCLAIMER</Line>
+            <Line>This model is provided as is, where is, and with no warranty of any kind either</Line>
+            <Line>expressed or implied, including but not limited to any implied warranties of</Line>
+            <Line>merchantability and fitness for a particular purpose.</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>Wolfspeed SiC Module PLECS Library</Line>
+            <Line></Line>
+            <Line>	CAB003M09DM3</Line>
+            <Line>	Half Bridge	(Diode Model)</Line>
+            <Line>	Version 2.3	Date: 11-08-2023</Line>
+            <Line></Line>
+            <Line>	Electrical Parameters</Line>
+            <Line>	Vf	= 3.221	V</Line>
+            <Line>	Ron	= 0.0037	Ω</Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>To find other WOLFSPEED SiC models, please visit: </Line>
+            <Line>https://www.wolfspeed.com/power/tools-and-support/all-models</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>

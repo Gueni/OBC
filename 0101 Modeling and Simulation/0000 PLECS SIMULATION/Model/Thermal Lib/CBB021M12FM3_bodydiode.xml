@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="Diode" vendor="Wolfspeed" partnumber="CBB021M12FM3">
+        <Variables/>
+        <SemiconductorData type="Diode">
+            <TurnOnLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0 0.02 0.1 1 2.5 5 10 20 30 40 50 60</CurrentAxis>
+                <TemperatureAxis> -40 -25 0 25 100 125 150 175 1000</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0.000 3.749 3.756 3.826 3.942 4.131 4.490 5.094 5.535 5.896 6.204 6.476</Temperature>
+                    <Temperature> 0.000 3.627 3.633 3.700 3.809 3.987 4.324 4.897 5.324 5.677 5.984 6.258</Temperature>
+                    <Temperature> 0.000 3.453 3.459 3.521 3.625 3.793 4.113 4.659 5.071 5.418 5.720 5.992</Temperature>
+                    <Temperature> 0.000 3.327 3.333 3.393 3.494 3.657 3.967 4.498 4.902 5.246 5.545 5.818</Temperature>
+                    <Temperature> 0.000 3.080 3.085 3.144 3.239 3.396 3.692 4.201 4.588 4.911 5.199 5.459</Temperature>
+                    <Temperature> 0.000 3.017 3.022 3.080 3.176 3.332 3.627 4.131 4.512 4.833 5.117 5.376</Temperature>
+                    <Temperature> 0.000 2.967 2.972 3.029 3.123 3.277 3.568 4.068 4.446 4.767 5.049 5.310</Temperature>
+                    <Temperature> 0.000 2.916 2.921 2.978 3.072 3.224 3.514 4.010 4.389 4.710 4.993 5.252</Temperature>
+                    <Temperature> 0.000 2.880 2.885 2.941 3.032 3.182 3.467 3.957 4.332 4.652 4.933 5.188</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.056003" C="0.002750"/>
+                <RCElement R="0.255998" C="0.020611"/>
+                <RCElement R="0.851395" C="0.078951"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>DISCLAIMER</Line>
+            <Line>This model is provided as is, where is, and with no warranty of any kind either</Line>
+            <Line>expressed or implied, including but not limited to any implied warranties of</Line>
+            <Line>merchantability and fitness for a particular purpose.</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>Wolfspeed SiC Module PLECS Library</Line>
+            <Line></Line>
+            <Line>	CBB021M12FM3</Line>
+            <Line>	Full Bridge	(Diode Model)</Line>
+            <Line>	Version 2.3	Date: 08-21-2023</Line>
+            <Line></Line>
+            <Line>	Electrical Parameters</Line>
+            <Line>	Vf	= 3.296	V</Line>
+            <Line>	Ron	= 0.0483	Ω</Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line></Line>
+            <Line></Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+            <Line>To find other WOLFSPEED SiC models, please visit: </Line>
+            <Line>https://www.wolfspeed.com/power/tools-and-support/all-models</Line>
+            <Line>-------------------------------------------------------------------------------------------------</Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>
