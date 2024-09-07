@@ -5661,6 +5661,9 @@ Plecs {
             Show          off
           }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -6872,6 +6875,9 @@ Plecs {
           DstTerminal   3
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -16240,6 +16246,9 @@ Plecs {
               }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -17098,6 +17107,9 @@ Plecs {
                 Points        [70, 80]
                 DstComponent  "Gain1"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -17106,6 +17118,7 @@ Plecs {
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Switch"
@@ -17206,10 +17219,16 @@ Plecs {
               SrcTerminal   2
               DstComponent  "Transfer Fcn"
 >>>>>>> parent of 9eaedad (llc model updated)
+=======
+              SrcComponent  "Gain1"
+              SrcTerminal   2
+              DstComponent  "Transfer Fcn"
+>>>>>>> parent of 9eaedad (llc model updated)
               DstTerminal   1
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Hit Crossing2"
@@ -17254,6 +17273,8 @@ Plecs {
               SrcTerminal   1
               Points        [900, 265]
 =======
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "Transfer Fcn"
@@ -17637,6 +17658,9 @@ Plecs {
               SrcTerminal   1
               Points        [275, 35]
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -17645,6 +17669,7 @@ Plecs {
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "V7"
@@ -17660,10 +17685,16 @@ Plecs {
               SrcTerminal   1
               DstComponent  "Divide1"
 >>>>>>> parent of 9eaedad (llc model updated)
+=======
+              SrcComponent  "V*"
+              SrcTerminal   1
+              DstComponent  "Divide1"
+>>>>>>> parent of 9eaedad (llc model updated)
               DstTerminal   2
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Relational\nOperator1"
@@ -17702,11 +17733,16 @@ Plecs {
 =======
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "Vdc"
               SrcTerminal   1
               Points        [70, 115; 70, 130]
               DstComponent  "Min/Max"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -17716,6 +17752,7 @@ Plecs {
               Type          Signal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               SrcComponent  "Relational\nOperator2"
               SrcTerminal   3
               Points        [365, 355; 365, 280]
@@ -17723,11 +17760,16 @@ Plecs {
 =======
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "V4"
               SrcTerminal   1
               Points        [70, 155; 70, 140]
               DstComponent  "Min/Max"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -17735,6 +17777,7 @@ Plecs {
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Integrator1"
@@ -17758,6 +17801,8 @@ Plecs {
                 DstTerminal   1
               }
 =======
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "Min/Max"
@@ -18196,6 +18241,9 @@ Plecs {
               KeepBaseline  off
               BaselineValue 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -19056,6 +19104,7 @@ Plecs {
             DstTerminal   1
           }
         }
+<<<<<<< HEAD
         Connection {
           Type          Signal
           SrcComponent  "Vdc*2"
@@ -19139,6 +19188,8 @@ Plecs {
             DstTerminal   3
           }
         }
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
@@ -21063,6 +21114,9 @@ Plecs {
 "wAAAH0AAAACAAAAfQAAAAEAAAB9AAAABwAAAH0AAAAGAAAAfQAAAAUAAAB9AAAABAAAAH0AAAAJAA"
 "AAfQAAAAgAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC3AAA"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
@@ -21409,10 +21463,14 @@ Plecs {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 DemoSignature "cs26vefjadRCLGcbVx+hV9klGbeOgRhwlsNWeJaUXBo="
 =======
 DemoSignature "DTJNw4JpHH4/y4d+qGmCecTsq58ASOxbyQT9yTTjiv4="
 >>>>>>> parent of 1b0789f (merging changes for back up (#30))
+=======
+DemoSignature "SJImujS0QLfoaGPaI23J6UdyZhwhbf/XrCQU6mD/nSA="
+>>>>>>> parent of 9eaedad (llc model updated)
 =======
 DemoSignature "SJImujS0QLfoaGPaI23J6UdyZhwhbf/XrCQU6mD/nSA="
 >>>>>>> parent of 9eaedad (llc model updated)
