@@ -5660,6 +5660,9 @@ Plecs {
             Value         "8"
             Show          off
           }
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
         }
         Connection {
@@ -6868,6 +6871,9 @@ Plecs {
           DstComponent  "LLC SW conduction losses"
           DstTerminal   3
         }
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
         Annotation {
           Name          "<html><body>\n<p><span style=\" font-size:18px; font-"
@@ -16233,6 +16239,9 @@ Plecs {
                 Show          off
               }
             }
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
             Connection {
               Type          Signal
@@ -17088,12 +17097,16 @@ Plecs {
               Branch {
                 Points        [70, 80]
                 DstComponent  "Gain1"
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
                 DstTerminal   1
               }
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Switch"
               SrcTerminal   1
@@ -17188,10 +17201,16 @@ Plecs {
               SrcTerminal   2
               DstComponent  "Transfer Fcn"
 >>>>>>> parent of 9eaedad (llc model updated)
+=======
+              SrcComponent  "Gain1"
+              SrcTerminal   2
+              DstComponent  "Transfer Fcn"
+>>>>>>> parent of 9eaedad (llc model updated)
               DstTerminal   1
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Hit Crossing2"
               SrcTerminal   2
@@ -17235,6 +17254,8 @@ Plecs {
               SrcTerminal   1
               Points        [900, 265]
 =======
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "Transfer Fcn"
               SrcTerminal   2
               Points        [230, 80; 230, 60]
@@ -17615,12 +17636,16 @@ Plecs {
               SrcComponent  "Pulse\nGenerator4"
               SrcTerminal   1
               Points        [275, 35]
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
               DstComponent  "Sum5"
               DstTerminal   3
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "V7"
               SrcTerminal   1
@@ -17630,10 +17655,16 @@ Plecs {
               SrcTerminal   1
               DstComponent  "Divide1"
 >>>>>>> parent of 9eaedad (llc model updated)
+=======
+              SrcComponent  "V*"
+              SrcTerminal   1
+              DstComponent  "Divide1"
+>>>>>>> parent of 9eaedad (llc model updated)
               DstTerminal   2
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Relational\nOperator1"
               SrcTerminal   3
@@ -17669,30 +17700,42 @@ Plecs {
               SrcTerminal   1
               DstComponent  "Relational\nOperator2"
 =======
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "Vdc"
               SrcTerminal   1
               Points        [70, 115; 70, 130]
               DstComponent  "Min/Max"
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
               DstTerminal   2
             }
             Connection {
               Type          Signal
 <<<<<<< HEAD
+<<<<<<< HEAD
               SrcComponent  "Relational\nOperator2"
               SrcTerminal   3
               Points        [365, 355; 365, 280]
               DstComponent  "Integrator1"
 =======
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "V4"
               SrcTerminal   1
               Points        [70, 155; 70, 140]
               DstComponent  "Min/Max"
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
               DstTerminal   3
             }
             Connection {
               Type          Signal
+<<<<<<< HEAD
 <<<<<<< HEAD
               SrcComponent  "Integrator1"
               SrcTerminal   2
@@ -17715,6 +17758,8 @@ Plecs {
                 DstTerminal   1
               }
 =======
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
               SrcComponent  "Min/Max"
               SrcTerminal   1
               Points        [135, 135; 135, 85]
@@ -18150,6 +18195,9 @@ Plecs {
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
             }
           }
@@ -18979,6 +19027,7 @@ Plecs {
             DstTerminal   1
           }
         }
+<<<<<<< HEAD
         Connection {
           Type          Signal
           SrcComponent  "Sum9"
@@ -19090,6 +19139,8 @@ Plecs {
             DstTerminal   3
           }
         }
+=======
+>>>>>>> parent of 9eaedad (llc model updated)
 =======
 >>>>>>> parent of 9eaedad (llc model updated)
         RectangleAnnotation {
@@ -21011,6 +21062,9 @@ Plecs {
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
 "wAAAH0AAAACAAAAfQAAAAEAAAB9AAAABwAAAH0AAAAGAAAAfQAAAAUAAAB9AAAABAAAAH0AAAAJAA"
 "AAfQAAAAgAAAB9AAAHawAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC3AAA"
+<<<<<<< HEAD
+>>>>>>> parent of 9eaedad (llc model updated)
+=======
 >>>>>>> parent of 9eaedad (llc model updated)
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
@@ -21354,10 +21408,14 @@ Plecs {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 DemoSignature "cs26vefjadRCLGcbVx+hV9klGbeOgRhwlsNWeJaUXBo="
 =======
 DemoSignature "DTJNw4JpHH4/y4d+qGmCecTsq58ASOxbyQT9yTTjiv4="
 >>>>>>> parent of 1b0789f (merging changes for back up (#30))
+=======
+DemoSignature "SJImujS0QLfoaGPaI23J6UdyZhwhbf/XrCQU6mD/nSA="
+>>>>>>> parent of 9eaedad (llc model updated)
 =======
 DemoSignature "SJImujS0QLfoaGPaI23J6UdyZhwhbf/XrCQU6mD/nSA="
 >>>>>>> parent of 9eaedad (llc model updated)
