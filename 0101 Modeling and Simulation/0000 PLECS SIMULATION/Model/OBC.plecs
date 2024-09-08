@@ -11776,7 +11776,7 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1536, 780]
-        ZoomFactor    0.873841
+        ZoomFactor    0.667271
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -12103,7 +12103,7 @@ Plecs {
           Frame         [-20, -10; 20, 10]
           Parameter {
             Variable      "Value"
-            Value         "400"
+            Value         "450"
             Show          off
           }
           Parameter {
@@ -13209,11 +13209,11 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 807]
+          Location      [0, 26; 1536, 811]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAOx"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAO2"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -13376,11 +13376,11 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 839]
+          Location      [0, 26; 1536, 843]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAPZ"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAPe"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -13559,11 +13559,11 @@ Plecs {
           Direction     down
           Flipped       on
           LabelPosition south
-          Location      [0, 26; 1536, 843]
+          Location      [0, 26; 1536, 850]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAPe"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAPn"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -14445,10 +14445,10 @@ Plecs {
           Type          Gain
           Name          "Gain6"
           Show          off
-          Position      [650, 480]
-          Direction     right
-          Flipped       off
-          LabelPosition northNortheast
+          Position      [635, 440]
+          Direction     left
+          Flipped       on
+          LabelPosition southSoutheast
           Parameter {
             Variable      "K"
             Value         "-1"
@@ -14488,10 +14488,10 @@ Plecs {
           Type          ZeroOrderHold
           Name          "Zero-Order\nHold9"
           Show          off
-          Position      [585, 455]
-          Direction     right
-          Flipped       off
-          LabelPosition south
+          Position      [570, 465]
+          Direction     left
+          Flipped       on
+          LabelPosition north
           CommentOut    DisabledClosedCircuit
           Parameter {
             Variable      "Ts"
@@ -14723,7 +14723,7 @@ Plecs {
           }
           Parameter {
             Variable      "f"
-            Value         "1e5"
+            Value         "50"
             Show          off
           }
           Parameter {
@@ -14745,11 +14745,11 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 26; 1536, 847]
+          Location      [0, 26; 1536, 850]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAPj"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAPn"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -14998,9 +14998,9 @@ Plecs {
           Type          PlecsProbe
           Name          "Iac3"
           Show          on
-          Position      [520, 455]
-          Direction     right
-          Flipped       off
+          Position      [505, 465]
+          Direction     left
+          Flipped       on
           LabelPosition west
           Probe {
             Component     "iL6"
@@ -15723,32 +15723,10 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Gain6"
-          SrcTerminal   2
-          Points        [675, 480; 675, 465]
-          DstComponent  "Switch8"
-          DstTerminal   2
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Iac3"
           SrcTerminal   1
           DstComponent  "Zero-Order\nHold9"
           DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Zero-Order\nHold9"
-          SrcTerminal   2
-          Points        [620, 455]
-          Branch {
-            DstComponent  "Switch8"
-            DstTerminal   3
-          }
-          Branch {
-            DstComponent  "Gain6"
-            DstTerminal   1
-          }
         }
         Connection {
           Type          Signal
@@ -16046,6 +16024,28 @@ Plecs {
           SrcTerminal   1
           DstComponent  "g_PFC1"
           DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Gain6"
+          SrcTerminal   2
+          Points        [670, 440; 670, 455]
+          DstComponent  "Switch8"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Zero-Order\nHold9"
+          SrcTerminal   2
+          Points        [605, 465]
+          Branch {
+            DstComponent  "Gain6"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "Switch8"
+            DstTerminal   2
+          }
         }
         RectangleAnnotation {
           Position     [860, 380]
@@ -21576,4 +21576,4 @@ Plecs {
     } 
   }
 }
-DemoSignature "UXUk1C7aBsdHoX+fOpFIrnvitXzmOlnPrz6z1q9W2f4="
+DemoSignature "amQpZQ1QxQDVAHl3M9m5JeMQ3nHTQxHYTAX/AAezu0w="
