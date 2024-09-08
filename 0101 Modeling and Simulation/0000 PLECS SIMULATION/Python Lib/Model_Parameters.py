@@ -47,16 +47,16 @@ PFC         = {
                   'Config'          : 1,                                                                                               #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 150e-6,                                                                                          #? [H]      - Inductance of the first choke winding
-                     'L2'           : 150e-6,                                                                                          #? [H]      - Inductance of the second choke winding
-                     'R1'           : 0.01,                                                                                            #? [Ohm]    - Resistance of the first choke winding
-                     'R2'           : 0.01,                                                                                            #? [Ohm]    - Resistance of the second choke winding
+                     'L1'           : 250e-6,                                                                                          #? [H]      - Inductance of the first choke winding
+                     'L2'           : 250e-6,                                                                                          #? [H]      - Inductance of the second choke winding
+                     'R1'           : 2.3e-3,                                                                                            #? [Ohm]    - Resistance of the first choke winding
+                     'R2'           : 2.3e-3,                                                                                            #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
                      'Rm'           : 0.001,                                                                                           #? [Ohm]    - Resistance of the mutual inductance
                      'i1'           : 0,                                                                                               #? [A]      - Initial current in the first choke winding
                      'i2'           : 0                                                                                                #? [A]      - Initial current in the second choke winding
                   },
-                  'Cout'            : 100e-6,                                                                                          #? [V]      - Input voltage of the grid
+                  'Cout'            : 1.56e-3,                                                                                          #? [V]      - Input voltage of the grid
                   'SW'              : {
                      'Config'       : 1,                                                                                               #? [/]      - Switch configuration
                      'therm_mosfet' : 'file:C3M0021120K',                                                                              #? [/]      - MOSFET thermal model file path
@@ -326,24 +326,25 @@ AnalysisOpts= {
 #!----------------------------------------------------------------------------------------------------------------------------------------
 def set_scopes(model):
     	
-   scopes      =  [                                                                                            
-                     f"{model}/Scope",                                                                             
-                     f"{model}/Scopes/grid_scope",                                                                 
-                     f"{model}/Scopes/EMI_scope",                                                                                         
-                     f"{model}/Scopes/grid vs filter",                                                             
-                     f"{model}/Scopes/PFC Input Output",                                                                                        
-                     f"{model}/Scopes/PFC Gates",                                                                                        
-                     f"{model}/Scopes/PFC Choke",                                                                                      
-                     f"{model}/Scopes/PFC SW Voltages",                                                                                    
-                     f"{model}/Scopes/PFC SW Currents",                                                                                    
-                     f"{model}/Scopes/PFC SW junction Temp",                                                                                    
-                     f"{model}/Scopes/PFC SW switching losses",                                                                                  
-                     f"{model}/Scopes/PFC SW conduction losses",                                                                                
-                     f"{model}/Scopes/PFC Cout",  
-                     f"{model}/Scopes/Efficiency",   
-                     f"{model}/Scopes/Load",                                                                                                                                                                                                                                                                                                                         
-                     f"{model}/Scopes/PFC TL"                                                                                 
-                  ]	
+   scope_names =  [
+                   'grid_scope'              ,
+                   'EMI_scope'               ,
+                   'grid vs filter'          ,
+                   'PFC Input Output'        ,
+                   'PFC Gates'               ,
+                   'PFC Choke'               ,
+                   'PFC SW Voltages'         ,
+                   'PFC SW Currents'         ,
+                   'PFC SW junction Temp'    ,
+                   'PFC SW switching losses' ,
+                   'PFC SW conduction losses',
+                   'PFC Cout'                ,
+                   'Efficiency'              ,
+                   'Load'                    ,
+                   'PFC TL'
+                   ]   
+   
+   scopes      =  [f"{model}/Scopes/{name}" for name in scope_names]	
    return scopes
 Waveforms   =  [                                                                                            
                   'Grid Voltage',                  
@@ -359,6 +360,10 @@ Waveforms   =  [
                   #!-------------------------
                   'PFC gates signal HS1',
                   'PFC gates signal LS1',
+                  'PFC gates signal HS2',
+                  'PFC gates signal LS2',
+                  'PFC gates signal HS3',
+                  'PFC gates signal LS3',
                   #!-------------------------
                   'PFC Input choke Winding 1 Current',
                   'PFC Input choke Winding 1 Voltage',
@@ -366,39 +371,39 @@ Waveforms   =  [
                   'PFC Input choke Winding 2 Voltage',
                   #!-------------------------
                   'PFC HS1 voltage',
-                  'PFC HS2 voltage',
-                  'PFC HS3 voltage',
                   'PFC LS1 voltage',
+                  'PFC HS2 voltage',
                   'PFC LS2 voltage',
+                  'PFC HS3 voltage',
                   'PFC LS3 voltage',
                   #!-------------------------
                   'PFC HS1 Current',
-                  'PFC HS2 Current',
-                  'PFC HS3 Current',
                   'PFC LS1 Current',
+                  'PFC HS2 Current',
                   'PFC LS2 Current',
+                  'PFC HS3 Current',
                   'PFC LS3 Current',
                   #!-------------------------
                   'PFC HS1 junction Temp',
-                  'PFC HS2 junction Temp',
-                  'PFC HS3 junction Temp',
                   'PFC LS1 junction Temp',
+                  'PFC HS2 junction Temp',
                   'PFC LS2 junction Temp',
+                  'PFC HS3 junction Temp',
                   'PFC LS3 junction Temp',
                   #!-------------------------
                   'PFC HS1 switching losses',
-                  'PFC HS1 switching losses',
-                  'PFC HS1 switching losses',
-                  'PFC HS1 switching losses',
-                  'PFC HS1 switching losses',
-                  'PFC HS1 switching losses',
+                  'PFC LS1 switching losses',
+                  'PFC HS2 switching losses',
+                  'PFC LS2 switching losses',
+                  'PFC HS3 switching losses',
+                  'PFC LS3 switching losses',
                   #!-------------------------
                   'PFC HS1 conduction losses',
-                  'PFC HS1 conduction losses',
-                  'PFC HS1 conduction losses',
-                  'PFC HS1 conduction losses',
-                  'PFC HS1 conduction losses',
-                  'PFC HS1 conduction losses',
+                  'PFC LS1 conduction losses',
+                  'PFC HS2 conduction losses',
+                  'PFC LS2 conduction losses',
+                  'PFC HS3 conduction losses',
+                  'PFC LS3 conduction losses',
                   #!-------------------------
                   'PFC output capacitor voltage',
                   'PFC output capacitor current',
@@ -422,7 +427,11 @@ Units       =  [
                   '[ A ]',               
                   #!-------------------------
                   '[ V ]',                  
+                  '[ V ]',  
                   '[ V ]',                  
+                  '[ V ]',   
+                  '[ V ]',                  
+                  '[ V ]',                
                   #!-------------------------
                   '[ A ]',                  
                   '[ V ]',                  
