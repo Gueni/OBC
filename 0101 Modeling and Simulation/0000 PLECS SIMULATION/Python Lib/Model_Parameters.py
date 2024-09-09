@@ -47,8 +47,8 @@ PFC         = {
                   'Config'          : 1,                                                                                               #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 250e-6,                                                                                          #? [H]      - Inductance of the first choke winding
-                     'L2'           : 250e-6,                                                                                          #? [H]      - Inductance of the second choke winding
+                     'L1'           : 300e-6,                                                                                          #? [H]      - Inductance of the first choke winding
+                     'L2'           : 300e-6,                                                                                          #? [H]      - Inductance of the second choke winding
                      'R1'           : 2.3e-3,                                                                                            #? [Ohm]    - Resistance of the first choke winding
                      'R2'           : 2.3e-3,                                                                                            #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
