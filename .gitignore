@@ -154,3 +154,8 @@ cython_debug/
 *.html
 *.csv
 *.log
+*.raw
+*.fft
+*.imp
+*.platform
+__pycache__ /

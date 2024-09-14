@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.1">
+    <Package class="Diode" vendor="Wolfspeed" partnumber="C4D30120D">
+        <Variables/>
+        <SemiconductorData type="Diode">
+            <TurnOnLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> 0</CurrentAxis>
+                <VoltageAxis> 0</VoltageAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <Energy scale="1">
+                    <Temperature>
+                        <Voltage> 0</Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss>
+                <ComputationMethod>Table only</ComputationMethod>
+                <Formula>0.97 + (T*-2.12e-3) + i*(0.031 + (T*3.92e-4))</Formula>
+                <CurrentAxis> -5 0 0.827 1.996 59.88</CurrentAxis>
+                <TemperatureAxis> -55 25 75 125 175 900 1000</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0 0 0.9774 1.023 2.11</Temperature>
+                    <Temperature> 0 0 0.8817 0.9422 2.271</Temperature>
+                    <Temperature> 0 0 0.8097 0.8827 2.582</Temperature>
+                    <Temperature> 0 0 0.7246 0.819 3.045</Temperature>
+                    <Temperature> 0 0 0.6685 0.7947 3.692</Temperature>
+                    <Temperature> 0 0 0.6685 0.7947 3.692</Temperature>
+                    <Temperature> 0 0 0.6685 0.7947 3.692</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <Branch type="Cauer">
+                <RCElement R="0.044206903" C="0.001511006"/>
+                <RCElement R="0.145804287" C="0.007465691"/>
+                <RCElement R="0.060054556" C="0.023902938"/>
+                <RCElement R="0.074692508" C="0.07931160900000001"/>
+            </Branch>
+        </ThermalModel>
+        <Comment>
+            <Line></Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>

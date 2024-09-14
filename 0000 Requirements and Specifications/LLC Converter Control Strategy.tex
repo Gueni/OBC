@@ -1,0 +1,139 @@
+\documentclass{article}
+%-------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{tocloft} % For custom Table of Contents formatting
+%-------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------
+\title{LLC Converter Control Strategy}
+\author{Mohamed Gueni}
+\date{\today}
+%-------------------------------------------------------
+\maketitle
+%-------------------------------------------------------
+\tableofcontents
+%-------------------------------------------------------
+\section{Introduction}
+\label{sec:introduction}
+This document outlines the control strategy for an LLC converter with 4 MOSFETs on the input side and 4 MOSFETs as synchronous rectifiers on the output side. The control strategy includes various controller blocks necessary for efficient and reliable operation of the converter.
+
+%-------------------------------------------------------
+\section{Resonant Frequency Control (Primary Side)}
+\label{sec:resonant_frequency_control}
+\subsection{Purpose}
+To regulate the output voltage by controlling the switching frequency of the MOSFETs on the input side (primary side of the LLC converter).
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Phase-Shift Control:} Modulates the phase difference between the high-side and low-side MOSFETs.
+    \item \textbf{Frequency Modulation:} Adjusts the switching frequency to regulate the output voltage by tracking the resonant frequency of the LLC tank circuit.
+\end{itemize}
+
+\subsection{Controller}
+A Phase-Locked Loop (PLL) or Voltage-Controlled Oscillator (VCO) can be used to modulate the switching frequency based on feedback from the output voltage.
+
+\subsection{Detailed Implementation}
+\begin{itemize}
+    \item \textbf{Objective:} Control the switching frequency of the primary side MOSFETs to regulate the output voltage. In an LLC resonant converter, the output voltage is regulated by adjusting the frequency of the driving signals to the primary MOSFETs, which effectively changes the gain of the LLC resonant tank.
+    \item \textbf{Components Needed in PLECS:}
+    \begin{itemize}
+        \item \textbf{Voltage-Controlled Oscillator (VCO):}
+        \begin{itemize}
+            \item Generates the switching signals for the primary-side MOSFETs.
+            \item The frequency of the VCO is adjusted based on the feedback from the output voltage.
+        \end{itemize}
+        \item \textbf{Phase-Locked Loop (PLL):}
+        \begin{itemize}
+            \item Locks onto the desired resonant frequency or phase difference to maintain efficient operation.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Block Diagram in PLECS:}
+    \begin{itemize}
+        \item \textbf{Input:} Error signal from the output voltage regulation loop.
+        \item \textbf{Processing:} Use a PI or PID controller to process the error signal and adjust the control voltage of the VCO.
+        \item \textbf{Output:} The VCO outputs the switching signals with the adjusted frequency for the primary MOSFETs.
+    \end{itemize}
+    \item \textbf{Implementation Steps in PLECS:}
+    \begin{enumerate}
+        \item \textbf{Create a VCO block} that takes a control voltage as input and outputs a switching signal.
+        \item \textbf{Link the output of the Voltage Loop} to the control input of the VCO.
+        \item \textbf{Generate the gate drive signals} for the primary MOSFETs using the VCO output.
+    \end{enumerate}
+\end{itemize}
+
+%-------------------------------------------------------
+\section{Output Voltage Regulation (Voltage Loop)}
+\label{sec:output_voltage_regulation}
+\subsection{Purpose}
+To maintain the desired output voltage despite variations in load or input voltage.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{PI or PID Controller:} A Proportional-Integral (PI) or Proportional-Integral-Derivative (PID) controller processes the error between the actual output voltage and the reference voltage. The output of this controller adjusts the switching frequency (or phase shift) of the primary side MOSFETs.
+\end{itemize}
+
+\subsection{Controller}
+The output of the voltage loop controls the input of the resonant frequency control block.
+
+%-------------------------------------------------------
+\section{Synchronous Rectification Control (Output Side)}
+\label{sec:synchronous_rectification_control}
+\subsection{Purpose}
+To ensure that the synchronous rectifier MOSFETs on the output side operate with precise timing to minimize conduction losses and prevent reverse current.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Gate Drive Signals:} Synchronized gate drive signals are required for the output MOSFETs, often derived from the primary side MOSFET signals with appropriate delay or phase shift.
+    \item \textbf{Dead-Time Control:} Proper dead-time between the switching of the high-side and low-side MOSFETs to avoid shoot-through and optimize efficiency.
+\end{itemize}
+
+\subsection{Controller}
+A logic circuit or microcontroller is often used to generate synchronized gate signals based on the timing of the primary side MOSFETs. Advanced designs might include adaptive dead-time control.
+
+%-------------------------------------------------------
+\section{Current Protection (Overcurrent Protection Loop)}
+\label{sec:current_protection}
+\subsection{Purpose}
+To protect the converter from overcurrent conditions that could damage the components.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Current Sensing:} A current sensor monitors the primary or secondary side current.
+    \item \textbf{Overcurrent Protection Logic:} If the sensed current exceeds a predefined threshold, the controller can reduce the switching frequency, shut down the converter, or trigger a fault condition.
+\end{itemize}
+
+\subsection{Controller}
+This can be integrated into the voltage control loop or implemented as a separate protection circuit.
+
+%-------------------------------------------------------
+\section{Soft-Start Control}
+\label{sec:soft_start_control}
+\subsection{Purpose}
+To gradually ramp up the output voltage to prevent inrush currents and ensure smooth startup.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Soft-Start Circuit:} Modulates the switching frequency or duty cycle gradually from a low value to the normal operating point during startup.
+\end{itemize}
+
+\subsection{Controller}
+Often integrated with the voltage regulation loop, where the reference voltage is slowly ramped up.
+
+%-------------------------------------------------------
+\section{Temperature Monitoring and Protection}
+\label{sec:temperature_monitoring}
+\subsection{Purpose}
+To prevent overheating of the MOSFETs and other critical components.
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Thermal Sensors:} Placed near MOSFETs or other heat-generating components.
+    \item \textbf{Thermal Protection Logic:} Reduces the switching frequency, shuts down the converter, or engages cooling mechanisms if temperatures exceed safe limits.
+\end{itemize}
+
+\subsection{Controller}
+A thermal protection circuit, which can be integrated into the main control loop or operate independently.
+
+\end{document}
