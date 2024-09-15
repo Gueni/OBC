@@ -8,7 +8,7 @@
 # EV Onboard Charger with PFC and LLC Resonant Converter
 ## Overview
 <p align="center">
-  <img  src="0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png">
+  <img  src="0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png">
 </p>
 
 This repository contains the design and implementation of an Electric Vehicle (EV) single phase Onboard Charger with Power Factor Correction (PFC) and LLC Resonant Converter. The onboard charger is responsible for efficiently converting AC power from the grid into DC power for charging the EV's battery pack.
@@ -26,10 +26,6 @@ The charger is designed to meet specific power requirements and comply with safe
 - [Modeling and Simulation](#modeling-and-simulation)
 - [Schematic Capture](#schematic-capture)
 - [PCB Design](#pcb-design)
-- [Control Circuit Design](#control-circuit-design)
-- [Safety and Compliance](#safety-and-compliance)
-- [Prototype Development and Testing](#prototype-development-and-testing)
-- [Production and Manufacturing](#production-and-manufacturing)
 
 ## Features
 
@@ -64,7 +60,7 @@ The magnetic component design covers the design and selection of transformers an
 Modeling and simulation involve using software tools to analyze and optimize the performance of the onboard charger.
 
 <p align="center">
-  <img  src="0101 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/report.gif">
+  <img  src="0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/report.gif">
 </p>
 
 ## Schematic Capture
@@ -74,23 +70,6 @@ Schematic capture involves creating the electrical schematics of the onboard cha
 ## PCB Design
 
 The PCB design encompasses the layout and design of the printed circuit board for the onboard charger.
-
-## Control Circuit Design
-
-The control circuit design includes the development of control algorithms and firmware for managing PFC and LLC converter operations.
-
-## Safety and Compliance
-
-The EV Onboard Charger is designed to meet safety and regulatory standards, including electrical isolation, thermal performance, and electromagnetic compatibility (EMC). Before using the charger, ensure that it complies with all relevant safety regulations in your region.
-
-## Prototype Development and Testing
-
-Prototype development and testing involve building and testing a physical prototype of the onboard charger.
-
-## Production and Manufacturing
-
-Production and manufacturing cover the mass production and assembly of the onboard charger for commercial use.
-
 
 ## How to Use
 
