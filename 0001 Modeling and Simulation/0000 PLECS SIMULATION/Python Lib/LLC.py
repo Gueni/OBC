@@ -1,24 +1,35 @@
 
-#?----------------------------------------------------------------------------------------------------------------------------------------
-#?                                                             ____  ____  ______
-#?                                                            / __ \/ __ )/ ____/
-#?                                                           / / / / __  / /
-#?                                                          / /_/ / /_/ / /___
-#?                                                          \____/_____/\____/
+#!/usr/bin/env python
+# coding=utf-8
+#? -------------------------------------------------------------------------------
+#?                                  __    __    ______
+#?                                 / /   / /   / ____/
+#?                                / /   / /   / /     
+#?                               / /___/ /___/ /___   
+#?                              /_____/_____/\____/       
+#?               
+#?      
 #?
-#?----------------------------------------------------------------------------------------------------------------------------------------
+#? Name:        LLC.py
+#? Purpose:     Run Simulation for LLC Model.
+#?
+#? Author:      Mohamed Gueni ( mohamedgueni@outlook.com)
+#?
+#? Created:     09/15/2024
+#? Licence:     Refer to the LICENSE file
+#? -------------------------------------------------------------------------------  
+#? -------------------------------------------------------------------------------
 import plecs as plc
 import Model_Parameters as mdl
-import post_process
 import cleardata
 import os
 import time
 #?----------------------------------------------------------------------------------------------------------------------------------------
 mdlvar                                 = mdl.ModelVars                                                        
-modelname                              = "OBC"                                 
+modelname                              = "LLC"                                 
 port                                   = "1080"                                                               
 url                                    = f"http://localhost:{port}/RPC2"                                      
-model_path                             = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/OBC.plecs"                  
+model_path                             = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/LLC.plecs"                  
 model_directory                        = (os.path.join(os.getcwd(), model_path)).replace("\\", "/")  
 
 mdlvar                                 = mdl.ModelVars                                                                                                                             
@@ -28,7 +39,7 @@ plcsim                                 = plc.simpy(
                                                     path            =   model_directory     ,  
                                                     modelvar        =   mdlvar              ,
                                                     analysisvars    =   mdlvar              ,
-                                                    analysisName    =   'OBC'
+                                                    analysisName    =   'LLC'
                                                     )                                                                                               
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.rpc_connect()                                                                       
@@ -45,10 +56,8 @@ mdlvar['ToFile']['output_html']        = str((os.path.join(mdl.current_directory
 mdlvar['ToFile']['Traces']             = str((os.path.join(mdl.current_directory,mdl.Traces_path)).replace("\\", "/"))
 
 plcsim.logParams(str(mdlvar['ToFile']['logfile']),mdlvar)
-plcsim.ClearAllTraces(mdl.set_scopes(modelname))  
 plcsim.Set_sim_param(mdlvar)
 plcsim.launch_sim(modelname=modelname)
 # plcsim.HoldAllTraces(mdl.scopes)
 # plcsim.saveAllTraces(mdl.scopes,mdl,mdlvar['ToFile']['Traces'])
-post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------

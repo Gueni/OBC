@@ -10,10 +10,10 @@ import os
 import numpy as np
 #!----------------------------------------------------------------------------------------------------------------------------------------                                                         
 current_directory   = os.getcwd()                                                                                                                                                              
-Traces_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces/"           
-ToFile_path         = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/"              
-logfile_path        = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/"              
-output_html_path    = "0101 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"
+Traces_path         = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces/"           
+ToFile_path         = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/"              
+logfile_path        = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/"              
+output_html_path    = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            
                   'tSim'	    	   : 1.0,                                                                                             #? [s]     - Total simulation time
@@ -100,14 +100,14 @@ DCLink      = {
                      }
 LLC         = {
                      'Config'		            : 1,                                                                                      #? [/]      - configuration
-                     'L_r'                   : 20e-6,                                                                                  #? [H]      - Resonant inductor
+                     'L_r'                   : 1.55e-6,                                                                                  #? [H]      - Resonant inductor
                      'L_k'                   : 5e-6,                                                                                   #? [H]      - Resonant inductor
                      'L_k_Iinit'             : 0,                                                                                      #? [H]      - Initial inductance of resonant inductor
                      'L_r_Iinit'             : 0,                                                                                      #? [/]      - Initial current in resonant inductor
                      'Trafo'                 : {
                         'Config'             : 1,                                                                                      #? [/]      - Transformer configuration
-                        'n_prim'             : 10,                                                                                     #? [/]      - Primary side turn number
-                        'n_sndry'            : 1,                                                                                      #? [/]      - Secondary side turn number
+                        'n_prim'             : 4,                                                                                     #? [/]      - Primary side turn number
+                        'n_sndry'            : 41,                                                                                      #? [/]      - Secondary side turn number
                         'Imaginit'           : 0,                                                                                      #? [/]      - Initial magnetizing current
                         'Lp'                 : 1e-9,                                                                                   #? [H]      - Primary inductance
                         'Rp'                 : 1e-2,                                                                                   #? [Ohm]    - Primary resistance
@@ -130,7 +130,7 @@ LLC         = {
                      },
                      'C_r'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
-                        'Cap_s'        : 47e-9,                                                                                        #? [F]      - Capacitance value
+                        'Cap_s'        : 1.2e-6,                                                                                        #? [F]      - Capacitance value
                         'Resr_s'       : 1e-10,                                                                                        #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'       : 1e-10,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
                         'Npara'        : 1,                                                                                            #? [/]      - Number of parallel capacitors
@@ -144,7 +144,7 @@ LLC         = {
                      'L'               : 1.6e-6,                                                                                       #? [H]      - Output inductor
                      'C_o'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Capacitance configuration
-                        'Cap_s'        : 100e-6,                                                                                        #? [F]      - Capacitance value
+                        'Cap_s'        : 480e-6,                                                                                        #? [F]      - Capacitance value
                         'Resr_s'       : 1e-10,                                                                                        #? [Ohm]    - Equivalent series resistance of the capacitance
                         'Lesl_s'       : 1e-10,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
                         'Npara'        : 1,                                                                                            #? [/]      - Number of parallel capacitors
@@ -154,10 +154,10 @@ LLC         = {
                      },
                      'HS1'             : {
                         'Config'       : 1,                                                                                            #? [/]      - Switch configuration
-                        'therm_mosfet' : 'file:C3M0021120K',                                                                           #? [/]      - MOSFET thermal model file path
+                        'therm_mosfet' : 'file:CAS300M12BM2',                                                                           #? [/]      - MOSFET thermal model file path
                         'Rgon'         : 2.5,                                                                                          #? [Ohm]    - Gate resistance for turn-on
                         'Rgoff'        : 2.5,                                                                                          #? [Ohm]    - Gate resistance for turn-off
-                        'ron_mosfet'   : 67e-3,                                                                                        #? [Ohm]    - MOSFET on-state resistance
+                        'ron_mosfet'   : 30e-3,                                                                                        #? [Ohm]    - MOSFET on-state resistance
                         'Iinit'        : 0,                                                                                            #? [A]      - Initial current through the MOSFET
                         'Coss'         : {
                               'Config' : 5,                                                                                            #? [/]      - Capacitance configuration
@@ -169,17 +169,17 @@ LLC         = {
                               'Vinit'  : 0,                                                                                            #? [V]      - Initial voltage across the capacitance
                               'Iinit'  : 0                                                                                             #? [A]      - Initial current through the capacitance
                         },
-                        'therm_body_diode'   : 'file:C3M0021120K_bodydiode',                                                           #? [/]      - Body diode thermal model file path
+                        'therm_body_diode'   : 'file:CAS300M12BM2_bodydiode',                                                           #? [/]      - Body diode thermal model file path
                         'ron_body_diode'     : 5e-3,                                                                                   #? [Ohm]    - Body diode on-state resistance
                         'Rdb_off'            : 0,                                                                                      #? [Ohm]    - Resistance when the body diode is off
-                        'vf_body_diode'      : 0.6,                                                                                    #? [V]      - Body diode forward voltage
+                        'vf_body_diode'      : 4.5,                                                                                    #? [V]      - Body diode forward voltage
                         'nPara'              : 1,                                                                                      #? [/]      - Number of parallel MOSFETs
                         'T_init'             : 25,                                                                                     #? [°C]     - Initial temperature of the MOSFET
                         'Tamb'               : 25,                                                                                     #? [°C]     - Ambient temperature
                         't_init'             : 25,                                                                                     #? [s]      - Initial time for thermal calculations
-                        'rth_sw'             : 0.72,                                                                                   #? [K/W]    - Thermal resistance between the switch junction and case
-                        'rth_ch'             : 62.5,                                                                                   #? [K/W]    - Thermal resistance between the case and heatsink
-                        'Rth'                : 0.34                                                                                    #? [K/W]    - Total thermal resistance
+                        'rth_sw'             : 0.1,                                                                                   #? [K/W]    - Thermal resistance between the switch junction and case
+                        'rth_ch'             : 0.1,                                                                                   #? [K/W]    - Thermal resistance between the case and heatsink
+                        'Rth'                : 0.1                                                                                    #? [K/W]    - Total thermal resistance
                      },
                      'SRHS1'                 : {                                                                                             
                         'Config'             : 1,                                                                                      #? [/]      - Switch configuration 

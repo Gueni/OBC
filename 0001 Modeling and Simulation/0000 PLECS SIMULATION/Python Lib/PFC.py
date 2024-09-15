@@ -1,12 +1,25 @@
 
-#?----------------------------------------------------------------------------------------------------------------------------------------
-#?                                                             ____  ____  ______
-#?                                                            / __ \/ __ )/ ____/
-#?                                                           / / / / __  / /
-#?                                                          / /_/ / /_/ / /___
-#?                                                          \____/_____/\____/
+#!/usr/bin/env python
+# coding=utf-8
+#? -------------------------------------------------------------------------------
+#?                                 ____  ____________
+#?                                / __ \/ ____/ ____/
+#?                               / /_/ / /_  / /     
+#?                              / ____/ __/ / /___   
+#?                             /_/   /_/    \____/      
+#?               
+#?      
 #?
-#?----------------------------------------------------------------------------------------------------------------------------------------
+#? Name:        PFC.py
+#? Purpose:     Run Simulation for PFC Model.
+#?
+#? Author:      Mohamed Gueni ( mohamedgueni@outlook.com)
+#?
+#? Created:     09/15/2024
+#? Licence:     Refer to the LICENSE file
+#? -------------------------------------------------------------------------------  
+#? -------------------------------------------------------------------------------
+
 import plecs as plc
 import Model_Parameters as mdl
 import post_process
@@ -15,10 +28,10 @@ import os
 import time
 #?----------------------------------------------------------------------------------------------------------------------------------------
 mdlvar                                 = mdl.ModelVars                                                        
-modelname                              = "OBC"                                 
+modelname                              = "PFC"                                 
 port                                   = "1080"                                                               
 url                                    = f"http://localhost:{port}/RPC2"                                      
-model_path                             = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/OBC.plecs"                  
+model_path                             = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/PFC.plecs"                  
 model_directory                        = (os.path.join(os.getcwd(), model_path)).replace("\\", "/")  
 
 mdlvar                                 = mdl.ModelVars                                                                                                                             
@@ -28,7 +41,7 @@ plcsim                                 = plc.simpy(
                                                     path            =   model_directory     ,  
                                                     modelvar        =   mdlvar              ,
                                                     analysisvars    =   mdlvar              ,
-                                                    analysisName    =   'OBC'
+                                                    analysisName    =   'PFC'
                                                     )                                                                                               
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.rpc_connect()                                                                       
@@ -50,5 +63,4 @@ plcsim.Set_sim_param(mdlvar)
 plcsim.launch_sim(modelname=modelname)
 # plcsim.HoldAllTraces(mdl.scopes)
 # plcsim.saveAllTraces(mdl.scopes,mdl,mdlvar['ToFile']['Traces'])
-post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------
