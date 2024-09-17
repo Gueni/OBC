@@ -50,5 +50,5 @@ plcsim.Set_sim_param(mdlvar)
 plcsim.launch_sim(modelname=modelname)
 # plcsim.HoldAllTraces(mdl.scopes)
 # plcsim.saveAllTraces(mdl.scopes,mdl,mdlvar['ToFile']['Traces'])
-post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
+# post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #?----------------------------------
