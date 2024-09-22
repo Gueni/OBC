@@ -7,19 +7,23 @@
 #?                              /_/   /_____/_____/\____//____/  /_/    \____/_/ |_/\____/  
 #?                              
 #?----------------------------------------------------------------------------------------------------------------------------------------
+import copy
 import xmlrpc.client
 import subprocess
 import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 class simpy:
     
-    def __init__(self,url,port,path,modelvar,analysisvars='',analysisName=''):
+    def __init__(self,url,port,path,modelvar,analysisvars='',analysisName='',parasim = False,paranum = 1):
         self.url            =   url
         self.port           =   port
         self.path           =   path
         self.modelvar       =   modelvar
         self.analysisvars   =   analysisvars
         self.analysisName   =   analysisName
+        self.opts           =   []
+        self.parasim             =   parasim 
+        self.paranum             =   paranum
 
     def is_running(self,process_name):
         try:
@@ -31,6 +35,14 @@ class simpy:
         except Exception as e:
             print(f"An error occurred: {e}")
             return False
+        
+    def return_opts(self,parasim = False , paranum = 1):
+        if not parasim and paranum == 1 : 
+            self.opts  = { 'ModelVars': self.modelvar}  #, 'SolverOpts': self.slv0pts, 'AnalysisOpts': self.an10pts}
+        else :
+            self.opts  = [{'ModelVars' : [copy.deepcopy(self.modelvar) for _ in range(paranum)][x] for x in range(paranum)}]   #, 'SolverOpts': slv_list[x], 'AnalysisOpts': anl_list [x]} for x in range(instances)]  
+        
+        return self.opts        
 
     def find_executable(self,exe_name):
         documents_folder = os.path.expanduser("~/Documents")
@@ -65,7 +77,8 @@ class simpy:
 
     def Set_sim_param(self,mdlvars):
         self.modelvar = mdlvars
-        self.opts =  {'ModelVars' :  self.modelvar} 
+        # self.opts =  {'ModelVars' :  self.modelvar} 
+        self.opts     = self.return_opts(self.parasim , self.paranum)
     
     def set_analysis_param(self,analysisvars):
         self.analysisvars = analysisvars

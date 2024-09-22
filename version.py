@@ -67,6 +67,6 @@ def populate_requirements_txt(project_dir: str, requirements_file: str) -> None:
 
     print(f'Requirements file "{requirements_file}" has been populated.')
 
-project_directory = 'D:/4 WORKSPACE/OBC/OBC/' 
-requirements_txt  = 'D:/4 WORKSPACE/OBC/OBC/requirements.txt'
+project_directory = 'D:/WORKSPACE/OBC/OBC/' 
+requirements_txt  = 'D:/WORKSPACE/OBC/OBC/requirements.txt'
 populate_requirements_txt(project_directory, requirements_txt)

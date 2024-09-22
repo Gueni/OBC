@@ -15,17 +15,31 @@ import cleardata
 import time
 import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
-port                                          = "1080"                                                               
-url                                           = f"http://localhost:{port}/RPC2"                                      
-modelname                                     = "OBC" 
-mdlvar                                        = mdl.ModelVars
 Vset                                          = (np.arange(5    ,24    +2    ,1    )).tolist()
 Fs                                            = np.linspace(20e3, 250e3, num=len(Vset)).tolist()
-plcsim                                        = plc.simpy(url=url , port=port , path=mdl.model_directory , modelvar=mdlvar)   
+
+mdlvar                                 = mdl.ModelVars                                                        
+modelname                              = "OBC"                                 
+port                                   = "1080"                                                               
+url                                    = f"http://localhost:{port}/RPC2"                                      
+model_path                             = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/OBC.plecs"                  
+model_directory                        = (os.path.join(os.getcwd(), model_path)).replace("\\", "/")  
+
+mdlvar                                 = mdl.ModelVars                                                                                                                             
+plcsim                                 = plc.simpy(
+                                                    url             =   url                 , 
+                                                    port            =   port                , 
+                                                    path            =   model_directory     ,  
+                                                    modelvar        =   mdlvar              ,
+                                                    analysisvars    =   mdlvar              ,
+                                                    analysisName    =   'OBC'               ,
+                                                    parasim         =   True                ,
+                                                    paranum         =   8
+                                                    )         
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.rpc_connect()                                                                    
 plcsim.load_model()
-plcsim.ClearAllTraces(mdl.scopes)
+# plcsim.ClearAllTraces(mdl.scopes)
 cleardata.clear_data_folders()                                                                  
 inc  = 0
 for i, item1 in enumerate(Fs):
@@ -47,6 +61,6 @@ for i, item1 in enumerate(Fs):
         plcsim.launch_sim(modelname=modelname)
         # plcsim.HoldAllTraces(mdl.scopes)
         # plcsim.saveAllTraces(mdlvar['scopes'],mdl,mdlvar['ToFile']['Traces'])
-        post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=False)
+        # post_process.gen_plots(resFile= mdlvar['ToFile']['ToFile_path'], html_file=mdlvar['ToFile']['output_html'],OPEN=False)
         inc+=1
 #?----------------------------------------------------------------------------------------------------------------------------------------
