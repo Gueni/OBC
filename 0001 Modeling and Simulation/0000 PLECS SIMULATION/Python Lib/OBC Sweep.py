@@ -15,7 +15,7 @@ import cleardata
 import time
 import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
-Vset                                          = (np.arange(5    ,24    +2    ,1    )).tolist()
+Vset                                          = (np.arange(300    ,450    +150    ,150    )).tolist()
 Fs                                            = np.linspace(20e3, 250e3, num=len(Vset)).tolist()
 
 mdlvar                                 = mdl.ModelVars                                                        
@@ -53,8 +53,7 @@ for i, item1 in enumerate(Fs):
         mdlvar['ToFile']['logfile']            = str((os.path.join(mdl.current_directory,mdl.logfile_path+f"Log_{utc_numeric}_{sim_idx}.log")).replace("\\", "/"))
         mdlvar['ToFile']['output_html']        = str((os.path.join(mdl.current_directory,mdl.output_html_path+f"Html_{utc_numeric}_{sim_idx}.html")).replace("\\", "/"))
         mdlvar['ToFile']['Traces']             = str((os.path.join(mdl.current_directory,mdl.Traces_path)).replace("\\", "/"))
-        # mdlvar['CTRL']['Vset']                 = Vset[j]
-        # mdlvar['CTRL']['Fs']                   = Fs[i]
+        mdlvar['CTRL']['Vset']                 = Vset[j]
 
         plcsim.logParams(mdlvar['ToFile']['logfile'],mdlvar)
         plcsim.Set_sim_param(mdlvar)

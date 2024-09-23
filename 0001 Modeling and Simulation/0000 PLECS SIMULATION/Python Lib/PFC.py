@@ -43,7 +43,7 @@ plcsim                                 = plc.simpy(
                                                     analysisvars    =   mdlvar              ,
                                                     analysisName    =   'PFC'               ,
                                                     parasim         =   True                ,
-                                                    paranum         =   1
+                                                    paranum         =   10
                                                     )                                                                                               
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.rpc_connect()                                                                       

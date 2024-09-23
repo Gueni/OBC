@@ -39,8 +39,10 @@ plcsim                                 = plc.simpy(
                                                     path            =   model_directory     ,  
                                                     modelvar        =   mdlvar              ,
                                                     analysisvars    =   mdlvar              ,
-                                                    analysisName    =   'LLC'
-                                                    )                                                                                               
+                                                    analysisName    =   'LLC'               ,
+                                                    parasim         =   False               ,
+                                                    paranum         =   1
+                                                    )                                                                                                   
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.rpc_connect()                                                                       
 plcsim.load_model()  

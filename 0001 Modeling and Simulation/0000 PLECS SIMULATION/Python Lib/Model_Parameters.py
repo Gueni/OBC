@@ -6,6 +6,7 @@
 #!                                        / /_/ / /_/ / /___     | |/ / /_/ / /  (__  )
 #!                                        \____/_____/\____/     |___/\__,_/_/  /____/
 #!----------------------------------------------------------------------------------------------------------------------------------------
+import configparser
 import os 
 import numpy as np
 #!----------------------------------------------------------------------------------------------------------------------------------------                                                         
@@ -14,7 +15,7 @@ Traces_path         = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python
 ToFile_path         = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV/"              
 logfile_path        = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log/"              
 output_html_path    = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html/"
-Coss_Config         = 1
+Coss_Config         = 5
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            
                   'tSim'	    	   : 1.0,                                                                                             #? [s]     - Total simulation time
@@ -23,12 +24,22 @@ Sim_param 	= {
                   'ZeroCross'       : 1000,                                                                                            #? [/]     - Zero-crossing detection limit
                   'rel_tol'		   : 1e-7                                                                                             #? [/]     - Relative tolerance for the numerical solver
                }
+Configs     = {
+                  'Grid'            : 1,                                                                                               #? [/]      - Config of the Grid.
+                  'AC_Filter'       : 5,                                                                                               #? [/]      - Config of the AC filter.
+                  'PFC'             : 2,                                                                                               #? [/]      - Config of the PFC.
+                  'DCLink'          : 1,                                                                                               #? [/]      - Config of the DCLink.
+                  'LLC'             : 2,                                                                                               #? [/]      - Config of the LLC.
+                  'HV_Filter'       : 3,                                                                                               #? [/]      - Config of the HV Filter.
+                  'Load'            : 1                                                                                                #? [/]      - Config of the Load.
+
+               }
 ToFile      = {   
                   'Ts'              : 0,                                                                                               #? [s]     - Sampling time for saving data
                   'tsave' 	    	   : Sim_param['tSim']-0.2                                                                            #? [s]     - Time point at which the data is saved
                }
 Grid        = {
-                  'Config'          : 1,                                                                                               #? [/]     - Configuration setting for the grid
+                  'Config'          : Configs['Grid'],                                                                                 #? [/]     - Configuration setting for the grid
                   'Vin'             : 230,                                                                                             #? [V]     - Input voltage of the grid
                   'Ts'              : 0,                                                                                               #? [s]     - Sampling time for grid operations
                   'f'               : 50,                                                                                              #? [Hz]    - Grid frequency
@@ -36,7 +47,7 @@ Grid        = {
                   'R'               : 0.01                                                                                             #? [Ohm]   - Grid resistance
                }
 AC_Filter   = {
-                  'Config'          : 5,                                                                                               #? [/]      - Configuration setting for the AC filter
+                  'Config'          : Configs['AC_Filter'],                                                                            #? [/]      - Configuration setting for the AC filter
                   'Cin'             : 1e-6,                                                                                            #? [F]      - Input capacitance
                   'L_CMC'           : 1.5e-3,                                                                                          #? [H]      - Common-mode choke inductance
                   'L_DMC'           : 900e-6,                                                                                          #? [H]      - Differential-mode choke inductance
@@ -46,13 +57,13 @@ AC_Filter   = {
                   'Ll'              : 10e-6                                                                                            #? [H]      - Filter inductor leakage inductance
                }
 PFC         = {
-                  'Config'          : 2,                                                                                               #? [/]      - Diode thermal description
+                  'Config'          : Configs['PFC'],                                                                                  #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 500e-3,                                                                                          #? [H]      - Inductance of the first choke winding
-                     'L2'           : 500e-3,                                                                                          #? [H]      - Inductance of the second choke winding
-                     'R1'           : 85e-3,                                                                                          #? [Ohm]    - Resistance of the first choke winding
-                     'R2'           : 85e-3,                                                                                          #? [Ohm]    - Resistance of the second choke winding
+                     'L1'           : 150e-3,                                                                                          #? [H]      - Inductance of the first choke winding
+                     'L2'           : 150e-3,                                                                                          #? [H]      - Inductance of the second choke winding
+                     'R1'           : 5e-3,                                                                                            #? [Ohm]    - Resistance of the first choke winding
+                     'R2'           : 5e-3,                                                                                            #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
                      'Rm'           : 0.001,                                                                                           #? [Ohm]    - Resistance of the mutual inductance
                      'i1'           : 0,                                                                                               #? [A]      - Initial current in the first choke winding
@@ -90,7 +101,7 @@ PFC         = {
                      }
                }
 DCLink      = {                                                                                             
-                      'Config'		   : 1,                                                                                            #? [/]      - Capacitance configuration
+                      'Config'		   : Configs['DCLink'],                                                                            #? [/]      - Capacitance configuration
                       'Cap_s'    		: 100e-6,                                                                                       #? [F]      - Capacitance value 
                       'Resr_s'		   : 1e-3,                                                                                         #? [F]      - Equivalent series resistance of the capacitance
                       'Lesl_s'		   : 1e-12,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
@@ -100,7 +111,9 @@ DCLink      = {
                       'Iinit'		      : 0                                                                                             #? [A]      - Initial current through the capacitance   
                      }
 LLC         = {
-                     'Config'		            : 2,                                                                                      #? [/]      - configuration
+                     'Config'		            : Configs['LLC'],                                                                         #? [/]      - configuration
+                     'Rp'                    : 1e-2,                                                                                   #? [H]      - Primary Res
+                     'Rs'                    : 1e-2,                                                                                   #? [H]      - Sec Res
                      'L_r'                   : 1.55e-6,                                                                                #? [H]      - Resonant inductor
                      'L_k'                   : 5e-6,                                                                                   #? [H]      - Resonant inductor
                      'L_k_Iinit'             : 0,                                                                                      #? [H]      - Initial inductance of resonant inductor
@@ -260,7 +273,7 @@ CTRL        = {
                      'Rv_Ki'                 : 800                                                                                     #? [/]      - Integral gain for voltage control
                   }
 HV_Filter   = {                                                                                             
-                     'Config'                : 3,                                                                                      #? [/]      - Filter configuration
+                     'Config'                : Configs['HV_Filter'],                                                                   #? [/]      - Filter configuration
                      'Cy'                    : {                                                                                        
                         'Config'             : 1,                                                                                      #? [/]      - Capacitance configuration
                         'Cap_s'              : 1e-3,                                                                                   #? [F]      - Capacitance value
@@ -295,7 +308,7 @@ HV_Filter   = {
                      },
                   }
 Load        = {
-                     'Config'                : 1,                                                                                      #? [/]      - Configuration type for the load setup
+                     'Config'                : Configs['Load'],                                                                        #? [/]      - Configuration type for the load setup
                      'CL'                    : 0,                                                                                      #? [F]      - Load capacitance value
                      'R'                     : 50,                                                                                     #? [Ohm]    - Load resistance value
                      'L'                     : 0,                                                                                      #? [H]      - Load inductance value
@@ -453,3 +466,7 @@ def generate_units(waveforms):
     return units
 
 Units       = generate_units(Waveforms)
+
+
+
+
