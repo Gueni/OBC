@@ -16,7 +16,6 @@ import time
 import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 Vset                                          = (np.arange(300    ,450    +150    ,150    )).tolist()
-Fs                                            = np.linspace(20e3, 250e3, num=len(Vset)).tolist()
 
 mdlvar                                 = mdl.ModelVars                                                        
 modelname                              = "OBC"                                 
@@ -33,8 +32,8 @@ plcsim                                 = plc.simpy(
                                                     modelvar        =   mdlvar              ,
                                                     analysisvars    =   mdlvar              ,
                                                     analysisName    =   'OBC'               ,
-                                                    parasim         =   True                ,
-                                                    paranum         =   8
+                                                    parasim         =   False               ,
+                                                    paranum         =   1
                                                     )         
 #?----------------------------------------------------------------------------------------------------------------------------------------
 plcsim.rpc_connect()                                                                    
@@ -42,8 +41,7 @@ plcsim.load_model()
 # plcsim.ClearAllTraces(mdl.scopes)
 cleardata.clear_data_folders()                                                                  
 inc  = 0
-for i, item1 in enumerate(Fs):
-    for j, item2 in enumerate(Vset):
+for j, item2 in enumerate(Vset):
 
         utc_numeric                            = str(int(time.strftime("%Y%m%d%H%M%S",  time.gmtime() )))
         sim_idx                                = inc+1

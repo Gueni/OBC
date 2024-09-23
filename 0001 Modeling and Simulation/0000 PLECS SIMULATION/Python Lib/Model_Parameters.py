@@ -26,8 +26,8 @@ Sim_param 	= {
                }
 Configs     = {
                   'Grid'            : 1,                                                                                               #? [/]      - Config of the Grid.
-                  'AC_Filter'       : 5,                                                                                               #? [/]      - Config of the AC filter.
-                  'PFC'             : 2,                                                                                               #? [/]      - Config of the PFC.
+                  'AC_Filter'       : 1,                                                                                               #? [/]      - Config of the AC filter.
+                  'PFC'             : 1,                                                                                               #? [/]      - Config of the PFC.
                   'DCLink'          : 1,                                                                                               #? [/]      - Config of the DCLink.
                   'LLC'             : 2,                                                                                               #? [/]      - Config of the LLC.
                   'HV_Filter'       : 3,                                                                                               #? [/]      - Config of the HV Filter.
@@ -60,10 +60,10 @@ PFC         = {
                   'Config'          : Configs['PFC'],                                                                                  #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 150e-3,                                                                                          #? [H]      - Inductance of the first choke winding
-                     'L2'           : 150e-3,                                                                                          #? [H]      - Inductance of the second choke winding
-                     'R1'           : 5e-3,                                                                                            #? [Ohm]    - Resistance of the first choke winding
-                     'R2'           : 5e-3,                                                                                            #? [Ohm]    - Resistance of the second choke winding
+                     'L1'           : 50e-3,                                                                                           #? [H]      - Inductance of the first choke winding
+                     'L2'           : 50e-3,                                                                                           #? [H]      - Inductance of the second choke winding
+                     'R1'           : 50e-3,                                                                                           #? [Ohm]    - Resistance of the first choke winding
+                     'R2'           : 50e-3,                                                                                           #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
                      'Rm'           : 0.001,                                                                                           #? [Ohm]    - Resistance of the mutual inductance
                      'i1'           : 0,                                                                                               #? [A]      - Initial current in the first choke winding
@@ -75,7 +75,7 @@ PFC         = {
                         'therm_mosfet' : 'file:C3M0021120K',                                                                           #? [/]      - MOSFET thermal model file path
                         'Rgon'         : 2.5,                                                                                          #? [Ohm]    - Gate resistance for turn-on
                         'Rgoff'        : 2.5,                                                                                          #? [Ohm]    - Gate resistance for turn-off
-                        'ron_mosfet'   : 30e-3,                                                                                        #? [Ohm]    - MOSFET on-state resistance
+                        'ron_mosfet'   : 65e-3,                                                                                        #? [Ohm]    - MOSFET on-state resistance
                         'Iinit'        : 0,                                                                                            #? [A]      - Initial current through the MOSFET
                         'Coss'         : {
                               'Config' : 5,                                                                                            #? [/]      - Capacitance configuration
@@ -102,7 +102,7 @@ PFC         = {
                }
 DCLink      = {                                                                                             
                       'Config'		   : Configs['DCLink'],                                                                            #? [/]      - Capacitance configuration
-                      'Cap_s'    		: 100e-6,                                                                                       #? [F]      - Capacitance value 
+                      'Cap_s'    		: 470e-6,                                                                                       #? [F]      - Capacitance value 
                       'Resr_s'		   : 1e-3,                                                                                         #? [F]      - Equivalent series resistance of the capacitance
                       'Lesl_s'		   : 1e-12,                                                                                        #? [H]      - Equivalent series inductance of the capacitance
                       'Npara'		      : 10,                                                                                           #? [/]      - Number of parallel capacitors
@@ -256,6 +256,7 @@ CTRL        = {
                      'Gsa'                   : 2 * np.pi * (2 * np.pi * 360e-6 * 20) * 12.5,                                           #? [S]     - Voltage compensator series gain (Gsa = 2*pi*Ga*IBW_Vloop)
                      
                      'Vref'                  : 400,                                                                                    #? [V]      - Reference voltage
+                     'Pout'                  : 7e3,                                                                                    #? [W]      - Reference voltage
                      'sys_clk'               : 100e6,                                                                                  #? [Hz]     - System clock frequency (100 MHz)
                      'max_period'            : 2000,                                                                                   #? [µs]     - Maximum system period allowed
                      'min_period'            : 200,                                                                                    #? [µs]     - Minimum system period allowed
