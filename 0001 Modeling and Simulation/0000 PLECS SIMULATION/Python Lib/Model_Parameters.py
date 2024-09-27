@@ -60,10 +60,10 @@ PFC         = {
                   'Config'          : Configs['PFC'],                                                                                  #? [/]      - Diode thermal description
                   'Choke'           : {
                      'Config'       : 1,                                                                                               #? [/]      - Diode thermal description
-                     'L1'           : 50e-3,                                                                                           #? [H]      - Inductance of the first choke winding
-                     'L2'           : 50e-3,                                                                                           #? [H]      - Inductance of the second choke winding
-                     'R1'           : 50e-3,                                                                                           #? [Ohm]    - Resistance of the first choke winding
-                     'R2'           : 50e-3,                                                                                           #? [Ohm]    - Resistance of the second choke winding
+                     'L1'           : 30e-3,                                                                                           #? [H]      - Inductance of the first choke winding
+                     'L2'           : 40e-6,                                                                                           #? [H]      - Inductance of the second choke winding
+                     'R1'           : 0.01,                                                                                               #? [Ohm]    - Resistance of the first choke winding
+                     'R2'           : 0.01,                                                                                               #? [Ohm]    - Resistance of the second choke winding
                      'Lm'           : 0.001,                                                                                           #? [H]      - Mutual inductance of the choke
                      'Rm'           : 0.001,                                                                                           #? [Ohm]    - Resistance of the mutual inductance
                      'i1'           : 0,                                                                                               #? [A]      - Initial current in the first choke winding
@@ -267,7 +267,7 @@ CTRL        = {
                      'C_sense'               : 10e-9,                                                                                  #? [F]      - Sensing capacitor
                      'adc_conv'              : 15,                                                                                     #? [/]      - Number of system clock cycles required for ADC conversion
                      'T_dt'                  : 300e-9,                                                                                 #? [s]      - Dead time
-                     'fs'                    : 70e-3,                                                                                  #? [Hz]     - Switching frequency
+                     'fs'                    : 100e-3,                                                                                  #? [Hz]     - Switching frequency
                      'Ri_Kp'                 : 0.1,                                                                                    #? [/]      - Proportional gain for current control
                      'Ri_Ki'                 : 600,                                                                                    #? [/]      - Integral gain for current control
                      'Rv_Kp'                 : 5,                                                                                      #? [/]      - Proportional gain for voltage control

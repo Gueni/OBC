@@ -41,7 +41,7 @@ class simpy:
             self.opts  = { 'ModelVars': self.modelvar}  #, 'SolverOpts': self.slv0pts, 'AnalysisOpts': self.an10pts}
         else :
             self.opts  = [{'ModelVars' : [copy.deepcopy(self.modelvar) for _ in range(paranum)][x] for x in range(paranum)}]   #, 'SolverOpts': slv_list[x], 'AnalysisOpts': anl_list [x]} for x in range(instances)]  
-        
+            # [{'ModelVars' :, 'SolverOpts':, 'AnalysisOpts': } for x in range(paranum)]
         return self.opts        
 
     def find_executable(self,exe_name):

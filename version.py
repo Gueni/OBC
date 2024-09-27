@@ -60,10 +60,9 @@ def populate_requirements_txt(project_dir: str, requirements_file: str) -> None:
         
         for imp in sorted(imports):
             version = get_installed_version(imp)
-            if version != 'unknown':
-                # Use ljust to align package names to the right
-                line = f'{imp.ljust(max_name_length)} == {version}\n'
-                req_file.write(line)
+            # Use ljust to align package names to the right
+            line = f'{imp.ljust(max_name_length)} == {version}\n'
+            req_file.write(line)
 
     print(f'Requirements file "{requirements_file}" has been populated.')
 
