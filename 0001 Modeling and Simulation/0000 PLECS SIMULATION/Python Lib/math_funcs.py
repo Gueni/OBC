@@ -90,7 +90,7 @@ def compute_average(signal, time_values):
         raise ValueError("Error: Time interval cannot be zero.")
 
     # Compute the average using trapezoidal integration
-    avg_value = np.trapz(signal, x=time_values) / delta_T
+    avg_value = np.trapezoid(signal, x=time_values) / delta_T
 
     return avg_value
 
