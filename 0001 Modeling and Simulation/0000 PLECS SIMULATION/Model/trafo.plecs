@@ -1,6 +1,6 @@
 Plecs {
   Name          "trafo"
-  Version       "4.7"
+  Version       "4.9"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
   TimeSpan      "tSim"
@@ -14,15 +14,20 @@ Plecs {
   RelTol        "rel_tol"
   AbsTol        "-1"
   TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
   SyncFixedStepTasks "2"
   UseSingleCommonBaseRate "2"
   LossVariableLimitExceededMsg "3"
   NegativeSwitchLossMsg "3"
   DivisionByZeroMsg "2"
+  DatatypeOverflowMsg "2"
+  DatatypeInheritanceConflictMsg "1"
+  ContSampleTimeConflictMsg "1"
   StiffnessDetectionMsg "2"
   MaxConsecutiveZCs "1000"
   AlgebraicLoopWithStateMachineMsg "2"
   AssertionAction "1"
+  FixedPointDatatypeOverride "1"
   InitializationCommands "\ntSim\t    \t   \t\t= \t1                          "
 "       ;  %  % [s] - simulation time\nmaxStep\t\t   \t\t= \t1e-3             "
 "                  ;  %  maximum step size\nrel_tol\t\t   \t\t= \t1e-3        "
@@ -58,6 +63,7 @@ Plecs {
   CodeGenTargetSettings ""
   ExtendedMatrixPrecision "1"
   MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "1"
   EnableStateSpaceSplitting "2"
   DisplayStateSpaceSplitting "1"
   DiscretizationMethod "2"
@@ -67,7 +73,7 @@ Plecs {
   ScriptsDialogGeometry "[626 364 526 272]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [0, 26; 1536, 780]
+    Location      [0, 26; 1283, 683]
     ZoomFactor    1
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -241,7 +247,17 @@ Plecs {
         Show          off
       }
       Parameter {
-        Variable      "DataType"
+        Variable      "OutputDataType"
+        Value         "11"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataTypeOverflowMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "GainDataType"
         Value         "11"
         Show          off
       }
@@ -518,6 +534,57 @@ Plecs {
         Direction     right
       }
     }
+    Component {
+      Type          Reference
+      SrcComponent  "Magnatic Components/Tr"
+      Name          "Tr1"
+      Show          on
+      Position      [515, 430]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -20; 10, 20]
+      Parameter {
+        Variable      "trafo"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Configuration"
+        Value         "1"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-15, -15]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [15, -15]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-15, 15]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [15, 15]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [15, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [-15, 0]
+        Direction     left
+      }
+    }
     Connection {
       Type          Signal
       SrcComponent  "Total Harmonic\nDistortion"
@@ -679,6 +746,7 @@ Plecs {
     JacobianCalculation "2"
     InitCycles    "10"
     ShowCycles    "5"
+    MaxNumberOfThreads "-1"
   }
   Analysis {
     Type          ACSweep
@@ -699,6 +767,7 @@ Plecs {
     JacobianPerturbation "1e-4"
     JacobianCalculation "2"
     InitCycles    "0"
+    MaxNumberOfThreads "-1"
   }
   Analysis {
     Type          ImpulseResponseAnalysis
@@ -717,6 +786,7 @@ Plecs {
     JacobianPerturbation "1e-4"
     JacobianCalculation "2"
     InitCycles    "0"
+    MaxNumberOfThreads "-1"
   }
   Analysis {
     Type          MultitoneAnalysis
@@ -728,6 +798,7 @@ Plecs {
     Amplitude     "1e-4"
     Perturbation  "i'"
     Response      "vo_oi'"
+    MaxNumberOfThreads "-1"
   }
   Analysis {
     Type          ACSweep
@@ -748,6 +819,7 @@ Plecs {
     JacobianPerturbation "1e-4"
     JacobianCalculation "2"
     InitCycles    "10"
+    MaxNumberOfThreads "-1"
   }
   Analysis {
     Type          ImpulseResponseAnalysis
@@ -766,6 +838,7 @@ Plecs {
     JacobianPerturbation "1e-4"
     JacobianCalculation "2"
     InitCycles    "10"
+    MaxNumberOfThreads "-1"
   }
   Analysis {
     Type          MultitoneAnalysis
@@ -777,6 +850,7 @@ Plecs {
     Amplitude     "1e-2"
     Perturbation  "i'"
     Response      "vo_oi'"
+    MaxNumberOfThreads "-1"
   }
 }
-DemoSignature "ylEsgllH2KbNWxBsvwW3nqY9BvhjNajU0VQMYqWnIRc="
+DemoSignature "FRnEeyZhkKNMliRGnbsv+1BJTVImwnkUKTvSmk8JzEE="
