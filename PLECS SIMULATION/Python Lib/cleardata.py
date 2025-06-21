@@ -10,10 +10,10 @@
 import os
 #?----------------------------------------------------------------------------------------------------------------------------------------
 folder_paths = [
-                (os.path.join(os.getcwd(), "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/CSV")).replace("\\", "/") ,
-                (os.path.join(os.getcwd(), "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/html")).replace("\\", "/") ,
-                (os.path.join(os.getcwd(), "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Log")).replace("\\", "/") ,
-                (os.path.join(os.getcwd(), "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/RES/Traces")).replace("\\", "/") 
+                (os.path.join(os.getcwd(), "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/CSV")).replace("\\", "/") ,
+                (os.path.join(os.getcwd(), "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/html")).replace("\\", "/") ,
+                (os.path.join(os.getcwd(), "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/Log")).replace("\\", "/") ,
+                (os.path.join(os.getcwd(), "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/Traces")).replace("\\", "/") 
                 ]
 #?----------------------------------------------------------------------------------------------------------------------------------------
 def delete_files_in_folder(folder_path):
