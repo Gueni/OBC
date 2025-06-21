@@ -21,7 +21,7 @@ mdlvar                                 = mdl.ModelVars
 modelname                              = "OBC"                                 
 port                                   = "1080"                                                               
 url                                    = f"http://localhost:{port}/RPC2"                                      
-model_path                             = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/OBC.plecs"                  
+model_path                             = "Modeling and Simulation/PLECS SIMULATION/Model/OBC.plecs"                  
 model_directory                        = (os.path.join(os.getcwd(), model_path)).replace("\\", "/")  
 
 mdlvar                                 = mdl.ModelVars                                                                                                                             

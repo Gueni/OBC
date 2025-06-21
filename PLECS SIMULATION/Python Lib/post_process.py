@@ -24,7 +24,7 @@ import plotly.subplots as sp
 
 def png_to_hex_base64():
     imghexdata                  = ''
-    img_path                    = (os.path.join(os.getcwd(), "0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
+    img_path                    = (os.path.join(os.getcwd(), "Modeling and Simulation/PLECS SIMULATION/Model/png/OBC.png")).replace("\\", "/") 
     screen                      = screeninfo.get_monitors()[0]
     screen_width, screen_height = screen.width, screen.height
     target_width                = int(screen_width * 0.5)  
@@ -103,7 +103,7 @@ def gen_plots(resFile, html_file, OPEN=False):
     ToFile              = ['sim_idx','utc_numeric','ToFile_path','logfile','output_html','Traces']
     mdlvar_flat         = delete_keys_from_dict(ToFile, copy.deepcopy(mdl.ModelVars),'ToFile')
     mdlvar_flat         = flatten_dict(convert_to_ordereddict(mdlvar_flat))
-    file_path           = "0001 Modeling and Simulation/0000 PLECS SIMULATION/Python Lib/Model_Parameters.py"  
+    file_path           = "Modeling and Simulation/PLECS SIMULATION/Python Lib/Model_Parameters.py"  
     unit ,comments      = extract_comments(file_path)
     table_fig           = go.Figure(data=[go.Table(
         header=dict(values=["PARAMETERS", "VALUES" , "UNITS","COMMENTS"],
