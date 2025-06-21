@@ -24,8 +24,6 @@ The charger is designed to meet specific power requirements and comply with safe
 - [LLC Resonant Converter Design](#llc-resonant-converter-design)
 - [Magnetic Component Design](#magnetic-component-design)
 - [Modeling and Simulation](#modeling-and-simulation)
-- [Schematic Capture](#schematic-capture)
-- [PCB Design](#pcb-design)
 
 ## Features
 
@@ -33,7 +31,6 @@ The charger is designed to meet specific power requirements and comply with safe
 - Supports AC mains input voltage range of 90V - 265V (230V/110V) and DC charging input of 300V - 1000V.
 - Outputs voltage of 250 - 450 VDC and 7 kW power, ensuring >96% efficiency and >0.96 power factor.
 - Safety features include overcurrent, overvoltage, overtemperature, and short circuit protection, with galvanic isolation.
-- Incorporates efficient cooling systems and communication interfaces like CAN and charging protocol.
 
 ## Requirements and Specifications
 
@@ -60,26 +57,8 @@ The magnetic component design covers the design and selection of transformers an
 Modeling and simulation involve using software tools to analyze and optimize the performance of the onboard charger.
 
 <p align="center">
-  <img  src="0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/report.gif">
+  <img  src="Modeling and Simulation/PLECS SIMULATION/Model/png/report.gif">
 </p>
-
-## Schematic Capture
-
-Schematic capture involves creating the electrical schematics of the onboard charger.
-
-## PCB Design
-
-The PCB design encompasses the layout and design of the printed circuit board for the onboard charger.
-
-## How to Use
-
-To use the EV onboard charger, follow these steps:
-
-1. Clone the repository: `git clone https://github.com/Gueni/OBC.git`
-2. Set up the development environment and build the control circuit firmware.
-3. Fabricate the PCB design using the provided Gerber files.
-4. Assemble the components onto the PCB.
-5. Test the charger with a suitable input power source and EV battery pack.
 
 ## Copyright and Licensing
 -----
