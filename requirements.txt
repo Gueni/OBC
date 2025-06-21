@@ -1,32 +1,34 @@
-             
-Image                
-List                 
-Model_Parameters     
-OrderedDict          
-PIL                  
-base64               
-cleardata            
-collections          
-configparser         
-copy                 
-itertools            
-make_subplots        
-numpy                
-os                   
-pandas               
-pkg_resources        
-plecs                
-plotly.graph_objects 
-plotly.graph_objs    
-plotly.subplots      
-post_process         
-product              
-psutil               
-pyfiglet             
-re                   
-screeninfo           
-subprocess           
-time                 
-typing               
-webbrowser           
-xmlrpc.client        
+Figlet               == unknown
+Image                == unknown
+List                 == unknown
+Model_Parameters     == unknown
+OrderedDict          == unknown
+PIL                  == unknown
+base64               == unknown
+cleardata            == unknown
+collections          == unknown
+configparser         == unknown
+copy                 == unknown
+fft                  == unknown
+itertools            == unknown
+make_subplots        == unknown
+numpy                == 2.2.5
+os                   == unknown
+pandas               == 2.2.3
+pkg_resources        == unknown
+plecs                == unknown
+plotly.graph_objects == unknown
+plotly.graph_objs    == unknown
+plotly.subplots      == unknown
+post_process         == unknown
+product              == unknown
+psutil               == unknown
+pyfiglet             == 1.0.2
+re                   == unknown
+scipy.fft            == unknown
+screeninfo           == unknown
+subprocess           == unknown
+time                 == unknown
+typing               == unknown
+webbrowser           == unknown
+xmlrpc.client        == unknown

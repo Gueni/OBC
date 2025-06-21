@@ -17,14 +17,11 @@
 #? Created:     09/01/2024
 #? Licence:     Refer to the LICENSE file
 #? -------------------------------------------------------------------------------  
-#? ------------------------------------------------------------------------------- 
-
-
 import os
 import re
 import pkg_resources
 from typing import List
-
+#? ------------------------------------------------------------------------------- 
 def extract_imports_from_file(filepath: str) -> List[str]:
     imports = []
     with open(filepath, 'r') as file:
@@ -66,6 +63,8 @@ def populate_requirements_txt(project_dir: str, requirements_file: str) -> None:
 
     print(f'Requirements file "{requirements_file}" has been populated.')
 
+#? -------------------------------------------------------------------------------
 project_directory = 'D:/WORKSPACE/OBC/OBC/' 
 requirements_txt  = 'D:/WORKSPACE/OBC/OBC/requirements.txt'
 populate_requirements_txt(project_directory, requirements_txt)
+#? -------------------------------------------------------------------------------
