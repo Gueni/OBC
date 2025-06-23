@@ -3,7 +3,6 @@ import psutil
 def kill_all_plecs_processes():
     # Flag to check if any processes were found
     processes_killed = False
-    
     # Iterate over all running processes
     for proc in psutil.process_iter(['pid', 'name']):
         try:
