@@ -8,7 +8,7 @@
 # EV Onboard Charger with PFC and LLC Resonant Converter
 ## Overview
 <p align="center">
-  <img  src="0001 Modeling and Simulation/0000 PLECS SIMULATION/Model/png/OBC.png">
+  <img  src="PLECS SIMULATION/Model/png/OBC.png">
 </p>
 
 This repository contains the design and implementation of an Electric Vehicle (EV) single phase Onboard Charger with Power Factor Correction (PFC) and LLC Resonant Converter. The onboard charger is responsible for efficiently converting AC power from the grid into DC power for charging the EV's battery pack.
@@ -57,7 +57,7 @@ The magnetic component design covers the design and selection of transformers an
 Modeling and simulation involve using software tools to analyze and optimize the performance of the onboard charger.
 
 <p align="center">
-  <img  src="Modeling and Simulation/PLECS SIMULATION/Model/png/report.gif">
+  <img  src="PLECS SIMULATION/Model/png/report.gif">
 </p>
 
 ## Copyright and Licensing
