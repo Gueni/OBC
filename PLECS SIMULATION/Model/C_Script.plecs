@@ -54,268 +54,15 @@ Plecs {
   ScriptsDialogSplitterPos "0"
   Schematic {
     Location      [0, 26; 1536, 780]
-    ZoomFactor    1.14436
+    ZoomFactor    1.30957
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
-      Type          CScript
-      Name          "C-Script"
-      Show          on
-      Position      [330, 520]
-      Direction     up
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "DialogGeometry"
-        Value         "[545 110 645 566]"
-        Show          off
-      }
-      Parameter {
-        Variable      "NumInputs"
-        Value         "4"
-        Show          off
-      }
-      Parameter {
-        Variable      "NumOutputs"
-        Value         "6"
-        Show          off
-      }
-      Parameter {
-        Variable      "NumContStates"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "NumDiscStates"
-        Value         "4"
-        Show          off
-      }
-      Parameter {
-        Variable      "NumZCSignals"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "DirectFeedthrough"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "Ts"
-        Value         "[0, -1; -2, 0]"
-        Show          off
-      }
-      Parameter {
-        Variable      "TerminalBasedSampleTimes"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "Parameters"
-        Value         "25e3, 100e-9, 0.1, 50, 0.01, 0.5"
-        Show          off
-      }
-      Parameter {
-        Variable      "LangStandard"
-        Value         "2"
-        Show          off
-      }
-      Parameter {
-        Variable      "GnuExtensions"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "RuntimeCheck"
-        Value         "2"
-        Show          off
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Declarations"
-        Value         "#include <float.h>  // Add this at the top of your Code"
-" Declarations\n"
-"#include <math.h>\n"
-"#define M_PI 3.14159265358979323846  // Add this in Code Declarations\n"
-"\n"
-"// Input mappings\n"
-"#define VAC InputSignal(0,0)    // AC voltage\n"
-"#define IAC InputSignal(1,0)    // AC current\n"
-"#define VDC InputSignal(2,0)    // DC voltage\n"
-"#define IDC InputSignal(3,0)    // DC current\n"
-"\n"
-"// Output mappings\n"
-"// Output mappings\n"
-"#define Q1 OutputSignal(0,0)    // Leg 1 high-side\n"
-"#define Q2 OutputSignal(1,0)    // Leg 1 low-side\n"
-"#define Q3 OutputSignal(2,0)    // Leg 2 high-side\n"
-"#define Q4 OutputSignal(3,0)    // Leg 2 low-side\n"
-"#define Q5 OutputSignal(4,0)    // Leg 3 high-side\n"
-"#define Q6 OutputSignal(5,0)    // Leg 3 low-side\n"
-"\n"
-"// Controller parameters\n"
-"static double fs, dead_time;\n"
-"static double kp_current, ki_current;\n"
-"static double kp_voltage, ki_voltage;\n"
-"\n"
-"// Controller states\n"
-"static double I_error_prev, V_error_prev;\n"
-"static double I_integral, V_integral;\n"
-"static double phase_angle;\n"
-"static int conduction_mode;  // 1=positive, -1=negative\n"
-"\n"
-"// Discrete states\n"
-"#define PREV_I_ERROR DiscState(0)\n"
-"#define PREV_V_ERROR DiscState(1)\n"
-"#define I_INTEGRAL DiscState(2)\n"
-"#define V_INTEGRAL DiscState(3)"
-        Show          off
-      }
-      Parameter {
-        Variable      "StartFcn"
-        Value         "// Initialize parameters from external inputs\n"
-"fs = ParamRealData(0,0);\n"
-"dead_time = ParamRealData(1,0);\n"
-"kp_current = ParamRealData(2,0);\n"
-"ki_current = ParamRealData(3,0);\n"
-"kp_voltage = ParamRealData(4,0);\n"
-"ki_voltage = ParamRealData(5,0);\n"
-"\n"
-"// Initialize states\n"
-"I_error_prev = 0;\n"
-"V_error_prev = 0;\n"
-"I_integral = 0;\n"
-"V_integral = 0;\n"
-"phase_angle = 0;\n"
-"conduction_mode = 0;\n"
-"\n"
-"// Initialize discrete states\n"
-"PREV_I_ERROR = 0;\n"
-"PREV_V_ERROR = 0;\n"
-"I_INTEGRAL = 0;\n"
-"V_INTEGRAL = 0;\n"
-"\n"
-"Q1 = 0;  // OutputSignal(0,0)\n"
-"Q2 = 0;  // OutputSignal(1,0)\n"
-"Q3 = 0;  // OutputSignal(2,0)\n"
-"Q4 = 0;  // OutputSignal(3,0)\n"
-"Q5 = 0;  // OutputSignal(4,0)\n"
-"Q6 = 0;  // OutputSignal(5,0)\n"
-"\n"
-"// Initialize variable sample time\n"
-"NextSampleHit = DBL_MAX;"
-        Show          off
-      }
-      Parameter {
-        Variable      "OutputFcn"
-        Value         "// Output the current gate states (updated in Update fu"
-"nction)\n"
-"// This ensures consistent output between update steps\n"
-"\n"
-"// Add dead-time management\n"
-"if (CurrentTime - fmod(CurrentTime, 1.0/fs) < dead_time) {\n"
-"    Q1 = Q2 = Q3 = Q4 = Q5 = Q6 = 0;\n"
-"}"
-        Show          off
-      }
-      Parameter {
-        Variable      "UpdateFcn"
-        Value         "// Only execute at major time steps\n"
-"if (!IsMajorStep) return;\n"
-"// Voltage loop (outer loop)\n"
-"double V_ref = 400.0; // Target DC voltage\n"
-"double V_error = V_ref - VDC;\n"
-"V_INTEGRAL += ki_voltage * V_error * (1.0/fs);\n"
-"double I_ref = kp_voltage * V_error + V_INTEGRAL;\n"
-"\n"
-"// Current loop (inner loop)\n"
-"double target_current = I_ref * sin(phase_angle);\n"
-"double I_error = target_current - IAC;\n"
-"I_INTEGRAL += ki_current * I_error * (1.0/fs);\n"
-"double duty = kp_current * I_error + I_INTEGRAL;\n"
-"\n"
-"// Phase angle update (50Hz grid)\n"
-"phase_angle += 2 * M_PI * 50 * (1.0/fs);\n"
-"if (phase_angle >= 2*M_PI) phase_angle -= 2*M_PI;\n"
-"\n"
-"// Mode transition detection\n"
-"if (VAC > 0.1 && conduction_mode != 1) {\n"
-"    conduction_mode = 1; // Positive half-cycle\n"
-"} else if (VAC < -0.1 && conduction_mode != -1) {\n"
-"    conduction_mode = -1; // Negative half-cycle\n"
-"}\n"
-"\n"
-"// Generate PWM signals with dead-time\n"
-"double carrier = fmod(CurrentTime, 1.0/fs)/(1.0/fs);\n"
-"\n"
-"if (conduction_mode == 1) {\n"
-"    // Positive half-cycle operation\n"
-"    Q1 = (duty > carrier) ? 1 : 0;\n"
-"    Q2 = !Q1;\n"
-"    \n"
-"    // Synchronous rectification legs\n"
-"    Q3 = 0; Q4 = 1;\n"
-"    Q5 = 1; Q6 = 0;\n"
-"} else if (conduction_mode == -1) {\n"
-"    // Negative half-cycle operation\n"
-"    Q3 = (duty > carrier) ? 1 : 0;\n"
-"    Q4 = !Q3;\n"
-"    \n"
-"    // Synchronous rectification legs\n"
-"    Q1 = 1; Q2 = 0;\n"
-"    Q5 = 0; Q6 = 1;\n"
-"}\n"
-"\n"
-"// Zero-crossing signals for mode transition\n"
-"ZCSignal(0) = VAC - 0.1;  // Positive transition\n"
-"ZCSignal(1) = VAC + 0.1;  // Negative transition\n"
-"\n"
-"\n"
-"\n"
-"// In Update function, after calculating I_ref\n"
-"double max_current = 20.0; // 20A limit\n"
-"if (I_ref > max_current) I_ref = max_current;\n"
-"else if (I_ref < -max_current) I_ref = -max_current;\n"
-"\n"
-"// In Update function\n"
-"if (VDC > 450.0) { // Overvoltage protection\n"
-"    Q1 = Q2 = Q3 = Q4 = Q5 = Q6 = 0;\n"
-"    SetErrorMessage(\"Overvoltage protection triggered\");\n"
-"    return;\n"
-"}"
-        Show          off
-      }
-      Parameter {
-        Variable      "DerivativeFcn"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "TerminateFcn"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "StoreCustomStateFcn"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "RestoreCustomStateFcn"
-        Value         ""
-        Show          off
-      }
-    }
-    Component {
       Type          Scope
       Name          "Scope1"
       Show          on
-      Position      [775, 265]
+      Position      [455, 235]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -369,521 +116,363 @@ Plecs {
       }
     }
     Component {
-      Type          PlecsProbe
-      Name          "Probe1"
+      Type          Subsystem
+      Name          "Bipolar PWM"
       Show          on
-      Position      [685, 265]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "Components/Electrical/Power Modules/HB1"
-      Name          "HB1"
-      Show          on
-      Position      [545, 415]
+      Position      [370, 235]
       Direction     up
       Flipped       off
-      LabelPosition west
-      Frame         [-20, -50; 20, 50]
+      LabelPosition south
+      Frame         [-25, -20; 25, 20]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
       Parameter {
-        Variable      "semiSymbol"
-        Value         "2"
-        Show          off
+        Variable      "fs"
+        Prompt        "Switching frequency"
+        Type          FreeText
+        Value         "20000"
+        Show          on
+        Tunable       off
+        TabName       ""
       }
       Parameter {
-        Variable      "assert"
-        Value         "2"
+        Variable      "dr"
+        Prompt        "Deadtime ratio"
+        Type          FreeText
+        Value         "0.01"
         Show          off
+        Tunable       off
+        TabName       ""
       }
       Parameter {
-        Variable      "switchModel"
-        Value         "1"
+        Variable      "dmin"
+        Prompt        "Minimum duty cycle"
+        Type          FreeText
+        Value         "0.02"
         Show          off
-      }
-      Parameter {
-        Variable      "combineRevDiode"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalIgbtDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalIgbt"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalMosfetDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalMosfet"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalRevDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "1"
-        Show          off
+        Tunable       off
+        TabName       ""
       }
       Terminal {
-        Type          Input
-        Position      [-20, -30]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, -55]
-        Direction     up
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 55]
-        Direction     down
-      }
-      Terminal {
-        Type          Port
-        Position      [25, 0]
+        Type          Output
+        Position      [29, 0]
         Direction     right
       }
       Terminal {
         Type          Input
-        Position      [-20, 30]
+        Position      [-25, 0]
         Direction     left
       }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "Components/Electrical/Power Modules/HB1"
-      Name          "HB2"
-      Show          on
-      Position      [670, 415]
-      Direction     up
-      Flipped       off
-      LabelPosition west
-      Frame         [-20, -50; 20, 50]
-      Parameter {
-        Variable      "semiSymbol"
-        Value         "2"
-        Show          off
-      }
-      Parameter {
-        Variable      "assert"
-        Value         "2"
-        Show          off
-      }
-      Parameter {
-        Variable      "switchModel"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "combineRevDiode"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalIgbtDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalIgbt"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalMosfetDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalMosfet"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalRevDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          Input
-        Position      [-20, -30]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, -55]
-        Direction     up
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 55]
-        Direction     down
-      }
-      Terminal {
-        Type          Port
-        Position      [25, 0]
-        Direction     right
-      }
-      Terminal {
-        Type          Input
-        Position      [-20, 30]
-        Direction     left
-      }
-    }
-    Component {
-      Type          Reference
-      SrcComponent  "Components/Electrical/Power Modules/HB1"
-      Name          "HB3"
-      Show          on
-      Position      [790, 415]
-      Direction     up
-      Flipped       off
-      LabelPosition west
-      Frame         [-20, -50; 20, 50]
-      Parameter {
-        Variable      "semiSymbol"
-        Value         "2"
-        Show          off
-      }
-      Parameter {
-        Variable      "assert"
-        Value         "2"
-        Show          off
-      }
-      Parameter {
-        Variable      "switchModel"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "combineRevDiode"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalIgbtDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalIgbt"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalMosfetDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalMosfet"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "thermalRevDiode"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          Input
-        Position      [-20, -30]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [0, -55]
-        Direction     up
-      }
-      Terminal {
-        Type          Port
-        Position      [0, 55]
-        Direction     down
-      }
-      Terminal {
-        Type          Port
-        Position      [25, 0]
-        Direction     right
-      }
-      Terminal {
-        Type          Input
-        Position      [-20, 30]
-        Direction     left
-      }
-    }
-    Component {
-      Type          Resistor
-      Name          "R2"
-      Show          on
-      Position      [885, 415]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      Parameter {
-        Variable      "R"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          ACVoltageSource
-      Name          "V_ac"
-      Show          on
-      Position      [330, 415]
-      Direction     down
-      Flipped       on
-      LabelPosition east
-      Parameter {
-        Variable      "V"
-        Value         "240"
-        Show          off
-      }
-      Parameter {
-        Variable      "w"
-        Value         "2*pi*50"
-        Show          off
-      }
-      Parameter {
-        Variable      "phi"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          SignalDemux
-      Name          "Demux"
-      Show          off
-      Position      [460, 535]
-      Direction     right
-      Flipped       on
-      LabelPosition south
-      Parameter {
-        Variable      "Width"
-        Value         "6"
-        Show          off
-      }
-    }
-    Component {
-      Type          PlecsProbe
-      Name          "Probe2"
-      Show          on
-      Position      [175, 495]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Probe {
-        Component     "V_ac"
-        Path          ""
-        Signals       {"Source voltage", "Source current"}
-      }
-    }
-    Component {
-      Type          PlecsProbe
-      Name          "Probe3"
-      Show          on
-      Position      [175, 540]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Probe {
-        Component     "R2"
-        Path          ""
-        Signals       {"Resistor voltage", "Resistor current"}
-      }
-    }
-    Component {
-      Type          SignalMux
-      Name          "Mux"
-      Show          off
-      Position      [250, 525]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Width"
-        Value         "[2 2]"
-        Show          off
+      Schematic {
+        Location      [0, 365; 280, 586]
+        ZoomFactor    1
+        SliderPosition [0, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          CScript
+          Name          "Bipolar PWM"
+          Show          on
+          Position      [115, 75]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "DialogGeometry"
+            Value         "[268 171 682 684]"
+            Show          off
+          }
+          Parameter {
+            Variable      "NumInputs"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NumOutputs"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NumContStates"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "NumDiscStates"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NumZCSignals"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "DirectFeedthrough"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Ts"
+            Value         "[1/fs, 0;-2, 0]"
+            Show          off
+          }
+          Parameter {
+            Variable      "TerminalBasedSampleTimes"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Parameters"
+            Value         "1/fs dr dmin"
+            Show          off
+          }
+          Parameter {
+            Variable      "LangStandard"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "GnuExtensions"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "RuntimeCheck"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "Declarations"
+            Value         "/** Bipolar PWM Version 1.0, 4-5-10\n"
+" *Note that multiple sample times are used.\n"
+" *The fixed sample time causes a hit at the beginning of each switching cycle"
+", i.e. a hit\n"
+" *is generated at n*Ts.\n"
+" *The variable sample time is used to cause a hit at the PWM transitions with"
+"in the cycle.\n"
+" */\n"
+"\n"
+"#include <float.h>\n"
+"#include <stdio.h>\n"
+"\n"
+"\n"
+"#define TS ParamRealData(0,0)  //sample period\n"
+"#define DEADTIME ParamRealData(1,0)\n"
+"#define DMIN ParamRealData(2,0)\n"
+"#define M Input(0)   //modulation index\n"
+"#define OUT Output(0)  //switch output\n"
+"#define STATE DiscState(0)\n"
+"#define NEVER DBL_MAX\n"
+"\n"
+"\n"
+"//State names\n"
+"typedef enum {\n"
+"  Start,\n"
+"  Blank1,\n"
+"  Low,\n"
+"  Blank2,\n"
+"  High,\n"
+"}state_type;\n"
+"static state_type NEXT_STATE;\n"
+"\n"
+"//Create a duty cycle type with relative on and off times\n"
+"typedef struct \n"
+"{\n"
+"  double M1;\n"
+"  double M2;\n"
+"} duty;\n"
+"static duty DUTY;\n"
+"\n"
+"\n"
+"/*Scales modulation index between [0,1] and calculates M1, M2,\n"
+" *the relative high and low times\n"
+" */\n"
+"void calc_duty_cycles(double m, double deadt_ratio, double dmin)\n"
+"{\n"
+"  DUTY.M1 = (m + 1)/2; //scale [-1,1] to [0,1]\n"
+"  DUTY.M2 = 1 - DUTY.M1;\n"
+"  DUTY.M1 = DUTY.M1 - deadt_ratio;\n"
+"  DUTY.M2 = DUTY.M2 - deadt_ratio;\n"
+"\n"
+"  if (DUTY.M1 <= dmin)\n"
+"  {\n"
+"    DUTY.M1 = dmin;\n"
+"    DUTY.M2 = 1 - 2*deadt_ratio - dmin;\n"
+"  }\n"
+"  else if (DUTY.M2 <= dmin)\n"
+"  {\n"
+"    DUTY.M2 = dmin;\n"
+"    DUTY.M1 = 1 - 2*deadt_ratio - dmin;\n"
+"  }\n"
+"}\n"
+            Show          off
+          }
+          Parameter {
+            Variable      "StartFcn"
+            Value         "STATE = Start;\n"
+"NextSampleHit = NEVER;"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputFcn"
+            Value         "static double T1, T2, T3, T4; //variable hit times"
+"\n"
+"\n"
+"switch ((state_type) STATE)\n"
+"{\n"
+"\n"
+"  //----------------------------------------\n"
+"  case Start:  //Start is entered at the hit caused by the fixed step setting"
+"\n"
+"    \n"
+"  if (M < -1 || M > 1)\n"
+"      SetErrorMessage(\"Modulation index for bipolar PWM block must be in the"
+" range [-1,1].\");\n"
+"\n"
+"    calc_duty_cycles(M, DEADTIME, DMIN); //calculate and scale DUTY.M1, M2   "
+"\n"
+"    T1 = CurrentTime + TS*DUTY.M1/2; //hit time for pwm hi to low\n"
+"    T2 = T1 + TS*DEADTIME;\n"
+"    T3 = T2 + TS*DUTY.M2;\n"
+"    T4 = T3 + TS*DEADTIME;\n"
+"    OUT = 1;\n"
+"    NEXT_STATE = Blank1;\n"
+"    NextSampleHit = T1;\n"
+"    break;\n"
+"\n"
+"  //----------------------------------------\n"
+"  case Blank1:\n"
+"    OUT = 0;\n"
+"    NEXT_STATE = Low;\n"
+"    NextSampleHit = T2;\n"
+"    break;\n"
+"\n"
+"  //----------------------------------------\n"
+"  case Low:\n"
+"    OUT = -1;\n"
+"    NEXT_STATE = Blank2;\n"
+"    NextSampleHit = T3;\n"
+"    break;\n"
+"\n"
+"\n"
+"  //---------------------------------------- \n"
+"  case Blank2:\n"
+"    OUT = 0;\n"
+"    NEXT_STATE = High;\n"
+"    NextSampleHit = T4;\n"
+"    break;\n"
+"\n"
+"  //----------------------------------------\n"
+"  case High:\n"
+"    OUT = 1;\n"
+"    NEXT_STATE = Start;\n"
+"    NextSampleHit = NEVER; //Wait for next fixed sample step hit\n"
+"    break;\n"
+"\n"
+"}"
+            Show          off
+          }
+          Parameter {
+            Variable      "UpdateFcn"
+            Value         "STATE = NEXT_STATE;"
+            Show          off
+          }
+          Parameter {
+            Variable      "DerivativeFcn"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "TerminateFcn"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "StoreCustomStateFcn"
+            Value         "WriteCustomStateDouble(NextSampleHit);\n"
+"WriteCustomStateDouble(DUTY.M1);\n"
+"WriteCustomStateDouble(DUTY.M2);"
+            Show          off
+          }
+          Parameter {
+            Variable      "RestoreCustomStateFcn"
+            Value         "NextSampleHit = ReadCustomStateDouble();\n"
+"DUTY.M1 = ReadCustomStateDouble();\n"
+"DUTY.M2 = ReadCustomStateDouble();"
+            Show          off
+          }
+        }
+        Component {
+          Type          Output
+          Name          "pwm"
+          Show          on
+          Position      [190, 75]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Input
+          Name          "cmp"
+          Show          on
+          Position      [45, 75]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Bipolar PWM"
+          SrcTerminal   2
+          DstComponent  "pwm"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "cmp"
+          SrcTerminal   1
+          DstComponent  "Bipolar PWM"
+          DstTerminal   1
+        }
       }
     }
     Connection {
       Type          Signal
-      SrcComponent  "Probe1"
+      SrcComponent  "Bipolar PWM"
       SrcTerminal   1
       DstComponent  "Scope1"
       DstTerminal   1
     }
-    Connection {
-      Type          Wire
-      SrcComponent  "HB1"
-      SrcTerminal   2
-      Points        [670, 360]
-      Branch {
-        Points        [790, 360]
-        Branch {
-          Points        [885, 360]
-          DstComponent  "R2"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "HB3"
-          DstTerminal   2
-        }
-      }
-      Branch {
-        DstComponent  "HB2"
-        DstTerminal   2
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HB1"
-      SrcTerminal   3
-      Points        [670, 470]
-      Branch {
-        Points        [790, 470]
-        Branch {
-          Points        [885, 470]
-          DstComponent  "R2"
-          DstTerminal   2
-        }
-        Branch {
-          DstComponent  "HB3"
-          DstTerminal   3
-        }
-      }
-      Branch {
-        DstComponent  "HB2"
-        DstTerminal   3
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HB1"
-      SrcTerminal   4
-      Points        [570, 410; 405, 410; 405, 405]
-      Branch {
-        Points        [695, 405]
-        DstComponent  "HB2"
-        DstTerminal   4
-      }
-      Branch {
-        Points        [370, 405; 370, 395]
-        DstComponent  "V_ac"
-        DstTerminal   1
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "HB3"
-      SrcTerminal   4
-      Points        [815, 400; 375, 400; 375, 380; 365, 380; 365, 435]
-      DstComponent  "V_ac"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "C-Script"
-      SrcTerminal   2
-      Points        [405, 520; 405, 535]
-      DstComponent  "Demux"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux"
-      SrcTerminal   2
-      Points        [490, 510; 490, 385]
-      DstComponent  "HB1"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux"
-      SrcTerminal   3
-      Points        [495, 520; 495, 445]
-      DstComponent  "HB1"
-      DstTerminal   5
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux"
-      SrcTerminal   4
-      Points        [500, 530; 500, 385]
-      DstComponent  "HB2"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux"
-      SrcTerminal   5
-      Points        [505, 540; 505, 445]
-      DstComponent  "HB2"
-      DstTerminal   5
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux"
-      SrcTerminal   6
-      Points        [510, 550; 510, 385]
-      DstComponent  "HB3"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Demux"
-      SrcTerminal   7
-      Points        [515, 560; 515, 445]
-      DstComponent  "HB3"
-      DstTerminal   5
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Probe2"
-      SrcTerminal   1
-      Points        [220, 495; 220, 520]
-      DstComponent  "Mux"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Probe3"
-      SrcTerminal   1
-      Points        [220, 540; 220, 530]
-      DstComponent  "Mux"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Mux"
-      SrcTerminal   1
-      Points        [275, 525; 275, 520]
-      DstComponent  "C-Script"
-      DstTerminal   1
-    }
   }
 }
-DemoSignature "Cyq4rUBP3ZTNeg9mvgSNnVtFW5U6FtQgWPER+JHiie0="
+DemoSignature "QIeY2QJ7+4HGTZQtotRQskG1lIWLopM94m55ec4Za8Q="
