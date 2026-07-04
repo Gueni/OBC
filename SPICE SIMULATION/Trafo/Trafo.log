@@ -1,0 +1,14 @@
+LTspice 26.0.1 for Windows
+Circuit: D:\WORKSPACE\OBC\SPICE SIMULATION\Trafo\Trafo.net
+Start Time: Sun Mar  8 22:41:39 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.266 seconds.
+
+Files loaded:
+D:\WORKSPACE\OBC\SPICE SIMULATION\Trafo\Trafo.net
+

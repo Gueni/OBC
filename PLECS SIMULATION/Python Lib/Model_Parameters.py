@@ -11,10 +11,10 @@ import os
 import numpy as np
 #!----------------------------------------------------------------------------------------------------------------------------------------                                                         
 current_directory   = os.getcwd()                                                                                                                                                              
-Traces_path         = "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/Traces/"           
-ToFile_path         = "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/CSV/"              
-logfile_path        = "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/Log/"              
-output_html_path    = "Modeling and Simulation/PLECS SIMULATION/Python Lib/RES/html/"
+Traces_path         = "/PLECS SIMULATION/Python Lib/RES/Traces/"           
+ToFile_path         = "/PLECS SIMULATION/Python Lib/RES/CSV/"              
+logfile_path        = "/PLECS SIMULATION/Python Lib/RES/Log/"              
+output_html_path    = "/PLECS SIMULATION/Python Lib/RES/html/"
 Coss_Config         = 5
 #!----------------------------------------------------------------------------------------------------------------------------------------
 Sim_param 	= {                                                                                            

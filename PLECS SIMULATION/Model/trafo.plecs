@@ -495,51 +495,10 @@ Plecs {
     }
     Component {
       Type          Reference
-      SrcComponent  "library/Magnatic Components/Tr"
-      Name          "Tr"
-      Show          on
-      Position      [525, 245]
-      Direction     up
-      Flipped       off
-      LabelPosition south
-      Frame         [-10, -20; 10, 20]
-      Parameter {
-        Variable      "trafo"
-        Value         "Trafo"
-        Show          off
-      }
-      Parameter {
-        Variable      "Configuration"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          Port
-        Position      [-15, -15]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [15, -15]
-        Direction     right
-      }
-      Terminal {
-        Type          Port
-        Position      [-15, 15]
-        Direction     left
-      }
-      Terminal {
-        Type          Port
-        Position      [15, 15]
-        Direction     right
-      }
-    }
-    Component {
-      Type          Reference
       SrcComponent  "Magnatic Components/Tr"
       Name          "Tr1"
       Show          on
-      Position      [515, 430]
+      Position      [525, 245]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -695,7 +654,7 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "Tr"
+      SrcComponent  "Tr1"
       SrcTerminal   2
       Points        [565, 230; 565, 195]
       DstComponent  "Am1"
@@ -713,13 +672,13 @@ Plecs {
       }
       Branch {
         Points        [565, 295; 565, 260]
-        DstComponent  "Tr"
+        DstComponent  "Tr1"
         DstTerminal   4
       }
     }
     Connection {
       Type          Wire
-      SrcComponent  "Tr"
+      SrcComponent  "Tr1"
       SrcTerminal   1
       Points        [460, 230; 460, 220; 405, 220]
       DstComponent  "V_ac"
@@ -727,7 +686,7 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "Tr"
+      SrcComponent  "Tr1"
       SrcTerminal   3
       Points        [460, 260; 460, 270; 405, 270]
       DstComponent  "V_ac"
@@ -853,4 +812,4 @@ Plecs {
     MaxNumberOfThreads "-1"
   }
 }
-DemoSignature "FRnEeyZhkKNMliRGnbsv+1BJTVImwnkUKTvSmk8JzEE="
+DemoSignature "yVdIffhUFe4hLc4HdgO0GGJjKEMyeVIOLQq5l05YjdY="

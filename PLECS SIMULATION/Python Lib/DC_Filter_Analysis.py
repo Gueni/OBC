@@ -33,7 +33,7 @@ port                                   = "1080"
 url                                    = f"http://localhost:{port}/RPC2"                                      
 analvar                                = mdl.AnalysisOpts                                                        
 modelname                              = "DC HV Filter Analysis"   
-model_path                             = "Modeling and Simulation/PLECS SIMULATION/Model/DC HV Filter Analysis.plecs"                  
+model_path                             = "PLECS SIMULATION/Model/DC HV Filter Analysis.plecs"                  
 model_directory                        = (os.path.join(os.getcwd(), model_path)).replace("\\", "/")  
 mdlvar                                 = mdl.ModelVars                                                                                                                             
 plcsim                                 = plc.simpy(
@@ -58,9 +58,9 @@ utc_numeric                            = str(int(time.strftime("%Y%m%d%H%M%S",  
 sim_idx                                = 1
 mdlvar['ToFile']['sim_idx']            = sim_idx
 mdlvar['ToFile']['utc_numeric']        = utc_numeric
-mdlvar['ToFile']['logfile']            = str((os.path.join(mdl.current_directory,mdl.logfile_path+f"Log_{utc_numeric}_{sim_idx}.log")).replace("\\", "/"))
+# mdlvar['ToFile']['logfile']            = str((os.path.join(mdl.current_directory,mdl.logfile_path+f"Log_{utc_numeric}_{sim_idx}.log")).replace("\\", "/"))
 analvar['DC_Filter']                   = mdlvar['HV_Filter']
-mdlvar['ToFile']['output_html']        = str((os.path.join(mdl.current_directory,mdl.output_html_path+f"Html_{utc_numeric}_{sim_idx}.html")).replace("\\", "/"))
+# mdlvar['ToFile']['output_html']        = str((os.path.join(mdl.current_directory,mdl.output_html_path+f"Html_{utc_numeric}_{sim_idx}.html")).replace("\\", "/"))
 
 combinations    = product(Cx, Cy, L, chokeL1, chokeL2)
 result_list     = []
@@ -73,10 +73,10 @@ for i, (item1, item2, item3, item4, item5) in enumerate(combinations):
     analvar['DC_Filter']['Choke']['L1']                   = item4 #chokeL1[i]
     analvar['DC_Filter']['Choke']['L2']                   = item5 #chokeL2[i]
 
-    plcsim.logParams(str(mdlvar['ToFile']['logfile']),analvar)
+    # plcsim.logParams(str(mdlvar['ToFile']['logfile']),analvar)
     plcsim.set_analysis_param(analvar)
     results                                = plcsim.launch_analysis(modelname=modelname)
     result_list.append(results)
-    plcsim.logParams(str(mdlvar['ToFile']['logfile']),result_list[0])
+    # plcsim.logParams(str(mdlvar['ToFile']['logfile']),result_list[0])
 post_process.plot_ac_analysis_sweep(result_list, html_file=mdlvar['ToFile']['output_html'],OPEN=True)
 #? -------------------------------------------------------------------------------
