@@ -1,7 +1,0 @@
-{
-    "python.analysis.autoImportCompletions": true,
-    "files.associations": {
-        "*.py": "python",
-        "PFC_C_SCRIPT.C": "cpp"
-    }
-}
