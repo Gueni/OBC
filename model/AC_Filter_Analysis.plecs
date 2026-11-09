@@ -1,5 +1,5 @@
 Plecs {
-  Name          "Input Filter Analysis"
+  Name          "AC_Filter_Analysis"
   Version       "4.7"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"

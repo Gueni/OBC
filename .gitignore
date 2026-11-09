@@ -1,0 +1,39 @@
+# ---- PLECS ----
+*.plecs.bak
+*.plecs~
+*_codegen/
+slprj/
+
+# ---- MATLAB / Octave ----
+*.asv
+*.m~
+*.mex*
+*.slxc
+octave-workspace
+
+# ---- LTspice (generated) ----
+*.raw
+*.log
+*.net
+*.fft
+*.op.raw
+*.tmp
+
+# ---- Simulation results (keep folders, not data) ----
+data/*
+!data/.gitkeep
+ltspice/results/*
+!ltspice/results/.gitkeep
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+
+# ---- Editors / OS ----
+.vscode/
+*.swp
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store

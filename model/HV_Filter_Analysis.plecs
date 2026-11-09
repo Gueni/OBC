@@ -1,5 +1,5 @@
 Plecs {
-  Name          "DC HV Filter Analysis"
+  Name          "HV_Filter_Analysis"
   Version       "4.7"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"

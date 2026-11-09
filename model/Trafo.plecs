@@ -1,5 +1,5 @@
 Plecs {
-  Name          "trafo"
+  Name          "Trafo"
   Version       "4.9"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -41,9 +41,9 @@ Plecs {
 "                          % []  - \n'Imaginit'\t\t   , 0,                    "
 "                        % []  - \n'Lp'\t\t         , 1e-9,                   "
 "                      % []  - \n'Rp'\t\t         , 1e-2,                     "
-"                    % []  - \n'Rc'\t\t         , 10,                         "
+"                    % []  - \n'Rc'\t\t         , 10e3,                       "
 "                  % []  - \n'Lm'\t\t         , 1e-9,                         "
-"                % []  - \n'Rs'\t\t         , 10,                             "
+"                % []  - \n'Rs'\t\t         , 1e-2,                           "
 "              % []  - \n'Ls'\t\t         , 1e-9,                             "
 "            % []  -\n'LpIinit'\t\t   , 0,                                    "
 "        % []  - \n'LmIinit'\t\t   , 0,                                       "
@@ -505,12 +505,12 @@ Plecs {
       Frame         [-10, -20; 10, 20]
       Parameter {
         Variable      "trafo"
-        Value         ""
+        Value         "Trafo"
         Show          off
       }
       Parameter {
         Variable      "Configuration"
-        Value         "1"
+        Value         "Trafo.Config"
         Show          off
       }
       Terminal {
